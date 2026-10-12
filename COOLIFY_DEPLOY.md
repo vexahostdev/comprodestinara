@@ -4,41 +4,44 @@ Panduan lengkap deployment proyek **Destinara Company Profile** (Laravel 12 + Vi
 
 ---
 
-## 1. Arsitektur Domain & Environment
+## 1. Ringkasan Kredensial MySQL Coolify
 
-| Environment | Domain / FQDN di Coolify | Database | File Acuan Env |
+| Parameter | Development | Staging | Production |
 |---|---|---|---|
-| **Development** | `http://localhost:8030` | `db_comprodestinara` | `.env.development` |
-| **Staging** | `https://staging.destinara.my.id` | `destinara_compro_staging` | `.env.staging` |
-| **Production** | `https://destinara.my.id` | `destinara_compro_prod` | `.env.production` |
+| **Coolify Resource** | `destinara-mysql-dev` | `destinara-mysql-staging` | `destinara-mysql-production` |
+| **DB_HOST / Container** | `vbi0lskyqkxybarmwlgtmobo` | `athi0chh8tohka2pb9dbrrfh` | `kgnzm2wodjjnfjfrxdo1avqa` |
+| **DB_PORT** | `3306` | `3306` | `3306` |
+| **DB_DATABASE** | `db_comprodestinara` | `db_comprodestinara` | `db_comprodestinara` |
+| **DB_USERNAME** | `mysql` | `mysql` | `mysql` |
+| **Domain (FQDN)** | `http://localhost:8030` | `https://staging.destinara.my.id` | `https://destinara.my.id` |
+| **File Env Acuan** | `.env.development` | `.env.staging` | `.env.production` |
+
+> 💡 **Tips Hak Akses MySQL di Coolify:**
+> Default user `mysql` di Coolify awalnya terasosiasi ke database default (`destinara_dev` / `destinara_staging` / `destinara_production`).
+> Jika migrasi mengalami error *Access denied for database db_comprodestinara*, ubah `DB_USERNAME=root` dan masukkan `ROOT_PASSWORD` yang tertera di catatan resource Coolify.
 
 ---
 
-## 2. Langkah Deployment di Coolify Dashboard
+## 2. Langkah Deployment di Dashboard Coolify
 
 ### A. Buat Resource Application
 1. Buka dashboard **Coolify**.
-2. Pilih Project & Environment (misal: `Production` atau `Staging`).
-3. Klik **+ New** -> **Application** -> pilih **Public Repository** atau **GitHub App / Private Repository**.
-4. Masukkan URL repo dan pilih branch yang sesuai (`main` atau `dev`).
-5. Pada pilihan Build Pack, biarkan default (**Nixpacks**).
+2. Pilih Project & Environment tujuan (**Production**, **Staging**, atau **Development**).
+3. Klik **+ New** -> **Application** -> pilih repositori Git Anda.
+4. Pilih branch yang sesuai (`main` atau `dev`).
+5. Pada pilihan Build Pack, gunakan **Nixpacks** (default).
 
 ### B. Konfigurasi Domain (FQDN)
 Pada kolom **Domains**:
 - **Production**: `https://destinara.my.id`
 - **Staging**: `https://staging.destinara.my.id`
-
-> Coolify secara otomatis akan mengurus sertifikat SSL Let's Encrypt melalui reverse proxy Traefik/Caddy. Laravel sudah dilengkapi middleware `trustProxies(at: '*')` sehingga HTTPS langsung aktif tanpa error mixed content.
+*(SSL Let's Encrypt diurus otomatis oleh Coolify).*
 
 ### C. Masukkan Environment Variables
-1. Buka tab **Environment Variables** di Coolify.
-2. Buka file `.env.production` (atau `.env.staging`).
+1. Buka tab **Environment Variables** di aplikasi Coolify Anda.
+2. Buka file `.env.production` (atau `.env.staging` / `.env.development`).
 3. Salin (**Copy**) seluruh isi file dan tempel (**Paste**) ke form Environment Variables Coolify.
-4. Sesuaikan nilai kredensial rahasia:
-   - `DB_HOST`: Jika MySQL dibuat sebagai service di Coolify pada project/network yang sama, isi dengan nama servicenya (misal: `mysql` atau `destinara-mysql`). Jika di luar container, gunakan IP private atau `host.docker.internal`.
-   - `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`.
-   - `MAIL_PASSWORD` (password SMTP email Hostinger).
-   - `ADMIN_PASSWORD` (password untuk seeder admin pertama).
+4. Simpan perubahan.
 
 ### D. Perintah Pasca-Deploy (Post-deployment Command)
 Di menu konfigurasi aplikasi Coolify, pada bagian **Post-deployment Command** (atau jalankan di Terminal Container):
@@ -48,10 +51,10 @@ php artisan migrate --force && php artisan storage:link && php artisan config:ca
 
 ---
 
-## 3. Persistent Storage (Penting untuk Upload File)
-Jika aplikasi mengizinkan upload gambar (destinasi, cerita, tim), tambahkan **Persistent Storage** di Coolify agar data upload tidak hilang saat rebuild container:
+## 3. Persistent Storage (Upload Gambar & Dokumen)
+Tambahkan **Persistent Storage** di Coolify agar aset upload tidak terhapus saat container di-rebuild:
 - **Source Volume**: `compro-storage-public`
-- **Destination Path**: `/app/storage/app/public` (atau path storage aplikasi Anda)
+- **Destination Path**: `/app/storage/app/public`
 
 ---
 

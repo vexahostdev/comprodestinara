@@ -15,209 +15,200 @@
   }
 @endphp
 
-<main class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] pb-16 lg:pb-24 pt-20 sm:pt-24 transition-colors">
-  <div class="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+<main class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] pb-16 lg:pb-24 transition-colors">
 
-    <!-- ==================== 1. HERO SECTION (POMAII MODERN ISLAND LAYOUT) ==================== -->
-    <section class="relative w-full">
-      <div class="relative w-full min-h-[580px] sm:min-h-[620px] lg:min-h-[680px] rounded-[32px] sm:rounded-[40px] lg:rounded-[48px] overflow-hidden bg-[#FAF9F6] dark:bg-[#140E0D] shadow-sm border border-gray-200/40 dark:border-white/10">
+  <!-- ==================== 1. FULL IMMERSIVE HERO SECTION (GRAND IMMERSIVE CANVAS) ==================== -->
+  <section class="relative w-full overflow-hidden bg-[#1E1716] min-h-[86vh] sm:min-h-[90vh] lg:min-h-[95vh] xl:min-h-[920px] flex flex-col justify-center pt-28 sm:pt-36 lg:pt-40 pb-28 sm:pb-36 lg:pb-40">
+    
+    <!-- Full Scenic Nature Photography (Spanning Edge-to-Edge with Grand Presence) -->
+    <img src="{{ $hero?->image_url ?? asset('assets/img/hd/hero-home.jpg') }}" 
+         alt="{{ $hero?->title ?? __('sections.home.hero.title') }}" 
+         class="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
+
+    <!-- Top Scrim: Crisp contrast for transparent navigation -->
+    <div class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+
+    <!-- Targeted Left Scrim: Clear contrast for text while keeping center & right photo naturally bright and vivid -->
+    <div class="absolute inset-y-0 left-0 w-full lg:w-3/5 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+
+    <!-- Bottom Scrim: Soft depth for floating search bar -->
+    <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
+
+    <!-- Decorative Top-Right Dot Grid -->
+    <div class="absolute top-28 right-8 z-10 pointer-events-none hidden sm:block opacity-40">
+      <div class="grid grid-cols-3 gap-2.5">
+        @for($i = 0; $i < 9; $i++)
+          <span class="w-1.5 h-1.5 rounded-full bg-white shadow-xs"></span>
+        @endfor
+      </div>
+    </div>
+
+    <!-- Hero Content Container (Generous Spacing, High Contrast, Immersive Scale) -->
+    <div class="relative z-20 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-12 my-auto">
+      <div class="max-w-xl sm:max-w-2xl lg:max-w-3xl">
         
-        <!-- Scenic Nature Photography (Right/Full Background) -->
-        <img src="{{ $hero?->image_url ?? asset('assets/img/hd/hero-home.jpg') }}" 
-             alt="{{ $hero?->title ?? __('sections.home.hero.title') }}" 
-             class="absolute inset-0 w-full h-full object-cover object-[center_30%]" />
-
-        <!-- Organic Fluid Shape on the Left (Desktop SVG Wave Mask) -->
-        <svg class="absolute inset-0 w-full h-full pointer-events-none hidden md:block" viewBox="0 0 1440 700" fill="none" preserveAspectRatio="none">
-          <path d="M0 0 H520 C640 140 670 240 590 380 C510 520 620 620 560 700 H0 V0 Z" class="fill-[#FAF9F6] dark:fill-[#140E0D]"/>
-          <!-- Subtle Soft Glassy Border Glow -->
-          <path d="M520 0 C640 140 670 240 590 380 C510 520 620 620 560 700" stroke="rgba(255,255,255,0.6)" stroke-width="6"/>
-        </svg>
-
-        <!-- Mobile Semi-transparent Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/90 to-transparent dark:from-[#140E0D] dark:via-[#140E0D]/90 dark:to-transparent md:hidden pointer-events-none"></div>
-
-        <!-- Right Side: Translucent Organic Liquid Wave Ribbons -->
-        <div class="absolute -right-16 top-1/4 w-80 h-96 pointer-events-none opacity-60 hidden xl:block">
-          <svg viewBox="0 0 300 400" fill="none" class="w-full h-full">
-            <path d="M50 0 C150 80 280 180 200 300 C150 380 50 350 0 400" stroke="rgba(255,255,255,0.7)" stroke-width="48" stroke-linecap="round" class="blur-xs"/>
-            <path d="M80 30 C170 100 260 200 190 310" stroke="rgba(255,255,255,0.4)" stroke-width="24" stroke-linecap="round"/>
-          </svg>
+        <!-- Micro Kicker Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 text-[#FFD3D2] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-5 sm:mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-[#E8999B] animate-pulse"></span>
+          <span>{{ $hero?->badge ?? __('sections.home.hero.badge') }}</span>
         </div>
 
-        <!-- Top Right: Decorative 3x3 Dot Grid -->
-        <div class="absolute top-8 right-8 z-20 pointer-events-none hidden sm:block opacity-60">
-          <div class="grid grid-cols-3 gap-2">
-            @for($i = 0; $i < 9; $i++)
-              <span class="w-1.5 h-1.5 rounded-full bg-white shadow-xs"></span>
-            @endfor
-          </div>
-        </div>
+        <!-- Headline: High-Impact Typography with Signature Maroon Brush Underline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-[56px] xl:text-[64px] lg:leading-[1.12] font-black text-white tracking-tight mb-6 drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]">
+          <span class="relative inline-block">
+            {{ $hero?->title ?? __('sections.home.hero.title') }}
+            <!-- Curved hand-drawn brush underline stroke in glowing coral/maroon -->
+            <svg class="absolute -bottom-2 sm:-bottom-3.5 left-0 w-full max-w-[320px] h-3.5 sm:h-5 text-[#E8999B]" viewBox="0 0 260 14" fill="none">
+              <path d="M3 10C65 2 195 2 257 11" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
 
-        <!-- Top Left: Botanical Leaf Illustration Accent -->
-        <div class="absolute top-6 left-6 sm:top-10 sm:left-10 z-20 pointer-events-none opacity-80">
-          <svg class="w-10 h-10 sm:w-14 sm:h-14 text-[#51634B] dark:text-[#A7C89F]" viewBox="0 0 64 64" fill="currentColor">
-            <path d="M12 52 C20 40 32 30 52 14 C36 18 24 28 16 42 C14 45 13 49 12 52 Z" opacity="0.65"/>
-            <path d="M18 40 C28 32 38 24 50 16 C38 24 30 34 22 46 Z" opacity="0.85"/>
-            <circle cx="14" cy="48" r="2" fill="currentColor"/>
-          </svg>
-        </div>
+        <!-- Calming Subtitle (Minim Teks, Nyaman Dibaca, High Contrast) -->
+        <p class="text-sm sm:text-base lg:text-lg text-white/95 max-w-xl sm:max-w-2xl leading-relaxed mb-9 font-normal drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
+          {{ $hero?->subtitle ?? __('sections.home.hero.subtitle') }}
+        </p>
 
-        <!-- Hero Content Area (Left Positioned) -->
-        <div class="relative z-20 max-w-xl sm:max-w-2xl py-14 sm:py-20 px-6 sm:px-12 lg:px-16 flex flex-col justify-center min-h-[580px] sm:min-h-[620px] lg:min-h-[680px]">
-          
-          <!-- Micro Kicker Badge -->
-          <div class="text-[11px] sm:text-xs font-extrabold tracking-[0.25em] text-[#703A3A] dark:text-[#E8999B] uppercase mb-4 sm:mb-5">
-            {{ $hero?->badge ?? __('sections.home.hero.badge') }}
-          </div>
+        <!-- Solid Pill CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-3.5 sm:gap-4">
+          <a href="{{ $hero?->button_link ?? route('destinations.index') }}" 
+             class="inline-flex items-center gap-2.5 bg-[#703A3A] hover:bg-[#8C4848] text-white font-bold text-xs sm:text-sm px-8 sm:px-9 py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.45)] hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <span>{{ $hero?->button_text ?? __('sections.home.hero.button_text') }}</span>
+            <span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+          </a>
 
-          <!-- Headline: Clean & Modern with Corporate Maroon Brush Stroke -->
-          <h1 class="text-3xl sm:text-4xl lg:text-[46px] lg:leading-[1.18] font-black text-[#1A1A1A] dark:text-white tracking-tight mb-5">
-            <span class="relative inline-block">
-              {{ $hero?->title ?? __('sections.home.hero.title') }}
-              <!-- Curved hand-drawn brush underline stroke in corporate maroon -->
-              <svg class="absolute -bottom-2 sm:-bottom-3 left-0 w-full max-w-[280px] h-3 sm:h-4 text-[#703A3A] dark:text-[#E8999B]" viewBox="0 0 260 14" fill="none">
-                <path d="M3 10C65 2 195 2 257 11" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </h1>
-
-          <!-- Calming Subtitle (Minim Teks, Nyaman Dibaca) -->
-          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 max-w-md sm:max-w-lg leading-relaxed mb-8 font-normal">
-            {{ $hero?->subtitle ?? __('sections.home.hero.subtitle') }}
-          </p>
-
-          <!-- Solid Pill CTA Button -->
-          <div>
-            <a href="{{ $hero?->button_link ?? route('destinations.index') }}" 
-               class="inline-flex items-center gap-2.5 bg-[#703A3A] hover:bg-[#561D1E] text-white font-bold text-xs sm:text-sm px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(112,58,58,0.25)] hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <span>{{ $hero?->button_text ?? __('sections.home.hero.button_text') }}</span>
-              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
-          </div>
-
+          <a href="{{ route('for-schools') }}" 
+             class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-bold text-xs sm:text-sm px-6 sm:px-7 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+            <span>{{ __('site.nav.for_schools') }}</span>
+            <span class="material-symbols-outlined text-[19px]">school</span>
+          </a>
         </div>
 
       </div>
+    </div>
 
-      <!-- ==================== 2. FLOATING SEARCH BAR ==================== -->
-      <div class="max-w-[1140px] mx-auto px-3 sm:px-6 relative -mt-10 sm:-mt-12 z-30">
-        <form action="{{ route('destinations.index') }}" method="GET" 
-              class="bg-white dark:bg-[#1E1716] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
-          
-          <!-- Slot 1: Lokasi / Destinasi -->
-          <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-            <span class="material-symbols-outlined text-gray-400 text-[22px]">location_on</span>
-            <div class="flex-1 min-w-0">
-              <label for="q-search" class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.nav.destinations') }}</label>
-              <input type="text" id="q-search" name="q" placeholder="{{ __('site.common.all_regions') }}" 
-                     class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none placeholder-gray-400 font-medium">
-            </div>
-          </div>
+  </section>
 
-          <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
-
-          <!-- Slot 2: Mandat / Jalur Program -->
-          <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-            <span class="material-symbols-outlined text-gray-400 text-[22px]">school</span>
-            <div class="flex-1 min-w-0">
-              <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('sections.home.gateways.tag') }}</span>
-              <select name="mandate" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-                <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
-                <option value="school" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.school_tag') }}</option>
-                <option value="research" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.research_tag') }}</option>
-                <option value="village" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.village_tag') }}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
-
-          <!-- Slot 3: Kategori Lanskap -->
-          <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-            <span class="material-symbols-outlined text-gray-400 text-[22px]">landscape</span>
-            <div class="flex-1 min-w-0">
-              <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.landscape_category') }}</span>
-              <select name="category" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-                <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
-                <option value="budaya" class="dark:bg-[#1E1716]">{{ __('site.common.cat_culture') }}</option>
-                <option value="ekologi" class="dark:bg-[#1E1716]">{{ __('site.common.cat_ecology') }}</option>
-                <option value="pangan" class="dark:bg-[#1E1716]">{{ __('site.common.cat_food') }}</option>
-                <option value="bahari" class="dark:bg-[#1E1716]">{{ __('site.common.cat_marine') }}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
-
-          <!-- Slot 4: Kapasitas Rombongan -->
-          <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-            <span class="material-symbols-outlined text-gray-400 text-[22px]">group</span>
-            <div class="flex-1 min-w-0">
-              <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.max_group_capacity') }}</span>
-              <span class="text-xs text-gray-500 dark:text-gray-400 font-medium block truncate">{{ __('site.common.default_capacity_range') }}</span>
-            </div>
-          </div>
-
-          <!-- Action Button: Maroon Pill Button -->
-          <div class="w-full lg:w-auto px-2 shrink-0">
-            <button type="submit" 
-                    class="w-full lg:w-auto bg-[#703A3A] hover:bg-[#561D1E] text-white px-7 py-3.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
-              <span>{{ __('site.common.explore_destinations') }}</span>
-              <span class="material-symbols-outlined text-[16px]">search</span>
-            </button>
-          </div>
-
-        </form>
-      </div>
-
-      <!-- ==================== 3. TRUST STRIP (4 MINIMALIST LINE ICONS) ==================== -->
-      <div class="max-w-[1140px] mx-auto px-4 sm:px-6 mt-12 mb-4">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
-              <span class="material-symbols-outlined text-[24px]">verified_user</span>
-            </div>
-            <div>
-              <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p2_title') }}</h4>
-              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.verified_fpic') }}</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
-              <span class="material-symbols-outlined text-[24px]">health_and_safety</span>
-            </div>
-            <div>
-              <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p1_title') }}</h4>
-              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.medical_sop') }}</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
-              <span class="material-symbols-outlined text-[24px]">menu_book</span>
-            </div>
-            <div>
-              <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p4_title') }}</h4>
-              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.syllabus_module') }}</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
-              <span class="material-symbols-outlined text-[24px]">school</span>
-            </div>
-            <div>
-              <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p3_title') }}</h4>
-              <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.verified_docs') }}</p>
-            </div>
-          </div>
-
+  <!-- ==================== 2. FLOATING SEARCH BAR ==================== -->
+  <div class="max-w-[1140px] mx-auto px-3 sm:px-6 relative -mt-10 sm:-mt-12 z-30">
+    <form action="{{ route('destinations.index') }}" method="GET" 
+          class="bg-white dark:bg-[#1E1716] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
+      
+      <!-- Slot 1: Lokasi / Destinasi -->
+      <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[#703A3A] dark:text-[#E8999B] text-[22px]">location_on</span>
+        <div class="flex-1 min-w-0">
+          <label for="q-search" class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.nav.destinations') }}</label>
+          <input type="text" id="q-search" name="q" placeholder="{{ __('site.common.all_regions') }}" 
+                 class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none placeholder-gray-400 font-medium">
         </div>
       </div>
-    </section>
+
+      <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
+
+      <!-- Slot 2: Mandat / Jalur Program -->
+      <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[#703A3A] dark:text-[#E8999B] text-[22px]">school</span>
+        <div class="flex-1 min-w-0">
+          <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('sections.home.gateways.tag') }}</span>
+          <select name="mandate" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
+            <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
+            <option value="school" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.school_tag') }}</option>
+            <option value="research" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.research_tag') }}</option>
+            <option value="village" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.village_tag') }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
+
+      <!-- Slot 3: Kategori Lanskap -->
+      <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[#703A3A] dark:text-[#E8999B] text-[22px]">landscape</span>
+        <div class="flex-1 min-w-0">
+          <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.landscape_category') }}</span>
+          <select name="category" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
+            <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
+            <option value="budaya" class="dark:bg-[#1E1716]">{{ __('site.common.cat_culture') }}</option>
+            <option value="ekologi" class="dark:bg-[#1E1716]">{{ __('site.common.cat_ecology') }}</option>
+            <option value="pangan" class="dark:bg-[#1E1716]">{{ __('site.common.cat_food') }}</option>
+            <option value="bahari" class="dark:bg-[#1E1716]">{{ __('site.common.cat_marine') }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="hidden lg:block w-px h-8 bg-gray-200 dark:bg-white/10 shrink-0"></div>
+
+      <!-- Slot 4: Kapasitas Rombongan -->
+      <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
+        <span class="material-symbols-outlined text-[#703A3A] dark:text-[#E8999B] text-[22px]">group</span>
+        <div class="flex-1 min-w-0">
+          <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.max_group_capacity') }}</span>
+          <span class="text-xs text-gray-500 dark:text-gray-400 font-medium block truncate">{{ __('site.common.default_capacity_range') }}</span>
+        </div>
+      </div>
+
+      <!-- Action Button: Maroon Pill Button -->
+      <div class="w-full lg:w-auto px-2 shrink-0">
+        <button type="submit" 
+                class="w-full lg:w-auto bg-[#703A3A] hover:bg-[#561D1E] text-white px-7 py-3.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+          <span>{{ __('site.common.explore_destinations') }}</span>
+          <span class="material-symbols-outlined text-[16px]">search</span>
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ==================== 3. TRUST STRIP (4 MINIMALIST LINE ICONS) ==================== -->
+  <div class="max-w-[1140px] mx-auto px-4 sm:px-6 mt-12 mb-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">verified_user</span>
+        </div>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p2_title') }}</h4>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.verified_fpic') }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">health_and_safety</span>
+        </div>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p1_title') }}</h4>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.medical_sop') }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">menu_book</span>
+        </div>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p4_title') }}</h4>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.syllabus_module') }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#703A3A] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">school</span>
+        </div>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-gray-900 dark:text-white leading-tight">{{ __('sections.home.safety_matrix.p3_title') }}</h4>
+          <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">{{ __('site.common.verified_docs') }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <div class="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 
     <!-- ==================== 4. FEATURED DESTINATIONS (4 FULL-BLEED PHOTO PORTRAIT CARDS) ==================== -->
     <section class="w-full">

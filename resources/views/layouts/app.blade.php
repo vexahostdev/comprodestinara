@@ -353,65 +353,65 @@
 </head>
 <body class="bg-surface font-body-default text-body-default text-on-surface">
 
-  <!-- ==================== HEADER (POMAII ARCHITECTURE: TRANSPARENT ON TOP, SOLID ON SCROLL) ==================== -->
-  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent shadow-none">
+  <!-- ==================== HEADER (POMAII ARCHITECTURE: TRANSPARENT OVER HERO, SOLID ON SCROLL) ==================== -->
+  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ request()->routeIs('home') ? 'is-home-header header-transparent' : 'bg-white/95 dark:bg-[#181211]/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-white/10' }}">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Left: Logo & Slogan (Pomaii Brand Lockup with Destinara Identity) -->
       <a href="{{ route('home') }}" class="flex items-center gap-3 group shrink-0" aria-label="Destinara Beranda">
         <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Destinara Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
         <div class="flex flex-col">
-          <span class="text-xl sm:text-2xl font-black text-[#1A1A1A] dark:text-white tracking-tight leading-none">DESTINARA</span>
-          <span class="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide mt-1 leading-none">{{ __('site.brand_tagline') }}</span>
+          <span class="header-brand-title text-xl sm:text-2xl font-black text-[#1A1A1A] dark:text-white tracking-tight leading-none transition-colors">DESTINARA</span>
+          <span class="header-brand-slogan text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide mt-1 leading-none transition-colors">{{ __('site.brand_tagline') }}</span>
         </div>
       </a>
 
       <!-- Center: Destinara Navigation Links (Pomaii Clean Spacing & Interactive Hover Underline) -->
       <nav class="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Navigasi Utama">
         <a href="{{ route('home') }}" 
-           class="group text-sm font-semibold transition-colors relative py-1 {{ request()->routeIs('home') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-semibold transition-colors relative py-1 {{ request()->routeIs('home') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.home') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('home') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('about') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('about') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('about') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.about') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('about') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-schools') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-schools') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-schools') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.for_schools') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-schools') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-researchers') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-researchers') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-researchers') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.for_researchers') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-researchers') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-villages') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-villages') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-villages') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.for_villages') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-villages') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('destinations.index') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('destinations.*') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('destinations.*') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.destinations') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('destinations.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('stories.index') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('stories.*') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('stories.*') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.stories') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('stories.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('contact.index') }}" 
-           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('contact.index') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('contact.index') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
           <span>{{ __('site.nav.contact') }}</span>
           <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('contact.index') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
@@ -424,7 +424,7 @@
         <div class="relative group" id="desktopLangDropdown">
           <button type="button" 
                   id="desktopLangBtn"
-                  class="h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] transition-all cursor-pointer shadow-xs"
+                  class="header-circle-btn h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] transition-all cursor-pointer shadow-xs"
                   title="{{ __('site.nav.choose_language') }}">
             <span class="material-symbols-outlined text-[17px] text-[#703A3A]">translate</span>
             <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
@@ -476,14 +476,14 @@
         <!-- Icon 1: Search -->
         <a href="{{ route('destinations.index') }}" 
            title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
-           class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">search</span>
         </a>
 
         <!-- Icon 2: Wishlist / Saved -->
         <a href="{{ route('destinations.index') }}" 
            title="Tapak Tersimpan"
-           class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">favorite_border</span>
         </a>
 
@@ -492,7 +492,7 @@
                 id="headerDrawerBtn"
                 aria-label="{{ __('site.nav.open_menu') }}"
                 title="Menu & Akses"
-                class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
 

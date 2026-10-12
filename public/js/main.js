@@ -23,14 +23,25 @@ function initHeaderScroll() {
   const header = document.getElementById('mainHeader');
   if (!header) return;
 
+  const isHome = header.classList.contains('is-home-header');
+
   function updateHeader() {
-    const isScrolled = window.scrollY > 20;
+    const isScrolled = window.scrollY > 25;
     if (isScrolled) {
+      if (isHome) {
+        header.classList.remove('header-transparent');
+      }
       header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
       header.classList.add('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
     } else {
-      header.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
-      header.classList.remove('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+      if (isHome) {
+        header.classList.add('header-transparent');
+        header.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
+        header.classList.remove('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+      } else {
+        header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
+        header.classList.add('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+      }
     }
   }
 
