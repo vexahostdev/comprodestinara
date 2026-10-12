@@ -4,8 +4,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeaderScroll();
   initThemeToggle();
   initMobileMenu();
+  initDesktopLangDropdown();
   initActiveNavLink();
   initBackToTop();
   initDestinasiFilter();
@@ -15,7 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   0. Light Mode & Dark Mode System
+   0. Header Scroll Transparency Engine (Transparent on Top, Solid on Scroll)
+   ========================================================================== */
+function initHeaderScroll() {
+  const header = document.getElementById('mainHeader');
+  if (!header) return;
+
+  function updateHeader() {
+    const isScrolled = window.scrollY > 20;
+    if (isScrolled) {
+      header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
+      header.classList.add('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+    } else {
+      header.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
+      header.classList.remove('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+}
+
+/* ==========================================================================
+   0.1 Light Mode & Dark Mode System
    ========================================================================== */
 function initThemeToggle() {
   const desktopBtn = document.getElementById('themeToggleBtn');
@@ -94,15 +118,19 @@ function initThemeToggle() {
 }
 
 /* ==========================================================================
-   1. Mobile Navigation Menu Drawer
+   1. Navigation Menu Drawer (Desktop & Mobile)
    ========================================================================== */
 function initMobileMenu() {
-  const menuBtn = document.getElementById('mobileMenuBtn');
   const closeBtn = document.getElementById('mobileMenuCloseBtn');
   const overlay = document.getElementById('mobileMenuOverlay');
   const drawer = document.getElementById('mobileMenuDrawer');
 
-  if (!menuBtn || !drawer) return;
+  const openBtns = [
+    document.getElementById('headerDrawerBtn'),
+    document.getElementById('mobileMenuBtn')
+  ].filter(Boolean);
+
+  if (openBtns.length === 0 || !drawer) return;
 
   function openMenu() {
     if (overlay) {
@@ -128,11 +156,14 @@ function initMobileMenu() {
     document.body.style.overflow = '';
   }
 
-  menuBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    openMenu();
+  openBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openMenu();
+    });
   });
+
 
   if (closeBtn) {
     closeBtn.addEventListener('click', (e) => {
@@ -157,6 +188,27 @@ function initMobileMenu() {
     link.addEventListener('click', () => {
       closeMenu();
     });
+  });
+}
+
+/* ==========================================================================
+   1.1 Desktop Language Switcher Click Handling
+   ========================================================================== */
+function initDesktopLangDropdown() {
+  const container = document.getElementById('desktopLangDropdown');
+  const btn = document.getElementById('desktopLangBtn');
+  const menu = document.getElementById('desktopLangMenu');
+  if (!container || !btn || !menu) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
   });
 }
 

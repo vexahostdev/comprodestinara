@@ -52,7 +52,7 @@ return array (
     'official_emails' => 'Officiële e-mailadressen',
     'partnership_email' => 'Partnerschappen: ',
     'general_email' => 'Algemene vragen: ',
-    'copyright' => 'Alle rechten voorbehouden.',
+    'copyright' => 'Alle rechten voorbehouden. | Ontwikkeld door vexahostcloud',
     'motto' => 'Het verbinden van leslokalen met overgeleverde landschapswijsheid.',
   ),
   'common' => 

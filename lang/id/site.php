@@ -63,7 +63,7 @@ return [
         'partnership_email' => 'Kemitraan:',
         'general_email' => 'Umum:',
 
-        'copyright' => 'Hak cipta dilindungi undang-undang. | Dikembangkan oleh RZ Digital Creative',
+        'copyright' => 'Hak cipta dilindungi undang-undang. | Dikembangkan oleh vexahostcloud',
         'motto' => 'Menghubungkan ruang kelas dengan kearifan tapak dan pengetahuan lokal.',
     ],
 

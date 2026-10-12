@@ -62,7 +62,10 @@ class LegalDocumentController extends Controller
 
     public function privacyEn()
     {
-        return redirect()->route('legal.privacy');
+        app()->setLocale('en');
+        session(['locale' => 'en']);
+
+        return $this->privacy();
     }
 
     /**

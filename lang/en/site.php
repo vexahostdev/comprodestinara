@@ -63,7 +63,7 @@ return [
         'partnership_email' => 'Partnership:',
         'general_email' => 'General:',
 
-        'copyright' => 'All rights reserved. | Developed by RZ Digital Creative',
+        'copyright' => 'All rights reserved. | Developed by vexahostcloud',
         'motto' => 'Bridging classrooms with indigenous landscape wisdom and living local knowledge.',
     ],
 

@@ -242,7 +242,7 @@
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400,0..1,0" rel="stylesheet"/>
 
   <!-- Tailwind CDN & Configuration for Destinara Design System -->
@@ -289,12 +289,21 @@
             "on-background": "rgb(var(--color-on-background) / <alpha-value>)"
           },
           borderRadius: {
-            DEFAULT: "0.25rem",
-            sm: "0.125rem",
-            md: "0.375rem",
-            lg: "0.5rem",
-            xl: "0.75rem",
+            DEFAULT: "0.5rem",
+            sm: "0.25rem",
+            md: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.25rem",
+            "3xl": "1.75rem",
+            "4xl": "2.25rem",
             full: "9999px"
+          },
+          boxShadow: {
+            "soft": "0 4px 20px -2px rgba(43, 33, 30, 0.05)",
+            "floating": "0 20px 45px -12px rgba(112, 58, 58, 0.16)",
+            "card": "0 10px 30px -5px rgba(0, 0, 0, 0.06)",
+            "card-hover": "0 20px 35px -8px rgba(112, 58, 58, 0.18)"
           },
           spacing: {
             "space-2xs": "0.25rem",
@@ -310,28 +319,29 @@
             "gutter-mobile": "1.25rem"
           },
           fontFamily: {
-            "display-hero": ["Newsreader", "Georgia", "serif"],
-            "headline-lg": ["Newsreader", "Georgia", "serif"],
-            "headline-md": ["Newsreader", "Georgia", "serif"],
-            "headline-sm": ["Newsreader", "Georgia", "serif"],
-            "caption-fieldnote": ["Newsreader", "Georgia", "serif"],
-            "body-lead": ["Work Sans", "sans-serif"],
-            "body-default": ["Work Sans", "sans-serif"],
-            "body-sm": ["Work Sans", "sans-serif"],
-            "label-action": ["Work Sans", "sans-serif"],
-            "label-tag": ["Work Sans", "sans-serif"]
+            sans: ["Plus Jakarta Sans", "Work Sans", "system-ui", "sans-serif"],
+            "display-hero": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "caption-fieldnote": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lead": ["Plus Jakarta Sans", "sans-serif"],
+            "body-default": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-action": ["Plus Jakarta Sans", "sans-serif"],
+            "label-tag": ["Plus Jakarta Sans", "sans-serif"]
           },
           fontSize: {
-            "display-hero": ["52px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "400" }],
-            "headline-lg": ["38px", { lineHeight: "46px", letterSpacing: "-0.015em", fontWeight: "400" }],
-            "headline-md": ["28px", { lineHeight: "36px", fontWeight: "400" }],
-            "headline-sm": ["22px", { lineHeight: "30px", fontWeight: "500" }],
-            "body-lead": ["20px", { lineHeight: "32px", fontWeight: "400" }],
-            "body-default": ["18px", { lineHeight: "30px", fontWeight: "400" }],
-            "body-sm": ["16px", { lineHeight: "25px", fontWeight: "400" }],
-            "caption-fieldnote": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-            "label-action": ["16px", { lineHeight: "22px", letterSpacing: "0.01em", fontWeight: "600" }],
-            "label-tag": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500" }]
+            "display-hero": ["48px", { lineHeight: "56px", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["26px", { lineHeight: "34px", fontWeight: "700" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-lead": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-default": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "caption-fieldnote": ["13px", { lineHeight: "20px", fontWeight: "500" }],
+            "label-action": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-tag": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }]
           }
         }
       }
@@ -343,315 +353,214 @@
 </head>
 <body class="bg-surface font-body-default text-body-default text-on-surface">
 
-  <!-- ==================== HEADER (Exact Royal Geographical Society Architecture) ==================== -->
-  <header class="fixed top-0 w-full z-50 bg-[#fff8f6] dark:bg-[#181211] shadow-[0_2px_10px_rgba(43,33,30,0.06)] dark:shadow-[0_2px_14px_rgba(0,0,0,0.5)] border-b border-[#2B211E]/15 dark:border-outline-variant/30 transition-colors duration-200">
-    <!-- Dark Top Accent Bar ala RGS -->
-    <div class="w-full h-[4px] bg-[#2B211E] dark:bg-[#8C5151] transition-colors"></div>
-
-    <div class="max-w-[1440px] mx-auto px-gutter-mobile md:px-gutter-desktop">
+  <!-- ==================== HEADER (POMAII ARCHITECTURE: TRANSPARENT ON TOP, SOLID ON SCROLL) ==================== -->
+  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-transparent border-b border-transparent shadow-none">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Desktop & Tablet Container (Spacious & Balanced RGS Scale with Generous Vertical Gap) -->
-      <div class="hidden lg:flex items-stretch justify-between min-h-[96px] xl:min-h-[104px] py-2 xl:py-2.5">
-        
-        <!-- Left: Brand / Logo Area with RGS Crosshair Accent -->
-        <div class="flex items-center py-2 pr-8">
-          <a href="{{ route('home') }}" class="flex items-center gap-4 group" aria-label="Destinara Beranda">
-            <!-- Iconic RGS-Style Crosshair / Coordinate Line with Accent Dot -->
-            <div class="relative flex items-center justify-center h-16 w-5 mr-1">
-              <div class="w-[2px] h-full bg-[#2B211E]/75 dark:bg-white/60 absolute left-1/2 -translate-x-1/2 top-0 transition-colors"></div>
-              <div class="w-3 h-3 rounded-full bg-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ring-2 ring-surface"></div>
-            </div>
-            
-            <div class="flex flex-col justify-center">
-              <img alt="Destinara Logo" class="destinara-logo h-9 xl:h-10 w-auto object-contain transition-transform group-hover:scale-102" src="{{ asset('assets/img/logo-horizontal.png') }}"/>
-              <span class="text-[12px] xl:text-[13px] font-medium text-on-surface-variant/90 font-sans mt-1 tracking-tight">
-                {{ __('site.brand_tagline') }}
-              </span>
-            </div>
-          </a>
+      <!-- Left: Logo & Slogan (Pomaii Brand Lockup with Destinara Identity) -->
+      <a href="{{ route('home') }}" class="flex items-center gap-3 group shrink-0" aria-label="Destinara Beranda">
+        <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Destinara Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black text-[#1A1A1A] dark:text-white tracking-tight leading-none">DESTINARA</span>
+          <span class="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide mt-1 leading-none">{{ __('site.brand_tagline') }}</span>
         </div>
+      </a>
 
-        <!-- Right: Top Utility Bar + Bottom Main Nav Links -->
-        <div class="flex flex-col justify-between flex-1 pl-6 py-1">
-          
-          <!-- Tier 1: Top Utility Strip (Hairline divider, Language Switcher, Theme Toggle, Login, Register) with generous bottom spacing -->
-          <div class="flex items-center justify-end pb-2 xl:pb-2.5">
-            
-            <!-- Horizontal Hairline extending across the top strip (as seen in RGS) -->
-            <div class="flex-1 h-[1px] bg-[#2B211E]/20 dark:bg-outline-variant/30 mr-6 self-center transition-colors"></div>
+      <!-- Center: Destinara Navigation Links (Pomaii Clean Spacing & Interactive Hover Underline) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Navigasi Utama">
+        <a href="{{ route('home') }}" 
+           class="group text-sm font-semibold transition-colors relative py-1 {{ request()->routeIs('home') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.home') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('home') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-            <div class="flex items-center gap-3">
+        <a href="{{ route('about') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('about') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.about') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('about') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-              <!-- Language Switcher Dropdown (Desktop) -->
-              <div class="relative group" id="desktopLangDropdown">
-                <button type="button" 
-                        id="desktopLangBtn"
-                        class="flex items-center gap-1.5 px-2.5 py-1 text-[13px] font-medium text-on-surface hover:text-primary hover:bg-surface-container border border-outline-variant/40 transition-all rounded-none cursor-pointer"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        title="{{ __('site.nav.choose_language') }}">
-                  <span class="material-symbols-outlined text-[17px] text-on-surface-variant">translate</span>
-                  <span class="text-[11px] xl:text-[12px] font-bold tracking-wider font-sans uppercase">
-                    @if(app()->getLocale() === 'zh') 🇨🇳 中文
-                    @elseif(app()->getLocale() === 'ja') 🇯🇵 日本語
-                    @elseif(app()->getLocale() === 'de') 🇩🇪 DE
-                    @elseif(app()->getLocale() === 'fr') 🇫🇷 FR
-                    @elseif(app()->getLocale() === 'nl') 🇳🇱 NL
-                    @elseif(app()->getLocale() === 'en') 🇬🇧 EN
-                    @else 🇮🇩 ID
-                    @endif
-                  </span>
-                  <svg class="w-3 h-3 text-on-surface-variant transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                  </svg>
-                </button>
-                <div class="absolute right-0 top-full mt-1 w-40 bg-surface dark:bg-[#1f1716] border border-outline-variant/40 shadow-xl py-1 z-50 hidden group-hover:block hover:block transition-all">
-                  <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'id' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
-                    @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'en' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
-                    @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'zh' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇨🇳</span><span>中文</span></span>
-                    @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'ja' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇯🇵</span><span>日本語</span></span>
-                    @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'de' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇩🇪</span><span>Deutsch</span></span>
-                    @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'fr' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇫🇷</span><span>Français</span></span>
-                    @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                  <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container hover:text-primary transition-colors {{ app()->getLocale() === 'nl' ? 'bg-surface-container font-bold text-primary' : '' }}">
-                    <span class="flex items-center gap-2"><span>🇳🇱</span><span>Nederlands</span></span>
-                    @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-sm text-primary">check</span> @endif
-                  </a>
-                </div>
-              </div>
+        <a href="{{ route('for-schools') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-schools') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.for_schools') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-schools') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-              <!-- Light / Dark Mode Toggle Button (RGS Style) -->
-              <button id="themeToggleBtn" 
-                      type="button" 
-                      aria-label="Ganti Tema Tampilan" 
-                      title="Ganti Mode Tampilan" 
-                      class="theme-toggle-btn flex items-center justify-center px-2 py-1 text-on-surface hover:text-primary hover:bg-surface-container border border-outline-variant/40 transition-all rounded-none cursor-pointer">
-                <!-- Sun Icon for Light Mode -->
-                <span class="theme-icon-light theme-toggle-icon material-symbols-outlined text-[18px] text-amber-600 dark:hidden">light_mode</span>
-                <!-- Moon Icon for Dark Mode -->
-                <span class="theme-icon-dark theme-toggle-icon material-symbols-outlined text-[18px] text-amber-200 hidden dark:inline-flex">dark_mode</span>
-              </button>
-              
-              <!-- Login Link -> Directed to layanan.destinara.id -->
-              <a href="https://layanan.destinara.id/login" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 text-[13px] xl:text-[14px] font-medium text-on-surface hover:text-primary transition-colors">
-                <svg class="w-4 h-4 text-on-surface/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                </svg>
-                <span>{{ __('site.nav.login') }}</span>
-              </a>
+        <a href="{{ route('for-researchers') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-researchers') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.for_researchers') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-researchers') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-              <!-- Register Block (Santai, proportional & elegant rectangular button) -> Directed to layanan.destinara.id -->
-              <a href="https://layanan.destinara.id/register" target="_blank" rel="noopener noreferrer" class="bg-[#8C5151] hover:bg-[#703a3a] text-white font-medium text-[12px] xl:text-[13px] px-4 xl:px-5 py-1.5 transition-colors uppercase tracking-wider rounded-none inline-flex items-center justify-center">
-                <span>{{ __('site.nav.register') }}</span>
-              </a>
+        <a href="{{ route('for-villages') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-villages') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.for_villages') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-villages') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-            </div>
+        <a href="{{ route('destinations.index') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('destinations.*') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.destinations') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('destinations.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-          </div>
+        <a href="{{ route('stories.index') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('stories.*') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.stories') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('stories.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
 
-          <!-- Tier 2: Bottom Primary Navigation Links (Generous vertical breathing room with hover underline) -->
-          <nav class="flex items-center justify-end gap-6 xl:gap-8 pt-3 xl:pt-3.5 pb-1 pr-1" aria-label="Navigasi Utama">
-            <a href="{{ route('home') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('home') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.home') }}
-            </a>
-            <a href="{{ route('about') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('about') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.about') }}
-            </a>
-            <a href="{{ route('for-schools') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('for-schools') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.for_schools') }}
-            </a>
-            <a href="{{ route('for-researchers') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('for-researchers') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.for_researchers') }}
-            </a>
-            <a href="{{ route('for-villages') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('for-villages') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.for_villages') }}
-            </a>
-            <a href="{{ route('destinations.index') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('destinations.*') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.destinations') }}
-            </a>
-            <a href="{{ route('stories.index') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('stories.*') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.stories') }}
-            </a>
-            <a href="{{ route('contact.index') }}" class="font-bold text-[14px] xl:text-[15px] pb-1.5 border-b-2 transition-all duration-150 {{ request()->routeIs('contact.index') ? 'border-primary text-primary' : 'border-transparent text-on-surface hover:border-primary hover:text-primary' }}">
-              {{ __('site.nav.contact') }}
-            </a>
-          </nav>
+        <a href="{{ route('contact.index') }}" 
+           class="group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('contact.index') ? 'text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+          <span>{{ __('site.nav.contact') }}</span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('contact.index') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+        </a>
+      </nav>
 
-        </div>
+      <!-- Right: Desktop Language Switcher + 3 Pomaii Outline Circle Icons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
 
-      </div>
-
-      <!-- Mobile Header View (Screens < 1024px) -->
-      <div class="flex lg:hidden items-center justify-between py-2.5 sm:py-3">
-        <!-- Brand & Needle: 100% Mathematically Aligned with Hero Vertical Line -->
-        <div class="flex items-center">
-          <div class="relative flex items-center justify-center h-10 w-5 mr-1 flex-shrink-0">
-            <div class="w-[2px] h-full bg-[#2B211E]/75 dark:bg-white/60 absolute left-1/2 -translate-x-1/2 top-0 transition-colors"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-primary absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ring-2 ring-surface"></div>
-          </div>
-          <a href="{{ route('home') }}" class="flex flex-col justify-center ml-2" aria-label="Destinara Beranda">
-            <img alt="Destinara Logo" class="destinara-logo h-7 sm:h-8 w-auto object-contain" src="{{ asset('assets/img/logo-horizontal.png') }}"/>
-            <span class="hidden sm:block text-[10px] text-on-surface-variant font-medium mt-0.5 whitespace-nowrap tracking-tight">
-              menghidupkan kembali cerita, budaya
+        <!-- Language Switcher Dropdown (Desktop & Tablet) -->
+        <div class="relative group" id="desktopLangDropdown">
+          <button type="button" 
+                  id="desktopLangBtn"
+                  class="h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] transition-all cursor-pointer shadow-xs"
+                  title="{{ __('site.nav.choose_language') }}">
+            <span class="material-symbols-outlined text-[17px] text-[#703A3A]">translate</span>
+            <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
+              @if(app()->getLocale() === 'zh') 🇨🇳 ZH
+              @elseif(app()->getLocale() === 'ja') 🇯🇵 JA
+              @elseif(app()->getLocale() === 'de') 🇩🇪 DE
+              @elseif(app()->getLocale() === 'fr') 🇫🇷 FR
+              @elseif(app()->getLocale() === 'nl') 🇳🇱 NL
+              @elseif(app()->getLocale() === 'en') 🇬🇧 EN
+              @else 🇮🇩 ID
+              @endif
             </span>
-          </a>
-        </div>
-
-        <!-- Mobile Action Buttons: Clean, Uncluttered, Elegant -->
-        <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-          <!-- Mobile Language Switcher Dropdown (Compact) -->
-          <div class="relative" id="mobileLangDropdown">
-            <button type="button" 
-                    id="mobileLangBtn"
-                    onclick="var m=document.getElementById('mobileLangMenu'); m.classList.toggle('hidden');"
-                    class="p-1.5 text-on-surface hover:text-primary hover:bg-surface-container transition-colors flex items-center gap-0.5 text-xs font-bold font-sans cursor-pointer"
-                    title="{{ __('site.nav.choose_language') }}">
-              <span class="material-symbols-outlined text-[19px]">translate</span>
-              <span class="text-[10px] uppercase font-bold tracking-wider">
-                {{ match(app()->getLocale()) { 'zh' => 'ZH', 'ja' => 'JA', 'de' => 'DE', 'fr' => 'FR', 'nl' => 'NL', 'en' => 'EN', default => 'ID' } }}
-              </span>
-            </button>
-            <div id="mobileLangMenu" class="hidden absolute right-0 top-full mt-1 w-36 bg-surface dark:bg-[#1f1716] border border-outline-variant/40 shadow-xl py-1 z-50">
-              <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'id' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇮🇩 ID</span>
-                @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'en' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇬🇧 EN</span>
-                @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'zh' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇨🇳 中文</span>
-                @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'ja' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇯🇵 日本語</span>
-                @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'de' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇩🇪 Deutsch</span>
-                @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'fr' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇫🇷 Français</span>
-                @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-              <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-1.5 text-xs font-medium text-on-surface hover:bg-surface-container {{ app()->getLocale() === 'nl' ? 'text-primary font-bold bg-surface-container' : '' }}">
-                <span>🇳🇱 Nederlands</span>
-                @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-xs text-primary">check</span> @endif
-              </a>
-            </div>
+            <span class="material-symbols-outlined text-[15px] text-gray-400 group-hover:rotate-180 transition-transform">expand_more</span>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#1E1716] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
+            <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
+              @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
+              @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'zh' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇨🇳</span><span>中文</span></span>
+              @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'ja' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇯🇵</span><span>日本語</span></span>
+              @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'de' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇩🇪</span><span>Deutsch</span></span>
+              @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'fr' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇫🇷</span><span>Français</span></span>
+              @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
+            <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'nl' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+              <span class="flex items-center gap-2"><span>🇳🇱</span><span>Nederlands</span></span>
+              @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+            </a>
           </div>
-
-          <!-- Mobile Theme Toggle Button -->
-          <button id="mobileThemeToggleBtn" 
-                  type="button" 
-                  aria-label="Ganti Tema Tampilan" 
-                  title="Ganti Mode Tampilan" 
-                  class="theme-toggle-btn p-1.5 text-on-surface hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center cursor-pointer">
-            <span class="theme-icon-light theme-toggle-icon material-symbols-outlined text-[20px] text-amber-600 dark:hidden">light_mode</span>
-            <span class="theme-icon-dark theme-toggle-icon material-symbols-outlined text-[20px] text-amber-200 hidden dark:inline-flex">dark_mode</span>
-          </button>
-
-          <!-- Mobile Login (Icon Only with tooltip/aria-label) -->
-          <a href="https://layanan.destinara.id/login" target="_blank" rel="noopener noreferrer" class="p-1.5 text-on-surface hover:text-primary transition-colors flex items-center justify-center" aria-label="Login ke Layanan Destinara" title="{{ __('site.nav.login') }}">
-            <svg class="w-5 h-5 text-on-surface" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-            </svg>
-          </a>
-
-          <!-- Mobile Register (Crisp terracotta rectangular plinth) -->
-          <a href="https://layanan.destinara.id/register" target="_blank" rel="noopener noreferrer" class="bg-[#8C5151] hover:bg-[#703a3a] text-white px-2.5 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-none transition-colors">
-            <span>{{ __('site.nav.register') }}</span>
-          </a>
-
-          <!-- Mobile Toggle Button (Sleek borderless icon) -->
-          <button id="mobileMenuBtn" aria-label="{{ __('site.nav.open_menu') }}" class="p-1 text-on-surface hover:text-primary hover:bg-surface-container transition-colors flex items-center justify-center">
-            <span class="material-symbols-outlined text-[24px]">menu</span>
-          </button>
         </div>
+
+        <!-- Icon 1: Search -->
+        <a href="{{ route('destinations.index') }}" 
+           title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
+           class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+          <span class="material-symbols-outlined text-[19px]">search</span>
+        </a>
+
+        <!-- Icon 2: Wishlist / Saved -->
+        <a href="{{ route('destinations.index') }}" 
+           title="Tapak Tersimpan"
+           class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+          <span class="material-symbols-outlined text-[19px]">favorite_border</span>
+        </a>
+
+        <!-- Icon 3: Menu Drawer -->
+        <button type="button" 
+                id="headerDrawerBtn"
+                aria-label="{{ __('site.nav.open_menu') }}"
+                title="Menu & Akses"
+                class="w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+          <span class="material-symbols-outlined text-[20px]">menu</span>
+        </button>
+
       </div>
 
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay -->
-  <div id="mobileMenuOverlay" class="fixed inset-0 bg-inverse-surface/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+  <!-- Drawer Backdrop Overlay -->
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
 
-  <!-- Mobile Fullscreen Menu (Slide Up dari Bawah — Persis JADISATU) -->
-  <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-surface flex flex-col justify-between p-6 sm:p-8 overflow-y-auto lg:hidden" aria-modal="true" role="dialog">
+  <!-- Slide-out Menu Drawer (Desktop & Mobile) -->
+  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 z-50 bg-white dark:bg-[#181211] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto" aria-modal="true" role="dialog">
     <div>
       <!-- Header with Brand & Close Button -->
       <div class="flex items-center justify-between pb-5 mb-5 border-b border-outline-variant/30">
         <div class="flex items-center gap-3">
           <img class="destinara-logo h-8 sm:h-9 w-auto object-contain" src="{{ asset('assets/img/logo-horizontal.png') }}" alt="Destinara Logo"/>
         </div>
-        <button id="mobileMenuCloseBtn" aria-label="{{ __('site.nav.close_menu') }}" class="w-10 h-10 border border-[#8C5151]/20 dark:border-outline-variant/30 bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary flex items-center justify-center transition-colors">
+        <button id="mobileMenuCloseBtn" aria-label="{{ __('site.nav.close_menu') }}" class="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 text-gray-600 dark:text-gray-300 hover:text-[#703A3A] flex items-center justify-center transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
       </div>
 
-      <!-- Mobile Language Switcher Strip in Drawer -->
-      <div class="mb-3">
-        <div class="p-2.5 border border-[#8C5151]/20 dark:border-outline-variant/30 bg-surface-container flex flex-col gap-2">
-          <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-on-surface px-1">
+      <!-- Language Switcher Strip in Drawer -->
+      <div class="mb-4">
+        <div class="p-3.5 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col gap-2.5">
+          <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-white px-0.5">
             <span class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[18px] text-primary">translate</span>
+              <span class="material-symbols-outlined text-[18px] text-[#703A3A]">translate</span>
               <span>{{ __('site.nav.language') }}</span>
             </span>
-            <span class="text-[11px] font-mono text-on-surface-variant font-normal">{{ __('site.nav.choose_language') }}</span>
+            <span class="text-[11px] font-normal text-gray-400 font-sans">{{ __('site.nav.choose_language') }}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-            <a href="{{ route('lang.switch', 'id') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'id' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇮🇩 Indonesia
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'en' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇬🇧 English
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'zh' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇨🇳 中文
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'ja' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇯🇵 日本語
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'de' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇩🇪 Deutsch
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'fr' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇫🇷 Français
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="py-1.5 px-2 text-center text-xs font-medium transition-colors border {{ app()->getLocale() === 'nl' ? 'bg-primary text-white border-primary font-bold' : 'bg-surface text-on-surface border-outline-variant/30 hover:bg-surface-container-high' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
               🇳🇱 Nederlands
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Mobile Theme Toggle Bar in Drawer -->
+      <!-- Theme Toggle Bar in Drawer -->
       <div class="mb-4">
         <button id="drawerThemeToggleBtn" 
                 type="button" 
                 aria-label="Ganti Tema Tampilan" 
-                class="theme-toggle-btn w-full py-2.5 px-3 border border-[#8C5151]/20 dark:border-outline-variant/30 bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-between transition-colors">
+                class="theme-toggle-btn w-full py-2.5 px-4 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 text-gray-700 dark:text-gray-200 flex items-center justify-between transition-colors">
           <div class="flex items-center gap-2">
             <span class="theme-icon-light theme-toggle-icon material-symbols-outlined text-[20px] text-amber-600 dark:hidden">light_mode</span>
             <span class="theme-icon-dark theme-toggle-icon material-symbols-outlined text-[20px] text-amber-200 hidden dark:inline-flex">dark_mode</span>
@@ -660,67 +569,79 @@
               <span class="hidden dark:inline">{{ __('site.nav.theme_dark_desc') }}</span>
             </span>
           </div>
-          <span class="text-[11px] font-mono text-on-surface-variant font-medium">Ubah</span>
+          <span class="text-[11px] font-mono text-gray-400 font-medium">Ubah</span>
         </button>
       </div>
 
-      <!-- Mobile Account Action Strip (layanan.destinara.id) -->
-      <div class="grid grid-cols-2 gap-2.5 mb-5 pb-4 border-b border-[#8C5151]/20 dark:border-outline-variant/30">
-        <a href="https://layanan.destinara.id/login" target="_blank" rel="noopener noreferrer" class="rgs-btn rgs-btn-outline !py-2.5 !text-xs !tracking-wider flex items-center justify-center gap-1.5">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      <!-- Portal Layanan Quick Buttons -->
+      <div class="grid grid-cols-2 gap-2.5 mb-5 pb-4 border-b border-gray-100 dark:border-white/10">
+        <a href="https://layanan.destinara.id/login" target="_blank" rel="noopener noreferrer" 
+           class="py-2.5 px-3 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
+          <span class="material-symbols-outlined text-[16px]">login</span>
           <span>{{ __('site.nav.login') }}</span>
         </a>
-        <a href="https://layanan.destinara.id/register" target="_blank" rel="noopener noreferrer" class="rgs-btn rgs-btn-primary !py-2.5 !text-xs !tracking-wider flex items-center justify-center">
+        <a href="https://layanan.destinara.id/register" target="_blank" rel="noopener noreferrer" 
+           class="py-2.5 px-3 rounded-full bg-[#703A3A] hover:bg-[#561D1E] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
           <span>{{ __('site.nav.register') }}</span>
         </a>
       </div>
 
-      <!-- Navigation Links -->
-      <nav class="divide-y divide-[#8C5151]/10">
-        <a href="{{ route('home') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('home') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+      <!-- Navigation Links List in Drawer -->
+      <nav class="space-y-1">
+        <a href="{{ route('home') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('home') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.home') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('about') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('about') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('about') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('about') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.about') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-schools') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('for-schools') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('for-schools') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-schools') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_schools_full') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-researchers') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('for-researchers') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('for-researchers') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-researchers') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_researchers_full') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-villages') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('for-villages') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('for-villages') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-villages') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_villages_full') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('destinations.index') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('destinations.*') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('destinations.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('destinations.*') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.destinations') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('stories.index') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('stories.*') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('stories.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('stories.*') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.stories_full') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('contact.index') }}" class="mobile-nav-link flex items-center justify-between px-3 py-3.5 text-base font-semibold transition-all hover:bg-surface-container {{ request()->routeIs('contact.index') ? 'bg-surface-container text-primary font-bold border-l-4 border-primary pl-4' : 'text-on-surface-variant hover:text-primary' }}">
+        <a href="{{ route('contact.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('contact.index') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.contact_full') }}</span>
-          <svg class="w-4 h-4 text-on-surface-variant/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
       </nav>
     </div>
 
-    <!-- Footer Action inside Fullscreen Menu -->
-    <div class="mt-8 pt-5 border-t border-[#8C5151]/20 space-y-3">
-      <a href="{{ route('destinations.index') }}" class="w-full rgs-btn rgs-btn-primary text-center">
+    <!-- Footer Action inside Drawer with Legal Links -->
+    <div class="mt-8 pt-5 border-t border-gray-100 dark:border-white/10 space-y-3">
+      <a href="{{ route('destinations.index') }}" class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3 px-5 rounded-full text-xs font-bold text-center block shadow-xs transition-colors">
         <span>{{ __('site.nav.explore_destinations') }}</span>
       </a>
-      <a href="{{ route('contact.index') }}" class="w-full rgs-btn rgs-btn-outline text-center">
+      <a href="{{ route('contact.index') }}" class="w-full border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-gray-700 dark:text-gray-200 py-3 px-5 rounded-full text-xs font-bold text-center block transition-colors">
         <span>{{ __('site.nav.consult_program') }}</span>
       </a>
-      <div class="text-center text-xs font-caption-fieldnote italic text-on-surface-variant pt-1">
+      
+      <!-- Syarat & Ketentuan, Kebijakan Privasi in Drawer -->
+      <div class="flex items-center justify-center gap-3 pt-2 text-[11px] text-gray-500 dark:text-gray-400">
+        <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
+        <span>•</span>
+        <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
+        <span>•</span>
+        <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
+      </div>
+
+      <div class="text-center text-xs italic text-gray-400 pt-1">
         {{ __('site.nav.field_pedagogy') }}
       </div>
     </div>
@@ -729,124 +650,151 @@
   <!-- ==================== MAIN CONTENT ==================== -->
   @yield('content')
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="w-full bg-surface-container-low py-space-3xl mt-space-3xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)] border-t border-outline-variant/30">
-    <div class="max-w-[1280px] mx-auto px-gutter-mobile md:px-gutter-desktop">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg md:gap-space-2xl pb-space-xl md:pb-space-2xl">
+  <!-- ==================== FOOTER (DESTINARA OFFICIAL 4-COLUMN ARCHITECTURE) ==================== -->
+  <footer class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Brand Strip -->
+      <div class="pb-10 mb-10 border-b border-gray-200/60 dark:border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <a href="{{ route('home') }}" class="inline-flex items-center gap-3">
+          <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Destinara" class="h-10 w-auto object-contain">
+          <div>
+            <span class="text-2xl font-black text-[#1A1A1A] dark:text-white tracking-tight block leading-none">DESTINARA</span>
+            <span class="text-[10px] text-gray-500 dark:text-gray-400 font-medium tracking-wide mt-1 block">{{ __('site.brand_tagline') }}</span>
+          </div>
+        </a>
+        <div class="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+          <span class="w-2 h-2 rounded-full bg-[#51634b]"></span>
+          <span>Inisiatif Pendidikan Lapangan &amp; Riset Komunitas Terverifikasi FPIC Adat</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-gray-200/60 dark:border-white/10">
+        
         <!-- Kolom 1: Perusahaan -->
-        <div class="flex flex-col gap-space-sm">
-          <h4 class="font-headline-sm text-headline-sm text-on-surface">{{ __('site.footer.company') }}</h4>
-          <ul class="flex flex-col gap-space-xs">
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('about') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.about_destinara') }}</a>
+        <div class="flex flex-col gap-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.company') }}</h4>
+          <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li>
+              <a href="{{ route('about') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.about_destinara') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('about') }}#filosofi" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.philosophy') }}</a>
+            <li>
+              <a href="{{ route('about') }}#filosofi" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.philosophy') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('about') }}#rekam-jejak" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.track_record') }}</a>
+            <li>
+              <a href="{{ route('about') }}#rekam-jejak" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.track_record') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('destinations.index') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.selected_sanctuaries') }}</a>
+            <li>
+              <a href="{{ route('destinations.index') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.selected_sanctuaries') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('legal.terms') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.terms') }}</a>
+            <li>
+              <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.terms') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('legal.privacy') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.privacy') }}</a>
+            <li>
+              <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy') }}</a>
+            </li>
+            <li>
+              <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy_en') }}</a>
             </li>
           </ul>
         </div>
+
         <!-- Kolom 2: Untuk Pengguna -->
-        <div class="flex flex-col gap-space-sm">
-          <h4 class="font-headline-sm text-headline-sm text-on-surface">{{ __('site.footer.for_users') }}</h4>
-          <ul class="flex flex-col gap-space-xs">
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('for-schools') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.school_programs') }}</a>
+        <div class="flex flex-col gap-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.for_users') }}</h4>
+          <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li>
+              <a href="{{ route('for-schools') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.school_programs') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('for-researchers') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.research_collab') }}</a>
+            <li>
+              <a href="{{ route('for-researchers') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.research_collab') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('for-villages') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.village_partnership') }}</a>
+            <li>
+              <a href="{{ route('for-villages') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.village_partnership') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('about') }}#fpic" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.fpic_ethics') }}</a>
+            <li>
+              <a href="{{ route('about') }}#fpic" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.fpic_ethics') }}</a>
             </li>
           </ul>
         </div>
+
         <!-- Kolom 3: Publikasi & Warta -->
-        <div class="flex flex-col gap-space-sm">
-          <h4 class="font-headline-sm text-headline-sm text-on-surface">{{ __('site.footer.publications') }}</h4>
-          <ul class="flex flex-col gap-space-xs">
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('stories.index') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.latest_stories') }}</a>
+        <div class="flex flex-col gap-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.publications') }}</h4>
+          <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
+            <li>
+              <a href="{{ route('stories.index') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.latest_stories') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.monograph_sikka') }}</a>
+            <li>
+              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.monograph_sikka') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('stories.index') }}#newsletter-form" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.newsletter') }}</a>
+            <li>
+              <a href="{{ route('stories.index') }}#newsletter-form" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.newsletter') }}</a>
             </li>
-            <li class="font-body-sm text-body-sm">
-              <a href="{{ route('for-schools') }}#silabus" class="w-fit inline-block pb-0.5 border-b-2 border-transparent text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-150">{{ __('site.footer.syllabus_guide') }}</a>
+            <li>
+              <a href="{{ route('for-schools') }}#silabus" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.syllabus_guide') }}</a>
             </li>
           </ul>
         </div>
-        <!-- Kolom 4: Narahubung -->
-        <div class="flex flex-col gap-space-sm">
-          <h4 class="font-headline-sm text-headline-sm text-on-surface">{{ __('site.footer.secretariat') }}</h4>
-          <div class="flex flex-col gap-space-xs">
-            <p class="font-body-sm text-body-sm text-on-surface-variant">{{ __('site.footer.sleman_address') }}</p>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">{{ __('site.footer.menteng_address') }}</p>
-            <div class="flex flex-col gap-1 pt-1 font-body-sm text-body-sm">
-              <span class="text-on-surface font-semibold text-xs uppercase tracking-wider">{{ __('site.footer.whatsapp_contacts') }}</span>
-              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary flex items-center gap-1.5 group w-fit transition-colors">
-                <span class="w-1.5 h-1.5 bg-secondary group-hover:bg-primary inline-block transition-colors"></span>
-                <span class="pb-0.5 border-b-2 border-transparent group-hover:border-primary transition-all duration-150">Maya: +62 821-1620-0363</span>
+
+        <!-- Kolom 4: Sekretariat & Narahubung -->
+        <div class="flex flex-col gap-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.secretariat') }}</h4>
+          <div class="flex flex-col gap-2 text-xs text-gray-600 dark:text-gray-300">
+            <p>{{ __('site.footer.sleman_address') }}</p>
+            <p>{{ __('site.footer.menteng_address') }}</p>
+            <div class="flex flex-col gap-1.5 pt-2">
+              <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.whatsapp_contacts') }}</span>
+              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+                Maya: +62 821-1620-0363
               </a>
-              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary flex items-center gap-1.5 group w-fit transition-colors">
-                <span class="w-1.5 h-1.5 bg-secondary group-hover:bg-primary inline-block transition-colors"></span>
-                <span class="pb-0.5 border-b-2 border-transparent group-hover:border-primary transition-all duration-150">Azki: +62 858-9486-0696</span>
+              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+                Azki: +62 858-9486-0696
               </a>
-              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary flex items-center gap-1.5 group w-fit transition-colors">
-                <span class="w-1.5 h-1.5 bg-secondary group-hover:bg-primary inline-block transition-colors"></span>
-                <span class="pb-0.5 border-b-2 border-transparent group-hover:border-primary transition-all duration-150">Ryan: +62 857-7441-0978</span>
+              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+                Ryan: +62 857-7441-0978
               </a>
             </div>
-            <div class="flex flex-col gap-1 pt-1 font-body-sm text-body-sm">
-              <span class="text-on-surface font-semibold text-xs uppercase tracking-wider">{{ __('site.footer.official_emails') }}</span>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="text-secondary hover:text-primary flex items-center gap-1.5 group w-fit transition-colors">
-                <span class="w-1.5 h-1.5 bg-secondary group-hover:bg-primary inline-block transition-colors"></span>
-                <span class="pb-0.5 border-b-2 border-transparent group-hover:border-primary transition-all duration-150">{{ __('site.footer.partnership_email') }} {{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}</span>
+            <div class="flex flex-col gap-1 pt-2">
+              <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.official_emails') }}</span>
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">
+                {{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}
               </a>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="text-secondary hover:text-primary flex items-center gap-1.5 group w-fit transition-colors">
-                <span class="w-1.5 h-1.5 bg-secondary group-hover:bg-primary inline-block transition-colors"></span>
-                <span class="pb-0.5 border-b-2 border-transparent group-hover:border-primary transition-all duration-150">{{ __('site.footer.general_email') }} {{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}</span>
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">
+                {{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}
               </a>
             </div>
           </div>
         </div>
+
       </div>
 
-      <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/30 text-center md:text-left">
-        <p>© {{ date('Y') }} {{ \App\Models\SiteSetting::get('company_legal_name', 'PT DESTINARA CHAKRAWAL ARTHA') }}. {{ __('site.footer.copyright') }}</p>
-        <p class="font-caption-fieldnote text-caption-fieldnote italic text-secondary">{{ __('site.footer.motto') }}</p>
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
+        <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('company_legal_name', 'PT DESTINARA CHAKRAWAL ARTHA') }}. {{ __('site.footer.copyright') }}</p>
+        <div class="flex items-center justify-center gap-3 text-xs">
+          <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
+          <span>•</span>
+          <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
+          <span>•</span>
+          <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
+        </div>
+        <p class="italic text-[#703A3A] dark:text-[#E8999B]">{{ __('site.footer.motto') }}</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== MOBILE STICKY UTILITY BAR (RGS Style Direct Access) ==================== -->
-  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur-md border-t border-[#8C5151]/20 px-4 py-2.5 shadow-[0_-4px_16px_rgba(43,33,30,0.08)] mobile-sticky-action-bar">
+  <!-- ==================== MOBILE STICKY UTILITY BAR ==================== -->
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#181211]/95 backdrop-blur-md border-t border-gray-200/60 dark:border-white/10 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] mobile-sticky-action-bar">
     <div class="max-w-md mx-auto flex items-center gap-2">
       <button type="button" 
          onclick="document.getElementById('mobileWhatsAppModal').classList.remove('hidden');" 
-         class="flex-1 rgs-btn rgs-btn-secondary !py-2.5 !px-2 !text-xs !tracking-wide flex items-center justify-center gap-1.5 text-center cursor-pointer">
+         class="flex-1 bg-[#51634b] hover:bg-[#3e4d39] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center cursor-pointer shadow-xs transition-all">
         <span class="material-symbols-outlined text-[17px]">chat</span>
         <span>WhatsApp</span>
       </button>
       <a href="{{ route('destinations.index') }}" 
-         class="flex-1 rgs-btn rgs-btn-primary !py-2.5 !px-2 !text-xs !tracking-wide flex items-center justify-center gap-1.5 text-center">
+         class="flex-1 bg-[#703A3A] hover:bg-[#561D1E] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center shadow-xs transition-all">
         <span class="material-symbols-outlined text-[17px]">travel_explore</span>
         <span>{{ __('site.common.explore_destinations') }}</span>
       </a>
@@ -855,50 +803,50 @@
 
   <!-- Mobile WhatsApp Contact Sheet Modal -->
   <div id="mobileWhatsAppModal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-xs p-0 sm:p-4">
-    <div class="bg-surface w-full max-w-md p-6 border-t-4 border-[#8C5151] border-x border-b border-outline-variant/30 shadow-2xl flex flex-col gap-4">
-      <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+    <div class="bg-white dark:bg-[#1F1716] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/10">
         <div>
-          <span class="font-headline-sm text-lg font-bold text-on-surface">{{ __('site.modal.wa_title') }}</span>
-          <p class="text-xs text-on-surface-variant">{{ __('site.modal.wa_subtitle') }}</p>
+          <span class="text-base font-bold text-[#1E1B1B] dark:text-white">{{ __('site.modal.wa_title') }}</span>
+          <p class="text-xs text-gray-500 dark:text-gray-400">{{ __('site.modal.wa_subtitle') }}</p>
         </div>
-        <button type="button" onclick="document.getElementById('mobileWhatsAppModal').classList.add('hidden');" class="p-1 text-on-surface-variant hover:text-primary">
-          <span class="material-symbols-outlined text-[24px]">close</span>
+        <button type="button" onclick="document.getElementById('mobileWhatsAppModal').classList.add('hidden');" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-white/10">
+          <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
 
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-2.5">
         <!-- Maya -->
-        <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-surface-container-low hover:bg-surface-container border-b-2 border-[#8C5151]/30 hover:border-[#8C5151] flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-on-surface">{{ __('site.modal.maya_name') }}</span>
-            <span class="text-[11px] text-secondary block">{{ __('site.modal.maya_role') }}</span>
-            <span class="text-xs text-on-surface-variant font-mono mt-0.5 block">+62 821-1620-0363</span>
+            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.maya_name') }}</span>
+            <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.maya_role') }}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 821-1620-0363</span>
           </div>
-          <span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
         </a>
 
         <!-- Azki -->
-        <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-surface-container-low hover:bg-surface-container border-b-2 border-[#8C5151]/30 hover:border-[#8C5151] flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-on-surface">{{ __('site.modal.azki_name') }}</span>
-            <span class="text-[11px] text-secondary block">{{ __('site.modal.azki_role') }}</span>
-            <span class="text-xs text-on-surface-variant font-mono mt-0.5 block">+62 858-9486-0696</span>
+            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.azki_name') }}</span>
+            <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.azki_role') }}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 858-9486-0696</span>
           </div>
-          <span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
         </a>
 
         <!-- Ryan -->
-        <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-surface-container-low hover:bg-surface-container border-b-2 border-[#8C5151]/30 hover:border-[#8C5151] flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-on-surface">{{ __('site.modal.ryan_name') }}</span>
-            <span class="text-[11px] text-secondary block">{{ __('site.modal.ryan_role') }}</span>
-            <span class="text-xs text-on-surface-variant font-mono mt-0.5 block">+62 857-7441-0978</span>
+            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.ryan_name') }}</span>
+            <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.ryan_role') }}</span>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 857-7441-0978</span>
           </div>
-          <span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
         </a>
       </div>
 
-      <button type="button" onclick="document.getElementById('mobileWhatsAppModal').classList.add('hidden');" class="rgs-btn rgs-btn-outline w-full text-center !py-2 text-xs">
+      <button type="button" onclick="document.getElementById('mobileWhatsAppModal').classList.add('hidden');" class="w-full py-2.5 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 rounded-full transition-colors text-center">
         <span>{{ __('site.modal.close') }}</span>
       </button>
     </div>

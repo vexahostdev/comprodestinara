@@ -63,7 +63,7 @@ return [
         'partnership_email' => '战略合作：',
         'general_email' => '常规咨询：',
 
-        'copyright' => '版权所有。 | 由 RZ Digital Creative 研发构建',
+        'copyright' => '版权所有。 | 由 vexahostcloud 研发构建',
         'motto' => '将课堂与群岛原住民的土地智慧与活态知识紧密相连。',
     ],
 

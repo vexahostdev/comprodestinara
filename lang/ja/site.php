@@ -51,7 +51,7 @@ return [
         'official_emails' => '公式電子メール',
         'partnership_email' => '提携・協働窓口：',
         'general_email' => '総合案内：',
-        'copyright' => '無断転載・複製を禁じます。',
+        'copyright' => '無断転載・複製を禁じます。 | 開発・構築：vexahostcloud',
         'motto' => '教室の学びを、群島各地の生きた土地の知恵とつなぐ。',
     ],
 

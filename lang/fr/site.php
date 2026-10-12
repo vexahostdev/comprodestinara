@@ -52,7 +52,7 @@ return array (
     'official_emails' => 'Courriels officiels',
     'partnership_email' => 'Partenariats : ',
     'general_email' => 'Information générale : ',
-    'copyright' => 'Tous droits réservés.',
+    'copyright' => 'Tous droits réservés. | Développé par vexahostcloud',
     'motto' => 'Relier les salles de classe aux savoirs ancestraux du territoire.',
   ),
   'common' => 

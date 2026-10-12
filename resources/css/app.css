@@ -2,19 +2,25 @@
 
 @layer base {
     * { box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif; }
 }
 
-/* SweetAlert Square / Tanpa Radius */
+/* SweetAlert Modern Soft Radius */
 .swal2-popup,
-.swal2-modal,
+.swal2-modal {
+    border-radius: 20px !important;
+}
 .swal2-confirm,
 .swal2-cancel,
-.swal2-deny,
+.swal2-deny {
+    border-radius: 9999px !important;
+}
 .swal2-input,
 .swal2-textarea,
-.swal2-select,
+.swal2-select {
+    border-radius: 12px !important;
+}
 .swal2-icon {
-    border-radius: 0px !important;
+    border-radius: 9999px !important;
 }
 

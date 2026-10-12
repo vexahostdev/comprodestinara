@@ -52,7 +52,7 @@ return array (
     'official_emails' => 'Offizielle E-Mails',
     'partnership_email' => 'Partnerschaften: ',
     'general_email' => 'Allgemeine Anfragen: ',
-    'copyright' => 'Alle Rechte vorbehalten.',
+    'copyright' => 'Alle Rechte vorbehalten. | Entwickelt von vexahostcloud',
     'motto' => 'Verbindung klassischer Unterrichtsräume mit indigenem Landschaftswissen.',
   ),
   'common' => 

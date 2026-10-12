@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         return view('home', [
             'sections' => $sections,
-            'featuredDestinations' => Destination::active()->featured()->take(3)->get(),
+            'featuredDestinations' => Destination::active()->orderByDesc('is_featured')->take(4)->get(),
             'allDestinations' => Destination::active()->get(),
             'stories' => Story::active()->take(3)->get(),
             'programs' => Program::active()->get(),
