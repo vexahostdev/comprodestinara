@@ -111,7 +111,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@destinara.id'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@destinara.my.id'),
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Destinara')),
     ],
 

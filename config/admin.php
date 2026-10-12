@@ -14,7 +14,7 @@ return [
     */
 
     'name'     => env('ADMIN_NAME', 'Admin Destinara'),
-    'email'    => env('ADMIN_EMAIL', 'admin@destinara.id'),
+    'email'    => env('ADMIN_EMAIL', 'admin@destinara.my.id'),
     'password' => env('ADMIN_PASSWORD', 'admin123'),
 
 ];
