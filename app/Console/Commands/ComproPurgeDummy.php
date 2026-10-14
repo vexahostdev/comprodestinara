@@ -13,20 +13,40 @@ class ComproPurgeDummy extends Command
      *
      * @var string
      */
-    protected $signature = 'compro:purge-dummy {--force : Jalankan pembersihan tanpa konfirmasi}';
+    protected $signature = 'compro:purge-dummy 
+                            {--dry-run : Menampilkan daftar record yang akan dihapus tanpa menghapusnya}
+                            {--force : Jalankan pembersihan tanpa konfirmasi interaktif}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Bersihkan record dummy (Wonosadi, Penglipuran, Suryadi, JADISATU, admin123) dari database Compro';
+    protected $description = 'Bersihkan record dummy seeder lama (artikel, testimoni lama/JADISATU, stats fiktif, admin lama) dari database Compro';
 
     /**
-     * Kata kunci dummy terlarang sesuai SPEC §19.2.
-     *
-     * @var array<string>
+     * Explicit lists of dummy records to purge.
      */
+    protected array $explicitStorySlugs = [
+        'zat-pewarna-alami-sikka',
+        'musim-tanam-tetua-adat-sasak',
+        'arsitektur-kayu-tanpa-paku',
+    ];
+
+    protected array $explicitTestimonialNames = [
+        'M. Taufik Hidayat',
+        'Dr. Ratih Kumalasari, M.Hum.',
+        'Drs. Ignatius Suryanto',
+        'Wonosadi Elder',
+    ];
+
+    protected array $explicitStatsLabels = [
+        'Tapak Riset Terkurasi',
+        'Pelajar & Peneliti Terfasilitasi',
+        'Kemitraan Berbasis Etika FPIC',
+        'Modul Pembelajaran Lapangan Aktif',
+    ];
+
     protected array $forbiddenKeywords = [
         'Wonosadi',
         'Penglipuran',
@@ -40,50 +60,76 @@ class ComproPurgeDummy extends Command
      */
     public function handle(): int
     {
-        $this->info('Memulai pembersihan data dummy di Destinara Compro...');
+        $isDryRun = (bool) $this->option('dry-run');
 
+        if ($isDryRun) {
+            $this->info('=== [DRY RUN] PEMERIKSAAN RECORD DUMMY COMPRO ===');
+        } else {
+            $this->info('Memulai pembersihan data dummy di Destinara Compro...');
+        }
+
+        $candidates = [
+            'testimonials' => $this->findTestimonialCandidates(),
+            'stories' => $this->findStoryCandidates(),
+            'stats' => $this->findStatCandidates(),
+            'users' => $this->findUserCandidates(),
+        ];
+
+        $totalCandidates = 0;
+        foreach ($candidates as $table => $rows) {
+            $totalCandidates += count($rows);
+        }
+
+        if ($isDryRun) {
+            $rows = [];
+            foreach ($candidates as $table => $items) {
+                foreach ($items as $item) {
+                    $rows[] = [
+                        $table,
+                        $item->id ?? '-',
+                        $item->identifier ?? '-',
+                        $item->details ?? '-',
+                    ];
+                }
+            }
+
+            if (! empty($rows)) {
+                $this->table(['Tabel', 'ID', 'Identifier', 'Keterangan'], $rows);
+            }
+
+            $this->info("[DRY RUN SELESAI] Ditemukan {$totalCandidates} record dummy seeder lama. Tidak ada record yang dihapus.");
+
+            return Command::SUCCESS;
+        }
+
+        if ($totalCandidates === 0) {
+            $this->info('Tidak ditemukan record dummy seeder lama untuk dibersihkan.');
+
+            return Command::SUCCESS;
+        }
+
+        if (! $this->option('force')) {
+            if ($this->input->isInteractive() && ! app()->environment('testing')) {
+                if (! $this->confirm("Ditemukan {$totalCandidates} record dummy. Apakah Anda yakin ingin menghapusnya secara permanen?")) {
+                    $this->warn('Pembersihan dibatalkan oleh pengguna.');
+
+                    return Command::SUCCESS;
+                }
+            }
+        }
+
+        // Perform actual deletion
         $totalPurged = 0;
 
-        // 1. Testimonials
-        if (Schema::hasTable('testimonials')) {
-            $purged = $this->purgeTable('testimonials', ['name', 'role', 'institution', 'quote']);
-            $this->line("• testimonials: {$purged} record dihapus.");
-            $totalPurged += $purged;
-        }
+        foreach ($candidates as $table => $items) {
+            $count = count($items);
+            if ($count > 0 && Schema::hasTable($table)) {
+                $ids = array_map(fn ($i) => $i->id, $items);
+                DB::table($table)->whereIn('id', $ids)->delete();
+            }
 
-        // 2. Stories
-        if (Schema::hasTable('stories')) {
-            $purged = $this->purgeTable('stories', ['title', 'slug', 'excerpt', 'content', 'author_name']);
-            $this->line("• stories: {$purged} record dihapus.");
-            $totalPurged += $purged;
-        }
-
-        // 3. Stats
-        if (Schema::hasTable('stats')) {
-            $purged = $this->purgeTable('stats', ['label', 'value']);
-            $this->line("• stats: {$purged} record dihapus.");
-            $totalPurged += $purged;
-        }
-
-        // 4. Users (kecuali admin valid yang tidak memakai kata terlarang)
-        if (Schema::hasTable('users')) {
-            $purged = $this->purgeTable('users', ['email', 'name']);
-            $this->line("• users: {$purged} record dihapus.");
-            $totalPurged += $purged;
-        }
-
-        // 5. Destinations (jika tabel masih ada)
-        if (Schema::hasTable('destinations')) {
-            $purged = $this->purgeTable('destinations', ['name', 'slug', 'lead', 'description']);
-            $this->line("• destinations: {$purged} record dihapus.");
-            $totalPurged += $purged;
-        }
-
-        // 6. Site Settings
-        if (Schema::hasTable('site_settings')) {
-            $purged = $this->purgeTable('site_settings', ['key', 'value']);
-            $this->line("• site_settings: {$purged} record dihapus.");
-            $totalPurged += $purged;
+            $this->line("• {$table}: {$count} record dihapus.");
+            $totalPurged += $count;
         }
 
         $this->info("Pembersihan selesai! Total {$totalPurged} record dummy dihapus.");
@@ -91,35 +137,112 @@ class ComproPurgeDummy extends Command
         return Command::SUCCESS;
     }
 
-    /**
-     * Purge rows in a table where any given column matches any forbidden keyword.
-     *
-     * @param  array<string>  $columns
-     */
-    protected function purgeTable(string $table, array $columns): int
+    protected function findTestimonialCandidates(): array
     {
-        $existingColumns = Schema::getColumnListing($table);
-        $validColumns = array_intersect($columns, $existingColumns);
-
-        if (empty($validColumns)) {
-            return 0;
+        if (! Schema::hasTable('testimonials')) {
+            return [];
         }
 
-        $query = DB::table($table);
+        $columns = Schema::getColumnListing('testimonials');
+        $hasCompany = in_array('company', $columns, true);
+        $hasInstitution = in_array('institution', $columns, true);
 
-        $query->where(function ($q) use ($validColumns) {
+        $query = DB::table('testimonials')->where(function ($q) use ($hasCompany, $hasInstitution) {
+            $q->whereIn('name', $this->explicitTestimonialNames);
+
             foreach ($this->forbiddenKeywords as $keyword) {
-                foreach ($validColumns as $col) {
-                    $q->orWhere($col, 'LIKE', "%{$keyword}%");
+                $q->orWhere('name', 'LIKE', "%{$keyword}%");
+                $q->orWhere('quote', 'LIKE', "%{$keyword}%");
+
+                if ($hasCompany) {
+                    $q->orWhere('company', 'LIKE', "%{$keyword}%");
+                }
+                if ($hasInstitution) {
+                    $q->orWhere('institution', 'LIKE', "%{$keyword}%");
                 }
             }
         });
 
-        $count = $query->count();
-        if ($count > 0) {
-            $query->delete();
+        return $query->get()->map(function ($row) use ($hasCompany, $hasInstitution) {
+            $company = $hasCompany ? ($row->company ?? '') : ($hasInstitution ? ($row->institution ?? '') : '');
+
+            return (object) [
+                'id' => $row->id,
+                'identifier' => $row->name,
+                'details' => $company ?: substr($row->quote ?? '', 0, 40),
+            ];
+        })->all();
+    }
+
+    protected function findStoryCandidates(): array
+    {
+        if (! Schema::hasTable('stories')) {
+            return [];
         }
 
-        return $count;
+        $query = DB::table('stories')->where(function ($q) {
+            $q->whereIn('slug', $this->explicitStorySlugs);
+
+            foreach ($this->forbiddenKeywords as $keyword) {
+                $q->orWhere('title', 'LIKE', "%{$keyword}%");
+                $q->orWhere('slug', 'LIKE', "%{$keyword}%");
+            }
+        });
+
+        return $query->get()->map(function ($row) {
+            return (object) [
+                'id' => $row->id,
+                'identifier' => $row->slug,
+                'details' => $row->title,
+            ];
+        })->all();
+    }
+
+    protected function findStatCandidates(): array
+    {
+        if (! Schema::hasTable('stats')) {
+            return [];
+        }
+
+        $query = DB::table('stats')->where(function ($q) {
+            $q->whereIn('label', $this->explicitStatsLabels);
+
+            foreach ($this->forbiddenKeywords as $keyword) {
+                $q->orWhere('label', 'LIKE', "%{$keyword}%");
+                $q->orWhere('value', 'LIKE', "%{$keyword}%");
+            }
+        });
+
+        return $query->get()->map(function ($row) {
+            return (object) [
+                'id' => $row->id,
+                'identifier' => $row->value,
+                'details' => $row->label,
+            ];
+        })->all();
+    }
+
+    protected function findUserCandidates(): array
+    {
+        if (! Schema::hasTable('users')) {
+            return [];
+        }
+
+        $query = DB::table('users')->where(function ($q) {
+            $q->where('email', 'admin@destinara.id');
+
+            foreach ($this->forbiddenKeywords as $keyword) {
+                $q->orWhere('email', 'LIKE', "%{$keyword}%");
+                $q->orWhere('name', 'LIKE', "%{$keyword}%");
+            }
+        });
+
+        return $query->get()->map(function ($row) {
+            return (object) [
+                'id' => $row->id,
+                'identifier' => $row->email,
+                'details' => $row->name,
+            ];
+        })->all();
     }
 }
