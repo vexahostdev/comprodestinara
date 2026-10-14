@@ -1,111 +1,130 @@
-# Destinara — Website Company Profile & Ruang Belajar Nusantara
+# Destinara — Company Profile & Editorial Web Portal
 
-Website resmi **Destinara (Inisiatif Pendidikan Lapangan & Riset Berbasis Komunitas)**. Proyek ini menyatukan seluruh rancangan desain editorial (*Google Stitch mockup*) menjadi sebuah situs web statis berbasis **HTML5, CSS3 kustom, dan Vanilla JavaScript (ES6+)** yang terintegrasi penuh, responsif di seluruh ukuran layar, dan siap diserahkan kepada klien (*client-ready*).
-
----
-
-## 🌟 Ikhtisar Proyek
-
-Destinara memposisikan diri sebagai jembatan etis antara ruang akademis (sekolah & kampus) dengan kearifan warga desa di seluruh pelosok Nusantara. Situs ini mengusung estetika editorial dokumenter bertema *terroir* lokal dengan tipografi berkelas (*Newsreader* serif & *Work Sans* sans-serif), visual berkilau, dan navigasi yang mulus.
+Portal web profil perusahaan resmi dan ruang publik **Destinara (Inisiatif Pendidikan Lapangan & Riset Berbasis Komunitas)** (`destinara.my.id`), dibangun menggunakan **Laravel 12**, **Tailwind CSS**, **Alpine.js**, dan **Breeze**.
 
 ---
 
-## 🗺️ Peta Halaman (Sitemap)
+## 🌟 Arsitektur & Peran Sistem
 
-Seluruh halaman terletak langsung di *root directory* dan saling terhubung dengan navigasi aktif dan *drawer* menu mobile:
+Destinara Compro bertindak sebagai wajah publik perusahaan dan menyajikan konten editorial, profil inisiatif, program sekolah/peneliti, serta warta lapangan.
 
-| Berkas | Halaman | Deskripsi Utama |
-| :--- | :--- | :--- |
-| [`index.html`](index.html) | **Beranda** | Pintu gerbang utama, pengantar kurikulum tapak nusantara, pratinjau sanggar mitra, metrik capaian desa, dan reviu mitra pendidikan. |
-| [`tentang-kami.html`](tentang-kami.html) | **Tentang Kami** | Esai kuratorial pendiri (*Ryan Prasetya & Maya Nirmala*), filosofi pendidikan kritis Ki Hadjar Dewantara, rekam jejak institusi, dan komitmen FPIC. |
-| [`destinasi.html`](destinasi.html) | **Jelajahi Destinasi** | Kurasi ruang belajar tapak dengan **filter kategori interaktif** (*Budaya, Ekologi, Pangan, Bahari*), 4 kartu modul desa mendalam, dan **Modal Popup Pratinjau Dossier**. |
-| [`untuk-sekolah.html`](untuk-sekolah.html) | **Untuk Sekolah** | Panduan resmi program ekskursi & *live-in* berkeselamatan tinggi, integrasi Kurikulum Merdeka / IB, alur persiapan 4 langkah, dan formulir audiensi kurikulum. |
-| [`untuk-peneliti.html`](untuk-peneliti.html) | **Untuk Peneliti & Akademisi** | Infrastruktur riset lapangan, protokol FPIC etika antropologi, direktori 42 desa mitra per tema kajian, serta formulir pengajuan riset lapangan. |
-| [`mitra-desa.html`](mitra-desa.html) | **Untuk Pengelola Destinasi** | Panduan bagi sesepuh adat, pengelola desa wisata, dan sanggar kriya untuk bergabung dalam jejaring Destinara, testimoni sesepuh, FAQ, dan formulir pendaftaran desa. |
-| [`cerita.html`](cerita.html) | **Cerita Lapangan** | Majalah warta & publikasi etnografi tapak dengan tab kategori, artikel kuratorial, statistik distribusi lapangan, dan langganan buletin korespondensi. |
-| [`cerita-detail.html`](cerita-detail.html) | **Baca Cerita / Monograf Etnografi** | Laman baca *editorial longform* mendalam (*Studi Kasus Pewarna Alami Sikka*), dilengkapi catatan pinggir (*marginalia*), resep botani alam, dan kutipan filosofis warga. |
-| [`kontak.html`](kontak.html) | **Kontak & Kemitraan** | Ruang musyawarah terbuka, kontak WhatsApp respons cepat, surel resmi kemitraan, peta sanggar Sleman (Yogyakarta) & Menteng (Jakarta), serta formulir penjajakan agenda. |
+### Integrasi dengan Destinara Core System
+Sesuai **BACKEND SPEC DESTINARA §15 & §16**:
+1. **Katalog Destinasi Terpusat**: Compro **tidak lagi menyimpan data destinasi di database lokal**. Seluruh destinasi diambil secara langsung melalui HTTP API dari Core System (`layanan.destinara.my.id/api/v1/public/destinations`).
+2. **Klien API Tangguh (`CoreSystemClient`)**:
+   - Cache lokal berdurasi 10 menit dengan tag `core-system`.
+   - Timeout request 5 detik.
+   - **Stale Fallback**: Apabila Core System sedang offline atau tidak dapat dijangkau, compro secara otomatis menyajikan data cache terakhir (stale cache) agar pengunjung tetap dapat melihat direktori desa.
+3. **Pemesanan Terintegrasi**: Tombol *Reservasi* atau *Booking* pada detail destinasi langsung mengarahkan pengunjung ke halaman pemesanan Core System menggunakan `booking_url` resmi dari API.
+4. **Pembersihan Data Fiktif (`compro:purge-dummy`)**: Command konsol untuk membersihkan data demo lama (testimoni fiktif, angka statistik klaim, destinasi lokal).
 
 ---
 
-## 💎 Fitur Unggulan & Interaktivitas
+## 🔒 Keamanan & Kebijakan Akses
 
-1. **Navigasi Responsif Penuh (Mobile Drawer):**
-   - Bilah navigasi atas otomatis menyorot halaman yang sedang aktif (*active indicator*).
-   - Menu hamburger di perangkat *mobile* & tablet membuka panel *drawer* dengan animasi *backdrop blur* yang halus.
-2. **Filter Kategori Interaktif:**
-   - Pada [`destinasi.html`](destinasi.html): Filter kategori *Semua Tapak*, *Budaya & Kriya*, *Ekologi & Hutan*, *Kedaulatan Pangan*, dan *Bahari*.
-   - Pada [`cerita.html`](cerita.html): Filter artikel *Semua Warta*, *Etnografi*, *Ekologi*, dan *Pendidikan*.
-3. **Popup Modal Pratinjau Dossier Lapangan:**
-   - Mengklik tombol *“Buka Pratinjau Berkas Lapang”* pada kartu destinasi akan menampilkan modal pop-up berisi ringkasan teknis desa, koordinat GPS, etika busana, dan kapasitas riset.
-4. **Formulir Interaktif & Toast Notifikasi Kustom:**
-   - Seluruh formulir dilengkapi validasi dan simulasi pengiriman dengan umpan balik visual (*toast notification*) bertema terroir yang elegan tanpa *page reload*.
-5. **Tombol "Kembali ke Atas" (*Back-to-Top*):**
-   - Muncul otomatis saat pengguna menggulir halaman ke bawah untuk mempermudah navigasi.
-6. **Aksesibel & Siap Cetak (*Print-Friendly*):**
-   - Gaya cetak khusus disiapkan di `css/style.css` untuk mencetak atau menyimpan berkas kurikulum menjadi PDF tanpa elemen antarmuka yang mengganggu.
+- **Registrasi Publik Ditutup**: Endpoint `/register` ditutup sepenuhnya dan mengembalikan respons HTTP `404 Not Found`.
+- **Proteksi Panel Admin**: Panel administrasi `/admin` dilindungi oleh middleware `EnsureAdmin` yang memvalidasi flag `is_admin = true` pada tabel `users`.
+- **Aman Path Traversal**: Route streaming aset `/storage/{path}` diproteksi dengan verifikasi `realpath()` terhadap direktori basis storage publik.
+- **Pembersihan Cache Aman**: Endpoint pembersihan cache sistem hanya dapat diakses melalui metode `POST` oleh admin terautentikasi (bukan `GET`).
+- **Zero Dummy Data**: Seluruh akun demo lama dan seeder fiktif telah dibersihkan. Akun admin diinisialisasi melalui environment variable.
 
 ---
 
-## 📂 Struktur Berkas Proyek
+## 📁 Struktur Modul & Fitur
 
-```text
-stitch_destinara_company_profile_website/
-├── index.html                   # Beranda
-├── tentang-kami.html            # Tentang Kami
-├── destinasi.html               # Jelajahi Destinasi (Filter + Modal)
-├── untuk-sekolah.html           # Program Sekolah
-├── untuk-peneliti.html          # Untuk Peneliti & Sivitas Akademika
-├── mitra-desa.html              # Panduan Mitra Desa & Sanggar
-├── cerita.html                  # Cerita Lapangan / Warta
-├── cerita-detail.html           # Laman Baca Editorial Monograf
-├── kontak.html                  # Kontak & Ruang Musyawarah
-├── css/
-│   └── style.css                # Palet Terroir, Typography, Animasi, Toast, Modal
-├── js/
-│   └── main.js                  # Engine Navigasi, Filter, Modal & Form Toast
-└── README.md                    # Dokumentasi Proyek & Panduan Klien
-```
+- `app/Services/CoreSystemClient.php`: Service pengambil data katalog destinasi dari Core System.
+- `app/Http/Controllers/DestinationController.php`: Menampilkan direktori tapak nusantara dari Core API.
+- `app/Http/Controllers/HomeController.php`: Beranda dengan destinasi unggulan dari Core API dan konten editorial CMS.
+- `app/Console/Commands/ComproPurgeDummy.php`: Command `php artisan compro:purge-dummy`.
+- `app/Http/Middleware/EnsureAdmin.php`: Penjaga akses khusus admin portal.
+- `routes/web.php` & `routes/auth.php`: Routing halaman publik, CMS, dan autentikasi.
 
 ---
 
-## 🚀 Cara Menjalankan & Membuka Proyek
+## 🛠️ Persyaratan Lingkungan & Instalasi Lokal
 
-### Opsi 1: Buka Langsung di Peramban (Tanpa Server)
-Proyek ini dibuat **100% *standalone***. Anda atau klien cukup mengklik dua kali (*double-click*) berkas **`index.html`** di browser manapun (Chrome, Edge, Safari, Firefox). Semua gambar, font Google, dan ikon dimuat secara aman via CDN terpercaya.
+### Kebutuhan:
+- PHP >= 8.2 (ekstensi: pdo_mysql, mbstring, curl, openssl)
+- Composer 2.x
+- Node.js 18+ & NPM
+- MySQL 8.0+
 
-### Opsi 2: Menggunakan Local Development Server
-Jika ingin menjalankan lewat lokal server:
+### Langkah Setup:
+
+1. **Clone repositori & masuk ke direktori**:
+   ```bash
+   cd "destinara - compro"
+   ```
+
+2. **Install dependensi**:
+   ```bash
+   composer install
+   npm install && npm run build
+   ```
+
+3. **Salin file environment & generate APP_KEY**:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Konfigurasi `.env`**:
+   ```dotenv
+   APP_NAME="Destinara Compro"
+   APP_ENV=local
+   APP_DEBUG=true
+   APP_URL=http://localhost:8000
+
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=db_comprodestinara
+   DB_USERNAME=root
+   DB_PASSWORD=
+
+   # Integrasi Core System
+   CORE_SYSTEM_URL=http://localhost:8001
+   CORE_SYSTEM_API_URL=http://localhost:8001/api/v1/public
+
+   # Kredensial Administrator Awal
+   ADMIN_NAME="Administrator Compro"
+   ADMIN_EMAIL="admin@destinara.my.id"
+   ADMIN_PASSWORD="PasswordAman123!"
+   ```
+
+5. **Migrasi database & Inisialisasi Konten**:
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   php artisan compro:purge-dummy
+   php artisan storage:link
+   ```
+
+6. **Jalankan web server lokal**:
+   ```bash
+   php artisan serve --port=8000
+   ```
+
+---
+
+## 🧪 Pengujian (Testing)
+
+Jalankan test suite otomatis:
 ```bash
-# Menggunakan Python (bawaan Windows/Mac/Linux)
-python -m http.server 8080
-
-# Atau menggunakan npx serve
-npx serve .
+php artisan test
 ```
-Lalu buka peramban di `http://localhost:8080`.
+
+Semua unit & feature test memverifikasi:
+- Penutupan rute registrasi (`/register` → 404).
+- Proteksi panel admin terhadap pengguna non-admin (403 Forbidden).
+- Resiliensi `CoreSystemClient` dengan simulasi HTTP API timeout & offline fallback.
+- Validasi streaming storage dan pencegahan path traversal.
+- Eksekusi command `compro:purge-dummy`.
 
 ---
 
-## 🌐 Panduan Berbagi ke Klien / Deploy Online
-
-1. **Kirim Berkas Arsip (.ZIP):**
-   - Kompres seluruh isi folder utama (pastikan berkas `.html`, folder `css/`, dan `js/` terikutsertakan).
-   - Klien dapat langsung mengekstrak dan membuka `index.html`.
-2. **Deploy Gratis 1-Klik ke Hosting Statis:**
-   - **Vercel / Netlify:** Tarik atau *drag & drop* folder ini langsung ke dashboard Netlify Drop (`https://app.netlify.com/drop`) atau Vercel. Situs akan langsung aktif dengan domain HTTPS gratis dalam hitungan detik.
-   - **GitHub Pages:** Unggah kode ke repositori GitHub dan aktifkan GitHub Pages di menu *Settings > Pages > Branch: main*.
-
----
-
-## 🎨 Palet Warna & Desain (*Design System*)
-
-- **Primary (*Bata Terakota Tapak*):** `#703a3a` / `#8c5151`
-- **Secondary (*Hijau Daun Rimba*):** `#51634b` / `#d4e9ca`
-- **Tertiary (*Oker Rempah Tanah*):** `#684200` / `#86580d`
-- **Surface & Background (*Krem Kertas Arsip*):** `#fff8f6` / `#fff1ed` / `#fdeae5`
-- **Typography:** *Newsreader* (Headings & Filosofi), *Work Sans* (Body, Navigasi & Label Data).
-
----
-
-*Hak Cipta © 2025 Destinara. Inisiatif Pendidikan Lapangan & Riset Berbasis Komunitas.*
+## 📦 Standar Kode
+Format kode dijaga menggunakan Laravel Pint:
+```bash
+./vendor/bin/pint
+```
