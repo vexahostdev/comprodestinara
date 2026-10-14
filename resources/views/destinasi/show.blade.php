@@ -71,13 +71,13 @@
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#51634b]/10 text-[#51634b] uppercase tracking-wider">
             {{ $destination->location }}
           </span>
-          @if($destination->badge)
+          @if(!empty($destination->badge))
             <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#703A3A]/10 text-[#703A3A] uppercase tracking-wider">
               {{ $destination->badge }}
             </span>
           @endif
           <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 uppercase tracking-wider">
-            {{ $destination->category }}
+            {{ $destination->category_name ?? $destination->category ?? '' }}
           </span>
         </div>
 
@@ -86,7 +86,7 @@
         </h1>
 
         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
-          {{ $destination->lead ?? Str::limit(strip_tags($destination->description), 180) }}
+          {{ $destination->lead ?? Str::limit(strip_tags($destination->description ?? ''), 180) }}
         </p>
 
       </div>
@@ -142,7 +142,7 @@
                       <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ is_array($pkg) ? ($pkg['description'] ?? '') : ($pkg->description ?? '') }}</p>
                     </div>
                     <div class="mt-3 pt-3 border-t border-gray-200/50 dark:border-white/10 flex items-center justify-between">
-                      <span class="text-xs font-bold text-[#51634b]">{{ is_array($pkg) ? ($pkg['price_formatted'] ?? ('Rp ' . number_format($pkg['price'] ?? 0, 0, ',', '.'))) : ($pkg->price_formatted ?? ('Rp ' . number_format($pkg->price ?? 0, 0, ',', '.'))) }}</span>
+                      <span class="text-xs font-bold text-[#51634b]">{{ is_array($pkg) ? ($pkg['price_formatted'] ?? ('Rp ' . number_format($pkg['price_per_pax'] ?? ($pkg['price'] ?? 0), 0, ',', '.'))) : ($pkg->price_formatted ?? ('Rp ' . number_format($pkg->price_per_pax ?? ($pkg->price ?? 0), 0, ',', '.'))) }}</span>
                       <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" class="text-xs font-bold text-[#703A3A] hover:underline">Pilih Paket</a>
                     </div>
                   </div>
@@ -174,7 +174,7 @@
               </div>
               <div class="flex items-start justify-between py-1 border-b border-gray-50 dark:border-white/5">
                 <span class="text-gray-500 dark:text-gray-400">{{ __('site.common.landscape_category') }}</span>
-                <span class="font-bold text-[#1E1B1B] dark:text-white uppercase">{{ $destination->category }}</span>
+                <span class="font-bold text-[#1E1B1B] dark:text-white uppercase">{{ $destination->category_name ?? $destination->category ?? '' }}</span>
               </div>
               <div class="flex items-start justify-between py-1 border-b border-gray-50 dark:border-white/5">
                 <span class="text-gray-500 dark:text-gray-400">{{ __('site.common.field_learning_module') }}</span>

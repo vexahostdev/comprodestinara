@@ -268,4 +268,63 @@ class ComproPlatformTest extends TestCase
 
         $response->assertStatus(404);
     }
+
+    public function test_public_destination_detail_handles_v5_core_api_structure_without_badge_or_lead(): void
+    {
+        Http::fake([
+            '*/api/v1/public/destinations/desa-wisata-pentingsari' => Http::response([
+                'success' => true,
+                'data' => [
+                    'slug' => 'desa-wisata-pentingsari',
+                    'name' => 'Desa Wisata Pentingsari',
+                    'category' => [
+                        'slug' => 'budaya',
+                        'name' => 'Budaya & Tradisi',
+                    ],
+                    'province' => 'DI Yogyakarta',
+                    'city' => 'Sleman',
+                    'short_description' => 'Desa wisata berwawasan lingkungan dan kearifan lokal.',
+                    'description' => 'Deskripsi lengkap desa wisata berwawasan kearifan lokal.',
+                    'educational_highlights' => ['Gamelan & Karawitan', 'Membatik Tradisional'],
+                    'facilities' => ['Pendopo', 'Toilet Bersih'],
+                    'cover_url' => 'https://example.com/pentingsari.jpg',
+                    'gallery_urls' => [],
+                    'price_from' => 175000,
+                    'rating_avg' => 4.9,
+                    'rating_count' => 15,
+                    'suitable_for' => ['study_tour', 'penelitian'],
+                    'is_featured' => true,
+                    'detail_url' => 'https://layanan.destinara.my.id/destinasi/desa-wisata-pentingsari',
+                    'booking_url' => 'https://layanan.destinara.my.id/buyer/booking/create?destinasi=desa-wisata-pentingsari',
+                    'packages' => [
+                        [
+                            'id' => 10,
+                            'name' => 'Paket Belajar Budaya Hidup',
+                            'duration' => '1 Hari',
+                            'duration_days' => 1,
+                            'price_per_pax' => 175000,
+                            'min_pax' => 20,
+                            'max_pax' => 60,
+                            'includes' => ['Makan Siang', 'Pemandu Lokal'],
+                        ],
+                    ],
+                    'reviews' => [],
+                ],
+            ], 200),
+            '*/api/v1/public/destinations*' => Http::response([
+                'success' => true,
+                'data' => [],
+            ], 200),
+        ]);
+
+        $response = $this->get('/destinasi/desa-wisata-pentingsari');
+
+        $response->assertStatus(200);
+        $response->assertSee('Desa Wisata Pentingsari');
+        $response->assertSee('Budaya &amp; Tradisi', false);
+        $response->assertSee('Paket Belajar Budaya Hidup');
+        $response->assertSee('Rp 175.000');
+        $response->assertSee('20-60 Peserta');
+        $response->assertSee('Unggulan');
+    }
 }
