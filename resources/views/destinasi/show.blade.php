@@ -167,7 +167,7 @@
             </div>
 
             <div class="pt-2 flex flex-col gap-3">
-              <a href="{{ route('contact.index') }}" 
+              <a href="{{ env('SYSTEM_PORTAL_URL', 'https://layanan.destinara.id') }}/buyer/booking/create?destinasi={{ $destination->slug }}" 
                  class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3.5 px-4 rounded-full text-xs font-bold text-center block shadow-md hover:shadow-xl transition-all">
                 <span>{{ __('site.common.apply_program_here') }}</span>
               </a>
