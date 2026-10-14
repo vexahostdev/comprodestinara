@@ -38,6 +38,7 @@ class ComproPurgeDummy extends Command
         'Dr. Ratih Kumalasari, M.Hum.',
         'Drs. Ignatius Suryanto',
         'Wonosadi Elder',
+        'Ki Joko Sudarmo',
     ];
 
     protected array $explicitStatsLabels = [
@@ -144,16 +145,20 @@ class ComproPurgeDummy extends Command
         }
 
         $columns = Schema::getColumnListing('testimonials');
+        $hasRole = in_array('role', $columns, true);
         $hasCompany = in_array('company', $columns, true);
         $hasInstitution = in_array('institution', $columns, true);
 
-        $query = DB::table('testimonials')->where(function ($q) use ($hasCompany, $hasInstitution) {
+        $query = DB::table('testimonials')->where(function ($q) use ($hasRole, $hasCompany, $hasInstitution) {
             $q->whereIn('name', $this->explicitTestimonialNames);
 
             foreach ($this->forbiddenKeywords as $keyword) {
                 $q->orWhere('name', 'LIKE', "%{$keyword}%");
                 $q->orWhere('quote', 'LIKE', "%{$keyword}%");
 
+                if ($hasRole) {
+                    $q->orWhere('role', 'LIKE', "%{$keyword}%");
+                }
                 if ($hasCompany) {
                     $q->orWhere('company', 'LIKE', "%{$keyword}%");
                 }
@@ -228,6 +233,9 @@ class ComproPurgeDummy extends Command
             return [];
         }
 
+        $adminEmail = config('admin.email');
+        $hasIsAdmin = Schema::hasColumn('users', 'is_admin');
+
         $query = DB::table('users')->where(function ($q) {
             $q->where('email', 'admin@destinara.id');
 
@@ -237,7 +245,31 @@ class ComproPurgeDummy extends Command
             }
         });
 
-        return $query->get()->map(function ($row) {
+        if (! empty($adminEmail)) {
+            $query->where('email', '!=', $adminEmail);
+        }
+
+        $candidates = $query->get();
+
+        if ($hasIsAdmin) {
+            $totalAdmins = DB::table('users')->where('is_admin', true)->count();
+            $remainingAdmins = $totalAdmins;
+            $filtered = [];
+
+            foreach ($candidates as $user) {
+                if ($user->is_admin) {
+                    if ($remainingAdmins <= 1) {
+                        continue;
+                    }
+                    $remainingAdmins--;
+                }
+                $filtered[] = $user;
+            }
+
+            $candidates = collect($filtered);
+        }
+
+        return $candidates->map(function ($row) {
             return (object) [
                 'id' => $row->id,
                 'identifier' => $row->email,

@@ -75,7 +75,7 @@ class ComproPlatformTest extends TestCase
         // Insert dummy testimonial
         Testimonial::create([
             'name' => 'Wonosadi Elder',
-            'role' => 'Pemangku Hutan Wonosadi',
+            'role' => 'Pemangku Hutan',
             'institution' => 'Wonosadi',
             'quote' => 'Dummy testimonial with Wonosadi text',
             'is_active' => true,
@@ -98,6 +98,76 @@ class ComproPlatformTest extends TestCase
 
         $this->assertDatabaseMissing('testimonials', ['name' => 'Wonosadi Elder']);
         $this->assertDatabaseHas('testimonials', ['name' => 'Prof. Budi Santoso']);
+    }
+
+    public function test_compro_purge_dummy_purges_ki_joko_sudarmo_and_role_keywords(): void
+    {
+        // 1. Explicit testimonial name: Ki Joko Sudarmo (even without forbidden text in quote)
+        Testimonial::create([
+            'name' => 'Ki Joko Sudarmo',
+            'role' => 'Tetua Desa',
+            'institution' => 'Komunitas Lokal',
+            'quote' => 'Menjaga kelestarian alam dan kearifan masa lalu.',
+            'is_active' => true,
+            'order' => 10,
+        ]);
+
+        // 2. Testimonial with forbidden keyword in role column
+        Testimonial::create([
+            'name' => 'Slamet Raharjo',
+            'role' => 'Pemandu Tapak Wonosadi',
+            'institution' => 'Kelompok Sadar Wisata',
+            'quote' => 'Ekowisata berbasis riset.',
+            'is_active' => true,
+            'order' => 11,
+        ]);
+
+        $this->artisan('compro:purge-dummy')
+            ->assertExitCode(0);
+
+        $this->assertDatabaseMissing('testimonials', ['name' => 'Ki Joko Sudarmo']);
+        $this->assertDatabaseMissing('testimonials', ['name' => 'Slamet Raharjo']);
+    }
+
+    public function test_compro_purge_dummy_skips_config_admin_email_and_preserves_sole_admin(): void
+    {
+        config(['admin.email' => 'active_admin@destinara.id']);
+
+        // 1. User with email matching config('admin.email') even if it has a forbidden keyword in name
+        $primaryAdmin = User::factory()->create([
+            'name' => 'Wonosadi Guardian Admin',
+            'email' => 'active_admin@destinara.id',
+            'is_admin' => true,
+        ]);
+
+        // 2. Another dummy non-admin matching keyword
+        $dummyUser = User::factory()->create([
+            'name' => 'Penglipuran Fake User',
+            'email' => 'dummy_penglipuran@destinara.id',
+            'is_admin' => false,
+        ]);
+
+        $this->artisan('compro:purge-dummy')
+            ->assertExitCode(0);
+
+        // Primary admin matching config('admin.email') is preserved!
+        $this->assertDatabaseHas('users', ['id' => $primaryAdmin->id]);
+        // Dummy non-admin is purged
+        $this->assertDatabaseMissing('users', ['id' => $dummyUser->id]);
+
+        // 3. Test sole admin protection:
+        // Even if config('admin.email') is different, the ONLY remaining admin must NEVER be deleted
+        config(['admin.email' => 'other_system@destinara.id']);
+        $primaryAdmin->update(['email' => 'admin123@destinara.id']); // matches forbidden keyword admin123
+
+        // Verify it is the only admin
+        $this->assertEquals(1, User::where('is_admin', true)->count());
+
+        $this->artisan('compro:purge-dummy')
+            ->assertExitCode(0);
+
+        // Sole admin is still preserved!
+        $this->assertDatabaseHas('users', ['id' => $primaryAdmin->id]);
     }
 
     public function test_public_destinations_fetch_from_core_system_api(): void
