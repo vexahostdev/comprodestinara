@@ -2,13 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\SiteSetting;
-use App\Models\Destination;
-use App\Models\Story;
 use App\Models\Program;
-use App\Models\Testimonial;
+use App\Models\SiteSetting;
 use App\Models\Stat;
+use App\Models\Story;
+use App\Models\Testimonial;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,21 +15,24 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Admin Users
-        User::updateOrCreate(
-            ['email' => 'admin@destinara.id'],
-            [
-                'name' => 'Administrator Destinara',
-                'password' => Hash::make('admin123'),
-            ]
-        );
+        // 1. Admin Users (SPEC §16.1 & §19.3)
+        $email = config('admin.email');
+        $password = config('admin.password');
+        $name = config('admin.name', 'Admin Destinara');
 
-        $adminPassword = config('admin.password', 'Destinara2025*');
+        if (app()->isProduction() && (empty($email) || empty($password))) {
+            throw new \RuntimeException('ADMIN_EMAIL and ADMIN_PASSWORD environment variables are required in production.');
+        }
+
+        $email = $email ?: 'admin@destinara.id';
+        $password = $password ?: 'DestinaraAdmin2026!';
+
         User::updateOrCreate(
-            ['email' => config('admin.email', 'admin@destinara.id')],
+            ['email' => $email],
             [
-                'name' => config('admin.name', 'Admin Destinara'),
-                'password' => Hash::make($adminPassword),
+                'name' => $name,
+                'password' => Hash::make($password),
+                'is_admin' => true,
             ]
         );
 
@@ -63,97 +65,7 @@ class DatabaseSeeder extends Seeder
             SiteSetting::updateOrCreate(['key' => $key], ['value' => $val]);
         }
 
-        // 3. Destinations
-        if (Destination::count() === 0) {
-            $destinations = [
-                [
-                    'name' => 'Hutan Adat Wonosadi & Bukit Karst',
-                    'slug' => 'hutan-adat-wonosadi',
-                    'category' => 'ekologi',
-                    'badge' => 'Konservasi Karst',
-                    'location' => 'Gunungkidul, D.I. Yogyakarta',
-                    'lead' => 'Laboratorium konservasi mata air karst berbasis hukum adat Sadumuk Bathuk Sanyari Bumi yang menjaga ketahanan air lereng perbukitan.',
-                    'description' => 'Di tengah gersangnya batuan gamping Gunung Sewu, kanopi pohon asam purba dan beringin setinggi 40 meter dijaga hukum adat Sadranan, memproteksi formasi rekahan tanah yang melahirkan tiga mata air abadi sepanjang kemarau ekstrem.',
-                    'research_focus' => 'Hidrologi karst tersembunyi, taksonomi vegetasi endemik Jawa Selatan, dan mekanisme sanksi sosial pemuliaan hutan tanpa aparat kepolisian.',
-                    'module_name' => 'Hidrologi Karst & Adat',
-                    'capacity' => '30 Peneliti',
-                    'image_path' => 'assets/img/hd/dest-wonosadi.jpg',
-                    'is_featured' => true,
-                    'is_active' => true,
-                    'order' => 1,
-                ],
-                [
-                    'name' => 'Desa Sasak Sade & Budaya Tenun',
-                    'slug' => 'desa-sasak-sade',
-                    'category' => 'budaya',
-                    'badge' => 'Etnomatematika Kriya',
-                    'location' => 'Lombok Tengah, Nusa Tenggara Barat',
-                    'lead' => 'Pusat studi arsitektur vernakular tahan gempa dan tata krama komunal suku Sasak yang lestari selama empat belas generasi.',
-                    'description' => 'Eksplorasi mendalam mengenai kearifan konstruksi atap ilalang dan dinding kotoran kerbau yang terbukti fleksibel menahan gempa tektonik lingkar cincin api, serta transmisi lisan pola geometris motif tenun ikat warisan leluhur Sasak.',
-                    'research_focus' => 'Geometri fraktal pada ragam hias kain tenun, sifat termal material tanah liat lokal, dan kedaulatan lumbung pangan keluarga Sasak.',
-                    'module_name' => 'Etnomatematika Kriya & Tenun',
-                    'capacity' => '24 Peneliti',
-                    'image_path' => 'assets/img/hd/dest-sasak-sade.jpg',
-                    'is_featured' => true,
-                    'is_active' => true,
-                    'order' => 2,
-                ],
-                [
-                    'name' => 'Kampung Kopi Kintamani & Subak Abian',
-                    'slug' => 'kampung-kopi-kintamani',
-                    'category' => 'pangan',
-                    'badge' => 'Agroekologi & Subak',
-                    'location' => 'Bangli, Bali',
-                    'lead' => 'Eksplorasi filosofi Tri Hita Karana melalui sistem Subak Abian yang memadukan perkebunan kopi arabika organik dengan spiritualitas tanah vulkanik.',
-                    'description' => 'Di lereng kaldera Gunung Batur, kelompok tani adat mempraktikkan pembagian air dan naungan pohon jeruk purba tanpa bahan kimia sintetis. Mahasiswa mengamati bagaimana kesucian pura berpadu dengan ketelitian pascapanen kopi dunia.',
-                    'research_focus' => 'Ekologi tanah vulkanik asam, manajemen kanopi peneduh kopi, mikrobiologi fermentasi alami, dan tata kelola musyawarah subak perkebunan kering.',
-                    'module_name' => 'Agroekologi & Subak Abian',
-                    'capacity' => '20 Peneliti',
-                    'image_path' => 'assets/img/hd/dest-kintamani.jpg',
-                    'is_featured' => true,
-                    'is_active' => true,
-                    'order' => 3,
-                ],
-                [
-                    'name' => 'Desa Adat Waerebo & Arsitektur Kerucut',
-                    'slug' => 'desa-adat-waerebo',
-                    'category' => 'budaya',
-                    'badge' => 'Arsitektur Mbaru Niang',
-                    'location' => 'Manggarai, Nusa Tenggara Timur',
-                    'lead' => 'Lembah pegunungan terisolir dengan tujuh rumah utama Mbaru Niang yang merefleksikan kosmologi perlindungan alam dan keluarga besar.',
-                    'description' => 'Mempelajari sambungan rotan, kayu worok, dan atap lontar bertingkat lima yang melambangkan tahapan kehidupan, cadangan benih pangan jagung, serta persemayaman arwah leluhur di puncak kabut Flores.',
-                    'research_focus' => 'Rekayasa ketahanan angin struktur kerucut, antropologi kekerabatan klan komunal, dan etno-arkeologi pemukiman dataran tinggi.',
-                    'module_name' => 'Struktur Vernakular & Tata Ruang Adat',
-                    'capacity' => '18 Peneliti',
-                    'image_path' => 'assets/img/hd/dest-waerebo.jpg',
-                    'is_featured' => false,
-                    'is_active' => true,
-                    'order' => 4,
-                ],
-                [
-                    'name' => 'Kampung Nelayan Bahari Wakatobi',
-                    'slug' => 'kampung-nelayan-wakatobi',
-                    'category' => 'bahari',
-                    'badge' => 'Konservasi Terumbu Adat',
-                    'location' => 'Wakatobi, Sulawesi Tenggara',
-                    'lead' => 'Kearifan sistem zonasi laut tradisional suku Bajo dan masyarakat pulau karang dalam merawat keanekaragaman segitiga terumbu karang dunia.',
-                    'description' => 'Siswa meneliti navigasi astronomi tradisional, pemahaman pasang surut tanpa kompas modern, dan implementasi hukum adat tuturan nenek moyang dalam melarang penangkapan ikan di titik pemijahan alami.',
-                    'research_focus' => 'Oseanografi dangkal, taksonomi karang lunak, etnozoologi biota laut, dan adaptasi sosial masyarakat permukiman panggung di atas laut.',
-                    'module_name' => 'Kearifan Maritim & Ekologi Pesisir',
-                    'capacity' => '25 Peneliti',
-                    'image_path' => 'assets/img/hd/dest-wakatobi.jpg',
-                    'is_featured' => false,
-                    'is_active' => true,
-                    'order' => 5,
-                ],
-            ];
-
-            foreach ($destinations as $item) {
-                Destination::create($item);
-            }
-        }
-
-        // 4. Stories
+        // 3. Stories (Destinations are served via Core System API per SPEC §16.3)
         if (Story::count() === 0) {
             $stories = [
                 [
@@ -273,10 +185,10 @@ class DatabaseSeeder extends Seeder
         if (Testimonial::count() === 0) {
             $testimonials = [
                 [
-                    'name' => 'Ki Joko Sudarmo',
-                    'role' => 'Pemangku Hutan Adat Wonosadi',
-                    'institution' => 'Gunungkidul, Yogyakarta',
-                    'quote' => 'Destinara tidak membawa rombongan turis yang merusak tanaman atau menuntut perlakuan hotel berbintang. Anak-anak yang datang mau mendengarkan batu dan pohon berbicara, dan santun mencium tangan sesepuh desa.',
+                    'name' => 'M. Taufik Hidayat',
+                    'role' => 'Koordinator Komunitas Konservasi Tapak',
+                    'institution' => 'DI Yogyakarta',
+                    'quote' => 'Destinara tidak membawa rombongan turis massal yang merusak tapak. Peserta yang datang mematuhi adab setempat, menghargai sesepuh desa, dan menjaga ekosistem bersama.',
                     'avatar_path' => null,
                     'order' => 1,
                     'is_active' => true,

@@ -109,19 +109,21 @@
               <!-- Image Container -->
               <div class="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-gray-100 mb-3">
                 
+                @if(!empty($dest->rating) && $dest->rating > 0)
                 <!-- Floating Rating Pill (Frosted Glass) -->
                 <div class="absolute top-3 left-3 z-10 bg-black/50 backdrop-blur-md text-white text-xs px-2.5 py-1 rounded-full font-bold flex items-center gap-1 shadow-xs">
                   <span class="text-amber-400 text-[13px]">★</span>
-                  <span>4.9</span>
+                  <span>{{ number_format($dest->rating, 1) }}</span>
                 </div>
+                @endif
 
                 <!-- Location Pill -->
                 <div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#1F1716]/90 backdrop-blur-md text-[#2B211E] dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-xs">
-                  {{ $dest->location }}
+                  {{ $dest->location ?? 'Indonesia' }}
                 </div>
 
-                <img src="{{ $dest->image_url }}" 
-                     alt="{{ $dest->name }}" 
+                <img src="{{ $dest->thumbnail_url ?? ($dest->cover_url ?? ($dest->image_url ?? asset('assets/img/hd/hero-fieldwork.jpg'))) }}" 
+                     alt="{{ $dest->name ?? 'Destinasi' }}" 
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-106"/>
                 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
@@ -139,10 +141,10 @@
               <!-- Body Info: Clean & Concise -->
               <div class="px-2 pb-2">
                 <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed mb-3">
-                  {{ $dest->lead ?? Str::limit(strip_tags($dest->description), 100) }}
+                  {{ $dest->lead ?? (isset($dest->description) ? Str::limit(strip_tags($dest->description), 100) : '') }}
                 </p>
 
-                @if($dest->research_focus)
+                @if(!empty($dest->research_focus))
                 <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-300 text-[11px] rounded-full font-medium">
                   <span class="material-symbols-outlined text-[14px] text-[#51634b]">biotech</span>
                   <span class="truncate max-w-[200px]">{{ $dest->research_focus }}</span>
@@ -155,7 +157,7 @@
             <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 flex items-center justify-between mt-2">
               <div class="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
                 <span class="material-symbols-outlined text-[16px] text-[#51634b]">group</span>
-                <span>{{ $dest->capacity ?? 'Kapasitas 60 pax' }}</span>
+                <span>{{ $dest->capacity ?? 'Terkurasi' }}</span>
               </div>
 
               <a href="{{ route('destinations.show', $dest->slug) }}" 

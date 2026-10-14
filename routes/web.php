@@ -1,24 +1,25 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DestinationController;
-use App\Http\Controllers\StoryController;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PageSectionController as AdminPageSectionController;
+use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
+use App\Http\Controllers\Admin\SettingController as AdminSettingController;
+use App\Http\Controllers\Admin\StatController as AdminStatController;
+use App\Http\Controllers\Admin\StoryController as AdminStoryController;
+use App\Http\Controllers\Admin\TeamMemberController as AdminTeamMemberController;
+use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LegalDocumentController;
 use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\DestinationController as AdminDestinationController;
-use App\Http\Controllers\Admin\StoryController as AdminStoryController;
-use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
-use App\Http\Controllers\Admin\TestimonialController as AdminTestimonialController;
-use App\Http\Controllers\Admin\StatController as AdminStatController;
-use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
-use App\Http\Controllers\Admin\SettingController as AdminSettingController;
-use App\Http\Controllers\Admin\PageSectionController as AdminPageSectionController;
-use App\Http\Controllers\Admin\TeamMemberController as AdminTeamMemberController;
-use App\Models\Destination;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StoryController;
 use App\Models\Story;
+use App\Services\CoreSystemClient;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 // ==================== PENGALIHAN BAHASA (LANGUAGE SWITCHER) ====================
@@ -44,35 +45,49 @@ Route::get('/privacy-policy', [LegalDocumentController::class, 'privacyEn'])->na
 Route::get('/dokumen/legal/{type}/stream', [LegalDocumentController::class, 'stream'])->name('legal.stream');
 Route::get('/dokumen/legal/{type}/download', [LegalDocumentController::class, 'download'])->name('legal.download');
 
-// Fallback Route untuk melayani file gambar storage di hosting tanpa symlink (cPanel & Hostinger)
+// Fallback Route untuk melayani file gambar storage di hosting tanpa symlink (dengan validasi realpath aman)
 Route::get('/storage/{path}', function (string $path) {
-    $paths = [
-        storage_path('app/public/' . $path),
-        public_path('storage/' . $path),
-        base_path('storage/app/public/' . $path),
+    $allowedBases = array_filter([
+        realpath(storage_path('app/public')),
+        realpath(public_path('storage')),
+    ]);
+
+    $candidates = [
+        storage_path('app/public/'.$path),
+        public_path('storage/'.$path),
     ];
-    foreach ($paths as $file) {
-        if (file_exists($file) && !is_dir($file)) {
-            $mime = mime_content_type($file) ?: 'application/octet-stream';
-            return response()->file($file, ['Content-Type' => $mime]);
+
+    foreach ($candidates as $cand) {
+        $real = realpath($cand);
+        if ($real && ! is_dir($real)) {
+            foreach ($allowedBases as $base) {
+                if (str_starts_with($real, $base)) {
+                    $mime = mime_content_type($real) ?: 'application/octet-stream';
+
+                    return response()->file($real, ['Content-Type' => $mime]);
+                }
+            }
         }
     }
+
     abort(404);
 })->where('path', '.*');
 
-// Admin Cache Cleaner (hanya bisa diakses jika sudah login)
-Route::middleware('auth')->get('/admin/clear-cache', function () {
-    \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+// Admin Cache Cleaner (hanya bisa diakses jika sudah login sebagai admin via POST)
+Route::middleware(['auth', 'admin'])->post('/admin/clear-cache', function () {
+    Artisan::call('optimize:clear');
+
     return redirect()->route('admin.dashboard')->with('success', 'Semua cache aplikasi (Route, Config, View) berhasil dibersihkan!');
 })->name('admin.clear-cache');
 
-// SEO Sitemap Dinamis untuk Google Search Console & Google Images
-Route::get('/sitemap.xml', function () {
-    $destinations = Destination::where('is_active', true)->get();
+// SEO Sitemap Dinamis untuk Google Search Console & Google Images (mengambil slug dari Core API)
+Route::get('/sitemap.xml', function (CoreSystemClient $coreClient) {
+    $destinationsRes = $coreClient->getDestinations(['per_page' => 50]);
+    $destinations = $destinationsRes['data'] ?? [];
     $stories = Story::where('is_active', true)->get();
 
-    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">' . "\n";
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'."\n";
 
     // Static service and landing pages
     $pages = [
@@ -89,8 +104,8 @@ Route::get('/sitemap.xml', function () {
     ];
 
     foreach ($pages as $p) {
-        $xml .= "  <url>\n    <loc>{$p['url']}</loc>\n    <lastmod>" . date('Y-m-d') . "</lastmod>\n    <changefreq>{$p['freq']}</changefreq>\n    <priority>{$p['priority']}</priority>\n";
-        if (!empty($p['img'])) {
+        $xml .= "  <url>\n    <loc>{$p['url']}</loc>\n    <lastmod>".date('Y-m-d')."</lastmod>\n    <changefreq>{$p['freq']}</changefreq>\n    <priority>{$p['priority']}</priority>\n";
+        if (! empty($p['img'])) {
             $imgEsc = htmlspecialchars($p['img'], ENT_XML1, 'UTF-8');
             $titleEsc = htmlspecialchars($p['title'], ENT_XML1, 'UTF-8');
             $xml .= "    <image:image>\n      <image:loc>{$imgEsc}</image:loc>\n      <image:title>{$titleEsc}</image:title>\n    </image:image>\n";
@@ -98,13 +113,15 @@ Route::get('/sitemap.xml', function () {
         $xml .= "  </url>\n";
     }
 
-    // Destinations
+    // Destinations from Core API
     foreach ($destinations as $d) {
-        $loc = route('destinations.show', $d->slug);
-        $date = $d->updated_at->format('Y-m-d');
-        $imgUrl = $d->image_url ? (str_starts_with($d->image_url, 'http') ? $d->image_url : url($d->image_url)) : asset('assets/img/hd/hero-fieldwork.jpg');
+        $slug = is_array($d) ? ($d['slug'] ?? '') : ($d->slug ?? '');
+        $name = is_array($d) ? ($d['name'] ?? '') : ($d->name ?? '');
+        $imgUrl = is_array($d) ? ($d['cover_url'] ?? asset('assets/img/hd/hero-fieldwork.jpg')) : ($d->cover_url ?? asset('assets/img/hd/hero-fieldwork.jpg'));
+        $loc = route('destinations.show', $slug);
+        $date = date('Y-m-d');
         $imgEsc = htmlspecialchars($imgUrl, ENT_XML1, 'UTF-8');
-        $nameEsc = htmlspecialchars($d->name . ' - ' . $d->location, ENT_XML1, 'UTF-8');
+        $nameEsc = htmlspecialchars($name, ENT_XML1, 'UTF-8');
         $xml .= "  <url>\n    <loc>{$loc}</loc>\n    <lastmod>{$date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n";
         $xml .= "    <image:image>\n      <image:loc>{$imgEsc}</image:loc>\n      <image:title>{$nameEsc}</image:title>\n    </image:image>\n";
         $xml .= "  </url>\n";
@@ -130,11 +147,20 @@ Route::get('/sitemap.xml', function () {
 // Auth Routes (Laravel Breeze)
 require __DIR__.'/auth.php';
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return redirect()->route('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 // ==================== PANEL ADMIN DESTINARA ====================
-Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('destinations', AdminDestinationController::class)->except(['show']);
     Route::resource('stories', AdminStoryController::class)->except(['show']);
     Route::resource('programs', AdminProgramController::class)->except(['show']);
     Route::resource('testimonials', AdminTestimonialController::class)->except(['show']);

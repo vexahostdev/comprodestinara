@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Program;
-use App\Models\Testimonial;
-use App\Models\Stat;
 use App\Models\PageSection;
+use App\Models\Program;
+use App\Models\Stat;
 use App\Models\TeamMember;
+use App\Models\Testimonial;
 
 class PageController extends Controller
 {

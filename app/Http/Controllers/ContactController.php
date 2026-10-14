@@ -21,11 +21,11 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'full_name'   => 'required|string|max:150',
+            'full_name' => 'required|string|max:150',
             'institution' => 'required|string|max:150',
-            'whatsapp'    => 'required|string|max:50',
-            'topic'       => 'nullable|string|max:100',
-            'notes'       => 'nullable|string|max:3000',
+            'whatsapp' => 'required|string|max:50',
+            'topic' => 'nullable|string|max:100',
+            'notes' => 'nullable|string|max:3000',
         ]);
 
         $message = ContactMessage::create($validated);

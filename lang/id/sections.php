@@ -5,7 +5,7 @@ return [
         'hero' => [
             'title' => 'Menghidupkan Ruang Belajar Nyata di Balik Kehangatan Desa Nusantara',
             'subtitle' => 'Menjembatani kurikulum institusi pendidikan dengan kearifan tapak, ekologi lokal, dan narasi hidup masyarakat adat di seluruh penjuru Indonesia.',
-            'badge' => 'Tahun Akademik ' . date('Y') . '/' . (date('Y') + 1),
+            'badge' => 'Tahun Akademik '.date('Y').'/'.(date('Y') + 1),
             'image_caption' => 'Sanggar Tarum, Kulon Progo',
             'button_text' => 'Jelajahi Destinasi',
         ],
@@ -252,7 +252,7 @@ return [
         ],
         'archival_bar' => [
             'dept' => 'Direktorat Kemitraan Akademik & Antropologi Terapan Destinara',
-            'protocol' => 'Protokol FPIC Standar ' . date('Y'),
+            'protocol' => 'Protokol FPIC Standar '.date('Y'),
             'connected' => 'Terhubung dengan Balai Adat Terkurasi',
         ],
         'facilities' => [

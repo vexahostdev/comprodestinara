@@ -1,59 +1,54 @@
 <?php
 
-return array (
-  'hutan-adat-wonosadi' => 
-  array (
-    'name' => 'Wonosadi-Gemeinschaftswald & Karsthügel',
-    'badge' => 'Karstquellenschutz',
-    'location' => 'Gunungkidul, D.I. Yogyakarta',
-    'lead' => 'Ein lebendiges Karsthydrologie-Labor unter dem Sadumuk-Bathuk-Sanyari-Bumi-Gewohnheitsrecht zum Schutz der Quellgebiete.',
-    'description' => 'Inmitten der Kalkfelsen von Gunung Sewu stehen 40 Meter hohe Tamarinden- und Banyanbäume unter strengem Schutz, um Karstspalten zu bewahren, die drei ganzjährige Quellen speisen.',
-    'research_focus' => 'Unterirdische Karsthydrologie, endemische südjavanesische Botanik und dörfliche Sanktionsmechanismen zum Waldschutz ohne staatliche Polizei.',
-    'module_name' => 'Karsthydrologie & Gewohnheitsrecht',
-    'capacity' => '30 Forschende & Lernende',
-  ),
-  'desa-sasak-sade' => 
-  array (
-    'name' => 'Sasak-Dorf Sade & Webtradition',
-    'badge' => 'Materielle Ethnomathematik',
-    'location' => 'Zentral-Lombok, West-Nusa-Tenggara',
-    'lead' => 'Zentrum erdbebensicherer Volksarchitektur und gelebter Sasak-Gemeinschaftstradition über 14 ununterbrochene Generationen.',
-    'description' => 'Untersuchung von Reetdächern und Lehm-Büffelmist-Putz gegen Erdstöße im Pazifischen Feuerring sowie mündliche Weitergabe fraktaler Webgeometrien.',
-    'research_focus' => 'Fraktale Geometrie in Ikat-Mustern, Thermodynamik von Lehmverbundstoffen und dörfliche Ernährungssouveränität.',
-    'module_name' => 'Textilhandwerk & Ethnomathematik',
-    'capacity' => '24 Forschende & Lernende',
-  ),
-  'kampung-kopi-kintamani' => 
-  array (
-    'name' => 'Kintamani-Kaffeedorf & Subak Abian',
-    'badge' => 'Agrarökologie & Subak',
-    'location' => 'Bangli, Bali',
-    'lead' => 'Erforschung der Tri-Hita-Karana-Philosophie durch das Subak-Abian-System, das Bio-Arabica-Plantagen mit vulkanischer Spiritualität verbindet.',
-    'description' => 'An den Hängen der Batur-Caldera praktizieren Bauerngemeinschaften agroforstwirtschaftlichen Schattenanbau ohne Agrochemikalien.',
-    'research_focus' => 'Vulkanboden-Mikrobiologie, Mikroklimasteuerung durch Schattenspender und Trockenland-Subak-Governance.',
-    'module_name' => 'Agrarökologie & Subak Abian',
-    'capacity' => '20 Forschende & Lernende',
-  ),
-  'desa-adat-waerebo' => 
-  array (
-    'name' => 'Traditionsdorf Wae Rebo & Kegelbauten',
-    'badge' => 'Mbaru-Niang-Architektur',
-    'location' => 'Manggarai, Ost-Nusa-Tenggara',
-    'lead' => 'Ein abgelegenes Hochgebirgstal mit sieben monumentalen Mbaru-Niang-Kegelhäusern als Ausdruck von Kosmologie und Sippenordnung.',
-    'description' => 'Studium geflochtener Rattanverbindungen, heimischer Worok-Hölzer und fünfstöckiger Palmblattbedachungen im Nebel von Flores.',
-    'research_focus' => 'Aerodynamische Windlastableitung an Kegelbauten, Clan-Verwandtschaftsanthropologie und Siedlungsplanung.',
-    'module_name' => 'Traditionelle Baukunst & Raumordnung',
-    'capacity' => '18 Forschende & Lernende',
-  ),
-  'kampung-nelayan-wakatobi' => 
-  array (
-    'name' => 'Wakatobi Küstenfischer-Gemeinschaft',
-    'badge' => 'Traditioneller Riffschutz',
-    'location' => 'Wakatobi, Südostsulawesi',
-    'lead' => 'Traditionelle marine Zonierung der Bajau-Seenomaden im Epizentrum weltweiter Meeresbiodiversität.',
-    'description' => 'Teilnehmende lernen Himmelsnavigation ohne Instrumente, Gezeitenlesen und traditionelle Fischereiverbote während der Korallenlaichzeit.',
-    'research_focus' => 'Flachwasser-Ozeanografie, Weichkorallentaxonomie, marine Ethnozoologie und Pfahlbau-Architektur.',
-    'module_name' => 'Meereswissen & Küstenökologie',
-    'capacity' => '25 Forschende & Lernende',
-  ),
-);
+return [
+    'hutan-adat-wonosadi' => [
+        'name' => 'Wonosadi-Gemeinschaftswald & Karsthügel',
+        'badge' => 'Karstquellenschutz',
+        'location' => 'Gunungkidul, D.I. Yogyakarta',
+        'lead' => 'Ein lebendiges Karsthydrologie-Labor unter dem Sadumuk-Bathuk-Sanyari-Bumi-Gewohnheitsrecht zum Schutz der Quellgebiete.',
+        'description' => 'Inmitten der Kalkfelsen von Gunung Sewu stehen 40 Meter hohe Tamarinden- und Banyanbäume unter strengem Schutz, um Karstspalten zu bewahren, die drei ganzjährige Quellen speisen.',
+        'research_focus' => 'Unterirdische Karsthydrologie, endemische südjavanesische Botanik und dörfliche Sanktionsmechanismen zum Waldschutz ohne staatliche Polizei.',
+        'module_name' => 'Karsthydrologie & Gewohnheitsrecht',
+        'capacity' => '30 Forschende & Lernende',
+    ],
+    'desa-sasak-sade' => [
+        'name' => 'Sasak-Dorf Sade & Webtradition',
+        'badge' => 'Materielle Ethnomathematik',
+        'location' => 'Zentral-Lombok, West-Nusa-Tenggara',
+        'lead' => 'Zentrum erdbebensicherer Volksarchitektur und gelebter Sasak-Gemeinschaftstradition über 14 ununterbrochene Generationen.',
+        'description' => 'Untersuchung von Reetdächern und Lehm-Büffelmist-Putz gegen Erdstöße im Pazifischen Feuerring sowie mündliche Weitergabe fraktaler Webgeometrien.',
+        'research_focus' => 'Fraktale Geometrie in Ikat-Mustern, Thermodynamik von Lehmverbundstoffen und dörfliche Ernährungssouveränität.',
+        'module_name' => 'Textilhandwerk & Ethnomathematik',
+        'capacity' => '24 Forschende & Lernende',
+    ],
+    'kampung-kopi-kintamani' => [
+        'name' => 'Kintamani-Kaffeedorf & Subak Abian',
+        'badge' => 'Agrarökologie & Subak',
+        'location' => 'Bangli, Bali',
+        'lead' => 'Erforschung der Tri-Hita-Karana-Philosophie durch das Subak-Abian-System, das Bio-Arabica-Plantagen mit vulkanischer Spiritualität verbindet.',
+        'description' => 'An den Hängen der Batur-Caldera praktizieren Bauerngemeinschaften agroforstwirtschaftlichen Schattenanbau ohne Agrochemikalien.',
+        'research_focus' => 'Vulkanboden-Mikrobiologie, Mikroklimasteuerung durch Schattenspender und Trockenland-Subak-Governance.',
+        'module_name' => 'Agrarökologie & Subak Abian',
+        'capacity' => '20 Forschende & Lernende',
+    ],
+    'desa-adat-waerebo' => [
+        'name' => 'Traditionsdorf Wae Rebo & Kegelbauten',
+        'badge' => 'Mbaru-Niang-Architektur',
+        'location' => 'Manggarai, Ost-Nusa-Tenggara',
+        'lead' => 'Ein abgelegenes Hochgebirgstal mit sieben monumentalen Mbaru-Niang-Kegelhäusern als Ausdruck von Kosmologie und Sippenordnung.',
+        'description' => 'Studium geflochtener Rattanverbindungen, heimischer Worok-Hölzer und fünfstöckiger Palmblattbedachungen im Nebel von Flores.',
+        'research_focus' => 'Aerodynamische Windlastableitung an Kegelbauten, Clan-Verwandtschaftsanthropologie und Siedlungsplanung.',
+        'module_name' => 'Traditionelle Baukunst & Raumordnung',
+        'capacity' => '18 Forschende & Lernende',
+    ],
+    'kampung-nelayan-wakatobi' => [
+        'name' => 'Wakatobi Küstenfischer-Gemeinschaft',
+        'badge' => 'Traditioneller Riffschutz',
+        'location' => 'Wakatobi, Südostsulawesi',
+        'lead' => 'Traditionelle marine Zonierung der Bajau-Seenomaden im Epizentrum weltweiter Meeresbiodiversität.',
+        'description' => 'Teilnehmende lernen Himmelsnavigation ohne Instrumente, Gezeitenlesen und traditionelle Fischereiverbote während der Korallenlaichzeit.',
+        'research_focus' => 'Flachwasser-Ozeanografie, Weichkorallentaxonomie, marine Ethnozoologie und Pfahlbau-Architektur.',
+        'module_name' => 'Meereswissen & Küstenökologie',
+        'capacity' => '25 Forschende & Lernende',
+    ],
+];

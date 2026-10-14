@@ -5,7 +5,7 @@ return [
         'hero' => [
             'title' => '在印度尼西亚群岛村落的温厚人文中，重温真实的活态课堂',
             'subtitle' => '搭建正规教育机构课程与在地田野智慧、本土生态及原住民真实生活叙事之间的对话桥梁。',
-            'badge' => '学年 ' . date('Y') . '/' . (date('Y') + 1),
+            'badge' => '学年 '.date('Y').'/'.(date('Y') + 1),
             'image_caption' => '古隆普罗戈 Tarum 工坊',
             'button_text' => '探索研学基地',
         ],
@@ -252,7 +252,7 @@ return [
         ],
         'archival_bar' => [
             'dept' => 'Destinara 学术合作与应用人类学指导局',
-            'protocol' => date('Y') . ' 年度标准知情同意原则 (FPIC)',
+            'protocol' => date('Y').' 年度标准知情同意原则 (FPIC)',
             'connected' => '直连严格筛选的传统部族议事厅',
         ],
         'facilities' => [

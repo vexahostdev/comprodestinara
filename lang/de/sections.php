@@ -1,154 +1,135 @@
 <?php
 
-return array (
-  'home' => 
-  array (
-    'hero' => 
-    array (
-      'title' => 'Lebendige Lernräume im Herzen der Dorfgemeinschaften des Archipels',
-      'subtitle' => 'Brückenschlag zwischen institutionellen Lehrplänen und landschaftsgebundenem Wissen indigener Kulturen in ganz Indonesien.',
-      'badge' => 'Akademisches Jahr 2026/2027',
-      'image_caption' => 'Sanggar Tarum, Kulon Progo',
-      'button_text' => 'Feldstationen erkunden',
-    ),
-    'gateways' => 
-    array (
-      'tag' => 'ZUGANGSWEGE NACH BEDARF',
-      'title' => 'Maßgeschneidert auf Ihre institutionellen Standards',
-      'subtitle' => 'Jede Zielgruppe hat spezifische Anforderungen an Pädagogik und Rahmenbedingungen. Wählen Sie den passenden Weg:',
-      'school_tag' => 'Für Schulen & Gymnasien',
-      'school_title' => 'Schulexkursionen & Live-in',
-      'school_desc' => 'Kontextuelle Wertebildung mit sicherem Betreuungsschlüssel, medizinischem Notfallkonzept und vollem Versicherungsschutz.',
-      'school_item1' => 'Thematische Module & indigenes Praxiswissen',
-      'school_item2' => 'Strikter Betreuungsschlüssel: 1 Begleiter auf 8 Schüler',
-      'school_item3' => 'Kompetenzbewertungen nach Programmabschluss',
-      'school_btn' => 'Schulprogramme ansehen',
-      'research_tag' => 'Für Forschende & Dozierende',
-      'research_title' => 'Lebendige Laboratorien & Feldforschung',
-      'research_desc' => 'Forschungsstationen mit FPIC-Ethikfreigabe, verifizierten Dorfältesten und lokaler Unterbringung.',
-      'research_item1' => '100% Freie, vorherige und informierte Zustimmung (FPIC)',
-      'research_item2' => 'Cluster für Ethnobotanik, Werkstoffe & traditionelle Baukunst',
-      'research_item3' => 'Unterstützung bei Genehmigungen & gemeinsamer Dokumentation',
-      'research_btn' => 'Forschungskooperationen ansehen',
-      'village_tag' => 'Für Dorfverwaltungen & Ältestenräte',
-      'village_title' => 'Partnerschaft auf Augenhöhe',
-      'village_desc' => 'Würdevolle Partnerschaften zum Schutz von Kulturland, mit direkter Erlösbeteiligung und Förderung junger Einheimischer.',
-      'village_item1' => 'Vollständige Erzählsouveränität verbleibt beim Dorf',
-      'village_item2' => 'Direkte Mittel für Zünfte & Jugendschulung',
-      'village_item3' => 'Feste Ansprechpartner des Sekretariats vor Ort',
-      'village_btn' => 'Dorfpartnerschaften ansehen',
-    ),
-    'stats' => 
-    array (
-      'sites_verified' => 'Verifizierte Partnerdörfer',
-      'students_field' => 'Schüler & Feldforscher',
-      'modules_published' => 'Publizierte Lehrplanmodule',
-      'partner_institutions' => 'Kooperationspartner',
-    ),
-    'intro_story' => 
-    array (
-      'title' => 'Ein Dorf ist kein bloßer Ausflugsort, sondern ein offenes Buch des Wissens',
-      'subtitle' => 'Zu lange verfielen Exkursionen in oberflächlichen Tourismus. Destinara verändert den Blick auf ländliche Räume grundlegend.',
-      'badge' => '[ ETHISCHES FELDARCHIV ]',
-      'content' => 'Wir gestalten forschungsbasiertes Lernen, bei dem Beobachtungen und Interviews stets auf gegenseitigem Einvernehmen mit den dörflichen Hütern beruhen.
+return [
+    'home' => [
+        'hero' => [
+            'title' => 'Lebendige Lernräume im Herzen der Dorfgemeinschaften des Archipels',
+            'subtitle' => 'Brückenschlag zwischen institutionellen Lehrplänen und landschaftsgebundenem Wissen indigener Kulturen in ganz Indonesien.',
+            'badge' => 'Akademisches Jahr 2026/2027',
+            'image_caption' => 'Sanggar Tarum, Kulon Progo',
+            'button_text' => 'Feldstationen erkunden',
+        ],
+        'gateways' => [
+            'tag' => 'ZUGANGSWEGE NACH BEDARF',
+            'title' => 'Maßgeschneidert auf Ihre institutionellen Standards',
+            'subtitle' => 'Jede Zielgruppe hat spezifische Anforderungen an Pädagogik und Rahmenbedingungen. Wählen Sie den passenden Weg:',
+            'school_tag' => 'Für Schulen & Gymnasien',
+            'school_title' => 'Schulexkursionen & Live-in',
+            'school_desc' => 'Kontextuelle Wertebildung mit sicherem Betreuungsschlüssel, medizinischem Notfallkonzept und vollem Versicherungsschutz.',
+            'school_item1' => 'Thematische Module & indigenes Praxiswissen',
+            'school_item2' => 'Strikter Betreuungsschlüssel: 1 Begleiter auf 8 Schüler',
+            'school_item3' => 'Kompetenzbewertungen nach Programmabschluss',
+            'school_btn' => 'Schulprogramme ansehen',
+            'research_tag' => 'Für Forschende & Dozierende',
+            'research_title' => 'Lebendige Laboratorien & Feldforschung',
+            'research_desc' => 'Forschungsstationen mit FPIC-Ethikfreigabe, verifizierten Dorfältesten und lokaler Unterbringung.',
+            'research_item1' => '100% Freie, vorherige und informierte Zustimmung (FPIC)',
+            'research_item2' => 'Cluster für Ethnobotanik, Werkstoffe & traditionelle Baukunst',
+            'research_item3' => 'Unterstützung bei Genehmigungen & gemeinsamer Dokumentation',
+            'research_btn' => 'Forschungskooperationen ansehen',
+            'village_tag' => 'Für Dorfverwaltungen & Ältestenräte',
+            'village_title' => 'Partnerschaft auf Augenhöhe',
+            'village_desc' => 'Würdevolle Partnerschaften zum Schutz von Kulturland, mit direkter Erlösbeteiligung und Förderung junger Einheimischer.',
+            'village_item1' => 'Vollständige Erzählsouveränität verbleibt beim Dorf',
+            'village_item2' => 'Direkte Mittel für Zünfte & Jugendschulung',
+            'village_item3' => 'Feste Ansprechpartner des Sekretariats vor Ort',
+            'village_btn' => 'Dorfpartnerschaften ansehen',
+        ],
+        'stats' => [
+            'sites_verified' => 'Verifizierte Partnerdörfer',
+            'students_field' => 'Schüler & Feldforscher',
+            'modules_published' => 'Publizierte Lehrplanmodule',
+            'partner_institutions' => 'Kooperationspartner',
+        ],
+        'intro_story' => [
+            'title' => 'Ein Dorf ist kein bloßer Ausflugsort, sondern ein offenes Buch des Wissens',
+            'subtitle' => 'Zu lange verfielen Exkursionen in oberflächlichen Tourismus. Destinara verändert den Blick auf ländliche Räume grundlegend.',
+            'badge' => '[ ETHISCHES FELDARCHIV ]',
+            'content' => 'Wir gestalten forschungsbasiertes Lernen, bei dem Beobachtungen und Interviews stets auf gegenseitigem Einvernehmen mit den dörflichen Hütern beruhen.
 
 Studierende sitzen im Kreis auf Veranden, lernen Klimarhythmen direkt von Saatguthütern und begreifen sozial-ökologische Zusammenhänge als gelebte Wirklichkeit.',
-      'image_caption' => 'Feldarchiv: Ethnobotanische Station für Indigo-Pflanzenfärbung, Sanggar Tarum, Kulon Progo',
-      'button_text' => 'Unsere Pädagogik & Ethikcharta',
-    ),
-    'featured_destinations' => 
-    array (
-      'tag' => 'INDEX AKTIVER FELDSTATIONEN',
-      'title' => 'Kuratierte Studienorte & Forschungsstationen',
-      'subtitle' => 'Offene Lernlandschaften mit geprüfter kultureller und ethischer Eignung.',
-      'all_btn' => 'Vollständigen Index öffnen',
-      'syllabus_btn' => 'Lehrplan öffnen',
-      'syllabus_module' => 'Lehrplanmodul:',
-      'safe_capacity' => 'Sichere Kapazität:',
-      'default_module' => 'Integriertes Feldcurriculum',
-      'default_capacity' => 'Max. 20 Personen / Durchgang',
-      'empty' => 'Derzeit sind keine ausgewählten Stationen verfügbar.',
-    ),
-    'safety_matrix' => 
-    array (
-      'tag' => 'SICHERHEITSSTANDARDS & ETHIK',
-      'title' => 'Ganzheitliche Risikovorsorge & moralische Verantwortung',
-      'subtitle' => 'Exkursionen in reale Landschaften verlangen geprüfte Standardverfahren statt touristischer Improvisation:',
-      'p1_title' => 'Medizinische Notfallpläne & Versicherung',
-      'p1_desc' => 'Feste Rettungswege zu regionalen Kliniken, zertifizierte Notfallausrüstung und Gruppenversicherung.',
-      'p2_title' => '100% FPIC-Zustimmung',
-      'p2_desc' => 'Freiwilliges, vorheriges Einverständnis mit den Ältesten zum Schutz von Privatsphäre und Riten.',
-      'p3_title' => 'Ausgebildete akademische Begleiter',
-      'p3_desc' => 'Zusammenarbeit universitärer Fachkräfte mit einheimischen Führern, die Geografie und Überlieferungen beherrschen.',
-      'p4_title' => 'Lehrplanevaluation & Leistungsnachweis',
-      'p4_desc' => 'Strukturierte Erfassung des Lernfortschritts zur Vorlage an Schule oder Fakultät.',
-    ),
-    'doc_hub' => 
-    array (
-      'tag' => 'INSTITUTIONELLES KOORDINATIONSZENTRUM',
-      'title' => 'Benötigen Sie offizielle Beschlussvorlagen für Lehrerkollegium, Schulleitung oder Fakultätsrat?',
-      'desc' => 'Wir stellen Leistungsbeschreibungen (TOR), Lehrplanentwürfe und Rechtsnachweise zur internen Vorlage bereit.',
-      'btn_submit' => 'Vorlage / TOR anfordern',
-      'btn_wa' => 'WhatsApp-Koordination',
-      'wa_message' => 'Guten Tag, wir bitten um Zusendung der Leistungsbeschreibung (TOR) und Terminabstimmung.',
-    ),
-    'programs' => 
-    array (
-      'tag' => 'CURRICULA & FORMATE',
-      'title' => 'Gestaffelt nach Bildungszielen',
-      'subtitle' => 'Von der Einführung bis zur Tiefenforschung: alle Programme werden von anthropologisch geschulten Kräften geleitet.',
-    ),
-  ),
-  'about' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'MANIFEST & GRÜNDUNGSGESCHICHTE',
-      'title' => 'Klassenzimmer neu denken — aus den Landschaften des Archipels',
-      'subtitle' => 'Destinara verbindet universitäre Bildung mit dem reichen Erfahrungsschatz ländlicher Dorfgemeinschaften.',
-      'badge' => 'Gegründet 2019',
-    ),
-  ),
-  'for_schools' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'FÜR SCHULEN & GYMNASIEN',
-      'title' => 'Lernen über den Tellerrand des Lehrbuchs hinaus',
-      'subtitle' => 'Ganzheitliche Felderfahrungen, die Charakter, ökologisches Bewusstsein und Teamgeist stärken.',
-      'badge' => 'Geprüfte Sicherheitsstandards',
-      'button_text' => 'Curriculum-Beratung anfragen',
-    ),
-  ),
-  'for_researchers' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'FÜR FORSCHENDE & AKADEMIKER',
-      'title' => 'Verlässlicher Primärdatenzugang & ethische Zusammenarbeit',
-      'subtitle' => 'Forschungsstationen für Anthropologie, Ethnobotanik und Regionalentwicklung.',
-      'badge' => 'FPIC-Ethikstandard',
-      'button_text' => 'Forschungsvorhaben einreichen',
-    ),
-  ),
-  'for_villages' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'SOLIDARITÄT MIT DORFGEMEINSCHAFTEN',
-      'title' => 'Würdevolle Partnerschaften & Wissenserhalt',
-      'subtitle' => 'Gemeinsamer Schutz überlieferten Wissens und zukunftsfähige Perspektiven für die Dorfjugend.',
-      'badge' => 'Charta dörflicher Souveränität',
-      'button_text' => 'Partnerschaft anfragen',
-    ),
-  ),
-  'contact' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'DIALOG BEGINNEN',
-      'title' => 'Kontakt & Beratung',
-      'subtitle' => 'Wir beraten Sie gerne zu Exkursionen, Forschungsprojekten und dörflichen Kooperationen.',
-    ),
-  ),
-);
+            'image_caption' => 'Feldarchiv: Ethnobotanische Station für Indigo-Pflanzenfärbung, Sanggar Tarum, Kulon Progo',
+            'button_text' => 'Unsere Pädagogik & Ethikcharta',
+        ],
+        'featured_destinations' => [
+            'tag' => 'INDEX AKTIVER FELDSTATIONEN',
+            'title' => 'Kuratierte Studienorte & Forschungsstationen',
+            'subtitle' => 'Offene Lernlandschaften mit geprüfter kultureller und ethischer Eignung.',
+            'all_btn' => 'Vollständigen Index öffnen',
+            'syllabus_btn' => 'Lehrplan öffnen',
+            'syllabus_module' => 'Lehrplanmodul:',
+            'safe_capacity' => 'Sichere Kapazität:',
+            'default_module' => 'Integriertes Feldcurriculum',
+            'default_capacity' => 'Max. 20 Personen / Durchgang',
+            'empty' => 'Derzeit sind keine ausgewählten Stationen verfügbar.',
+        ],
+        'safety_matrix' => [
+            'tag' => 'SICHERHEITSSTANDARDS & ETHIK',
+            'title' => 'Ganzheitliche Risikovorsorge & moralische Verantwortung',
+            'subtitle' => 'Exkursionen in reale Landschaften verlangen geprüfte Standardverfahren statt touristischer Improvisation:',
+            'p1_title' => 'Medizinische Notfallpläne & Versicherung',
+            'p1_desc' => 'Feste Rettungswege zu regionalen Kliniken, zertifizierte Notfallausrüstung und Gruppenversicherung.',
+            'p2_title' => '100% FPIC-Zustimmung',
+            'p2_desc' => 'Freiwilliges, vorheriges Einverständnis mit den Ältesten zum Schutz von Privatsphäre und Riten.',
+            'p3_title' => 'Ausgebildete akademische Begleiter',
+            'p3_desc' => 'Zusammenarbeit universitärer Fachkräfte mit einheimischen Führern, die Geografie und Überlieferungen beherrschen.',
+            'p4_title' => 'Lehrplanevaluation & Leistungsnachweis',
+            'p4_desc' => 'Strukturierte Erfassung des Lernfortschritts zur Vorlage an Schule oder Fakultät.',
+        ],
+        'doc_hub' => [
+            'tag' => 'INSTITUTIONELLES KOORDINATIONSZENTRUM',
+            'title' => 'Benötigen Sie offizielle Beschlussvorlagen für Lehrerkollegium, Schulleitung oder Fakultätsrat?',
+            'desc' => 'Wir stellen Leistungsbeschreibungen (TOR), Lehrplanentwürfe und Rechtsnachweise zur internen Vorlage bereit.',
+            'btn_submit' => 'Vorlage / TOR anfordern',
+            'btn_wa' => 'WhatsApp-Koordination',
+            'wa_message' => 'Guten Tag, wir bitten um Zusendung der Leistungsbeschreibung (TOR) und Terminabstimmung.',
+        ],
+        'programs' => [
+            'tag' => 'CURRICULA & FORMATE',
+            'title' => 'Gestaffelt nach Bildungszielen',
+            'subtitle' => 'Von der Einführung bis zur Tiefenforschung: alle Programme werden von anthropologisch geschulten Kräften geleitet.',
+        ],
+    ],
+    'about' => [
+        'hero' => [
+            'tag' => 'MANIFEST & GRÜNDUNGSGESCHICHTE',
+            'title' => 'Klassenzimmer neu denken — aus den Landschaften des Archipels',
+            'subtitle' => 'Destinara verbindet universitäre Bildung mit dem reichen Erfahrungsschatz ländlicher Dorfgemeinschaften.',
+            'badge' => 'Gegründet 2019',
+        ],
+    ],
+    'for_schools' => [
+        'hero' => [
+            'tag' => 'FÜR SCHULEN & GYMNASIEN',
+            'title' => 'Lernen über den Tellerrand des Lehrbuchs hinaus',
+            'subtitle' => 'Ganzheitliche Felderfahrungen, die Charakter, ökologisches Bewusstsein und Teamgeist stärken.',
+            'badge' => 'Geprüfte Sicherheitsstandards',
+            'button_text' => 'Curriculum-Beratung anfragen',
+        ],
+    ],
+    'for_researchers' => [
+        'hero' => [
+            'tag' => 'FÜR FORSCHENDE & AKADEMIKER',
+            'title' => 'Verlässlicher Primärdatenzugang & ethische Zusammenarbeit',
+            'subtitle' => 'Forschungsstationen für Anthropologie, Ethnobotanik und Regionalentwicklung.',
+            'badge' => 'FPIC-Ethikstandard',
+            'button_text' => 'Forschungsvorhaben einreichen',
+        ],
+    ],
+    'for_villages' => [
+        'hero' => [
+            'tag' => 'SOLIDARITÄT MIT DORFGEMEINSCHAFTEN',
+            'title' => 'Würdevolle Partnerschaften & Wissenserhalt',
+            'subtitle' => 'Gemeinsamer Schutz überlieferten Wissens und zukunftsfähige Perspektiven für die Dorfjugend.',
+            'badge' => 'Charta dörflicher Souveränität',
+            'button_text' => 'Partnerschaft anfragen',
+        ],
+    ],
+    'contact' => [
+        'hero' => [
+            'tag' => 'DIALOG BEGINNEN',
+            'title' => 'Kontakt & Beratung',
+            'subtitle' => 'Wir beraten Sie gerne zu Exkursionen, Forschungsprojekten und dörflichen Kooperationen.',
+        ],
+    ],
+];

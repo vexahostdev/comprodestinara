@@ -1,59 +1,54 @@
 <?php
 
-return array (
-  'hutan-adat-wonosadi' => 
-  array (
-    'name' => 'Wonosadi-Gemeenschapsbos & Karstheuvels',
-    'badge' => 'Karstbronbescherming',
-    'location' => 'Gunungkidul, D.I. Yogyakarta',
-    'lead' => 'Een levend laboratorium voor karstbronbescherming onder het gewoonterecht Sadumuk Bathuk Sanyari Bumi.',
-    'description' => 'Tussen de kalksteenformaties van Gunung Sewu worden 40 meter hoge tamarinde- en waringinbomen beschermd om rotsspleten te behoeden die drie permanente bronnen voeden.',
-    'research_focus' => 'Ondergrondse karsthydrologie, inheemse Zuid-Javaanse botanische taxonomie en sociale sanctiemechanismen voor bosbehoud.',
-    'module_name' => 'Karsthydrologie & Gewoonterecht',
-    'capacity' => '30 onderzoekers & studenten',
-  ),
-  'desa-sasak-sade' => 
-  array (
-    'name' => 'Sasak-Dorp Sade & Weeftraditie',
-    'badge' => 'Materiële Etnowiskunde',
-    'location' => 'Centraal-Lombok, West-Nusa-Tenggara',
-    'lead' => 'Centrum van aardbevingsbestendige dorpsarchitectuur en Sasak-gewoonten die al veertien generaties voortleven.',
-    'description' => 'Diepgaande studie naar rieten daken en muren van leem en buffelmest die flexibel meebewegen bij aardschokken, gecombineerd met overgeleverde fractale ikat-patronen.',
-    'research_focus' => 'Fractale geometrie in ikat-weefsels, thermodynamica van traditionele leem en voedselsoevereiniteit in Sasak-rijstschuren.',
-    'module_name' => 'Textielambacht & Etnowiskunde',
-    'capacity' => '24 onderzoekers & studenten',
-  ),
-  'kampung-kopi-kintamani' => 
-  array (
-    'name' => 'Kintamani-Koffiedorp & Subak Abian',
-    'badge' => 'Agro-ecologie & Subak',
-    'location' => 'Bangli, Bali',
-    'lead' => 'Verkenning van de Tri Hita Karana-filosofie via het Subak Abian-systeem, dat biologische Arabica-teelt harmonieert met vulkanische spiritualiteit.',
-    'description' => 'Op de hellingen van de Batur-krater beheren boerengemeenschappen water en schaduwrijke bosbouw zonder synthetische chemicaliën.',
-    'research_focus' => 'Vulkanische bodemmicrobiologie, microklimaatbeheer door schaduwbomen en besluitvorming in het droge-land subak.',
-    'module_name' => 'Agro-ecologie & Subak Abian',
-    'capacity' => '20 onderzoekers & studenten',
-  ),
-  'desa-adat-waerebo' => 
-  array (
-    'name' => 'Traditioneel Dorp Wae Rebo & Kegelvormige Woningen',
-    'badge' => 'Mbaru Niang-Architectuur',
-    'location' => 'Manggarai, Oost-Nusa-Tenggara',
-    'lead' => 'Een afgelegen bergvallei met zeven monumentale Mbaru Niang-kegelhuizen die kosmologie en verwantschapsorde weerspiegelen.',
-    'description' => 'Bestudering van gevlochten rotanverbindingen, worok-houtconstructies en vijf verdiepingen tellende palmvezeldaken in de nevels van Flores.',
-    'research_focus' => 'Aerodynamische windverdeling op kegelconstructies, clanverwantschapsantropologie en nederzettingsplanning.',
-    'module_name' => 'Traditionele Architectuur & Ruimtelijke Ordening',
-    'capacity' => '18 onderzoekers & studenten',
-  ),
-  'kampung-nelayan-wakatobi' => 
-  array (
-    'name' => 'Wakatobi Kustvissersgemeenschap',
-    'badge' => 'Traditioneel Koraalrifbeheer',
-    'location' => 'Wakatobi, Zuidoost-Sulawesi',
-    'lead' => 'Inheemse mariene zonering van de Bajau-zeenomaden die waken over het epicentrum van mariene biodiversiteit.',
-    'description' => 'Studenten bestuderen navigatie op de sterrenhemel, getijdenlezing zonder instrumenten en mondelinge wetten die visvangst tijdens de koraalpaaitijd verbieden.',
-    'research_focus' => 'Kust-oceanografie, taxonomie van zachte koralen, mariene etnozoölogie en paalwoning-architectuur.',
-    'module_name' => 'Mariene Wijsheid & Kustecologie',
-    'capacity' => '25 onderzoekers & studenten',
-  ),
-);
+return [
+    'hutan-adat-wonosadi' => [
+        'name' => 'Wonosadi-Gemeenschapsbos & Karstheuvels',
+        'badge' => 'Karstbronbescherming',
+        'location' => 'Gunungkidul, D.I. Yogyakarta',
+        'lead' => 'Een levend laboratorium voor karstbronbescherming onder het gewoonterecht Sadumuk Bathuk Sanyari Bumi.',
+        'description' => 'Tussen de kalksteenformaties van Gunung Sewu worden 40 meter hoge tamarinde- en waringinbomen beschermd om rotsspleten te behoeden die drie permanente bronnen voeden.',
+        'research_focus' => 'Ondergrondse karsthydrologie, inheemse Zuid-Javaanse botanische taxonomie en sociale sanctiemechanismen voor bosbehoud.',
+        'module_name' => 'Karsthydrologie & Gewoonterecht',
+        'capacity' => '30 onderzoekers & studenten',
+    ],
+    'desa-sasak-sade' => [
+        'name' => 'Sasak-Dorp Sade & Weeftraditie',
+        'badge' => 'Materiële Etnowiskunde',
+        'location' => 'Centraal-Lombok, West-Nusa-Tenggara',
+        'lead' => 'Centrum van aardbevingsbestendige dorpsarchitectuur en Sasak-gewoonten die al veertien generaties voortleven.',
+        'description' => 'Diepgaande studie naar rieten daken en muren van leem en buffelmest die flexibel meebewegen bij aardschokken, gecombineerd met overgeleverde fractale ikat-patronen.',
+        'research_focus' => 'Fractale geometrie in ikat-weefsels, thermodynamica van traditionele leem en voedselsoevereiniteit in Sasak-rijstschuren.',
+        'module_name' => 'Textielambacht & Etnowiskunde',
+        'capacity' => '24 onderzoekers & studenten',
+    ],
+    'kampung-kopi-kintamani' => [
+        'name' => 'Kintamani-Koffiedorp & Subak Abian',
+        'badge' => 'Agro-ecologie & Subak',
+        'location' => 'Bangli, Bali',
+        'lead' => 'Verkenning van de Tri Hita Karana-filosofie via het Subak Abian-systeem, dat biologische Arabica-teelt harmonieert met vulkanische spiritualiteit.',
+        'description' => 'Op de hellingen van de Batur-krater beheren boerengemeenschappen water en schaduwrijke bosbouw zonder synthetische chemicaliën.',
+        'research_focus' => 'Vulkanische bodemmicrobiologie, microklimaatbeheer door schaduwbomen en besluitvorming in het droge-land subak.',
+        'module_name' => 'Agro-ecologie & Subak Abian',
+        'capacity' => '20 onderzoekers & studenten',
+    ],
+    'desa-adat-waerebo' => [
+        'name' => 'Traditioneel Dorp Wae Rebo & Kegelvormige Woningen',
+        'badge' => 'Mbaru Niang-Architectuur',
+        'location' => 'Manggarai, Oost-Nusa-Tenggara',
+        'lead' => 'Een afgelegen bergvallei met zeven monumentale Mbaru Niang-kegelhuizen die kosmologie en verwantschapsorde weerspiegelen.',
+        'description' => 'Bestudering van gevlochten rotanverbindingen, worok-houtconstructies en vijf verdiepingen tellende palmvezeldaken in de nevels van Flores.',
+        'research_focus' => 'Aerodynamische windverdeling op kegelconstructies, clanverwantschapsantropologie en nederzettingsplanning.',
+        'module_name' => 'Traditionele Architectuur & Ruimtelijke Ordening',
+        'capacity' => '18 onderzoekers & studenten',
+    ],
+    'kampung-nelayan-wakatobi' => [
+        'name' => 'Wakatobi Kustvissersgemeenschap',
+        'badge' => 'Traditioneel Koraalrifbeheer',
+        'location' => 'Wakatobi, Zuidoost-Sulawesi',
+        'lead' => 'Inheemse mariene zonering van de Bajau-zeenomaden die waken over het epicentrum van mariene biodiversiteit.',
+        'description' => 'Studenten bestuderen navigatie op de sterrenhemel, getijdenlezing zonder instrumenten en mondelinge wetten die visvangst tijdens de koraalpaaitijd verbieden.',
+        'research_focus' => 'Kust-oceanografie, taxonomie van zachte koralen, mariene etnozoölogie en paalwoning-architectuur.',
+        'module_name' => 'Mariene Wijsheid & Kustecologie',
+        'capacity' => '25 onderzoekers & studenten',
+    ],
+];

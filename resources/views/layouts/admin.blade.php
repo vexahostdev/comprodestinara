@@ -153,7 +153,6 @@
                     $navItems = [
                         ['route' => 'admin.dashboard', 'icon' => 'dashboard', 'label' => 'Dashboard'],
                         ['route' => 'admin.pages.index', 'prefix' => 'admin.pages.', 'icon' => 'web', 'label' => 'Konten Halaman'],
-                        ['route' => 'admin.destinations.index', 'prefix' => 'admin.destinations.', 'icon' => 'explore', 'label' => 'Tapak Destinasi'],
                         ['route' => 'admin.stories.index', 'prefix' => 'admin.stories.', 'icon' => 'auto_stories', 'label' => 'Cerita Lapangan'],
                         ['route' => 'admin.programs.index', 'prefix' => 'admin.programs.', 'icon' => 'school', 'label' => 'Program & Layanan'],
                         ['route' => 'admin.team.index', 'prefix' => 'admin.team.', 'icon' => 'groups', 'label' => 'Dewan Kurator'],
@@ -184,10 +183,13 @@
         </div>
 
         <div class="p-3 border-t border-white/10 space-y-1">
-            <a href="{{ route('admin.clear-cache') }}" class="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-colors px-2 py-1 rounded hover:bg-white/5">
-                <span class="material-symbols-outlined text-[16px]">cached</span>
-                <span>Bersihkan Cache</span>
-            </a>
+            <form method="POST" action="{{ route('admin.clear-cache') }}">
+                @csrf
+                <button type="submit" class="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-colors w-full px-2 py-1 rounded hover:bg-white/5 text-left cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px]">cached</span>
+                    <span>Bersihkan Cache</span>
+                </button>
+            </form>
             <a href="{{ route('home') }}" target="_blank" class="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-colors px-2 py-1 rounded hover:bg-white/5">
                 <span class="material-symbols-outlined text-[16px]">open_in_new</span>
                 <span>Lihat Website</span>

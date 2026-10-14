@@ -11,6 +11,7 @@ class SettingController extends Controller
     public function index()
     {
         $settings = SiteSetting::all()->pluck('value', 'key');
+
         return view('admin.settings.index', compact('settings'));
     }
 
@@ -25,6 +26,7 @@ class SettingController extends Controller
             }
             SiteSetting::set($key, $value ? trim($value) : $value);
         }
+
         return back()->with('success', 'Pengaturan website berhasil diperbarui!');
     }
 }

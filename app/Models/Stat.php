@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Traits\LocalizableModel;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class Stat extends Model
 {
@@ -14,12 +15,15 @@ class Stat extends Model
         'order' => 'integer',
     ];
 
-    use \App\Traits\LocalizableModel;
+    use LocalizableModel;
 
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true)->orderBy('order', 'asc');
     }
 
-    public function getLabelAttribute($value) { return $this->getLocalized('label'); }
+    public function getLabelAttribute($value)
+    {
+        return $this->getLocalized('label');
+    }
 }

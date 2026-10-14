@@ -1,154 +1,135 @@
 <?php
 
-return array (
-  'home' => 
-  array (
-    'hero' => 
-    array (
-      'title' => 'Faire vivre des salles de classe réelles au cœur des villages de l’archipel',
-      'subtitle' => 'Relier les programmes scolaires et universitaires aux savoirs du territoire, aux équilibres écologiques et aux récits vivants d’Indonésie.',
-      'badge' => 'Année académique 2026/2027',
-      'image_caption' => 'Atelier Tarum, Kulon Progo',
-      'button_text' => 'Explorer les stations',
-    ),
-    'gateways' => 
-    array (
-      'tag' => 'VOIES D’ACCÈS SELON VOS MISSIONS',
-      'title' => 'Conçu pour répondre aux exigences de votre institution',
-      'subtitle' => 'Chaque partenaire dispose d’objectifs pédagogiques et de responsabilités distincts. Choisissez le parcours adapté :',
-      'school_tag' => 'Pour les collèges & lycées',
-      'school_title' => 'Excursions scolaires & immersion',
-      'school_desc' => 'Éducation civique et environnementale intégrée, encadrement médical éprouvé et couverture d’assurance intégrale.',
-      'school_item1' => 'Modules thématiques ancrés dans les savoirs vivants',
-      'school_item2' => 'Taux d’encadrement strict : 1 facilitateur pour 8 élèves',
-      'school_item3' => 'Dossiers d’évaluation des compétences en fin de séjour',
-      'school_btn' => 'Voir les programmes scolaires',
-      'research_tag' => 'Pour les universitaires & chercheurs',
-      'research_title' => 'Laboratoires vivants & enquêtes de terrain',
-      'research_desc' => 'Stations de recherche avec accord éthique FPIC, interlocuteurs coutumiers qualifiés et hébergement en village.',
-      'research_item1' => 'Consentement préalable libre et éclairé (FPIC à 100%)',
-      'research_item2' => 'Pôles ethnobotanique, artisanat & habitat vernaculaire',
-      'research_item3' => 'Aide aux autorisations & co-archivage avec les habitants',
-      'research_btn' => 'Voir les projets de recherche',
-      'village_tag' => 'Pour les représentants villageois',
-      'village_title' => 'Partenariats de souveraineté territoriale',
-      'village_desc' => 'Accords respectueux protégeant les terres coutumières, assurant une redistribution financière directe et valorisant la jeunesse.',
-      'village_item1' => 'Souveraineté narrative intégrale des habitants',
-      'village_item2' => 'Soutien direct aux caisses de guildes & formation',
-      'village_item3' => 'Médiateurs de terrain permanents auprès des aînés',
-      'village_btn' => 'Voir la souveraineté villageoise',
-    ),
-    'stats' => 
-    array (
-      'sites_verified' => 'Villages partenaires certifiés',
-      'students_field' => 'Élèves & chercheurs de terrain',
-      'modules_published' => 'Modules pédagogiques publiés',
-      'partner_institutions' => 'Institutions partenaires',
-    ),
-    'intro_story' => 
-    array (
-      'title' => 'Un village n’est pas une simple escale, mais un livre ouvert de savoirs',
-      'subtitle' => 'Trop longtemps, les sorties pédagogiques sont restées superficielles. Destinara réinvente la rencontre avec le monde rural.',
-      'badge' => '[ ARCHIVES ÉTHIQUES DE TERRAIN ]',
-      'content' => 'Nous concevons des séjours fondés sur le territoire où observation, enquête et vie communautaire reposent sur un accord équitable avec les anciens.
+return [
+    'home' => [
+        'hero' => [
+            'title' => 'Faire vivre des salles de classe réelles au cœur des villages de l’archipel',
+            'subtitle' => 'Relier les programmes scolaires et universitaires aux savoirs du territoire, aux équilibres écologiques et aux récits vivants d’Indonésie.',
+            'badge' => 'Année académique 2026/2027',
+            'image_caption' => 'Atelier Tarum, Kulon Progo',
+            'button_text' => 'Explorer les stations',
+        ],
+        'gateways' => [
+            'tag' => 'VOIES D’ACCÈS SELON VOS MISSIONS',
+            'title' => 'Conçu pour répondre aux exigences de votre institution',
+            'subtitle' => 'Chaque partenaire dispose d’objectifs pédagogiques et de responsabilités distincts. Choisissez le parcours adapté :',
+            'school_tag' => 'Pour les collèges & lycées',
+            'school_title' => 'Excursions scolaires & immersion',
+            'school_desc' => 'Éducation civique et environnementale intégrée, encadrement médical éprouvé et couverture d’assurance intégrale.',
+            'school_item1' => 'Modules thématiques ancrés dans les savoirs vivants',
+            'school_item2' => 'Taux d’encadrement strict : 1 facilitateur pour 8 élèves',
+            'school_item3' => 'Dossiers d’évaluation des compétences en fin de séjour',
+            'school_btn' => 'Voir les programmes scolaires',
+            'research_tag' => 'Pour les universitaires & chercheurs',
+            'research_title' => 'Laboratoires vivants & enquêtes de terrain',
+            'research_desc' => 'Stations de recherche avec accord éthique FPIC, interlocuteurs coutumiers qualifiés et hébergement en village.',
+            'research_item1' => 'Consentement préalable libre et éclairé (FPIC à 100%)',
+            'research_item2' => 'Pôles ethnobotanique, artisanat & habitat vernaculaire',
+            'research_item3' => 'Aide aux autorisations & co-archivage avec les habitants',
+            'research_btn' => 'Voir les projets de recherche',
+            'village_tag' => 'Pour les représentants villageois',
+            'village_title' => 'Partenariats de souveraineté territoriale',
+            'village_desc' => 'Accords respectueux protégeant les terres coutumières, assurant une redistribution financière directe et valorisant la jeunesse.',
+            'village_item1' => 'Souveraineté narrative intégrale des habitants',
+            'village_item2' => 'Soutien direct aux caisses de guildes & formation',
+            'village_item3' => 'Médiateurs de terrain permanents auprès des aînés',
+            'village_btn' => 'Voir la souveraineté villageoise',
+        ],
+        'stats' => [
+            'sites_verified' => 'Villages partenaires certifiés',
+            'students_field' => 'Élèves & chercheurs de terrain',
+            'modules_published' => 'Modules pédagogiques publiés',
+            'partner_institutions' => 'Institutions partenaires',
+        ],
+        'intro_story' => [
+            'title' => 'Un village n’est pas une simple escale, mais un livre ouvert de savoirs',
+            'subtitle' => 'Trop longtemps, les sorties pédagogiques sont restées superficielles. Destinara réinvente la rencontre avec le monde rural.',
+            'badge' => '[ ARCHIVES ÉTHIQUES DE TERRAIN ]',
+            'content' => 'Nous concevons des séjours fondés sur le territoire où observation, enquête et vie communautaire reposent sur un accord équitable avec les anciens.
 
 Les apprenants ne restent pas enfermés dans des salles climatisées : ils se réunissent sous les préaux, découvrent les rythmes de la nature auprès des paysans et intériorisent les réalités socio-écologiques.',
-      'image_caption' => 'Archive : Station ethnobotanique d’indigo naturel, Sanggar Tarum, Kulon Progo',
-      'button_text' => 'Découvrir notre pédagogie & charte éthique',
-    ),
-    'featured_destinations' => 
-    array (
-      'tag' => 'INDEX DES STATIONS EN ACTIVITÉ',
-      'title' => 'Stations d’études & sites d’immersion sélectionnés',
-      'subtitle' => 'Des territoires ouverts ayant validé l’ensemble des critères éthiques et prêts à accueillir délégations et chercheurs.',
-      'all_btn' => 'Consulter tout l’index',
-      'syllabus_btn' => 'Consulter le syllabus',
-      'syllabus_module' => 'Module du syllabus :',
-      'safe_capacity' => 'Capacité sécurisée :',
-      'default_module' => 'Curriculum territorial intégré',
-      'default_capacity' => 'Max. 20 personnes / session',
-      'empty' => 'Aucune station n’est répertoriée pour le moment.',
-    ),
-    'safety_matrix' => 
-    array (
-      'tag' => 'NORMES DE SÉCURITÉ & D’ÉTHIQUE',
-      'title' => 'Gestion intégrée des risques & responsabilité morale',
-      'subtitle' => 'Emmener des groupes en immersion exige des procédures éprouvées plutôt que de simples approximations touristiques :',
-      'p1_title' => 'Dispositif médical & assurances',
-      'p1_desc' => 'Liaisons avec les centres de santé locaux, trousses de secours de terrain et assurance groupe tous risques.',
-      'p2_title' => 'Accord éthique FPIC à 100%',
-      'p2_desc' => 'Consentement explicite et éclairé des aînés pour respecter l’intimité villageoise et les rites sacrés.',
-      'p3_title' => 'Facilitateurs académiques formés',
-      'p3_desc' => 'Association de chercheurs universitaires et de médiateurs locaux maîtrisant la mémoire des lieux.',
-      'p4_title' => 'Évaluation & restitution des acquis',
-      'p4_desc' => 'Outils pédagogiques structurés pour évaluer les compétences des apprenants et restituer le bilan à l’établissement.',
-    ),
-    'doc_hub' => 
-    array (
-      'tag' => 'CENTRE DE COORDINATION INSTITUTIONNELLE',
-      'title' => 'Besoin de documents officiels pour votre conseil d’établissement ou de faculté ?',
-      'desc' => 'Nous fournissons les cahiers des charges (TDR), les propositions de syllabus et les attestations administratives complètes.',
-      'btn_submit' => 'Demander un dossier / TDR',
-      'btn_wa' => 'Coordination WhatsApp',
-      'wa_message' => 'Bonjour, nous souhaitons recevoir les termes de référence (TDR) et planifier un échange.',
-    ),
-    'programs' => 
-    array (
-      'tag' => 'ARCHIVES PÉDAGOGIQUES & FORMATS',
-      'title' => 'Une offre progressive adaptée à vos besoins',
-      'subtitle' => 'De la découverte d’initiation à la recherche approfondie, tous les séjours sont animés par des facilitateurs qualifiés.',
-    ),
-  ),
-  'about' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'MANIFESTE & HISTORIQUE',
-      'title' => 'Repenser la salle de classe à partir des territoires de l’archipel',
-      'subtitle' => 'Destinara fait le lien entre transmission académique et savoirs séculaires des communautés rurales.',
-      'badge' => 'Fondé en 2019',
-    ),
-  ),
-  'for_schools' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'POUR LES COLLÈGES & LYCÉES',
-      'title' => 'Apprendre au-delà des manuels en prise avec le réel',
-      'subtitle' => 'Une pédagogie de terrain qui forge l’esprit critique, l’empathie et la conscience écologique.',
-      'badge' => 'Normes de sécurité certifiées',
-      'button_text' => 'Demander un projet pédagogique',
-    ),
-  ),
-  'for_researchers' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'POUR CHERCHEURS & ENSEIGNANTS',
-      'title' => 'Accès vérifié aux données primaires & éthique de coopération',
-      'subtitle' => 'Plateformes de terrain pour l’anthropologie, l’ethnobotanique et les études environnementales.',
-      'badge' => 'Conforme protocole FPIC',
-      'button_text' => 'Soumettre un projet d’enquête',
-    ),
-  ),
-  'for_villages' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'SOLIDARITÉ AVEC LES COMMUNAUTÉS',
-      'title' => 'Souveraineté territoriale & préservation des mémoires',
-      'subtitle' => 'Préserver les biens communs et offrir un avenir durable aux jeunes générations villageoises.',
-      'badge' => 'Charte de souveraineté',
-      'button_text' => 'Rejoindre le réseau partenaire',
-    ),
-  ),
-  'contact' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'ENGAGER LE DIALOGUE',
-      'title' => 'Contact & Orientation',
-      'subtitle' => 'Nous sommes à votre disposition pour concrétiser vos projets éducatifs, scientifiques et communautaires.',
-    ),
-  ),
-);
+            'image_caption' => 'Archive : Station ethnobotanique d’indigo naturel, Sanggar Tarum, Kulon Progo',
+            'button_text' => 'Découvrir notre pédagogie & charte éthique',
+        ],
+        'featured_destinations' => [
+            'tag' => 'INDEX DES STATIONS EN ACTIVITÉ',
+            'title' => 'Stations d’études & sites d’immersion sélectionnés',
+            'subtitle' => 'Des territoires ouverts ayant validé l’ensemble des critères éthiques et prêts à accueillir délégations et chercheurs.',
+            'all_btn' => 'Consulter tout l’index',
+            'syllabus_btn' => 'Consulter le syllabus',
+            'syllabus_module' => 'Module du syllabus :',
+            'safe_capacity' => 'Capacité sécurisée :',
+            'default_module' => 'Curriculum territorial intégré',
+            'default_capacity' => 'Max. 20 personnes / session',
+            'empty' => 'Aucune station n’est répertoriée pour le moment.',
+        ],
+        'safety_matrix' => [
+            'tag' => 'NORMES DE SÉCURITÉ & D’ÉTHIQUE',
+            'title' => 'Gestion intégrée des risques & responsabilité morale',
+            'subtitle' => 'Emmener des groupes en immersion exige des procédures éprouvées plutôt que de simples approximations touristiques :',
+            'p1_title' => 'Dispositif médical & assurances',
+            'p1_desc' => 'Liaisons avec les centres de santé locaux, trousses de secours de terrain et assurance groupe tous risques.',
+            'p2_title' => 'Accord éthique FPIC à 100%',
+            'p2_desc' => 'Consentement explicite et éclairé des aînés pour respecter l’intimité villageoise et les rites sacrés.',
+            'p3_title' => 'Facilitateurs académiques formés',
+            'p3_desc' => 'Association de chercheurs universitaires et de médiateurs locaux maîtrisant la mémoire des lieux.',
+            'p4_title' => 'Évaluation & restitution des acquis',
+            'p4_desc' => 'Outils pédagogiques structurés pour évaluer les compétences des apprenants et restituer le bilan à l’établissement.',
+        ],
+        'doc_hub' => [
+            'tag' => 'CENTRE DE COORDINATION INSTITUTIONNELLE',
+            'title' => 'Besoin de documents officiels pour votre conseil d’établissement ou de faculté ?',
+            'desc' => 'Nous fournissons les cahiers des charges (TDR), les propositions de syllabus et les attestations administratives complètes.',
+            'btn_submit' => 'Demander un dossier / TDR',
+            'btn_wa' => 'Coordination WhatsApp',
+            'wa_message' => 'Bonjour, nous souhaitons recevoir les termes de référence (TDR) et planifier un échange.',
+        ],
+        'programs' => [
+            'tag' => 'ARCHIVES PÉDAGOGIQUES & FORMATS',
+            'title' => 'Une offre progressive adaptée à vos besoins',
+            'subtitle' => 'De la découverte d’initiation à la recherche approfondie, tous les séjours sont animés par des facilitateurs qualifiés.',
+        ],
+    ],
+    'about' => [
+        'hero' => [
+            'tag' => 'MANIFESTE & HISTORIQUE',
+            'title' => 'Repenser la salle de classe à partir des territoires de l’archipel',
+            'subtitle' => 'Destinara fait le lien entre transmission académique et savoirs séculaires des communautés rurales.',
+            'badge' => 'Fondé en 2019',
+        ],
+    ],
+    'for_schools' => [
+        'hero' => [
+            'tag' => 'POUR LES COLLÈGES & LYCÉES',
+            'title' => 'Apprendre au-delà des manuels en prise avec le réel',
+            'subtitle' => 'Une pédagogie de terrain qui forge l’esprit critique, l’empathie et la conscience écologique.',
+            'badge' => 'Normes de sécurité certifiées',
+            'button_text' => 'Demander un projet pédagogique',
+        ],
+    ],
+    'for_researchers' => [
+        'hero' => [
+            'tag' => 'POUR CHERCHEURS & ENSEIGNANTS',
+            'title' => 'Accès vérifié aux données primaires & éthique de coopération',
+            'subtitle' => 'Plateformes de terrain pour l’anthropologie, l’ethnobotanique et les études environnementales.',
+            'badge' => 'Conforme protocole FPIC',
+            'button_text' => 'Soumettre un projet d’enquête',
+        ],
+    ],
+    'for_villages' => [
+        'hero' => [
+            'tag' => 'SOLIDARITÉ AVEC LES COMMUNAUTÉS',
+            'title' => 'Souveraineté territoriale & préservation des mémoires',
+            'subtitle' => 'Préserver les biens communs et offrir un avenir durable aux jeunes générations villageoises.',
+            'badge' => 'Charte de souveraineté',
+            'button_text' => 'Rejoindre le réseau partenaire',
+        ],
+    ],
+    'contact' => [
+        'hero' => [
+            'tag' => 'ENGAGER LE DIALOGUE',
+            'title' => 'Contact & Orientation',
+            'subtitle' => 'Nous sommes à votre disposition pour concrétiser vos projets éducatifs, scientifiques et communautaires.',
+        ],
+    ],
+];

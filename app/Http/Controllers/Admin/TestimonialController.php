@@ -11,6 +11,7 @@ class TestimonialController extends Controller
     public function index()
     {
         $testimonials = Testimonial::orderBy('order')->get();
+
         return view('admin.testimonials.index', compact('testimonials'));
     }
 
@@ -77,6 +78,7 @@ class TestimonialController extends Controller
     public function destroy(Testimonial $testimonial)
     {
         $testimonial->delete();
+
         return redirect()->route('admin.testimonials.index')->with('success', 'Testimoni berhasil dihapus!');
     }
 }

@@ -12,6 +12,7 @@ class StoryController extends Controller
     public function index()
     {
         $stories = Story::latest()->paginate(15);
+
         return view('admin.stories.index', compact('stories'));
     }
 
@@ -36,7 +37,7 @@ class StoryController extends Controller
             'is_active' => 'boolean',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']) . '-' . rand(100, 999);
+        $validated['slug'] = Str::slug($validated['title']).'-'.rand(100, 999);
         $validated['is_featured'] = $request->boolean('is_featured');
         $validated['is_active'] = $request->boolean('is_active');
         $validated['published_at'] = now();
@@ -88,6 +89,7 @@ class StoryController extends Controller
     public function destroy(Story $story)
     {
         $story->delete();
+
         return redirect()->route('admin.stories.index')->with('success', 'Cerita lapangan berhasil dihapus!');
     }
 }

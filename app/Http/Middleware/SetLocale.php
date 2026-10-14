@@ -2,10 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Carbon\Carbon;
 
 class SetLocale
 {
@@ -30,7 +30,7 @@ class SetLocale
         }
 
         // 2. Cek dari cookie jika session belum diset
-        if (!$locale && $request->hasCookie('destinara_locale')) {
+        if (! $locale && $request->hasCookie('destinara_locale')) {
             $cookieLocale = $request->cookie('destinara_locale');
             if (in_array($cookieLocale, $this->supportedLocales, true)) {
                 $locale = $cookieLocale;
@@ -41,7 +41,7 @@ class SetLocale
         }
 
         // 3. Cek preferensi bahasa browser (Accept-Language)
-        if (!$locale) {
+        if (! $locale) {
             $acceptLanguage = $request->server('HTTP_ACCEPT_LANGUAGE', '');
             if ($acceptLanguage) {
                 // Cari match dengan bahasa yang didukung
@@ -62,7 +62,7 @@ class SetLocale
         }
 
         // 4. Default ke Bahasa Indonesia
-        if (!$locale || !in_array($locale, $this->supportedLocales, true)) {
+        if (! $locale || ! in_array($locale, $this->supportedLocales, true)) {
             $locale = config('app.fallback_locale', 'id');
         }
 
