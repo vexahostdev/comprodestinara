@@ -27,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
         if (app()->environment(['production', 'staging']) || str_starts_with((string) config('app.url'), 'https')) {
             URL::forceScheme('https');
         }
+
+        \Carbon\Carbon::setLocale('id');
+        @setlocale(LC_TIME, 'id_ID.utf8', 'id_ID', 'id', 'indonesian');
     }
 }

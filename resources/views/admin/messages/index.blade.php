@@ -42,7 +42,7 @@
                                 <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $msg->whatsapp) }}" target="_blank" class="text-emerald-700 font-medium hover:underline">{{ $msg->whatsapp }}</a>
                             </td>
                             <td class="p-3.5 text-gray-600">{{ $msg->topic_label }}</td>
-                            <td class="p-3.5 text-gray-400 text-[11px]">{{ $msg->created_at->format('d M Y, H:i') }}</td>
+                            <td class="p-3.5 text-gray-400 text-[11px]">{{ $msg->created_at->translatedFormat('d M Y, H:i') }}</td>
                             <td class="p-3.5">
                                 @if(!$msg->is_read)
                                     <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded text-[10px] font-semibold">Baru</span>
