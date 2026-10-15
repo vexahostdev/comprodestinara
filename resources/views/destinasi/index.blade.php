@@ -38,7 +38,7 @@
         <div>
           <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#51634b]/10 text-[#51634b] text-xs font-bold uppercase tracking-wider rounded-full mb-3">
             <span class="w-1.5 h-1.5 rounded-full bg-[#51634b]"></span>
-            <span>Katalog Tapak Terverifikasi {{ date('Y') }}</span>
+            <span>Katalog Tapak Terkurasi {{ date('Y') }}</span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
             {{ __('site.common.curated_destinations') }}

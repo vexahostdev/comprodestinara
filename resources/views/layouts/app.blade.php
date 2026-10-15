@@ -665,7 +665,7 @@
         </a>
         <div class="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
           <span class="w-2 h-2 rounded-full bg-[#51634b]"></span>
-          <span>Inisiatif Pendidikan Lapangan &amp; Riset Komunitas Terverifikasi FPIC Adat</span>
+          <span>Inisiatif Pendidikan Lapangan &amp; Riset Komunitas Terkurasi</span>
         </div>
       </div>
 
