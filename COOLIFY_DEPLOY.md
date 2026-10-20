@@ -39,7 +39,7 @@ DB_USERNAME=mysql # atau root jika hak akses dibatasi
 DB_PASSWORD=secret_password_anda
 
 # Integrasi ke Destinara Core System (Layanan Booking)
-CORE_SYSTEM_URL=https://layanan.destinara.my.id
+CORE_SYSTEM_URL=https://layanan.destinara.my.id   # staging: https://layanan-staging.destinara.my.id (WAJIB, default-nya production)
 CORE_SYSTEM_API_URL=https://layanan.destinara.my.id/api/v1/public
 
 # Inisialisasi Akun Admin Portal
@@ -65,8 +65,10 @@ Di Coolify, pada tab **Storages** / **Persistent Storage**:
 ### Deploy Pertama Kali (Setelah Refactor Backend):
 Jalankan migrasi, pembersihan data demo lama (`compro:purge-dummy`), pembuatan symlink storage, dan optimasi cache:
 ```bash
-php artisan migrate --force && php artisan compro:purge-dummy && php artisan storage:link && php artisan optimize
+php artisan migrate --force && php artisan compro:purge-dummy --force && php artisan storage:link && php artisan optimize
 ```
+
+> `--force` wajib: tanpa itu perintah meminta konfirmasi interaktif dan post-deploy Coolify gagal. Untuk melihat daftar yang akan dihapus lebih dulu, jalankan `php artisan compro:purge-dummy --dry-run` lewat Terminal Coolify.
 
 ### Update Deploy Selanjutnya:
 ```bash
