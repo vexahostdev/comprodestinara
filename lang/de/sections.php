@@ -3,6 +3,7 @@
 return [
     'home' => [
         'hero' => [
+            'scroll_hint' => 'Zum Entdecken scrollen',
             'title' => 'Lebendige Lernräume im Herzen der Dorfgemeinschaften des Archipels',
             'subtitle' => 'Brückenschlag zwischen institutionellen Lehrplänen und landschaftsgebundenem Wissen indigener Kulturen in ganz Indonesien.',
             'badge' => 'Akademisches Jahr 2026/2027',

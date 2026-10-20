@@ -556,6 +556,8 @@ h1, h2, h3, .font-headline-lg, .font-headline-md, .font-display-hero {
 /* Global Viewport Overflow Prevention */
 html, body {
   overflow-x: hidden;
+  /* clip: tetap memotong luapan horizontal tanpa menjadikan body scroll container (agar position: sticky berfungsi) */
+  overflow-x: clip;
   max-width: 100vw;
 }
 

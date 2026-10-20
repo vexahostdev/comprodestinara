@@ -24,9 +24,14 @@ function initHeaderScroll() {
   if (!header) return;
 
   const isHome = header.classList.contains('is-home-header');
+  // Beranda dengan scroll hero: header tetap transparan selama hero masih membesar.
+  const scrollHero = document.querySelector('[data-scroll-hero]');
 
   function updateHeader() {
-    const isScrolled = window.scrollY > 25;
+    const threshold = scrollHero && scrollHero.classList.contains('is-animated')
+      ? scrollHero.offsetTop + scrollHero.offsetHeight - window.innerHeight - 25
+      : 25;
+    const isScrolled = window.scrollY > threshold;
     if (isScrolled) {
       if (isHome) {
         header.classList.remove('header-transparent');

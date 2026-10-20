@@ -5,6 +5,10 @@
 @section('meta_keywords', 'destinara, wisata edukasi nusantara, field trip sekolah, study tour berizin, live in desa, riset antropologi, penelitian tapak, kearifan lokal, kemitraan desa wisata, etnobotani, layanan destinara')
 @section('og_image', asset('assets/img/hd/hero-home.jpg'))
 
+@push('scripts')
+  @vite('resources/js/home-hero.js')
+@endpush
+
 @section('content')
 @php
   $hero = $sections['hero'] ?? null;
@@ -17,76 +21,117 @@
 
 <main class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] pb-16 lg:pb-24 transition-colors">
 
-  <!-- ==================== 1. FULL IMMERSIVE HERO SECTION (GRAND IMMERSIVE CANVAS) ==================== -->
-  <section class="relative w-full overflow-hidden bg-[#1E1716] min-h-[86vh] sm:min-h-[90vh] lg:min-h-[95vh] xl:min-h-[920px] flex flex-col justify-center pt-28 sm:pt-36 lg:pt-40 pb-28 sm:pb-36 lg:pb-40">
-    
-    <!-- Full Scenic Nature Photography (Spanning Edge-to-Edge with Grand Presence) -->
-    <img src="{{ $hero?->image_url ?? asset('assets/img/hd/hero-home.jpg') }}" 
-         alt="{{ $hero?->title ?? __('sections.home.hero.title') }}" 
-         class="absolute inset-0 w-full h-full object-cover object-[center_35%]" />
+  <!-- ==================== 1. SCROLL EXPANSION HERO (media kecil → layar penuh saat di-scroll) ==================== -->
+  @php
+    $heroTitle = $hero?->title ?? __('sections.home.hero.title');
+    $heroImage = $hero?->image_url ?? asset('assets/img/hd/hero-home.jpg');
+    // Video lokal diutamakan bila sudah diunggah ke public/assets/video/hero.mp4.
+    $heroVideo = file_exists(public_path('assets/video/hero.mp4'))
+        ? asset('assets/video/hero.mp4')
+        : 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1';
+    // Judul dipecah dua untuk efek bergeser ke kiri & kanan (bahasa tanpa spasi dipecah per karakter).
+    $titleWords = preg_split('/\s+/u', trim($heroTitle));
+    if (count($titleWords) > 1) {
+        $half = (int) ceil(count($titleWords) / 2);
+        $titleLeft = implode(' ', array_slice($titleWords, 0, $half));
+        $titleRight = implode(' ', array_slice($titleWords, $half));
+    } else {
+        $half = (int) ceil(mb_strlen($heroTitle) / 2);
+        $titleLeft = mb_substr($heroTitle, 0, $half);
+        $titleRight = mb_substr($heroTitle, $half);
+    }
+  @endphp
 
-    <!-- Top Scrim: Crisp contrast for transparent navigation -->
-    <div class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-black/80 via-black/30 to-transparent pointer-events-none"></div>
+  <style>
+    /* Tanpa JS / reduced motion: hero statis setinggi satu layar dengan media penuh. */
+    [data-scroll-hero] { height: 100dvh; }
+    [data-scroll-hero] [data-hero-media] { width: 100%; height: 100%; }
+    [data-scroll-hero] [data-hero-bg],
+    [data-scroll-hero] [data-hero-split],
+    [data-scroll-hero] [data-hero-kicker] { display: none; }
+    [data-scroll-hero].is-animated { height: 280vh; }
+    [data-scroll-hero].is-animated [data-hero-bg] { display: block; }
+    [data-scroll-hero].is-animated [data-hero-split],
+    [data-scroll-hero].is-animated [data-hero-kicker] { display: flex; }
+    [data-scroll-hero].is-animated [data-hero-content] { opacity: 0; }
+    @media (max-width: 767px) { [data-scroll-hero].is-animated { height: 240vh; } }
+  </style>
 
-    <!-- Targeted Left Scrim: Clear contrast for text while keeping center & right photo naturally bright and vivid -->
-    <div class="absolute inset-y-0 left-0 w-full lg:w-3/5 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none"></div>
+  <section data-scroll-hero class="relative w-full bg-[#1E1716]">
+    <div class="sticky top-0 h-[100dvh] w-full overflow-hidden">
 
-    <!-- Bottom Scrim: Soft depth for floating search bar -->
-    <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none"></div>
-
-    <!-- Decorative Top-Right Dot Grid -->
-    <div class="absolute top-28 right-8 z-10 pointer-events-none hidden sm:block opacity-40">
-      <div class="grid grid-cols-3 gap-2.5">
-        @for($i = 0; $i < 9; $i++)
-          <span class="w-1.5 h-1.5 rounded-full bg-white shadow-xs"></span>
-        @endfor
+      <!-- Latar: foto lanskap penuh, memudar saat media membesar -->
+      <div data-hero-bg class="absolute inset-0 will-change-transform">
+        <img src="{{ asset('assets/img/hd/hero-bg-waterfall.webp') }}" alt="" aria-hidden="true"
+             class="w-full h-full object-cover" fetchpriority="high" decoding="async" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/40"></div>
       </div>
-    </div>
 
-    <!-- Hero Content Container (Generous Spacing, High Contrast, Immersive Scale) -->
-    <div class="relative z-20 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-12 my-auto">
-      <div class="max-w-xl sm:max-w-2xl lg:max-w-3xl">
-        
-        <!-- Micro Kicker Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 text-[#FFD3D2] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-5 sm:mb-6 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-[#E8999B] animate-pulse"></span>
-          <span>{{ $hero?->badge ?? __('sections.home.hero.badge') }}</span>
-        </div>
+      <!-- Media: video kecil di tengah yang membesar menjadi layar penuh -->
+      <div data-hero-media class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.35)]">
+        <video src="{{ $heroVideo }}" poster="{{ $heroImage }}" autoplay muted loop playsinline preload="metadata"
+               disablepictureinpicture disableremoteplayback aria-hidden="true"
+               class="w-full h-full object-cover pointer-events-none"></video>
+        <div data-hero-shade class="absolute inset-0 bg-black opacity-40"></div>
+      </div>
 
-        <!-- Headline: High-Impact Typography with Signature Maroon Brush Underline -->
-        <h1 class="text-3xl sm:text-5xl lg:text-[56px] xl:text-[64px] lg:leading-[1.12] font-black text-white tracking-tight mb-6 drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]">
-          <span class="relative inline-block">
-            {{ $hero?->title ?? __('sections.home.hero.title') }}
-            <!-- Curved hand-drawn brush underline stroke in glowing coral/maroon -->
-            <svg class="absolute -bottom-2 sm:-bottom-3.5 left-0 w-full max-w-[320px] h-3.5 sm:h-5 text-[#E8999B]" viewBox="0 0 260 14" fill="none">
-              <path d="M3 10C65 2 195 2 257 11" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-        </h1>
-
-        <!-- Calming Subtitle (Minim Teks, Nyaman Dibaca, High Contrast) -->
-        <p class="text-sm sm:text-base lg:text-lg text-white/95 max-w-xl sm:max-w-2xl leading-relaxed mb-9 font-normal drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
-          {{ $hero?->subtitle ?? __('sections.home.hero.subtitle') }}
+      <!-- Kicker di bawah media (bergeser keluar saat scroll) -->
+      <div data-hero-kicker class="absolute inset-x-0 top-1/2 mt-[210px] z-10 flex-col items-center gap-1 text-center pointer-events-none">
+        <p data-hero-kicker-left data-hero-intro class="text-sm sm:text-base font-bold tracking-[0.2em] uppercase text-[#FFD3D2] drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+          {{ $hero?->badge ?? __('sections.home.hero.badge') }}
         </p>
-
-        <!-- Solid Pill CTA Buttons -->
-        <div class="flex flex-wrap items-center gap-3.5 sm:gap-4">
-          <a href="{{ $hero?->button_link ?? route('destinations.index') }}" 
-             class="inline-flex items-center gap-2.5 bg-[#703A3A] hover:bg-[#8C4848] text-white font-bold text-xs sm:text-sm px-8 sm:px-9 py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.45)] hover:shadow-2xl hover:scale-105 transition-all duration-300">
-            <span>{{ $hero?->button_text ?? __('sections.home.hero.button_text') }}</span>
-            <span class="material-symbols-outlined text-[19px]">arrow_forward</span>
-          </a>
-
-          <a href="{{ route('for-schools') }}" 
-             class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-bold text-xs sm:text-sm px-6 sm:px-7 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
-            <span>{{ __('site.nav.for_schools') }}</span>
-            <span class="material-symbols-outlined text-[19px]">school</span>
-          </a>
-        </div>
-
+        <p data-hero-kicker-right data-hero-intro class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+          <span>{{ __('sections.home.hero.scroll_hint') }}</span>
+          <span class="material-symbols-outlined text-[18px] animate-bounce">keyboard_double_arrow_down</span>
+        </p>
       </div>
-    </div>
 
+      <!-- Judul terbelah (visual saja; judul asli ada di panel konten) -->
+      <div data-hero-split aria-hidden="true" class="absolute inset-0 z-10 flex-col items-center justify-center gap-2 sm:gap-3 px-4 text-center pointer-events-none">
+        <span data-hero-split-left data-hero-intro class="block max-w-5xl text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)]">{{ $titleLeft }}</span>
+        <span data-hero-split-right data-hero-intro class="block max-w-5xl text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#FFD3D2] drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)]">{{ $titleRight }}</span>
+      </div>
+
+      <!-- Konten akhir: tampil setelah media memenuhi layar -->
+      <div data-hero-content class="absolute inset-0 z-20 flex items-center">
+        <div class="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-12 pb-16">
+          <div class="max-w-xl sm:max-w-2xl lg:max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/25 text-[#FFD3D2] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-5 sm:mb-6 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-[#E8999B] animate-pulse"></span>
+              <span>{{ $hero?->badge ?? __('sections.home.hero.badge') }}</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-[56px] xl:text-[64px] lg:leading-[1.12] font-black text-white tracking-tight mb-6 drop-shadow-[0_2px_16px_rgba(0,0,0,0.7)]">
+              <span class="relative inline-block">
+                {{ $heroTitle }}
+                <svg class="absolute -bottom-2 sm:-bottom-3.5 left-0 w-full max-w-[320px] h-3.5 sm:h-5 text-[#E8999B]" viewBox="0 0 260 14" fill="none" aria-hidden="true">
+                  <path d="M3 10C65 2 195 2 257 11" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h1>
+
+            <p class="text-sm sm:text-base lg:text-lg text-white/95 max-w-xl sm:max-w-2xl leading-relaxed mb-9 font-normal drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
+              {{ $hero?->subtitle ?? __('sections.home.hero.subtitle') }}
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3.5 sm:gap-4">
+              <a href="{{ $hero?->button_link ?? route('destinations.index') }}"
+                 class="inline-flex items-center gap-2.5 bg-[#703A3A] hover:bg-[#8C4848] text-white font-bold text-xs sm:text-sm px-8 sm:px-9 py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.45)] hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <span>{{ $hero?->button_text ?? __('sections.home.hero.button_text') }}</span>
+                <span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+              </a>
+
+              <a href="{{ route('for-schools') }}"
+                 class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-bold text-xs sm:text-sm px-6 sm:px-7 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+                <span>{{ __('site.nav.for_schools') }}</span>
+                <span class="material-symbols-outlined text-[19px]">school</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- ==================== 2. FLOATING SEARCH BAR ==================== -->
@@ -161,7 +206,7 @@
   </div>
 
   <!-- ==================== 3. TRUST STRIP (4 MINIMALIST LINE ICONS) ==================== -->
-  <div class="max-w-[1140px] mx-auto px-4 sm:px-6 mt-12 mb-8">
+  <div data-reveal class="max-w-[1140px] mx-auto px-4 sm:px-6 mt-12 mb-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       
       <div class="flex items-center gap-3.5">
@@ -211,7 +256,7 @@
   <div class="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 
     <!-- ==================== 4. FEATURED DESTINATIONS (4 FULL-BLEED PHOTO PORTRAIT CARDS) ==================== -->
-    <section class="w-full">
+    <section data-reveal class="w-full">
       <!-- Section Header -->
       <div class="flex items-center justify-between mb-6 sm:mb-8">
         <div class="flex items-center gap-2">
@@ -265,7 +310,7 @@
     </section>
 
     <!-- ==================== 5. CATEGORY ICONS ROW (6 CIRCULAR SAGE PILLS) ==================== -->
-    <section class="w-full py-4">
+    <section data-reveal class="w-full py-4">
       <div class="flex items-center justify-center gap-4 sm:gap-8 lg:gap-14 flex-wrap">
         
         <a href="{{ route('destinations.index', ['category' => 'budaya']) }}" class="flex items-center gap-3 group">
@@ -314,7 +359,7 @@
     </section>
 
     <!-- ==================== 6. TRAVEL STORIES & GUIDES (POMAII 3-PART CARD) ==================== -->
-    <section class="w-full">
+    <section data-reveal class="w-full">
       <div class="bg-[#F3EFE6] dark:bg-[#1E1716] rounded-[32px] sm:rounded-[40px] p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-[#E8E2D5] dark:border-white/10 transition-colors">
         
         <!-- Bottom-Right Botanical Leaf Illustration -->
@@ -409,7 +454,7 @@
     </section>
 
     <!-- ==================== 7. PANORAMA BANNER (CORPORATE MAROON THEME) ==================== -->
-    <section class="w-full">
+    <section data-reveal class="w-full">
       <div class="bg-gradient-to-r from-[#3D1415] via-[#4A1D1E] to-[#682728] rounded-[32px] sm:rounded-[40px] text-white overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center relative border border-white/10">
         
         <!-- Left Side: Scenic Landscape Image with Curved Cut -->
@@ -458,7 +503,7 @@
     </section>
 
     <!-- ==================== 8. STATS ROW (4 METRICS + SOSIAL) ==================== -->
-    <section class="w-full py-4 border-b border-gray-200/80 dark:border-white/10">
+    <section data-reveal class="w-full py-4 border-b border-gray-200/80 dark:border-white/10">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 py-4">
         
         <!-- 4 Stats -->

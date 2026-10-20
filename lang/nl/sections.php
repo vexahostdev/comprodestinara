@@ -3,6 +3,7 @@
 return [
     'home' => [
         'hero' => [
+            'scroll_hint' => 'Scroll om te ontdekken',
             'title' => 'Levende leslokalen tot leven wekken in het hart van inheemse dorpen in de archipel',
             'subtitle' => 'Een brug slaan tussen onderwijscurricula en landschapswijsheid, lokale ecologieën en de verhalen van gemeenschappen in Indonesië.',
             'badge' => 'Academisch jaar 2026/2027',

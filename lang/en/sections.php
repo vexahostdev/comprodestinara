@@ -3,6 +3,7 @@
 return [
     'home' => [
         'hero' => [
+            'scroll_hint' => 'Scroll to explore',
             'title' => 'Reviving Living Classrooms within the Warmth of Indigenous Archipelago Villages',
             'subtitle' => 'Bridging institutional educational curricula with landscape wisdom, local ecologies, and the living narratives of indigenous communities across Indonesia.',
             'badge' => 'Academic Year '.date('Y').'/'.(date('Y') + 1),
