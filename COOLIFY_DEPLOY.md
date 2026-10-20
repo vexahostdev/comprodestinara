@@ -1,65 +1,83 @@
 # 🚀 Panduan Deployment Destinara Compro ke Coolify
 
-Panduan lengkap deployment proyek **Destinara Company Profile** (Laravel 12 + Vite + Tailwind CSS + MySQL) ke **Coolify** menggunakan domain **destinara.my.id**.
+Panduan deployment produksi **Destinara Company Profile** (`destinara.my.id`) ke **Coolify** (Nixpacks, PHP 8.2+, MySQL) sesuai **BACKEND SPEC DESTINARA §21**.
 
 ---
 
-## 1. Ringkasan Kredensial MySQL Coolify
+## 1. Arsitektur & Lingkungan
 
-| Parameter | Development | Staging | Production |
-|---|---|---|---|
-| **Coolify Resource** | `destinara-mysql-dev` | `destinara-mysql-staging` | `destinara-mysql-production` |
-| **DB_HOST / Container** | `vbi0lskyqkxybarmwlgtmobo` | `athi0chh8tohka2pb9dbrrfh` | `kgnzm2wodjjnfjfrxdo1avqa` |
-| **DB_PORT** | `3306` | `3306` | `3306` |
-| **DB_DATABASE** | `db_comprodestinara` | `db_comprodestinara` | `db_comprodestinara` |
-| **DB_USERNAME** | `mysql` | `mysql` | `mysql` |
-| **Domain (FQDN)** | `http://localhost:8030` | `https://staging.destinara.my.id` | `https://destinara.my.id` |
-| **File Env Acuan** | `.env.development` | `.env.staging` | `.env.production` |
-
-> 💡 **Tips Hak Akses MySQL di Coolify:**
-> Default user `mysql` di Coolify awalnya terasosiasi ke database default (`destinara_dev` / `destinara_staging` / `destinara_production`).
-> Jika migrasi mengalami error *Access denied for database db_comprodestinara*, ubah `DB_USERNAME=root` dan masukkan `ROOT_PASSWORD` yang tertera di catatan resource Coolify.
+- **Build Pack**: Nixpacks
+- **PHP Version**: 8.2+
+- **Database**: MySQL 8.0+ (`db_comprodestinara`)
+- **Domain (FQDN)**:
+  - Production: `https://destinara.my.id` (SSL Let's Encrypt otomatis dari Coolify)
+  - Staging: `https://staging.destinara.my.id`
+  - Development: `https://dev.destinara.my.id`
 
 ---
 
-## 2. Langkah Deployment di Dashboard Coolify
+## 2. Environment Variables Wajib
 
-### A. Buat Resource Application
-1. Buka dashboard **Coolify**.
-2. Pilih Project & Environment tujuan (**Production**, **Staging**, atau **Development**).
-3. Klik **+ New** -> **Application** -> pilih repositori Git Anda.
-4. Pilih branch yang sesuai (`main` atau `dev`).
-5. Pada pilihan Build Pack, gunakan **Nixpacks** (default).
+Masukkan variabel-variabel berikut pada tab **Environment Variables** aplikasi Coolify:
 
-### B. Konfigurasi Domain (FQDN)
-Pada kolom **Domains**:
-- **Production**: `https://destinara.my.id`
-- **Staging**: `https://staging.destinara.my.id`
-*(SSL Let's Encrypt diurus otomatis oleh Coolify).*
+```dotenv
+APP_NAME="Destinara Compro"
+APP_ENV=production
+APP_KEY=base64:... # Generate dengan: php artisan key:generate --show
+APP_DEBUG=false
+APP_URL=https://destinara.my.id
 
-### C. Masukkan Environment Variables
-1. Buka tab **Environment Variables** di aplikasi Coolify Anda.
-2. Buka file `.env.production` (atau `.env.staging` / `.env.development`).
-3. Salin (**Copy**) seluruh isi file dan tempel (**Paste**) ke form Environment Variables Coolify.
-4. Simpan perubahan.
+LOG_CHANNEL=stack
+LOG_LEVEL=info
 
-### D. Perintah Pasca-Deploy (Post-deployment Command)
-Di menu konfigurasi aplikasi Coolify, pada bagian **Post-deployment Command** (atau jalankan di Terminal Container):
-```bash
-php artisan migrate --force && php artisan storage:link && php artisan config:cache && php artisan route:cache && php artisan view:cache
+# Database MySQL Coolify
+DB_CONNECTION=mysql
+DB_HOST=kgnzm2wodjjnfjfrxdo1avqa # Sesuai resource container MySQL
+DB_PORT=3306
+DB_DATABASE=db_comprodestinara
+DB_USERNAME=mysql # atau root jika hak akses dibatasi
+DB_PASSWORD=secret_password_anda
+
+# Integrasi ke Destinara Core System (Layanan Booking)
+CORE_SYSTEM_URL=https://layanan.destinara.my.id
+CORE_SYSTEM_API_URL=https://layanan.destinara.my.id/api/v1/public
+
+# Inisialisasi Akun Admin Portal
+ADMIN_NAME="Administrator Compro"
+ADMIN_EMAIL="admin@destinara.my.id"
+ADMIN_PASSWORD="GantiDenganPasswordSuperAman123!"
 ```
 
 ---
 
-## 3. Persistent Storage (Upload Gambar & Dokumen)
-Tambahkan **Persistent Storage** di Coolify agar aset upload tidak terhapus saat container di-rebuild:
+## 3. Persistent Storage (Volume)
+
+Untuk menjaga agar gambar sampul artikel, dokumen media editorial, dan aset upload CMS tidak hilang saat rebuild container:
+
+Di Coolify, pada tab **Storages** / **Persistent Storage**:
 - **Source Volume**: `compro-storage-public`
 - **Destination Path**: `/app/storage/app/public`
 
 ---
 
-## 4. Akun Admin Awal
-Setelah menjalankan `php artisan migrate --seed`:
-- **URL Admin**: `https://destinara.my.id/admin`
-- **Email**: `admin@destinara.my.id`
-- **Password**: Sesuai nilai `ADMIN_PASSWORD` di environment Coolify.
+## 4. Perintah Pasca-Deploy (Post-deployment Command)
+
+### Deploy Pertama Kali (Setelah Refactor Backend):
+Jalankan migrasi, pembersihan data demo lama (`compro:purge-dummy`), pembuatan symlink storage, dan optimasi cache:
+```bash
+php artisan migrate --force && php artisan compro:purge-dummy && php artisan storage:link && php artisan optimize
+```
+
+### Update Deploy Selanjutnya:
+```bash
+php artisan migrate --force && php artisan storage:link && php artisan optimize
+```
+
+---
+
+## 5. Akses Admin Portal
+
+Setelah deployment selesai:
+- Akses URL: `https://destinara.my.id/admin`
+- Email & Password: Sesuai nilai `ADMIN_EMAIL` dan `ADMIN_PASSWORD` yang Anda tentukan di environment Coolify.
+- Pengguna umum tidak dapat mendaftar (rute `/register` mengembalikan 404).

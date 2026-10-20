@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class LegalDocumentController extends Controller
@@ -15,15 +14,15 @@ class LegalDocumentController extends Controller
             'title_id' => 'Syarat & Ketentuan Layanan',
             'title_en' => 'Terms of Service',
             'filename' => 'Destinara-ToS-v1.0-Final.pdf',
-            'version'  => '1.0 (Final)',
-            'updated'  => 'September 2026',
+            'version' => '1.0 (Final)',
+            'updated' => 'September 2026',
         ],
         'privacy' => [
             'title_id' => 'Kebijakan Privasi',
             'title_en' => 'Privacy Policy',
             'filename' => 'Destinara-KebijakanPrivasi-v1.0.pdf',
-            'version'  => '1.0',
-            'updated'  => 'September 2026',
+            'version' => '1.0',
+            'updated' => 'September 2026',
         ],
     ];
 
@@ -79,7 +78,7 @@ class LegalDocumentController extends Controller
 
         return response()->file($path, [
             'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="' . $doc['filename'] . '"',
+            'Content-Disposition' => 'inline; filename="'.$doc['filename'].'"',
             'Cache-Control' => 'public, max-age=86400',
         ]);
     }
@@ -117,7 +116,7 @@ class LegalDocumentController extends Controller
     {
         $type = $this->normalizeType($type);
 
-        if (!array_key_exists($type, $this->documents)) {
+        if (! array_key_exists($type, $this->documents)) {
             abort(404, 'Dokumen resmi tidak ditemukan.');
         }
 
@@ -125,8 +124,8 @@ class LegalDocumentController extends Controller
 
         // Cek public/documents terlebih dahulu, lalu fallback ke document/ di root
         $candidates = [
-            public_path('documents/' . $filename),
-            base_path('document/' . $filename),
+            public_path('documents/'.$filename),
+            base_path('document/'.$filename),
         ];
 
         foreach ($candidates as $candidate) {

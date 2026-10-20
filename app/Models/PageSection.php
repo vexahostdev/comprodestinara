@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
+use App\Traits\LocalizableModel;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 class PageSection extends Model
 {
@@ -32,7 +32,7 @@ class PageSection extends Model
         'order' => 'integer',
     ];
 
-    use \App\Traits\LocalizableModel;
+    use LocalizableModel;
 
     public static function getSection(string $pageSlug, string $sectionKey, $default = null): ?self
     {
@@ -41,13 +41,40 @@ class PageSection extends Model
             ->first() ?? $default;
     }
 
-    public function getTitleAttribute($value) { return $this->getLocalized('title'); }
-    public function getSubtitleAttribute($value) { return $this->getLocalized('subtitle'); }
-    public function getBadgeAttribute($value) { return $this->getLocalized('badge'); }
-    public function getContentAttribute($value) { return $this->getLocalized('content'); }
-    public function getImageCaptionAttribute($value) { return $this->getLocalized('image_caption'); }
-    public function getButtonTextAttribute($value) { return $this->getLocalized('button_text'); }
-    public function getSecondaryButtonTextAttribute($value) { return $this->getLocalized('secondary_button_text'); }
+    public function getTitleAttribute($value)
+    {
+        return $this->getLocalized('title');
+    }
+
+    public function getSubtitleAttribute($value)
+    {
+        return $this->getLocalized('subtitle');
+    }
+
+    public function getBadgeAttribute($value)
+    {
+        return $this->getLocalized('badge');
+    }
+
+    public function getContentAttribute($value)
+    {
+        return $this->getLocalized('content');
+    }
+
+    public function getImageCaptionAttribute($value)
+    {
+        return $this->getLocalized('image_caption');
+    }
+
+    public function getButtonTextAttribute($value)
+    {
+        return $this->getLocalized('button_text');
+    }
+
+    public function getSecondaryButtonTextAttribute($value)
+    {
+        return $this->getLocalized('secondary_button_text');
+    }
 
     public function getImageUrlAttribute(): ?string
     {
@@ -57,7 +84,7 @@ class PageSection extends Model
 
         // If stored in storage/
         if (str_starts_with($this->image, 'page-sections/')) {
-            return asset('storage/' . $this->image);
+            return asset('storage/'.$this->image);
         }
 
         // If direct asset link

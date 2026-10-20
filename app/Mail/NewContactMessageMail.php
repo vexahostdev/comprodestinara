@@ -5,9 +5,9 @@ namespace App\Mail;
 use App\Models\ContactMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
 class NewContactMessageMail extends Mailable
@@ -24,7 +24,7 @@ class NewContactMessageMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Pesan Baru dari Website Destinara: ' . $this->contactMessage->name . ($this->contactMessage->company ? ' (' . $this->contactMessage->company . ')' : ''),
+            subject: 'Pesan Baru dari Website Destinara: '.$this->contactMessage->name.($this->contactMessage->company ? ' ('.$this->contactMessage->company.')' : ''),
             replyTo: [
                 new Address($this->contactMessage->email, $this->contactMessage->name),
             ],

@@ -5,7 +5,7 @@ return [
         'hero' => [
             'title' => 'Reviving Living Classrooms within the Warmth of Indigenous Archipelago Villages',
             'subtitle' => 'Bridging institutional educational curricula with landscape wisdom, local ecologies, and the living narratives of indigenous communities across Indonesia.',
-            'badge' => 'Academic Year ' . date('Y') . '/' . (date('Y') + 1),
+            'badge' => 'Academic Year '.date('Y').'/'.(date('Y') + 1),
             'image_caption' => 'Tarum Sanctuary, Kulon Progo',
             'button_text' => 'Explore Field Sites',
         ],
@@ -252,7 +252,7 @@ return [
         ],
         'archival_bar' => [
             'dept' => 'Destinara Directorate of Academic Partnerships & Applied Anthropology',
-            'protocol' => 'Standard FPIC Protocol ' . date('Y'),
+            'protocol' => 'Standard FPIC Protocol '.date('Y'),
             'connected' => 'Connected with Curated Customary Halls',
         ],
         'facilities' => [

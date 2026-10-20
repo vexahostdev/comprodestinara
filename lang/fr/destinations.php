@@ -1,59 +1,54 @@
 <?php
 
-return array (
-  'hutan-adat-wonosadi' => 
-  array (
-    'name' => 'Forêt coutumière de Wonosadi & Collines karstiques',
-    'badge' => 'Conservation karstique',
-    'location' => 'Gunungkidul, D.I. Yogyakarta',
-    'lead' => 'Un observatoire vivant de la protection des sources karstiques régi par le droit coutumier Sadumuk Bathuk Sanyari Bumi.',
-    'description' => 'Au cœur des roches calcaires de Gunung Sewu, des canopées de tamariniers et de banians de 40 mètres protègent les failles alimentant trois sources pérennes.',
-    'research_focus' => 'Hydrologie karstique souterraine, botanique endémique de Java et mécanismes d’autorégulation communautaire.',
-    'module_name' => 'Hydrologie karstique & droit coutumier',
-    'capacity' => '30 chercheurs & apprenants',
-  ),
-  'desa-sasak-sade' => 
-  array (
-    'name' => 'Village Sasak de Sade & Patrimoine du tissage',
-    'badge' => 'Ethnomathématiques matérielles',
-    'location' => 'Lombok central, Petites îles de la Sonde occidentales',
-    'lead' => 'Haut lieu de l’architecture parasismique traditionnelle et des coutumes Sasak préservées depuis quatorze générations.',
-    'description' => 'Étude approfondie des toitures de chaume et des enduits de bouse et d’argile résistants aux séismes, combinée aux motifs géométriques fractals des ikats.',
-    'research_focus' => 'Géométrie fractale textile, thermodynamique des argiles locales et souveraineté vivrière des greniers Sasak.',
-    'module_name' => 'Artisanat textile & ethnomathématiques',
-    'capacity' => '24 chercheurs & apprenants',
-  ),
-  'kampung-kopi-kintamani' => 
-  array (
-    'name' => 'Village caféier de Kintamani & Subak Abian',
-    'badge' => 'Agroécologie & Subak',
-    'location' => 'Bangli, Bali',
-    'lead' => 'Exploration de la philosophie Tri Hita Karana à travers le système Subak Abian, associant vergers d’Arabica et spiritualité volcanique.',
-    'description' => 'Sur les pentes de la caldeira du mont Batur, les coopératives paysannes gèrent l’eau et l’agroforesterie sous couvert végétal sans produits chimiques de synthèse.',
-    'research_focus' => 'Microbiologie des sols volcaniques acides, régulation microclimatique par ombrage et gouvernance délibérative du subak.',
-    'module_name' => 'Agroécologie & Subak Abian',
-    'capacity' => '20 chercheurs & apprenants',
-  ),
-  'desa-adat-waerebo' => 
-  array (
-    'name' => 'Village coutumier de Wae Rebo & Habitat conique',
-    'badge' => 'Architecture Mbaru Niang',
-    'location' => 'Manggarai, Petites îles de la Sonde orientales',
-    'lead' => 'Une vallée montagnarde isolée abritant sept maisons coniques Mbaru Niang reflétant cosmologie et parenté communautaire.',
-    'description' => 'Étude des charpentes en bois de worok sans clous, des liens de rotin et des couvertures de palme étagées dans la brume de Florès.',
-    'research_focus' => 'Résistance aérodynamique des structures coniques, anthropologie clanique et urbanisme d’altitude.',
-    'module_name' => 'Structures vernaculaires & ordre spatial',
-    'capacity' => '18 chercheurs & apprenants',
-  ),
-  'kampung-nelayan-wakatobi' => 
-  array (
-    'name' => 'Communauté de pêcheurs maritimes de Wakatobi',
-    'badge' => 'Protection récifale coutumière',
-    'location' => 'Wakatobi, Sulawesi du Sud-Est',
-    'lead' => 'Zonage maritime traditionnel des nomades de la mer Bajau veillant sur l’épicentre mondial de la biodiversité marine.',
-    'description' => 'Immersion dans la navigation stellaire sans instruments, la lecture des marées et les lois coutumières interdisant la pêche durant la ponte des coraux.',
-    'research_focus' => 'Océanographie côtière, taxonomie des coraux mous, ethnozoologie marine et habitat sur pilotis.',
-    'module_name' => 'Savoirs maritimes & écologie côtière',
-    'capacity' => '25 chercheurs & apprenants',
-  ),
-);
+return [
+    'hutan-adat-wonosadi' => [
+        'name' => 'Forêt coutumière de Wonosadi & Collines karstiques',
+        'badge' => 'Conservation karstique',
+        'location' => 'Gunungkidul, D.I. Yogyakarta',
+        'lead' => 'Un observatoire vivant de la protection des sources karstiques régi par le droit coutumier Sadumuk Bathuk Sanyari Bumi.',
+        'description' => 'Au cœur des roches calcaires de Gunung Sewu, des canopées de tamariniers et de banians de 40 mètres protègent les failles alimentant trois sources pérennes.',
+        'research_focus' => 'Hydrologie karstique souterraine, botanique endémique de Java et mécanismes d’autorégulation communautaire.',
+        'module_name' => 'Hydrologie karstique & droit coutumier',
+        'capacity' => '30 chercheurs & apprenants',
+    ],
+    'desa-sasak-sade' => [
+        'name' => 'Village Sasak de Sade & Patrimoine du tissage',
+        'badge' => 'Ethnomathématiques matérielles',
+        'location' => 'Lombok central, Petites îles de la Sonde occidentales',
+        'lead' => 'Haut lieu de l’architecture parasismique traditionnelle et des coutumes Sasak préservées depuis quatorze générations.',
+        'description' => 'Étude approfondie des toitures de chaume et des enduits de bouse et d’argile résistants aux séismes, combinée aux motifs géométriques fractals des ikats.',
+        'research_focus' => 'Géométrie fractale textile, thermodynamique des argiles locales et souveraineté vivrière des greniers Sasak.',
+        'module_name' => 'Artisanat textile & ethnomathématiques',
+        'capacity' => '24 chercheurs & apprenants',
+    ],
+    'kampung-kopi-kintamani' => [
+        'name' => 'Village caféier de Kintamani & Subak Abian',
+        'badge' => 'Agroécologie & Subak',
+        'location' => 'Bangli, Bali',
+        'lead' => 'Exploration de la philosophie Tri Hita Karana à travers le système Subak Abian, associant vergers d’Arabica et spiritualité volcanique.',
+        'description' => 'Sur les pentes de la caldeira du mont Batur, les coopératives paysannes gèrent l’eau et l’agroforesterie sous couvert végétal sans produits chimiques de synthèse.',
+        'research_focus' => 'Microbiologie des sols volcaniques acides, régulation microclimatique par ombrage et gouvernance délibérative du subak.',
+        'module_name' => 'Agroécologie & Subak Abian',
+        'capacity' => '20 chercheurs & apprenants',
+    ],
+    'desa-adat-waerebo' => [
+        'name' => 'Village coutumier de Wae Rebo & Habitat conique',
+        'badge' => 'Architecture Mbaru Niang',
+        'location' => 'Manggarai, Petites îles de la Sonde orientales',
+        'lead' => 'Une vallée montagnarde isolée abritant sept maisons coniques Mbaru Niang reflétant cosmologie et parenté communautaire.',
+        'description' => 'Étude des charpentes en bois de worok sans clous, des liens de rotin et des couvertures de palme étagées dans la brume de Florès.',
+        'research_focus' => 'Résistance aérodynamique des structures coniques, anthropologie clanique et urbanisme d’altitude.',
+        'module_name' => 'Structures vernaculaires & ordre spatial',
+        'capacity' => '18 chercheurs & apprenants',
+    ],
+    'kampung-nelayan-wakatobi' => [
+        'name' => 'Communauté de pêcheurs maritimes de Wakatobi',
+        'badge' => 'Protection récifale coutumière',
+        'location' => 'Wakatobi, Sulawesi du Sud-Est',
+        'lead' => 'Zonage maritime traditionnel des nomades de la mer Bajau veillant sur l’épicentre mondial de la biodiversité marine.',
+        'description' => 'Immersion dans la navigation stellaire sans instruments, la lecture des marées et les lois coutumières interdisant la pêche durant la ponte des coraux.',
+        'research_focus' => 'Océanographie côtière, taxonomie des coraux mous, ethnozoologie marine et habitat sur pilotis.',
+        'module_name' => 'Savoirs maritimes & écologie côtière',
+        'capacity' => '25 chercheurs & apprenants',
+    ],
+];

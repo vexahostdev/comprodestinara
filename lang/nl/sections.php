@@ -1,154 +1,135 @@
 <?php
 
-return array (
-  'home' => 
-  array (
-    'hero' => 
-    array (
-      'title' => 'Levende leslokalen tot leven wekken in het hart van inheemse dorpen in de archipel',
-      'subtitle' => 'Een brug slaan tussen onderwijscurricula en landschapswijsheid, lokale ecologieën en de verhalen van gemeenschappen in Indonesië.',
-      'badge' => 'Academisch jaar 2026/2027',
-      'image_caption' => 'Sanggar Tarum, Kulon Progo',
-      'button_text' => 'Veldstations ontdekken',
-    ),
-    'gateways' => 
-    array (
-      'tag' => 'TOEGANGSROUTES NAAR BEHOEFTE',
-      'title' => 'Ontworpen conform uw institutionele doelstellingen',
-      'subtitle' => 'Elke doelgroep heeft specifieke pedagogische behoeften en richtlijnen. Kies het pad dat aansluit bij uw instelling:',
-      'school_tag' => 'Voor scholen & lycea',
-      'school_title' => 'Schoolexcursies & live-in',
-      'school_desc' => 'Contextuele karaktervorming gekoppeld aan leerdoelen, met veilige begeleidingsratio’s, medische draaiboeken en volledige verzekering.',
-      'school_item1' => 'Thematische modules & inheemse kennisbronnen',
-      'school_item2' => 'Strikte begeleidingsnorm: 1 facilitator op 8 leerlingen',
-      'school_item3' => 'Competentieverslagen na afronding van het programma',
-      'school_btn' => 'Schoolprogramma’s bekijken',
-      'research_tag' => 'Voor docenten & onderzoekers',
-      'research_title' => 'Levende laboratoria & veldwerk',
-      'research_desc' => 'Onderzoeksstations met FPIC-ethiekgoedkeuring, geverifieerde dorpsoudsten en verblijf in de dorpsgemeenschap.',
-      'research_item1' => '100% Vrije, voorafgaande en geïnformeerde toestemming (FPIC)',
-      'research_item2' => 'Onderzoeksclusters etnobotanie, ambachten & volksarchitectuur',
-      'research_item3' => 'Ondersteuning bij vergunningen & gezamenlijke archivering',
-      'research_btn' => 'Onderzoekssamenwerkingen bekijken',
-      'village_tag' => 'Voor dorpsbesturen & oudstenraden',
-      'village_title' => 'Partnerschap op basis van soevereiniteit',
-      'village_desc' => 'Waardige samenwerking ter bescherming van voorouderlijk land, met eerlijke directe opbrengsten en opleiding van lokale jongeren.',
-      'village_item1' => 'Volledige zeggenschap over het eigen dorpsverhaal',
-      'village_item2' => 'Rechtstreekse financiering van ambachtsgilden & jeugd',
-      'village_item3' => 'Vaste veldbegeleiders vanuit het secretariaat ter plaatse',
-      'village_btn' => 'Dorpssoevereiniteit bekijken',
-    ),
-    'stats' => 
-    array (
-      'sites_verified' => 'Geverifieerde partnerdorpen',
-      'students_field' => 'Leerlingen & veldonderzoekers',
-      'modules_published' => 'Gepubliceerde leermodules',
-      'partner_institutions' => 'Samenwerkende instellingen',
-    ),
-    'intro_story' => 
-    array (
-      'title' => 'Een dorp is geen willekeurige tussenstop, maar een open boek vol wijsheid',
-      'subtitle' => 'Jarenlang vervielen excursies in oppervlakkig toerisme. Destinara verandert de manier waarop onderwijsinstellingen naar dorpen kijken.',
-      'badge' => '[ ETHISCH VELDARCHIEF ]',
-      'content' => 'Wij ontwerpen onderwijstrajecten waarbij elke observatie en elk gesprek rust op gelijkwaardige overeenstemming met de dorpsoudsten.
+return [
+    'home' => [
+        'hero' => [
+            'title' => 'Levende leslokalen tot leven wekken in het hart van inheemse dorpen in de archipel',
+            'subtitle' => 'Een brug slaan tussen onderwijscurricula en landschapswijsheid, lokale ecologieën en de verhalen van gemeenschappen in Indonesië.',
+            'badge' => 'Academisch jaar 2026/2027',
+            'image_caption' => 'Sanggar Tarum, Kulon Progo',
+            'button_text' => 'Veldstations ontdekken',
+        ],
+        'gateways' => [
+            'tag' => 'TOEGANGSROUTES NAAR BEHOEFTE',
+            'title' => 'Ontworpen conform uw institutionele doelstellingen',
+            'subtitle' => 'Elke doelgroep heeft specifieke pedagogische behoeften en richtlijnen. Kies het pad dat aansluit bij uw instelling:',
+            'school_tag' => 'Voor scholen & lycea',
+            'school_title' => 'Schoolexcursies & live-in',
+            'school_desc' => 'Contextuele karaktervorming gekoppeld aan leerdoelen, met veilige begeleidingsratio’s, medische draaiboeken en volledige verzekering.',
+            'school_item1' => 'Thematische modules & inheemse kennisbronnen',
+            'school_item2' => 'Strikte begeleidingsnorm: 1 facilitator op 8 leerlingen',
+            'school_item3' => 'Competentieverslagen na afronding van het programma',
+            'school_btn' => 'Schoolprogramma’s bekijken',
+            'research_tag' => 'Voor docenten & onderzoekers',
+            'research_title' => 'Levende laboratoria & veldwerk',
+            'research_desc' => 'Onderzoeksstations met FPIC-ethiekgoedkeuring, geverifieerde dorpsoudsten en verblijf in de dorpsgemeenschap.',
+            'research_item1' => '100% Vrije, voorafgaande en geïnformeerde toestemming (FPIC)',
+            'research_item2' => 'Onderzoeksclusters etnobotanie, ambachten & volksarchitectuur',
+            'research_item3' => 'Ondersteuning bij vergunningen & gezamenlijke archivering',
+            'research_btn' => 'Onderzoekssamenwerkingen bekijken',
+            'village_tag' => 'Voor dorpsbesturen & oudstenraden',
+            'village_title' => 'Partnerschap op basis van soevereiniteit',
+            'village_desc' => 'Waardige samenwerking ter bescherming van voorouderlijk land, met eerlijke directe opbrengsten en opleiding van lokale jongeren.',
+            'village_item1' => 'Volledige zeggenschap over het eigen dorpsverhaal',
+            'village_item2' => 'Rechtstreekse financiering van ambachtsgilden & jeugd',
+            'village_item3' => 'Vaste veldbegeleiders vanuit het secretariaat ter plaatse',
+            'village_btn' => 'Dorpssoevereiniteit bekijken',
+        ],
+        'stats' => [
+            'sites_verified' => 'Geverifieerde partnerdorpen',
+            'students_field' => 'Leerlingen & veldonderzoekers',
+            'modules_published' => 'Gepubliceerde leermodules',
+            'partner_institutions' => 'Samenwerkende instellingen',
+        ],
+        'intro_story' => [
+            'title' => 'Een dorp is geen willekeurige tussenstop, maar een open boek vol wijsheid',
+            'subtitle' => 'Jarenlang vervielen excursies in oppervlakkig toerisme. Destinara verandert de manier waarop onderwijsinstellingen naar dorpen kijken.',
+            'badge' => '[ ETHISCH VELDARCHIEF ]',
+            'content' => 'Wij ontwerpen onderwijstrajecten waarbij elke observatie en elk gesprek rust op gelijkwaardige overeenstemming met de dorpsoudsten.
 
 Leerlingen zitten in een kring op veranda’s, leren seizoensritmes rechtstreeks van zaadtelers en doorgronden sociaal-ecologische dynamieken als geleefde werkelijkheid.',
-      'image_caption' => 'Veldarchief: Etnobotanisch station voor natuurlijke indigoverving, Sanggar Tarum, Kulon Progo',
-      'button_text' => 'Onze pedagogiek & ons ethisch handvest',
-    ),
-    'featured_destinations' => 
-    array (
-      'tag' => 'INDEX ACTIEVE VELDSTATIONS',
-      'title' => 'Geselecteerde studie- & onderzoeksstations',
-      'subtitle' => 'Open leeromgevingen die aan alle ethische voorwaarden voldoen en klaar zijn voor school- en onderzoeksgroepen.',
-      'all_btn' => 'Volledige index bekijken',
-      'syllabus_btn' => 'Syllabus inzien',
-      'syllabus_module' => 'Syllabusmodule:',
-      'safe_capacity' => 'Veilige capaciteit:',
-      'default_module' => 'Integraal veldcurriculum',
-      'default_capacity' => 'Max. 20 personen / sessie',
-      'empty' => 'Er zijn momenteel geen geselecteerde locaties beschikbaar.',
-    ),
-    'safety_matrix' => 
-    array (
-      'tag' => 'VEILIGHEIDSNORMEN & ETHIEK',
-      'title' => 'Integrale risicobeheersing & morele verantwoordelijkheid',
-      'subtitle' => 'Het begeleiden van groepen in echte landschappen vereist beproefde procedures in plaats van improvisatie:',
-      'p1_title' => 'Medische paraatheid & verzekering',
-      'p1_desc' => 'Afspraken met regionale gezondheidscentra, gecertificeerde eerstehulpuitrusting en een allrisk-groepsverzekering.',
-      'p2_title' => '100% FPIC-toestemming',
-      'p2_desc' => 'Voorafgaande, vrije instemming met de dorpsoudsten ter bescherming van privacy en heilige gebruiken.',
-      'p3_title' => 'Opgeleide academische begeleiders',
-      'p3_desc' => 'Samenwerking tussen universitaire experts en lokale gidsen die landschap en mondelinge geschiedenis beheersen.',
-      'p4_title' => 'Curriculumevaluatie & toetsing',
-      'p4_desc' => 'Gestructureerde evaluatie-instrumenten om de leeropbrengst vast te leggen en te rapporteren aan school of faculteit.',
-    ),
-    'doc_hub' => 
-    array (
-      'tag' => 'INSTITUTIONEEL COÖRDINATIEPUNT',
-      'title' => 'Heeft u officiële documenten nodig voor uw schoolbestuur, directie of faculteitsraad?',
-      'desc' => 'Wij leveren programma-omschrijvingen, leervoorstellen en juridische documenten ter directe interne besluitvorming.',
-      'btn_submit' => 'Dossier / Omschrijving aanvragen',
-      'btn_wa' => 'WhatsApp-coördinatie',
-      'wa_message' => 'Hallo, wij willen graag de programmabeschrijving ontvangen en data afstemmen.',
-    ),
-    'programs' => 
-    array (
-      'tag' => 'CURRICULA & FORMATS',
-      'title' => 'Opgebouwd naar uw onderwijsdoelen',
-      'subtitle' => 'Van introductie tot diepgaand onderzoek: alle activiteiten worden begeleid door antropologisch geschoolde staf.',
-    ),
-  ),
-  'about' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'MANIFEST & ONTSTAAN',
-      'title' => 'Het klaslokaal heroverwegen vanuit de landschappen van de archipel',
-      'subtitle' => 'Destinara verbindt academisch onderwijs met de levende wijsheid van dorpsgemeenschappen.',
-      'badge' => 'Opgericht in 2019',
-    ),
-  ),
-  'for_schools' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'VOOR VOORTGEZET ONDERWIJS',
-      'title' => 'Leren voorbij het schoolboek in direct contact met de realiteit',
-      'subtitle' => 'Ervaringsgericht leren dat karakter, ecologisch besef en maatschappelijke betrokkenheid vormt.',
-      'badge' => 'Gecertificeerde veiligheidsnormen',
-      'button_text' => 'Curriculumadvies aanvragen',
-    ),
-  ),
-  'for_researchers' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'VOOR ONDERZOEKERS & DOCENTEN',
-      'title' => 'Betrouwbare toegang tot primaire data & ethische samenwerking',
-      'subtitle' => 'Onderzoeksstations voor antropologie, etnobotanie en sociale ecologie.',
-      'badge' => 'Conform FPIC-ethiekcode',
-      'button_text' => 'Onderzoeksvoorstel indienen',
-    ),
-  ),
-  'for_villages' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'SOLIDARITEIT MET DORPSGEMEENSCHAPPEN',
-      'title' => 'Zelfbeschikking over land & behoud van erfgoedkennis',
-      'subtitle' => 'Gezamenlijke bescherming van overgeleverde kennis en duurzame kansen voor de dorpsjeugd.',
-      'badge' => 'Handvest voor dorpssoevereiniteit',
-      'button_text' => 'Partnerschap aanvragen',
-    ),
-  ),
-  'contact' => 
-  array (
-    'hero' => 
-    array (
-      'tag' => 'HET GESPREK AANGAAN',
-      'title' => 'Contact & Advies',
-      'subtitle' => 'Wij staan u graag te woord voor schoolexcursies, wetenschappelijke expedities en dorpsinitiatieven.',
-    ),
-  ),
-);
+            'image_caption' => 'Veldarchief: Etnobotanisch station voor natuurlijke indigoverving, Sanggar Tarum, Kulon Progo',
+            'button_text' => 'Onze pedagogiek & ons ethisch handvest',
+        ],
+        'featured_destinations' => [
+            'tag' => 'INDEX ACTIEVE VELDSTATIONS',
+            'title' => 'Geselecteerde studie- & onderzoeksstations',
+            'subtitle' => 'Open leeromgevingen die aan alle ethische voorwaarden voldoen en klaar zijn voor school- en onderzoeksgroepen.',
+            'all_btn' => 'Volledige index bekijken',
+            'syllabus_btn' => 'Syllabus inzien',
+            'syllabus_module' => 'Syllabusmodule:',
+            'safe_capacity' => 'Veilige capaciteit:',
+            'default_module' => 'Integraal veldcurriculum',
+            'default_capacity' => 'Max. 20 personen / sessie',
+            'empty' => 'Er zijn momenteel geen geselecteerde locaties beschikbaar.',
+        ],
+        'safety_matrix' => [
+            'tag' => 'VEILIGHEIDSNORMEN & ETHIEK',
+            'title' => 'Integrale risicobeheersing & morele verantwoordelijkheid',
+            'subtitle' => 'Het begeleiden van groepen in echte landschappen vereist beproefde procedures in plaats van improvisatie:',
+            'p1_title' => 'Medische paraatheid & verzekering',
+            'p1_desc' => 'Afspraken met regionale gezondheidscentra, gecertificeerde eerstehulpuitrusting en een allrisk-groepsverzekering.',
+            'p2_title' => '100% FPIC-toestemming',
+            'p2_desc' => 'Voorafgaande, vrije instemming met de dorpsoudsten ter bescherming van privacy en heilige gebruiken.',
+            'p3_title' => 'Opgeleide academische begeleiders',
+            'p3_desc' => 'Samenwerking tussen universitaire experts en lokale gidsen die landschap en mondelinge geschiedenis beheersen.',
+            'p4_title' => 'Curriculumevaluatie & toetsing',
+            'p4_desc' => 'Gestructureerde evaluatie-instrumenten om de leeropbrengst vast te leggen en te rapporteren aan school of faculteit.',
+        ],
+        'doc_hub' => [
+            'tag' => 'INSTITUTIONEEL COÖRDINATIEPUNT',
+            'title' => 'Heeft u officiële documenten nodig voor uw schoolbestuur, directie of faculteitsraad?',
+            'desc' => 'Wij leveren programma-omschrijvingen, leervoorstellen en juridische documenten ter directe interne besluitvorming.',
+            'btn_submit' => 'Dossier / Omschrijving aanvragen',
+            'btn_wa' => 'WhatsApp-coördinatie',
+            'wa_message' => 'Hallo, wij willen graag de programmabeschrijving ontvangen en data afstemmen.',
+        ],
+        'programs' => [
+            'tag' => 'CURRICULA & FORMATS',
+            'title' => 'Opgebouwd naar uw onderwijsdoelen',
+            'subtitle' => 'Van introductie tot diepgaand onderzoek: alle activiteiten worden begeleid door antropologisch geschoolde staf.',
+        ],
+    ],
+    'about' => [
+        'hero' => [
+            'tag' => 'MANIFEST & ONTSTAAN',
+            'title' => 'Het klaslokaal heroverwegen vanuit de landschappen van de archipel',
+            'subtitle' => 'Destinara verbindt academisch onderwijs met de levende wijsheid van dorpsgemeenschappen.',
+            'badge' => 'Opgericht in 2019',
+        ],
+    ],
+    'for_schools' => [
+        'hero' => [
+            'tag' => 'VOOR VOORTGEZET ONDERWIJS',
+            'title' => 'Leren voorbij het schoolboek in direct contact met de realiteit',
+            'subtitle' => 'Ervaringsgericht leren dat karakter, ecologisch besef en maatschappelijke betrokkenheid vormt.',
+            'badge' => 'Gecertificeerde veiligheidsnormen',
+            'button_text' => 'Curriculumadvies aanvragen',
+        ],
+    ],
+    'for_researchers' => [
+        'hero' => [
+            'tag' => 'VOOR ONDERZOEKERS & DOCENTEN',
+            'title' => 'Betrouwbare toegang tot primaire data & ethische samenwerking',
+            'subtitle' => 'Onderzoeksstations voor antropologie, etnobotanie en sociale ecologie.',
+            'badge' => 'Conform FPIC-ethiekcode',
+            'button_text' => 'Onderzoeksvoorstel indienen',
+        ],
+    ],
+    'for_villages' => [
+        'hero' => [
+            'tag' => 'SOLIDARITEIT MET DORPSGEMEENSCHAPPEN',
+            'title' => 'Zelfbeschikking over land & behoud van erfgoedkennis',
+            'subtitle' => 'Gezamenlijke bescherming van overgeleverde kennis en duurzame kansen voor de dorpsjeugd.',
+            'badge' => 'Handvest voor dorpssoevereiniteit',
+            'button_text' => 'Partnerschap aanvragen',
+        ],
+    ],
+    'contact' => [
+        'hero' => [
+            'tag' => 'HET GESPREK AANGAAN',
+            'title' => 'Contact & Advies',
+            'subtitle' => 'Wij staan u graag te woord voor schoolexcursies, wetenschappelijke expedities en dorpsinitiatieven.',
+        ],
+    ],
+];

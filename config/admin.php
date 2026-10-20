@@ -4,17 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Akun Admin Awal
+    | Akun Admin Utama Compro — SPEC §16.1
     |--------------------------------------------------------------------------
-    |
-    | Dipakai oleh DatabaseSeeder untuk membuat user admin pertama.
-    | Nilainya diambil dari .env supaya kredensial tidak tertulis di kode
-    | dan bisa berbeda antara lokal dan production.
-    |
+    | ADMIN_EMAIL dan ADMIN_PASSWORD wajib diatur via environment di produksi.
     */
 
-    'name'     => env('ADMIN_NAME', 'Admin Destinara'),
-    'email'    => env('ADMIN_EMAIL', 'admin@destinara.my.id'),
-    'password' => env('ADMIN_PASSWORD', 'admin123'),
+    'name' => env('ADMIN_NAME', 'Administrator Destinara'),
+    'email' => env('ADMIN_EMAIL'),
+    'password' => env('ADMIN_PASSWORD'),
 
 ];

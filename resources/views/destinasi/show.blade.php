@@ -71,13 +71,13 @@
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#51634b]/10 text-[#51634b] uppercase tracking-wider">
             {{ $destination->location }}
           </span>
-          @if($destination->badge)
+          @if(!empty($destination->badge))
             <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#703A3A]/10 text-[#703A3A] uppercase tracking-wider">
               {{ $destination->badge }}
             </span>
           @endif
           <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 uppercase tracking-wider">
-            {{ $destination->category }}
+            {{ $destination->category_name ?? $destination->category ?? '' }}
           </span>
         </div>
 
@@ -86,7 +86,7 @@
         </h1>
 
         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
-          {{ $destination->lead ?? Str::limit(strip_tags($destination->description), 180) }}
+          {{ $destination->lead ?? Str::limit(strip_tags($destination->description ?? ''), 180) }}
         </p>
 
       </div>
@@ -101,7 +101,7 @@
           
           <!-- Image Visual Container -->
           <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-3xl overflow-hidden bg-gray-100 shadow-md">
-            <img src="{{ $destination->image_url }}" alt="{{ $destination->name }}" class="w-full h-full object-cover">
+            <img src="{{ $destination->cover_image_url ?? ($destination->image_url ?? asset('assets/img/hd/hero-fieldwork.jpg')) }}" alt="{{ $destination->name }}" class="w-full h-full object-cover">
           </div>
 
           <!-- Description Block -->
@@ -127,6 +127,30 @@
             </div>
           @endif
 
+          @if(!empty($destination->packages) && count($destination->packages) > 0)
+            <!-- Packages Highlight -->
+            <div class="p-6 bg-white dark:bg-[#1F1716] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A] flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+                <span>Paket Pembelajaran & Riset Tersedia</span>
+              </span>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                @foreach($destination->packages as $pkg)
+                  <div class="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col justify-between">
+                    <div>
+                      <h4 class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ is_array($pkg) ? ($pkg['name'] ?? '') : ($pkg->name ?? '') }}</h4>
+                      <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ is_array($pkg) ? ($pkg['description'] ?? '') : ($pkg->description ?? '') }}</p>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200/50 dark:border-white/10 flex items-center justify-between">
+                      <span class="text-xs font-bold text-[#51634b]">{{ is_array($pkg) ? ($pkg['price_formatted'] ?? ('Rp ' . number_format($pkg['price_per_pax'] ?? ($pkg['price'] ?? 0), 0, ',', '.'))) : ($pkg->price_formatted ?? ('Rp ' . number_format($pkg->price_per_pax ?? ($pkg->price ?? 0), 0, ',', '.'))) }}</span>
+                      <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" class="text-xs font-bold text-[#703A3A] hover:underline">Pilih Paket</a>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            </div>
+          @endif
+
         </div>
 
         <!-- Right Sticky Booking / Information Card -->
@@ -139,7 +163,7 @@
               </h4>
               <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#51634b]">
                 <span class="w-2 h-2 rounded-full bg-[#51634b]"></span>
-                <span>Terverifikasi</span>
+                <span>Terkurasi</span>
               </span>
             </div>
 
@@ -150,7 +174,7 @@
               </div>
               <div class="flex items-start justify-between py-1 border-b border-gray-50 dark:border-white/5">
                 <span class="text-gray-500 dark:text-gray-400">{{ __('site.common.landscape_category') }}</span>
-                <span class="font-bold text-[#1E1B1B] dark:text-white uppercase">{{ $destination->category }}</span>
+                <span class="font-bold text-[#1E1B1B] dark:text-white uppercase">{{ $destination->category_name ?? $destination->category ?? '' }}</span>
               </div>
               <div class="flex items-start justify-between py-1 border-b border-gray-50 dark:border-white/5">
                 <span class="text-gray-500 dark:text-gray-400">{{ __('site.common.field_learning_module') }}</span>
@@ -167,7 +191,7 @@
             </div>
 
             <div class="pt-2 flex flex-col gap-3">
-              <a href="{{ env('SYSTEM_PORTAL_URL', 'https://layanan.destinara.id') }}/buyer/booking/create?destinasi={{ $destination->slug }}" 
+              <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" 
                  class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3.5 px-4 rounded-full text-xs font-bold text-center block shadow-md hover:shadow-xl transition-all">
                 <span>{{ __('site.common.apply_program_here') }}</span>
               </a>

@@ -33,7 +33,7 @@ class TranslationService
     protected function getStoragePath(string $locale): string
     {
         $dir = storage_path('app/translations');
-        if (!File::isDirectory($dir)) {
+        if (! File::isDirectory($dir)) {
             File::makeDirectory($dir, 0755, true, true);
         }
 
@@ -52,7 +52,7 @@ class TranslationService
 
         $targetPair = $this->localeMap[$targetLocale] ?? $targetLocale;
         $sourcePair = $sourceLocale === 'id' ? 'id-ID' : $sourceLocale;
-        $cacheKey = 'trans_' . md5("{$sourceLocale}_{$targetLocale}_{$text}");
+        $cacheKey = 'trans_'.md5("{$sourceLocale}_{$targetLocale}_{$text}");
 
         return Cache::remember($cacheKey, 60 * 60 * 24 * 30, function () use ($text, $sourcePair, $targetPair) {
             try {
@@ -70,12 +70,12 @@ class TranslationService
                 if ($response->successful()) {
                     $json = $response->json();
                     $translated = $json['responseData']['translatedText'] ?? null;
-                    if (!empty($translated) && !str_starts_with($translated, 'MYMEMORY WARNING:')) {
+                    if (! empty($translated) && ! str_starts_with($translated, 'MYMEMORY WARNING:')) {
                         return html_entity_decode($translated, ENT_QUOTES | ENT_HTML5, 'UTF-8');
                     }
                 }
             } catch (\Throwable $e) {
-                Log::warning("AutoTranslate error [{$sourcePair}->{$targetPair}]: " . $e->getMessage());
+                Log::warning("AutoTranslate error [{$sourcePair}->{$targetPair}]: ".$e->getMessage());
             }
 
             return $text;
@@ -94,6 +94,7 @@ class TranslationService
             $trimmed = trim($para);
             if (empty($trimmed)) {
                 $translatedParagraphs[] = '';
+
                 continue;
             }
 
@@ -107,8 +108,9 @@ class TranslationService
                 if ($response->successful()) {
                     $json = $response->json();
                     $translated = $json['responseData']['translatedText'] ?? null;
-                    if (!empty($translated) && !str_starts_with($translated, 'MYMEMORY WARNING:')) {
+                    if (! empty($translated) && ! str_starts_with($translated, 'MYMEMORY WARNING:')) {
                         $translatedParagraphs[] = html_entity_decode($translated, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
                         continue;
                     }
                 }
@@ -136,7 +138,7 @@ class TranslationService
 
             foreach ($fields as $field) {
                 $originalValue = $model->getAttribute($field);
-                if (empty($originalValue) || !is_string($originalValue)) {
+                if (empty($originalValue) || ! is_string($originalValue)) {
                     continue;
                 }
 
@@ -207,13 +209,13 @@ class TranslationService
     {
         return match ($basename) {
             'Destination' => "destinations.{$model->slug}.{$field}",
-            'Story'       => "stories.{$model->slug}.{$field}",
-            'Program'     => "programs.{$model->id}.{$field}",
+            'Story' => "stories.{$model->slug}.{$field}",
+            'Program' => "programs.{$model->id}.{$field}",
             'Testimonial' => "testimonials.{$model->id}.{$field}",
-            'Stat'        => "stats.{$model->id}.{$field}",
-            'TeamMember'  => "team.{$model->id}.{$field}",
+            'Stat' => "stats.{$model->id}.{$field}",
+            'TeamMember' => "team.{$model->id}.{$field}",
             'PageSection' => "sections.{$model->page_slug}.{$model->section_key}.{$field}",
-            default       => null,
+            default => null,
         };
     }
 }

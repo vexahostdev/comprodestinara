@@ -28,7 +28,7 @@
         <div class="border-b border-gray-100 pb-4">
             <div class="flex items-center justify-between">
                 <h3 class="text-base font-bold text-gray-800">{{ $message->full_name }}</h3>
-                <span class="text-gray-400 text-[11px]">{{ $message->created_at->format('d M Y, H:i:s WIB') }}</span>
+                <span class="text-gray-400 text-[11px]">{{ $message->created_at->translatedFormat('d F Y, H:i:s') }} WIB</span>
             </div>
             <div class="text-gray-500 mt-1">{{ $message->institution }}</div>
         </div>

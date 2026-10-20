@@ -12,13 +12,14 @@ class TeamMemberController extends Controller
     public function index()
     {
         $members = TeamMember::orderBy('order')->orderBy('id')->get();
+
         return view('admin.team.index', compact('members'));
     }
 
     public function create()
     {
         return view('admin.team.form', [
-            'member' => new TeamMember(),
+            'member' => new TeamMember,
             'isEdit' => false,
         ]);
     }

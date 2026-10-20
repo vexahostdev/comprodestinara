@@ -18,7 +18,7 @@ class LocaleController extends Controller
      */
     public function switch(Request $request, string $locale): RedirectResponse
     {
-        if (!in_array($locale, self::SUPPORTED_LOCALES, true)) {
+        if (! in_array($locale, self::SUPPORTED_LOCALES, true)) {
             $locale = config('app.fallback_locale', 'id');
         }
 

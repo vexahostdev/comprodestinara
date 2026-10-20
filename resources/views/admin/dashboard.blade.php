@@ -88,26 +88,36 @@
             <div class="p-4 border-b border-gray-100 flex items-center justify-between">
                 <div class="font-semibold text-gray-800 text-sm flex items-center gap-2">
                     <span class="material-symbols-outlined text-[#703a3a] text-[18px]">explore</span>
-                    <span>Tapak Destinasi</span>
+                    <span>Katalog Tapak (Core System API)</span>
                 </div>
-                <a href="{{ route('admin.destinations.create') }}" class="text-xs text-[#703a3a] font-semibold hover:underline">+ Tambah</a>
+                <a href="{{ config('services.core_system.url') }}/admin/destinasi" target="_blank" class="text-xs text-[#703a3a] font-semibold hover:underline flex items-center gap-1">
+                    <span>Kelola di Core</span>
+                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                </a>
             </div>
             <div class="divide-y divide-gray-100">
                 @forelse($recentDestinations as $dest)
+                    @php
+                        $dName = is_array($dest) ? ($dest['name'] ?? '') : ($dest->name ?? '');
+                        $dSlug = is_array($dest) ? ($dest['slug'] ?? '') : ($dest->slug ?? '');
+                        $dCity = is_array($dest) ? ($dest['city'] ?? '') : ($dest->city ?? '');
+                        $dProv = is_array($dest) ? ($dest['province'] ?? '') : ($dest->province ?? '');
+                        $dImg = is_array($dest) ? ($dest['cover_url'] ?? asset('assets/img/hd/hero-fieldwork.jpg')) : ($dest->cover_url ?? asset('assets/img/hd/hero-fieldwork.jpg'));
+                    @endphp
                     <div class="p-3.5 flex items-center justify-between hover:bg-gray-50 transition-colors">
                         <div class="flex items-center gap-3">
-                            <img src="{{ $dest->image_url }}" alt="{{ $dest->name }}" class="w-10 h-10 rounded-lg object-cover">
+                            <img src="{{ $dImg }}" alt="{{ $dName }}" class="w-10 h-10 rounded-lg object-cover">
                             <div>
-                                <div class="font-medium text-gray-800 text-xs">{{ $dest->name }}</div>
-                                <div class="text-[11px] text-gray-400">{{ $dest->location }} &bull; <span class="uppercase text-amber-700 font-medium">{{ $dest->category }}</span></div>
+                                <div class="font-medium text-gray-800 text-xs">{{ $dName }}</div>
+                                <div class="text-[11px] text-gray-400">{{ $dCity }}, {{ $dProv }}</div>
                             </div>
                         </div>
-                        <a href="{{ route('admin.destinations.edit', $dest->id) }}" class="text-gray-400 hover:text-gray-700">
-                            <span class="material-symbols-outlined text-[18px]">edit</span>
+                        <a href="{{ route('destinations.show', $dSlug) }}" target="_blank" class="text-gray-400 hover:text-gray-700" title="Lihat di Web">
+                            <span class="material-symbols-outlined text-[18px]">visibility</span>
                         </a>
                     </div>
                 @empty
-                    <div class="p-6 text-center text-gray-400 text-xs">Belum ada data destinasi.</div>
+                    <div class="p-6 text-center text-gray-400 text-xs">Belum ada data destinasi terhubung dari Core API.</div>
                 @endforelse
             </div>
         </div>

@@ -35,4 +35,14 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Destinara Core System API Integration — SPEC §16.2
+    |--------------------------------------------------------------------------
+    */
+    'core_system' => [
+        'url' => env('CORE_SYSTEM_URL', env('SYSTEM_PORTAL_URL', 'https://layanan.destinara.my.id')),
+        'api_url' => env('CORE_SYSTEM_API_URL', env('SYSTEM_API_URL', 'https://layanan.destinara.my.id/api/v1/public')),
+    ],
+
 ];

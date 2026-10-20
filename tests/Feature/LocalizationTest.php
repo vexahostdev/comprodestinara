@@ -2,10 +2,25 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class LocalizationTest extends TestCase
 {
+    use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        Http::fake([
+            '*/api/v1/public/*' => Http::response(['success' => true, 'data' => []], 200),
+        ]);
+
+        $this->seed();
+    }
+
     /**
      * Test language switcher endpoint.
      */
@@ -13,7 +28,7 @@ class LocalizationTest extends TestCase
     {
         $locales = ['id', 'en', 'zh', 'ja', 'de', 'fr', 'nl'];
         foreach ($locales as $locale) {
-            $response = $this->get('/lang/' . $locale);
+            $response = $this->get('/lang/'.$locale);
             $response->assertRedirect();
             $response->assertSessionHas('locale', $locale);
             $response->assertCookie('destinara_locale', $locale);
@@ -28,16 +43,16 @@ class LocalizationTest extends TestCase
         $locales = ['id', 'en', 'zh', 'ja', 'de', 'fr', 'nl'];
         $routes = [
             '/',
-            '/' . 'tentang-kami',
-            '/' . 'untuk-sekolah',
-            '/' . 'untuk-peneliti',
-            '/' . 'mitra-desa',
-            '/' . 'destinasi',
-            '/' . 'cerita',
-            '/' . 'kontak',
-            '/' . 'syarat-ketentuan',
-            '/' . 'kebijakan-privasi',
-            '/' . 'login',
+            '/'.'tentang-kami',
+            '/'.'untuk-sekolah',
+            '/'.'untuk-peneliti',
+            '/'.'mitra-desa',
+            '/'.'destinasi',
+            '/'.'cerita',
+            '/'.'kontak',
+            '/'.'syarat-ketentuan',
+            '/'.'kebijakan-privasi',
+            '/'.'login',
         ];
 
         foreach ($locales as $locale) {
@@ -62,32 +77,30 @@ class LocalizationTest extends TestCase
     {
         // English Home
         $resEn = $this->withSession(['locale' => 'en'])->get('/');
-        $resEn->assertSee('Curated Sanctuaries');
-        $resEn->assertSee('Field Researchers');
+        $resEn->assertSee('Explore Field Sites');
 
         // Chinese Home
         $resZh = $this->withSession(['locale' => 'zh'])->get('/');
-        $resZh->assertSee('探索目的地');
+        $resZh->assertSee('探索研学基地');
 
         // Japanese Home
         $resJa = $this->withSession(['locale' => 'ja'])->get('/');
-        $resJa->assertSee('厳選された自然環境');
+        $resJa->assertSee('フィールドを探す');
 
         // German Home
         $resDe = $this->withSession(['locale' => 'de'])->get('/');
-        $resDe->assertSee('Kuratierte Schutzgebiete');
+        $resDe->assertSee('Feldstationen erkunden');
 
         // French Home
         $resFr = $this->withSession(['locale' => 'fr'])->get('/');
-        $resFr->assertSee('Sanctuaires');
+        $resFr->assertSee('Explorer les stations');
 
         // Dutch Home
         $resNl = $this->withSession(['locale' => 'nl'])->get('/');
-        $resNl->assertSee('Gecureerde Reservaten');
+        $resNl->assertSee('Veldstations ontdekken');
 
         // Indonesian Home
         $resId = $this->withSession(['locale' => 'id'])->get('/');
-        $resId->assertSee('Tapak Terkurasi');
-        $resId->assertSee('Peneliti Lapangan');
+        $resId->assertSee('Jelajahi Destinasi');
     }
 }

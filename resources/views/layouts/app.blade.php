@@ -575,12 +575,12 @@
 
       <!-- Portal Layanan Quick Buttons -->
       <div class="grid grid-cols-2 gap-2.5 mb-5 pb-4 border-b border-gray-100 dark:border-white/10">
-        <a href="{{ env('SYSTEM_PORTAL_URL', 'https://layanan.destinara.id') }}/login" target="_blank" rel="noopener noreferrer" 
+        <a href="{{ config('services.core_system.url') }}/login" target="_blank" rel="noopener noreferrer" 
            class="py-2.5 px-3 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
           <span class="material-symbols-outlined text-[16px]">login</span>
           <span>{{ __('site.nav.login') }}</span>
         </a>
-        <a href="{{ env('SYSTEM_PORTAL_URL', 'https://layanan.destinara.id') }}/register" target="_blank" rel="noopener noreferrer" 
+        <a href="{{ config('services.core_system.url') }}/register" target="_blank" rel="noopener noreferrer" 
            class="py-2.5 px-3 rounded-full bg-[#703A3A] hover:bg-[#561D1E] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
           <span>{{ __('site.nav.register') }}</span>
         </a>
@@ -665,7 +665,7 @@
         </a>
         <div class="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
           <span class="w-2 h-2 rounded-full bg-[#51634b]"></span>
-          <span>Inisiatif Pendidikan Lapangan &amp; Riset Komunitas Terverifikasi FPIC Adat</span>
+          <span>Inisiatif Pendidikan Lapangan &amp; Riset Komunitas Terkurasi</span>
         </div>
       </div>
 

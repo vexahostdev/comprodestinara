@@ -22,7 +22,7 @@ class PageSectionController extends Controller
     {
         $activePage = $request->query('page', 'home');
 
-        if (!array_key_exists($activePage, $this->pages)) {
+        if (! array_key_exists($activePage, $this->pages)) {
             $activePage = 'home';
         }
 
@@ -42,6 +42,7 @@ class PageSectionController extends Controller
     {
         // Parameter name in route is $page or $section
         $section = $page;
+
         return view('admin.pages.edit', [
             'section' => $section,
             'pages' => $this->pages,
@@ -89,9 +90,9 @@ class PageSectionController extends Controller
 
         if ($request->has('items')) {
             $filteredItems = array_values(array_filter($request->input('items', []), function ($item) {
-                return !empty($item['title']) || !empty($item['stat']) || !empty($item['desc']);
+                return ! empty($item['title']) || ! empty($item['stat']) || ! empty($item['desc']);
             }));
-            $section->items = !empty($filteredItems) ? $filteredItems : null;
+            $section->items = ! empty($filteredItems) ? $filteredItems : null;
         }
 
         $section->save();
@@ -103,10 +104,11 @@ class PageSectionController extends Controller
     public function toggle(PageSection $page)
     {
         $section = $page;
-        $section->is_active = !$section->is_active;
+        $section->is_active = ! $section->is_active;
         $section->save();
 
         $status = $section->is_active ? 'diaktifkan' : 'dinonaktifkan';
+
         return redirect()->back()->with('success', "Section '{$section->section_name}' berhasil {$status}!");
     }
 }

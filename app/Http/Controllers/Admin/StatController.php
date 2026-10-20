@@ -11,6 +11,7 @@ class StatController extends Controller
     public function index()
     {
         $stats = Stat::orderBy('order')->get();
+
         return view('admin.stats.index', compact('stats'));
     }
 
@@ -61,6 +62,7 @@ class StatController extends Controller
     public function destroy(Stat $stat)
     {
         $stat->delete();
+
         return redirect()->route('admin.stats.index')->with('success', 'Statistik berhasil dihapus!');
     }
 }

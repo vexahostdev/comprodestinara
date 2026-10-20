@@ -20,10 +20,10 @@ class PageSectionSeeder extends Seeder
                 'section_name' => 'Hero Banner Utama',
                 'title' => 'Menghidupkan Ruang Belajar Nyata di Balik Kehangatan Desa Nusantara',
                 'subtitle' => 'Menjembatani kurikulum institusi pendidikan dengan kearifan tapak, ekologi lokal, dan narasi hidup masyarakat adat di seluruh penjuru Indonesia.',
-                'badge' => 'Tahun Akademik ' . date('Y') . '/' . (date('Y') + 1),
+                'badge' => 'Tahun Akademik '.date('Y').'/'.(date('Y') + 1),
                 'content' => null,
                 'image' => 'assets/img/hd/hero-home.jpg',
-                'image_caption' => 'Dokumentasi tapak lapangan aktif tahun akademik ' . date('Y') . '/' . (date('Y') + 1),
+                'image_caption' => 'Dokumentasi tapak lapangan aktif tahun akademik '.date('Y').'/'.(date('Y') + 1),
                 'button_text' => 'Jelajahi Destinasi',
                 'button_link' => '/destinasi',
                 'secondary_button_text' => null,
@@ -105,7 +105,7 @@ class PageSectionSeeder extends Seeder
                 'items' => [
                     ['stat' => '12 Orang', 'label' => 'Kapasitas Kelompok', 'desc' => 'Batas ketat daya tampung per kelompok guna menekan beban ekologis tapak.'],
                     ['stat' => '100% FPIC', 'label' => 'Persetujuan Musyawarah', 'desc' => 'Persetujuan awal tanpa paksaan (Free Prior Informed Consent) bersama dewan musyawarah desa mitra.'],
-                    ['stat' => '40% Alokasi', 'label' => 'Kedaulatan Finansial', 'desc' => 'Dari biaya program dialirkan langsung ke kas desa mitra dan regenerasi sanggar adat lokal.']
+                    ['stat' => '40% Alokasi', 'label' => 'Kedaulatan Finansial', 'desc' => 'Dari biaya program dialirkan langsung ke kas desa mitra dan regenerasi sanggar adat lokal.'],
                 ],
                 'order' => 2,
                 'is_active' => true,
@@ -146,7 +146,7 @@ class PageSectionSeeder extends Seeder
                     ['icon' => 'handshake', 'title' => 'Kemitraan Setara', 'desc' => 'Warga desa adalah narasumber utama dan rekan dialog, bukan sekadar objek studi atau penyedia jasa akomodasi.'],
                     ['icon' => 'nature', 'title' => 'Batas Ekologis Rendah Jejak', 'desc' => 'Jumlah rombongan dibatasi ketat agar ritme sosial dan kelestarian ekosistem tapak tidak terdistorsi oleh kedatangan kelompok luar.'],
                     ['icon' => 'gavel', 'title' => 'Transparansi & Hak Kepemilikan Data', 'desc' => 'Seluruh data observasi, dokumentasi audio-visual, dan jurnal lapangan disalin kembali dan diarsipkan di balai desa mitra.'],
-                    ['icon' => 'savings', 'title' => 'Kedaulatan Ekonomi Lokal', 'desc' => 'Pengeluaran logistik, makan, homestay, dan fasilitasi dialirkan sepenuhnya kepada dapur warga dan kas sanggar komunitas.']
+                    ['icon' => 'savings', 'title' => 'Kedaulatan Ekonomi Lokal', 'desc' => 'Pengeluaran logistik, makan, homestay, dan fasilitasi dialirkan sepenuhnya kepada dapur warga dan kas sanggar komunitas.'],
                 ],
                 'order' => 4,
                 'is_active' => true,
@@ -207,7 +207,7 @@ class PageSectionSeeder extends Seeder
                     ['icon' => 'verified_user', 'title' => 'Kepatuhan Regulasi Dinas', 'desc' => 'Kelengkapan administrasi resmi mencakup izin dinas pendidikan, surat rekomendasi wilayah, dan MoU berpayung hukum legal.'],
                     ['icon' => 'menu_book', 'title' => 'Modul Silabus Tematik Terpadu', 'desc' => 'Materi disesuaikan dengan jenjang SMP/SMA: P5 Gaya Hidup Berkelanjutan, Kearifan Lokal, dan Rekayasa Teknologi Sederhana.'],
                     ['icon' => 'health_and_safety', 'title' => 'Protokol Keamanan & Mitigasi Rasio 1:8', 'desc' => 'Setiap 8 siswa didampingi oleh 1 fasilitator bersertifikasi pertolongan pertama (First Aid) dan relawan pemandu tapak desa.'],
-                    ['icon' => 'receipt_long', 'title' => 'Laporan Pertanggungjawaban Rapi', 'desc' => 'Format pelaporan keuangan dan capaian belajar siap audit, dilengkapi portofolio lembar kerja refleksi siswa.']
+                    ['icon' => 'receipt_long', 'title' => 'Laporan Pertanggungjawaban Rapi', 'desc' => 'Format pelaporan keuangan dan capaian belajar siap audit, dilengkapi portofolio lembar kerja refleksi siswa.'],
                 ],
                 'order' => 2,
                 'is_active' => true,
@@ -230,7 +230,7 @@ class PageSectionSeeder extends Seeder
                     ['step' => '01', 'title' => 'Pemetaan Silabus & Audiensi Kurikulum', 'desc' => 'Tim kurator kami mendiskusikan capaian pembelajaran yang ditargetkan guru mata pelajaran.'],
                     ['step' => '02', 'title' => 'Penyusunan Rencana Operasional & Perizinan', 'desc' => 'Penerbitan proposal teknis, MoU, dokumen mitigasi risiko rute perjalanan, dan izin desa mitra.'],
                     ['step' => '03', 'title' => 'Pembekalan Peserta & Pelaksanaan Lapangan', 'desc' => 'Sesi briefing etika tapak di sekolah dilanjutkan pendampingan intensif selama 2-4 hari di desa.'],
-                    ['step' => '04', 'title' => 'Evaluasi Refleksi & Penyerahan Berkas LPJ', 'desc' => 'Penilaian rubrik portofolio siswa, video dokumentasi kegiatan, dan draf laporan keuangan transparan.']
+                    ['step' => '04', 'title' => 'Evaluasi Refleksi & Penyerahan Berkas LPJ', 'desc' => 'Penilaian rubrik portofolio siswa, video dokumentasi kegiatan, dan draf laporan keuangan transparan.'],
                 ],
                 'order' => 3,
                 'is_active' => true,
@@ -290,7 +290,7 @@ class PageSectionSeeder extends Seeder
                 'items' => [
                     ['icon' => 'verified', 'title' => 'Persetujuan FPIC Penuh', 'desc' => 'Setiap topik wawancara dan pengambilan sampel telah dikonsultasikan dalam musyawarah adat sebelum tim riset tiba.'],
                     ['icon' => 'folder_shared', 'title' => 'Salinan Arsip Kembali ke Desa', 'desc' => 'Hasil publikasi jurnal, skripsi, atau tesis wajib diserahkan satu eksemplar dalam bahasa populer untuk perpustakaan desa.'],
-                    ['icon' => 'lock', 'title' => 'Perlindungan Pengetahuan Sakral', 'desc' => 'Kerahasiaan mantra, lokasi situs sakral, atau ramuan herbal tertentu dijaga ketat dari komersialisasi sepihak.']
+                    ['icon' => 'lock', 'title' => 'Perlindungan Pengetahuan Sakral', 'desc' => 'Kerahasiaan mantra, lokasi situs sakral, atau ramuan herbal tertentu dijaga ketat dari komersialisasi sepihak.'],
                 ],
                 'order' => 2,
                 'is_active' => true,
@@ -313,7 +313,7 @@ class PageSectionSeeder extends Seeder
                     ['title' => 'Akses Listrik & Meja Kerja Homestay', 'desc' => 'Kamar homestay dilengkapi area kerja tenang, colokan listrik stabil, dan koneksi internet cadangan.'],
                     ['title' => 'Penerjemah Bahasa Daerah Lokal', 'desc' => 'Fasilitator pendamping yang fasih bahasa ibu setempat untuk wawancara mendalam dengan sesepuh adat.'],
                     ['title' => 'Logistik & Izin Wilayah Bakesbangpol', 'desc' => 'Bantuan pengurusan izin penelitian tingkat kabupaten/provinsi dan surat pengantar desa.'],
-                    ['title' => 'Transportasi Lapangan 4x4 / Trail', 'desc' => 'Armada penunjang untuk menjangkau tapak-tapak pelosok yang sulit dijangkau kendaraan biasa.']
+                    ['title' => 'Transportasi Lapangan 4x4 / Trail', 'desc' => 'Armada penunjang untuk menjangkau tapak-tapak pelosok yang sulit dijangkau kendaraan biasa.'],
                 ],
                 'order' => 3,
                 'is_active' => true,
@@ -356,7 +356,7 @@ class PageSectionSeeder extends Seeder
                     ['title' => 'Alokasi Dana Kas & Sanggar Desa', 'desc' => 'Setiap peserta berkontribusi langsung ke kas desa dan kas pemeliharaan rumah adat/sanggar seni lokal.'],
                     ['title' => 'Peluang Ekonomi Dapur Warga', 'desc' => 'Penyediaan konsumsi berbasis bahan pangan lokal yang dimasak bergilir oleh kelompok ibu-ibu PKK.'],
                     ['title' => 'Regenerasi Minat Budaya Generasi Muda', 'desc' => 'Anak-anak muda desa dilatih menjadi fasilitator riset dan pemandu tapak berpenghasilan mandiri.'],
-                    ['title' => 'Dokumentasi Digital Warisan Leluhur', 'desc' => 'Buku silsilah, tanaman obat, dan arsip cerita lisan dibantu pembukuan digitalnya secara cuma-cuma.']
+                    ['title' => 'Dokumentasi Digital Warisan Leluhur', 'desc' => 'Buku silsilah, tanaman obat, dan arsip cerita lisan dibantu pembukuan digitalnya secara cuma-cuma.'],
                 ],
                 'order' => 2,
                 'is_active' => true,

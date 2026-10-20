@@ -38,7 +38,7 @@
                             </td>
                             <td class="p-3.5 text-emerald-800 font-medium">{{ $story->category }}</td>
                             <td class="p-3.5 text-gray-600">{{ $story->author_name ?? '-' }}</td>
-                            <td class="p-3.5 text-gray-400 text-[11px]">{{ $story->published_at ? $story->published_at->format('d M Y') : '-' }}</td>
+                            <td class="p-3.5 text-gray-400 text-[11px]">{{ $story->published_at ? $story->published_at->translatedFormat('d F Y') : '-' }}</td>
                             <td class="p-3.5 text-right space-x-2">
                                 <a href="{{ route('admin.stories.edit', $story->id) }}" class="text-blue-600 hover:text-blue-800 font-medium">Edit</a>
                                 <form action="{{ route('admin.stories.destroy', $story->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus cerita ini?')">

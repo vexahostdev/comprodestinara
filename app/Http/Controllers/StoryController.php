@@ -25,6 +25,7 @@ class StoryController extends Controller
     {
         $story = Story::where('slug', $slug)->firstOrFail();
         $recentStories = Story::active()->where('id', '!=', $story->id)->take(3)->get();
+
         return view('cerita.show', compact('story', 'recentStories'));
     }
 }

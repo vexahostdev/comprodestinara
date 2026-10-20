@@ -13,8 +13,8 @@ trait LocalizableModel
     public static function bootLocalizableModel(): void
     {
         static::saved(function ($model) {
-            // Jalankan auto-translate saat admin menyimpan perubahan data
-            if (request()->is('admin*') || app()->runningInConsole()) {
+            // Jalankan auto-translate HANYA saat admin menyimpan perubahan data via web (bukan console/seeding/testing)
+            if (request()->is('admin*') && ! app()->runningInConsole() && ! app()->runningUnitTests()) {
                 try {
                     $model->autoTranslate();
                 } catch (\Throwable $e) {
@@ -46,7 +46,7 @@ trait LocalizableModel
         // 1. Cek terjemahan kurasi manual di katalog lang/{locale}/
         if ($key && Lang::has($key)) {
             $translated = __($key);
-            if (!empty($translated)) {
+            if (! empty($translated)) {
                 return $translated;
             }
         }
@@ -55,12 +55,12 @@ trait LocalizableModel
         if ($key) {
             $service = app(TranslationService::class);
             $stored = $service->getStoredTranslation($key, $locale);
-            if (!empty($stored)) {
+            if (! empty($stored)) {
                 return $stored;
             }
 
-            // 3. Auto-translate on-the-fly jika belum ada dan simpan hasilnya
-            if (is_string($original) && mb_strlen($original) > 0) {
+            // 3. Auto-translate on-the-fly jika belum ada dan simpan hasilnya (hanya di web request produksi/lokal)
+            if (! app()->runningUnitTests() && ! app()->runningInConsole() && is_string($original) && mb_strlen($original) > 0) {
                 $autoTranslated = $service->translate($original, $locale, 'id');
                 if ($autoTranslated && $autoTranslated !== $original) {
                     return $autoTranslated;
@@ -77,7 +77,7 @@ trait LocalizableModel
     public function autoTranslate(?array $fields = null): void
     {
         $targetFields = $fields ?: $this->getTranslatableFields();
-        if (!empty($targetFields)) {
+        if (! empty($targetFields)) {
             app(TranslationService::class)->translateModel($this, $targetFields);
         }
     }
@@ -89,13 +89,13 @@ trait LocalizableModel
     {
         return match (class_basename($this)) {
             'Destination' => ['name', 'excerpt', 'narrative', 'ecological_context', 'research_focus', 'administrative_location', 'landscape_category', 'curriculum_focus', 'cultural_protocol'],
-            'Story'       => ['title', 'excerpt', 'content', 'elder_quote', 'elder_name', 'elder_title'],
-            'Program'     => ['name', 'description', 'duration_days', 'target_audience'],
+            'Story' => ['title', 'excerpt', 'content', 'elder_quote', 'elder_name', 'elder_title'],
+            'Program' => ['name', 'description', 'duration_days', 'target_audience'],
             'Testimonial' => ['quote', 'author_role', 'author_school'],
-            'Stat'        => ['label'],
-            'TeamMember'  => ['name', 'role', 'bio'],
+            'Stat' => ['label'],
+            'TeamMember' => ['name', 'role', 'bio'],
             'PageSection' => ['title', 'subtitle', 'body'],
-            default       => [],
+            default => [],
         };
     }
 
@@ -107,12 +107,12 @@ trait LocalizableModel
         return match (class_basename($this)) {
             'PageSection' => "sections.{$this->page_slug}.{$this->section_key}.{$attribute}",
             'Destination' => "destinations.{$this->slug}.{$attribute}",
-            'Program'     => "programs.{$this->id}.{$attribute}",
-            'Story'       => "stories.{$this->slug}.{$attribute}",
+            'Program' => "programs.{$this->id}.{$attribute}",
+            'Story' => "stories.{$this->slug}.{$attribute}",
             'Testimonial' => "testimonials.{$this->id}.{$attribute}",
-            'Stat'        => "stats.{$this->id}.{$attribute}",
-            'TeamMember'  => "team.{$this->id}.{$attribute}",
-            default       => null,
+            'Stat' => "stats.{$this->id}.{$attribute}",
+            'TeamMember' => "team.{$this->id}.{$attribute}",
+            default => null,
         };
     }
 }
