@@ -29,7 +29,7 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="flex flex-col w-full">
     
     <!-- Header Banner -->
@@ -60,23 +60,23 @@
         <!-- Category Filter Pills -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full flex-nowrap">
           <a href="{{ route('destinations.index') }}" 
-             class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap {{ !request('category') || request('category') === 'all' ? 'bg-[#703A3A] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap {{ !request('category') || request('category') === 'all' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             {{ __('site.common.all_regions') }}
           </a>
           <a href="{{ route('destinations.index', ['category' => 'budaya']) }}" 
-             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'budaya' ? 'bg-[#703A3A] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'budaya' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             🏛️ {{ __('site.common.cat_culture') }}
           </a>
           <a href="{{ route('destinations.index', ['category' => 'ekologi']) }}" 
-             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'ekologi' ? 'bg-[#703A3A] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'ekologi' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             🌱 {{ __('site.common.cat_ecology') }}
           </a>
           <a href="{{ route('destinations.index', ['category' => 'pangan']) }}" 
-             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'pangan' ? 'bg-[#703A3A] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'pangan' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             🌾 {{ __('site.common.cat_food') }}
           </a>
           <a href="{{ route('destinations.index', ['category' => 'bahari']) }}" 
-             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'bahari' ? 'bg-[#703A3A] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap {{ request('category') === 'bahari' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             🌊 {{ __('site.common.cat_marine') }}
           </a>
         </div>
@@ -88,10 +88,10 @@
           @endif
           <div class="relative w-full sm:w-64">
             <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari nama tapak..." 
-                   class="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#703A3A]">
+                   class="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45]">
             <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400 text-[16px]">search</span>
           </div>
-          <button type="submit" class="bg-[#703A3A] text-white px-4 py-2 rounded-full text-xs font-bold shrink-0 hover:bg-[#561D1E] transition-colors">
+          <button type="submit" class="bg-[#1F2B45] text-white px-4 py-2 rounded-full text-xs font-bold shrink-0 hover:bg-[#16203A] transition-colors">
             Cari
           </button>
         </form>
@@ -161,7 +161,7 @@
               </div>
 
               <a href="{{ route('destinations.show', $dest->slug) }}" 
-                 class="bg-[#703A3A] hover:bg-[#561D1E] text-white px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs">
+                 class="bg-[#1F2B45] hover:bg-[#16203A] text-white px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-xs">
                 <span>Buka Silabus</span>
                 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
               </a>
@@ -172,7 +172,7 @@
           <div class="col-span-1 sm:col-span-2 lg:col-span-3 py-16 text-center text-gray-500 bg-white dark:bg-[#1F1716] rounded-3xl p-8 border border-gray-100 dark:border-white/5">
             <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">search_off</span>
             <p class="text-sm font-semibold">{{ __('site.common.no_destinations') }}</p>
-            <a href="{{ route('destinations.index') }}" class="inline-block mt-3 text-xs font-bold text-[#703A3A] hover:underline">{{ __('site.common.back_to_all') }}</a>
+            <a href="{{ route('destinations.index') }}" class="inline-block mt-3 text-xs font-bold text-[#1F2B45] hover:underline">{{ __('site.common.back_to_all') }}</a>
           </div>
         @endforelse
       </div>

@@ -28,12 +28,12 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 py-2 text-xs text-gray-500 dark:text-gray-400">
-      <a href="{{ url('/') }}" class="hover:text-[#703A3A] transition-colors">{{ __('site.nav.home') }}</a>
+      <a href="{{ url('/') }}" class="hover:text-[#1F2B45] transition-colors">{{ __('site.nav.home') }}</a>
       <span>/</span>
       <span class="text-[#1E1B1B] dark:text-white font-medium">{{ __('site.legal.privacy_title') }}</span>
     </nav>
@@ -64,7 +64,7 @@
             <span>{{ __('site.legal.open_new_tab') }}</span>
           </a>
           <a href="{{ $downloadUrl }}" 
-             class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#703A3A] hover:bg-[#561D1E] text-white rounded-full text-xs font-bold transition-all shadow-sm">
+             class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#1F2B45] hover:bg-[#16203A] text-white rounded-full text-xs font-bold transition-all shadow-sm">
             <span class="material-symbols-outlined text-[16px]">download</span>
             <span>{{ __('site.legal.download_pdf_copy') }}</span>
           </a>
@@ -74,17 +74,17 @@
       <!-- Navigasi Dokumen Terkait -->
       <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-white/5 text-xs flex-wrap">
         <span class="text-gray-400 font-medium">{{ __('site.legal.related_docs') }}:</span>
-        <a href="{{ route('legal.terms') }}" class="text-gray-600 dark:text-gray-300 hover:text-[#703A3A] transition-colors flex items-center gap-1.5 font-medium">
+        <a href="{{ route('legal.terms') }}" class="text-gray-600 dark:text-gray-300 hover:text-[#1F2B45] transition-colors flex items-center gap-1.5 font-medium">
           <span class="material-symbols-outlined text-[15px]">description</span>
           <span>{{ __('site.footer.terms') }}</span>
         </a>
         <span class="text-gray-300">•</span>
-        <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] transition-colors flex items-center gap-1.5 font-medium {{ request()->routeIs('legal.privacy') && app()->getLocale() !== 'en' ? 'font-bold text-[#703A3A]' : 'text-gray-600 dark:text-gray-300' }}">
+        <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] transition-colors flex items-center gap-1.5 font-medium {{ request()->routeIs('legal.privacy') && app()->getLocale() !== 'en' ? 'font-bold text-[#1F2B45]' : 'text-gray-600 dark:text-gray-300' }}">
           <span class="material-symbols-outlined text-[15px]">shield</span>
           <span>{{ __('site.footer.privacy') }} (ID)</span>
         </a>
         <span class="text-gray-300">•</span>
-        <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] transition-colors flex items-center gap-1.5 font-medium {{ request()->routeIs('legal.privacy.en') || app()->getLocale() === 'en' ? 'font-bold text-[#703A3A]' : 'text-gray-600 dark:text-gray-300' }}">
+        <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] transition-colors flex items-center gap-1.5 font-medium {{ request()->routeIs('legal.privacy.en') || app()->getLocale() === 'en' ? 'font-bold text-[#1F2B45]' : 'text-gray-600 dark:text-gray-300' }}">
           <span class="material-symbols-outlined text-[15px]">translate</span>
           <span>{{ __('site.footer.privacy_en') }}</span>
         </a>
@@ -101,13 +101,13 @@
         </div>
         <div class="flex items-center gap-2">
           <button type="button" onclick="togglePdfFullscreen('pdfViewerCard')" 
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1E1716] rounded-full border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#703A3A] font-semibold transition-all shadow-xs cursor-pointer"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1E1716] rounded-full border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs cursor-pointer"
                   title="{{ __('site.legal.fullscreen') }}">
             <span class="material-symbols-outlined text-base" id="fullscreenIcon">fullscreen</span>
             <span id="fullscreenText">{{ __('site.legal.fullscreen') }}</span>
           </button>
           <a href="{{ $streamUrl }}#zoom=80&navpanes=1&pagemode=bookmarks" target="_blank" rel="noopener noreferrer" 
-             class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1E1716] rounded-full border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#703A3A] font-semibold transition-all shadow-xs"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1E1716] rounded-full border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs"
              title="{{ __('site.legal.full_tab') }}">
             <span class="material-symbols-outlined text-base">open_in_new</span>
             <span>{{ __('site.legal.full_tab') }}</span>
@@ -131,7 +131,7 @@
               {{ __('site.legal.browser_not_supported') }}
             </p>
             <div class="flex items-center gap-3">
-              <a href="{{ $streamUrl }}" target="_blank" class="px-5 py-2.5 bg-[#703A3A] text-white rounded-full text-xs font-bold">
+              <a href="{{ $streamUrl }}" target="_blank" class="px-5 py-2.5 bg-[#1F2B45] text-white rounded-full text-xs font-bold">
                 {{ __('site.legal.open_pdf') }}
               </a>
               <a href="{{ $downloadUrl }}" class="px-5 py-2.5 border border-white/30 text-white rounded-full text-xs font-bold">
@@ -153,7 +153,7 @@
       </div>
       <div>
         <span>{{ __('site.legal.dpo_contact') }}</span>
-        <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="font-bold text-[#703A3A] hover:underline">
+        <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="font-bold text-[#1F2B45] hover:underline">
           {{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}
         </a>
       </div>

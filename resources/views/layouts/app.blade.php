@@ -237,7 +237,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}"/>
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}"/>
   <link rel="manifest" href="{{ asset('site.webmanifest') }}"/>
-  <meta name="theme-color" content="#703a3a"/>
+  <meta name="theme-color" content="#1F2B45"/>
 
   <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -369,51 +369,51 @@
       <!-- Center: Destinara Navigation Links (Pomaii Clean Spacing & Interactive Hover Underline) -->
       <nav class="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Navigasi Utama">
         <a href="{{ route('home') }}" 
-           class="header-nav-link group text-sm font-semibold transition-colors relative py-1 {{ request()->routeIs('home') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-semibold transition-colors relative py-1 {{ request()->routeIs('home') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.home') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('home') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('home') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('about') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('about') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('about') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.about') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('about') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('about') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-schools') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-schools') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-schools') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.for_schools') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-schools') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-schools') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-researchers') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-researchers') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-researchers') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.for_researchers') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-researchers') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-researchers') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('for-villages') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-villages') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('for-villages') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.for_villages') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-villages') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('for-villages') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('destinations.index') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('destinations.*') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('destinations.*') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.destinations') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('destinations.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('destinations.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('stories.index') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('stories.*') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('stories.*') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.stories') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('stories.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('stories.*') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
 
         <a href="{{ route('contact.index') }}" 
-           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('contact.index') ? 'active-link text-[#703A3A] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#703A3A]' }}">
+           class="header-nav-link group text-sm font-medium transition-colors relative py-1 {{ request()->routeIs('contact.index') ? 'active-link text-[#1F2B45] font-bold' : 'text-gray-800 dark:text-gray-200 hover:text-[#1F2B45]' }}">
           <span>{{ __('site.nav.contact') }}</span>
-          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#703A3A] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('contact.index') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
+          <span class="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#1F2B45] rounded-full transition-all duration-300 origin-left {{ request()->routeIs('contact.index') ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100' }}"></span>
         </a>
       </nav>
 
@@ -424,9 +424,9 @@
         <div class="relative group" id="desktopLangDropdown">
           <button type="button" 
                   id="desktopLangBtn"
-                  class="header-circle-btn h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] transition-all cursor-pointer shadow-xs"
+                  class="header-circle-btn h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
                   title="{{ __('site.nav.choose_language') }}">
-            <span class="material-symbols-outlined text-[17px] text-[#703A3A]">translate</span>
+            <span class="material-symbols-outlined text-[17px] text-[#1F2B45]">translate</span>
             <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
               @if(app()->getLocale() === 'zh') 🇨🇳 ZH
               @elseif(app()->getLocale() === 'ja') 🇯🇵 JA
@@ -442,33 +442,33 @@
           
           <!-- Dropdown Menu -->
           <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#1E1716] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
-            <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
-              @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
-              @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'zh' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇨🇳</span><span>中文</span></span>
-              @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'ja' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇯🇵</span><span>日本語</span></span>
-              @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'de' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇩🇪</span><span>Deutsch</span></span>
-              @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'fr' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇫🇷</span><span>Français</span></span>
-              @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#703A3A] transition-colors {{ app()->getLocale() === 'nl' ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇳🇱</span><span>Nederlands</span></span>
-              @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-sm text-[#703A3A]">check</span> @endif
+              @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
           </div>
         </div>
@@ -476,14 +476,14 @@
         <!-- Icon 1: Search -->
         <a href="{{ route('destinations.index') }}" 
            title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">search</span>
         </a>
 
         <!-- Icon 2: Wishlist / Saved -->
         <a href="{{ route('destinations.index') }}" 
            title="Tapak Tersimpan"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">favorite_border</span>
         </a>
 
@@ -492,7 +492,7 @@
                 id="headerDrawerBtn"
                 aria-label="{{ __('site.nav.open_menu') }}"
                 title="Menu & Akses"
-                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#703A3A] hover:border-[#703A3A] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
 
@@ -512,7 +512,7 @@
         <div class="flex items-center gap-3">
           <img class="destinara-logo h-8 sm:h-9 w-auto object-contain" src="{{ asset('assets/img/logo-horizontal.png') }}" alt="Destinara Logo"/>
         </div>
-        <button id="mobileMenuCloseBtn" aria-label="{{ __('site.nav.close_menu') }}" class="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 text-gray-600 dark:text-gray-300 hover:text-[#703A3A] flex items-center justify-center transition-colors">
+        <button id="mobileMenuCloseBtn" aria-label="{{ __('site.nav.close_menu') }}" class="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 text-gray-600 dark:text-gray-300 hover:text-[#1F2B45] flex items-center justify-center transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -524,31 +524,31 @@
         <div class="p-3.5 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 flex flex-col gap-2.5">
           <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-800 dark:text-white px-0.5">
             <span class="flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[18px] text-[#703A3A]">translate</span>
+              <span class="material-symbols-outlined text-[18px] text-[#1F2B45]">translate</span>
               <span>{{ __('site.nav.language') }}</span>
             </span>
             <span class="text-[11px] font-normal text-gray-400 font-sans">{{ __('site.nav.choose_language') }}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇮🇩 Indonesia
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇬🇧 English
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇨🇳 中文
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇯🇵 日本語
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇩🇪 Deutsch
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇫🇷 Français
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#703A3A] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#703A3A]' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇳🇱 Nederlands
             </a>
           </div>
@@ -576,47 +576,47 @@
       <!-- Portal Layanan Quick Buttons -->
       <div class="grid grid-cols-2 gap-2.5 mb-5 pb-4 border-b border-gray-100 dark:border-white/10">
         <a href="{{ config('services.core_system.url') }}/login" target="_blank" rel="noopener noreferrer" 
-           class="py-2.5 px-3 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
+           class="py-2.5 px-3 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
           <span class="material-symbols-outlined text-[16px]">login</span>
           <span>{{ __('site.nav.login') }}</span>
         </a>
         <a href="{{ config('services.core_system.url') }}/register" target="_blank" rel="noopener noreferrer" 
-           class="py-2.5 px-3 rounded-full bg-[#703A3A] hover:bg-[#561D1E] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
+           class="py-2.5 px-3 rounded-full bg-[#1F2B45] hover:bg-[#16203A] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
           <span>{{ __('site.nav.register') }}</span>
         </a>
       </div>
 
       <!-- Navigation Links List in Drawer -->
       <nav class="space-y-1">
-        <a href="{{ route('home') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('home') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('home') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('home') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.home') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('about') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('about') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('about') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('about') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.about') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-schools') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-schools') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('for-schools') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-schools') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_schools_full') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-researchers') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-researchers') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('for-researchers') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-researchers') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_researchers_full') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('for-villages') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-villages') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('for-villages') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('for-villages') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.for_villages_full') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('destinations.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('destinations.*') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('destinations.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('destinations.*') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.destinations') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('stories.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('stories.*') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('stories.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('stories.*') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.stories_full') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
-        <a href="{{ route('contact.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('contact.index') ? 'bg-[#703A3A]/10 text-[#703A3A] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
+        <a href="{{ route('contact.index') }}" class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-sm font-semibold transition-all {{ request()->routeIs('contact.index') ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5' }}">
           <span>{{ __('site.nav.contact_full') }}</span>
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </a>
@@ -625,20 +625,20 @@
 
     <!-- Footer Action inside Drawer with Legal Links -->
     <div class="mt-8 pt-5 border-t border-gray-100 dark:border-white/10 space-y-3">
-      <a href="{{ route('destinations.index') }}" class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3 px-5 rounded-full text-xs font-bold text-center block shadow-xs transition-colors">
+      <a href="{{ route('destinations.index') }}" class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3 px-5 rounded-full text-xs font-bold text-center block shadow-xs transition-colors">
         <span>{{ __('site.nav.explore_destinations') }}</span>
       </a>
-      <a href="{{ route('contact.index') }}" class="w-full border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-gray-700 dark:text-gray-200 py-3 px-5 rounded-full text-xs font-bold text-center block transition-colors">
+      <a href="{{ route('contact.index') }}" class="w-full border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-gray-700 dark:text-gray-200 py-3 px-5 rounded-full text-xs font-bold text-center block transition-colors">
         <span>{{ __('site.nav.consult_program') }}</span>
       </a>
       
       <!-- Syarat & Ketentuan, Kebijakan Privasi in Drawer -->
       <div class="flex items-center justify-center gap-3 pt-2 text-[11px] text-gray-500 dark:text-gray-400">
-        <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
+        <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
         <span>•</span>
-        <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
+        <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
         <span>•</span>
-        <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
+        <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
       </div>
 
       <div class="text-center text-xs italic text-gray-400 pt-1">
@@ -651,7 +651,7 @@
   @yield('content')
 
   <!-- ==================== FOOTER (DESTINARA OFFICIAL 4-COLUMN ARCHITECTURE) ==================== -->
-  <footer class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
+  <footer class="w-full bg-[#FFFFFF] dark:bg-[#140E0D] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Brand Strip -->
@@ -676,25 +676,25 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.company') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('about') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.about_destinara') }}</a>
+              <a href="{{ route('about') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.about_destinara') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#filosofi" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.philosophy') }}</a>
+              <a href="{{ route('about') }}#filosofi" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.philosophy') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#rekam-jejak" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.track_record') }}</a>
+              <a href="{{ route('about') }}#rekam-jejak" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.track_record') }}</a>
             </li>
             <li>
-              <a href="{{ route('destinations.index') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.selected_sanctuaries') }}</a>
+              <a href="{{ route('destinations.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.selected_sanctuaries') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.terms') }}</a>
+              <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.terms') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy') }}</a>
+              <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy_en') }}</a>
+              <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy_en') }}</a>
             </li>
           </ul>
         </div>
@@ -704,16 +704,16 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.for_users') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('for-schools') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.school_programs') }}</a>
+              <a href="{{ route('for-schools') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.school_programs') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-researchers') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.research_collab') }}</a>
+              <a href="{{ route('for-researchers') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.research_collab') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-villages') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.village_partnership') }}</a>
+              <a href="{{ route('for-villages') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.village_partnership') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#fpic" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.fpic_ethics') }}</a>
+              <a href="{{ route('about') }}#fpic" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.fpic_ethics') }}</a>
             </li>
           </ul>
         </div>
@@ -723,16 +723,16 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.publications') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('stories.index') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.latest_stories') }}</a>
+              <a href="{{ route('stories.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.latest_stories') }}</a>
             </li>
             <li>
-              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.monograph_sikka') }}</a>
+              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.monograph_sikka') }}</a>
             </li>
             <li>
-              <a href="{{ route('stories.index') }}#newsletter-form" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.newsletter') }}</a>
+              <a href="{{ route('stories.index') }}#newsletter-form" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.newsletter') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-schools') }}#silabus" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.syllabus_guide') }}</a>
+              <a href="{{ route('for-schools') }}#silabus" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.syllabus_guide') }}</a>
             </li>
           </ul>
         </div>
@@ -745,22 +745,22 @@
             <p>{{ __('site.footer.menteng_address') }}</p>
             <div class="flex flex-col gap-1.5 pt-2">
               <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.whatsapp_contacts') }}</span>
-              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
                 Maya: +62 821-1620-0363
               </a>
-              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
                 Azki: +62 858-9486-0696
               </a>
-              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
                 Ryan: +62 857-7441-0978
               </a>
             </div>
             <div class="flex flex-col gap-1 pt-2">
               <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.official_emails') }}</span>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">
                 {{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}
               </a>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors">
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">
                 {{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}
               </a>
             </div>
@@ -773,13 +773,13 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
         <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('company_legal_name', 'PT DESTINARA CHAKRAWAL ARTHA') }}. {{ __('site.footer.copyright') }}</p>
         <div class="flex items-center justify-center gap-3 text-xs">
-          <a href="{{ route('legal.terms') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
+          <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
           <span>•</span>
-          <a href="{{ route('legal.privacy') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
+          <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
           <span>•</span>
-          <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#703A3A] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
+          <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
         </div>
-        <p class="italic text-[#703A3A] dark:text-[#E8999B]">{{ __('site.footer.motto') }}</p>
+        <p class="italic text-[#1F2B45] dark:text-[#E8999B]">{{ __('site.footer.motto') }}</p>
       </div>
     </div>
   </footer>
@@ -794,7 +794,7 @@
         <span>WhatsApp</span>
       </button>
       <a href="{{ route('destinations.index') }}" 
-         class="flex-1 bg-[#703A3A] hover:bg-[#561D1E] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center shadow-xs transition-all">
+         class="flex-1 bg-[#1F2B45] hover:bg-[#16203A] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center shadow-xs transition-all">
         <span class="material-symbols-outlined text-[17px]">travel_explore</span>
         <span>{{ __('site.common.explore_destinations') }}</span>
       </a>
@@ -816,33 +816,33 @@
 
       <div class="flex flex-col gap-2.5">
         <!-- Maya -->
-        <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
             <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.maya_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.maya_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 821-1620-0363</span>
           </div>
-          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#1F2B45] text-[20px]">chat</span>
         </a>
 
         <!-- Azki -->
-        <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
             <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.azki_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.azki_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 858-9486-0696</span>
           </div>
-          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#1F2B45] text-[20px]">chat</span>
         </a>
 
         <!-- Ryan -->
-        <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#703A3A]/5 rounded-2xl border border-transparent hover:border-[#703A3A]/20 flex items-center justify-between transition-colors">
+        <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
             <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.ryan_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.ryan_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 857-7441-0978</span>
           </div>
-          <span class="material-symbols-outlined text-[#703A3A] text-[20px]">chat</span>
+          <span class="material-symbols-outlined text-[#1F2B45] text-[20px]">chat</span>
         </a>
       </div>
 
@@ -862,7 +862,7 @@
         icon: 'success',
         title: 'Berhasil!',
         text: "{{ session('success') }}",
-        confirmButtonColor: '#703a3a',
+        confirmButtonColor: '#1F2B45',
         borderRadius: '8px'
       });
     </script>
@@ -874,7 +874,7 @@
         icon: 'error',
         title: 'Perhatian',
         text: "{{ session('error') }}",
-        confirmButtonColor: '#703a3a',
+        confirmButtonColor: '#1F2B45',
         borderRadius: '8px'
       });
     </script>

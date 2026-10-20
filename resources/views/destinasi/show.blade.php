@@ -55,14 +55,14 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="flex flex-col w-full">
 
     <!-- Header Dossier Top -->
     <section class="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-6">
       <div class="flex flex-col gap-4">
         
-        <a href="{{ route('destinations.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#703A3A] hover:underline self-start">
+        <a href="{{ route('destinations.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F2B45] hover:underline self-start">
           <span class="material-symbols-outlined text-[16px]">arrow_back</span>
           <span>{{ __('site.common.back_to_index') }}</span>
         </a>
@@ -72,7 +72,7 @@
             {{ $destination->location }}
           </span>
           @if(!empty($destination->badge))
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#703A3A]/10 text-[#703A3A] uppercase tracking-wider">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#1F2B45]/10 text-[#1F2B45] uppercase tracking-wider">
               {{ $destination->badge }}
             </span>
           @endif
@@ -130,7 +130,7 @@
           @if(!empty($destination->packages) && count($destination->packages) > 0)
             <!-- Packages Highlight -->
             <div class="p-6 bg-white dark:bg-[#1F1716] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A] flex items-center gap-1.5">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45] flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[18px]">inventory_2</span>
                 <span>Paket Pembelajaran & Riset Tersedia</span>
               </span>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="mt-3 pt-3 border-t border-gray-200/50 dark:border-white/10 flex items-center justify-between">
                       <span class="text-xs font-bold text-[#51634b]">{{ is_array($pkg) ? ($pkg['price_formatted'] ?? ('Rp ' . number_format($pkg['price_per_pax'] ?? ($pkg['price'] ?? 0), 0, ',', '.'))) : ($pkg->price_formatted ?? ('Rp ' . number_format($pkg->price_per_pax ?? ($pkg->price ?? 0), 0, ',', '.'))) }}</span>
-                      <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" class="text-xs font-bold text-[#703A3A] hover:underline">Pilih Paket</a>
+                      <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" class="text-xs font-bold text-[#1F2B45] hover:underline">Pilih Paket</a>
                     </div>
                   </div>
                 @endforeach
@@ -186,13 +186,13 @@
               </div>
               <div class="flex items-start justify-between py-1">
                 <span class="text-gray-500 dark:text-gray-400">{{ __('site.common.cultural_protocol') }}</span>
-                <span class="font-bold text-[#703A3A]">{{ __('site.common.fpic_verified_badge') }}</span>
+                <span class="font-bold text-[#1F2B45]">{{ __('site.common.fpic_verified_badge') }}</span>
               </div>
             </div>
 
             <div class="pt-2 flex flex-col gap-3">
               <a href="{{ $destination->booking_url ?? (config('services.core_system.url') . '/buyer/booking/create?destinasi=' . $destination->slug) }}" 
-                 class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3.5 px-4 rounded-full text-xs font-bold text-center block shadow-md hover:shadow-xl transition-all">
+                 class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3.5 px-4 rounded-full text-xs font-bold text-center block shadow-md hover:shadow-xl transition-all">
                 <span>{{ __('site.common.apply_program_here') }}</span>
               </a>
               <a href="https://wa.me/{{ \App\Models\SiteSetting::get('contact_whatsapp', '6282116200363') }}?text={{ urlencode('Halo Destinara, saya tertarik dengan tapak ' . $destination->name . ' untuk program lapangan.') }}" 
@@ -222,7 +222,7 @@
             {{ __('site.common.related_destinations') }}
           </h3>
         </div>
-        <a href="{{ route('destinations.index') }}" class="text-xs font-bold text-[#703A3A] hover:underline flex items-center gap-1">
+        <a href="{{ route('destinations.index') }}" class="text-xs font-bold text-[#1F2B45] hover:underline flex items-center gap-1">
           <span>{{ __('site.common.view_all_destinations') }}</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
@@ -240,7 +240,7 @@
                   </span>
                 </div>
               </div>
-              <h4 class="text-base font-bold text-[#1E1B1B] dark:text-white group-hover:text-[#703A3A] transition-colors leading-snug mb-1">
+              <h4 class="text-base font-bold text-[#1E1B1B] dark:text-white group-hover:text-[#1F2B45] transition-colors leading-snug mb-1">
                 {{ $rel->name }}
               </h4>
               <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
@@ -251,7 +251,7 @@
               <span class="text-xs font-bold text-[#51634b]">
                 {{ $rel->capacity ?? '20-30 Peserta' }}
               </span>
-              <a href="{{ route('destinations.show', $rel->slug) }}" class="text-xs font-bold text-[#703A3A] group-hover:underline flex items-center gap-1">
+              <a href="{{ route('destinations.show', $rel->slug) }}" class="text-xs font-bold text-[#1F2B45] group-hover:underline flex items-center gap-1">
                 <span>{{ __('site.common.read_more') }}</span>
                 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
               </a>

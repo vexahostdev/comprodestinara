@@ -60,19 +60,19 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
 
     <!-- Top Navigation & Breadcrumb -->
     <div class="flex items-center justify-between pt-4">
       <a href="{{ route('stories.index') }}" 
-         class="inline-flex items-center gap-2 text-xs font-bold text-[#703A3A] bg-white dark:bg-[#1E1716] px-4 py-2 rounded-full border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all">
+         class="inline-flex items-center gap-2 text-xs font-bold text-[#1F2B45] bg-white dark:bg-[#1E1716] px-4 py-2 rounded-full border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all">
         <span class="material-symbols-outlined text-[16px]">arrow_back</span>
         <span>{{ __('site.common.back_to_stories') }}</span>
       </a>
 
       <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-[#703A3A]/10 text-[#703A3A] text-xs font-bold uppercase tracking-wider">
+        <span class="px-3 py-1 rounded-full bg-[#1F2B45]/10 text-[#1F2B45] text-xs font-bold uppercase tracking-wider">
           {{ $story->category }}
         </span>
         <span class="text-xs text-gray-500 dark:text-gray-400 font-medium hidden sm:inline">
@@ -125,7 +125,7 @@
           {{ __('site.common.archived_in_knowledge') }}
         </div>
         <a href="{{ route('contact.index') }}" 
-           class="bg-[#703A3A] hover:bg-[#561D1E] text-white px-6 py-3 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all">
+           class="bg-[#1F2B45] hover:bg-[#16203A] text-white px-6 py-3 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all">
           {{ __('site.common.discuss_this_topic') }}
         </a>
       </div>

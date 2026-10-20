@@ -29,13 +29,13 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 
     <!-- Top Header Banner -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-gray-200/60 dark:border-white/10">
       <div class="space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#703A3A]/10 text-[#703A3A] text-xs font-bold uppercase tracking-wider">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1F2B45]/10 text-[#1F2B45] text-xs font-bold uppercase tracking-wider">
           <span class="material-symbols-outlined text-[16px]">menu_book</span>
           <span>{{ __('site.common.field_stories_badge') }}</span>
         </div>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="flex items-center gap-2 text-xs font-semibold text-gray-500 dark:text-gray-400 shrink-0">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#703A3A]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#1F2B45]"></span>
         <span>Arsip Catatan Lapangan Terkurasi</span>
       </div>
     </div>
@@ -68,7 +68,7 @@
         <div class="lg:col-span-5 flex flex-col justify-between gap-5">
           <div class="space-y-4">
             <div class="flex items-center gap-2 flex-wrap text-xs">
-              <span class="px-3 py-1 rounded-full bg-[#703A3A]/10 text-[#703A3A] font-bold uppercase tracking-wider">
+              <span class="px-3 py-1 rounded-full bg-[#1F2B45]/10 text-[#1F2B45] font-bold uppercase tracking-wider">
                 {{ $featuredStory->category }}
               </span>
               <span class="text-gray-400">•</span>
@@ -78,7 +78,7 @@
             </div>
 
             <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1E1B1B] dark:text-white leading-snug tracking-tight">
-              <a href="{{ route('stories.show', $featuredStory->slug) }}" class="hover:text-[#703A3A] transition-colors">
+              <a href="{{ route('stories.show', $featuredStory->slug) }}" class="hover:text-[#1F2B45] transition-colors">
                 {{ $featuredStory->title }}
               </a>
             </h2>
@@ -93,7 +93,7 @@
               {{ __('site.common.by_author', ['author' => $featuredStory->author_name]) }}
             </span>
             <a href="{{ route('stories.show', $featuredStory->slug) }}" 
-               class="bg-[#703A3A] hover:bg-[#561D1E] text-white px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5 shadow-xs transition-all">
+               class="bg-[#1F2B45] hover:bg-[#16203A] text-white px-5 py-2.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5 shadow-xs transition-all">
               <span>{{ __('site.common.read_more') }}</span>
               <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>
@@ -108,7 +108,7 @@
     <section class="space-y-8">
       <div class="flex items-center justify-between">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A] block mb-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45] block mb-1">
             {{ __('site.common.field_collection_badge') }}
           </span>
           <h3 class="text-2xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
@@ -124,7 +124,7 @@
             <div class="space-y-4">
               <a href="{{ route('stories.show', $story->slug) }}" class="relative w-full aspect-[16/10] overflow-hidden block rounded-2xl shadow-sm">
                 <img src="{{ $story->image_url }}" alt="{{ $story->title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#703A3A] text-[11px] font-bold uppercase tracking-wider shadow-xs">
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#1F2B45] text-[11px] font-bold uppercase tracking-wider shadow-xs">
                   {{ $story->category }}
                 </div>
               </a>
@@ -136,7 +136,7 @@
                   <span>{{ $story->published_at ? $story->published_at->translatedFormat('d M Y') : '' }}</span>
                 </div>
 
-                <h4 class="text-base sm:text-lg font-bold text-[#1E1B1B] dark:text-white leading-snug group-hover:text-[#703A3A] transition-colors">
+                <h4 class="text-base sm:text-lg font-bold text-[#1E1B1B] dark:text-white leading-snug group-hover:text-[#1F2B45] transition-colors">
                   <a href="{{ route('stories.show', $story->slug) }}">
                     {{ $story->title }}
                   </a>
@@ -150,7 +150,7 @@
 
             <div class="pt-4 mt-4 border-t border-gray-100 dark:border-white/5 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
               <span class="font-medium truncate">{{ $story->author_name }}</span>
-              <a href="{{ route('stories.show', $story->slug) }}" class="text-[#703A3A] font-bold hover:underline shrink-0">
+              <a href="{{ route('stories.show', $story->slug) }}" class="text-[#1F2B45] font-bold hover:underline shrink-0">
                 Baca →
               </a>
             </div>

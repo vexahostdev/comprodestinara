@@ -39,7 +39,7 @@
   $hero = $sections['hero'] ?? null;
   $villageBenefits = $sections['village_benefits'] ?? null;
 @endphp
-<main class="w-full pt-20 sm:pt-24 bg-[#FAF7F5] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
     
     @if(!$hero || $hero->is_active)
@@ -50,7 +50,7 @@
         <!-- Left: Text & Action -->
         <div class="lg:col-span-7 flex flex-col items-start gap-5">
           @if($hero?->badge || __('sections.for_villages.hero.badge'))
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#703A3A]/10 text-[#703A3A] text-xs font-bold uppercase tracking-wider">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1F2B45]/10 text-[#1F2B45] text-xs font-bold uppercase tracking-wider">
             <span class="material-symbols-outlined text-[16px]">nature_people</span>
             <span>{{ $hero?->badge ?? __('sections.for_villages.hero.badge') }}</span>
           </div>
@@ -66,7 +66,7 @@
 
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto pt-2">
             <a href="{{ $hero?->button_link ?? '#formulir-kemitraan' }}" 
-               class="bg-[#703A3A] hover:bg-[#561D1E] text-white px-8 py-3.5 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all">
+               class="bg-[#1F2B45] hover:bg-[#16203A] text-white px-8 py-3.5 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all">
               {{ $hero?->button_text ?? __('sections.for_villages.hero.button_text') }}
             </a>
             <a href="https://wa.me/{{ \App\Models\SiteSetting::get('contact_whatsapp_ryan', '6285774410978') }}?text={{ urlencode('Halo Ryan, kami pengelola desa ingin menanyakan kemitraan tapak Destinara.') }}" 
@@ -103,8 +103,8 @@
             </div>
           </div>
 
-          <div class="p-5 bg-[#FAF7F5] dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/5 flex items-center gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] flex items-center justify-center shrink-0">
+          <div class="p-5 bg-[#FFFFFF] dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/5 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center shrink-0">
               <span class="material-symbols-outlined text-[24px]">volunteer_activism</span>
             </div>
             <div>
@@ -129,13 +129,13 @@
           <img src="{{ asset('assets/img/hd/desa-lurah.jpg') }}" alt="Pak Lurah Marto Suwito" class="w-full h-full object-cover">
         </div>
         <div class="flex-1 flex flex-col gap-3 text-center sm:text-left">
-          <span class="material-symbols-outlined text-3xl text-[#703A3A]">format_quote</span>
+          <span class="material-symbols-outlined text-3xl text-[#1F2B45]">format_quote</span>
           <blockquote class="text-base sm:text-lg font-serif italic text-gray-800 dark:text-gray-200 leading-relaxed">
             "{{ __('sections.for_villages.elder_quote.quote') }}"
           </blockquote>
           <div class="pt-2">
             <p class="text-sm font-bold text-[#1E1B1B] dark:text-white">{{ __('sections.for_villages.elder_quote.author') }}</p>
-            <p class="text-xs text-[#703A3A] font-semibold mt-0.5">{{ __('sections.for_villages.elder_quote.role') }}</p>
+            <p class="text-xs text-[#1F2B45] font-semibold mt-0.5">{{ __('sections.for_villages.elder_quote.role') }}</p>
           </div>
         </div>
       </div>
@@ -144,7 +144,7 @@
     <!-- 3 Core Benefits Cards -->
     <section class="space-y-8">
       <div class="text-center max-w-2xl mx-auto space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A]">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45]">
           {{ __('sections.for_villages.benefits.tag') }}
         </span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
@@ -159,7 +159,7 @@
         <!-- Benefit 1 -->
         <div class="bg-white dark:bg-[#1E1716] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center">
               <span class="material-symbols-outlined text-[26px]">handshake</span>
             </div>
             <h3 class="text-lg font-bold text-[#1E1B1B] dark:text-white leading-snug">
@@ -169,7 +169,7 @@
               {{ __('sections.for_villages.benefits.c1_desc') }}
             </p>
           </div>
-          <div class="p-3.5 bg-[#FAF7F5] dark:bg-white/5 rounded-2xl text-xs text-[#703A3A] font-medium italic">
+          <div class="p-3.5 bg-[#FFFFFF] dark:bg-white/5 rounded-2xl text-xs text-[#1F2B45] font-medium italic">
             {{ __('sections.for_villages.benefits.c1_note') }}
           </div>
         </div>
@@ -187,7 +187,7 @@
               {{ __('sections.for_villages.benefits.c2_desc') }}
             </p>
           </div>
-          <div class="p-3.5 bg-[#FAF7F5] dark:bg-white/5 rounded-2xl text-xs text-[#51634b] font-medium italic">
+          <div class="p-3.5 bg-[#FFFFFF] dark:bg-white/5 rounded-2xl text-xs text-[#51634b] font-medium italic">
             {{ __('sections.for_villages.benefits.c2_note') }}
           </div>
         </div>
@@ -205,7 +205,7 @@
               {{ __('sections.for_villages.benefits.c3_desc') }}
             </p>
           </div>
-          <div class="p-3.5 bg-[#FAF7F5] dark:bg-white/5 rounded-2xl text-xs text-amber-700 font-medium italic">
+          <div class="p-3.5 bg-[#FFFFFF] dark:bg-white/5 rounded-2xl text-xs text-amber-700 font-medium italic">
             {{ __('sections.for_villages.benefits.c3_note') }}
           </div>
         </div>
@@ -220,7 +220,7 @@
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center p-8 sm:p-14">
           <div class="max-w-xl text-white space-y-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-[#FAF7F5]/80">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#FFFFFF]/80">
               {{ __('sections.for_villages.banner.tag') }}
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -237,7 +237,7 @@
     <!-- 4-Step How It Works Section -->
     <section class="space-y-8">
       <div class="text-center max-w-2xl mx-auto space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A]">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45]">
           {{ __('sections.for_villages.steps.tag') }}
         </span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
@@ -252,7 +252,7 @@
         <!-- Step 1 -->
         <div class="bg-white dark:bg-[#1E1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
-            <span class="text-3xl font-extrabold text-[#703A3A] block leading-none">01</span>
+            <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">01</span>
             <h4 class="text-base font-bold text-[#1E1B1B] dark:text-white">
               {{ __('sections.for_villages.steps.s1_title') }}
             </h4>
@@ -261,7 +261,7 @@
             </p>
           </div>
           <div class="pt-3 border-t border-gray-100 dark:border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[16px] text-[#703A3A]">forum</span>
+            <span class="material-symbols-outlined text-[16px] text-[#1F2B45]">forum</span>
             <span>Dialog Awal</span>
           </div>
         </div>
@@ -269,7 +269,7 @@
         <!-- Step 2 -->
         <div class="bg-white dark:bg-[#1E1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
-            <span class="text-3xl font-extrabold text-[#703A3A] block leading-none">02</span>
+            <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">02</span>
             <h4 class="text-base font-bold text-[#1E1B1B] dark:text-white">
               {{ __('sections.for_villages.steps.s2_title') }}
             </h4>
@@ -278,7 +278,7 @@
             </p>
           </div>
           <div class="pt-3 border-t border-gray-100 dark:border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[16px] text-[#703A3A]">cottage</span>
+            <span class="material-symbols-outlined text-[16px] text-[#1F2B45]">cottage</span>
             <span>Verifikasi Lokasi</span>
           </div>
         </div>
@@ -286,7 +286,7 @@
         <!-- Step 3 -->
         <div class="bg-white dark:bg-[#1E1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
-            <span class="text-3xl font-extrabold text-[#703A3A] block leading-none">03</span>
+            <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">03</span>
             <h4 class="text-base font-bold text-[#1E1B1B] dark:text-white">
               {{ __('sections.for_villages.steps.s3_title') }}
             </h4>
@@ -295,7 +295,7 @@
             </p>
           </div>
           <div class="pt-3 border-t border-gray-100 dark:border-white/5 text-xs text-gray-400 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[16px] text-[#703A3A]">policy</span>
+            <span class="material-symbols-outlined text-[16px] text-[#1F2B45]">policy</span>
             <span>Pakta FPIC</span>
           </div>
         </div>
@@ -324,7 +324,7 @@
       <!-- Left: Form Card -->
       <div class="lg:col-span-7 bg-white dark:bg-[#1E1716] p-8 sm:p-10 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-[#703A3A]">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45]">
             {{ __('sections.for_villages.form.tag') }}
           </span>
           <h3 class="text-2xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight mt-1">
@@ -340,7 +340,7 @@
             <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5" for="namaLengkap">
               {{ __('sections.for_villages.form.name_label') }}
             </label>
-            <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#703A3A] transition-all" 
+            <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45] transition-all" 
                    id="namaLengkap" 
                    placeholder="{{ __('sections.for_villages.form.name_placeholder') }}" 
                    required type="text"/>
@@ -351,7 +351,7 @@
               <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5" for="nomorHp">
                 {{ __('sections.for_villages.form.phone_label') }}
               </label>
-              <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#703A3A] transition-all" 
+              <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45] transition-all" 
                      id="nomorHp" 
                      placeholder="{{ __('sections.for_villages.form.phone_placeholder') }}" 
                      required type="tel"/>
@@ -360,7 +360,7 @@
               <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5" for="peranWarga">
                 {{ __('sections.for_villages.form.role_label') }}
               </label>
-              <select class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white focus:outline-none focus:border-[#703A3A] transition-all cursor-pointer" 
+              <select class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white focus:outline-none focus:border-[#1F2B45] transition-all cursor-pointer" 
                       id="peranWarga">
                 <option value="pengurus-pokdarwis">{{ __('sections.for_villages.form.role_pokdarwis') }}</option>
                 <option value="aparatur-desa">{{ __('sections.for_villages.form.role_aparatur') }}</option>
@@ -374,7 +374,7 @@
             <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5" for="lokasiDesa">
               {{ __('sections.for_villages.form.location_label') }}
             </label>
-            <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#703A3A] transition-all" 
+            <input class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45] transition-all" 
                    id="lokasiDesa" 
                    placeholder="{{ __('sections.for_villages.form.location_placeholder') }}" 
                    required type="text"/>
@@ -384,13 +384,13 @@
             <label class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5" for="kegiatanKhas">
               {{ __('sections.for_villages.form.activities_label') }}
             </label>
-            <textarea class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#703A3A] transition-all resize-none" 
+            <textarea class="w-full px-4 py-3 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-xs sm:text-sm text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45] transition-all resize-none" 
                       id="kegiatanKhas" 
                       placeholder="{{ __('sections.for_villages.form.activities_placeholder') }}" 
                       rows="3"></textarea>
           </div>
 
-          <button class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3.5 px-6 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all cursor-pointer mt-2" 
+          <button class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3.5 px-6 rounded-full text-xs font-bold text-center shadow-md hover:shadow-xl transition-all cursor-pointer mt-2" 
                   type="submit">
             {{ __('sections.for_villages.form.submit_btn') }}
           </button>
@@ -404,7 +404,7 @@
             {{ __('sections.for_villages.faq.title') }}
           </h4>
           <div class="space-y-3">
-            <div class="p-4 rounded-2xl bg-[#FAF7F5] dark:bg-white/5 space-y-1">
+            <div class="p-4 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 space-y-1">
               <p class="text-xs font-bold text-[#1E1B1B] dark:text-white">
                 {{ __('sections.for_villages.faq.q1') }}
               </p>
@@ -412,7 +412,7 @@
                 {{ __('sections.for_villages.faq.a1') }}
               </p>
             </div>
-            <div class="p-4 rounded-2xl bg-[#FAF7F5] dark:bg-white/5 space-y-1">
+            <div class="p-4 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 space-y-1">
               <p class="text-xs font-bold text-[#1E1B1B] dark:text-white">
                 {{ __('sections.for_villages.faq.q2') }}
               </p>
@@ -420,7 +420,7 @@
                 {{ __('sections.for_villages.faq.a2') }}
               </p>
             </div>
-            <div class="p-4 rounded-2xl bg-[#FAF7F5] dark:bg-white/5 space-y-1">
+            <div class="p-4 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 space-y-1">
               <p class="text-xs font-bold text-[#1E1B1B] dark:text-white">
                 {{ __('sections.for_villages.faq.q3') }}
               </p>
@@ -439,7 +439,7 @@
           <div>
             <p class="text-xs font-bold text-[#1E1B1B] dark:text-white">{{ __('sections.for_villages.faq.talk_direct_title') }}</p>
             <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">
-              {!! __('sections.for_villages.faq.talk_direct_desc', ['name' => '<a href="https://wa.me/' . \App\Models\SiteSetting::get('contact_whatsapp_ryan', '6285774410978') . '?text=' . urlencode('Halo Ryan, kami pengelola desa ingin menanyakan kemitraan tapak Destinara.') . '" target="_blank" rel="noopener" class="text-[#703A3A] font-bold hover:underline">Mas Ryan</a>', 'phone' => '+62 857-7441-0978']) !!}
+              {!! __('sections.for_villages.faq.talk_direct_desc', ['name' => '<a href="https://wa.me/' . \App\Models\SiteSetting::get('contact_whatsapp_ryan', '6285774410978') . '?text=' . urlencode('Halo Ryan, kami pengelola desa ingin menanyakan kemitraan tapak Destinara.') . '" target="_blank" rel="noopener" class="text-[#1F2B45] font-bold hover:underline">Mas Ryan</a>', 'phone' => '+62 857-7441-0978']) !!}
             </p>
           </div>
         </div>
@@ -447,7 +447,7 @@
     </section>
 
     <!-- Deep Maroon Bottom CTA -->
-    <section class="bg-[#561D1E] text-white rounded-3xl p-10 sm:p-14 lg:p-16 text-center space-y-6 shadow-xl relative overflow-hidden">
+    <section class="bg-[#16203A] text-white rounded-3xl p-10 sm:p-14 lg:p-16 text-center space-y-6 shadow-xl relative overflow-hidden">
       <div class="max-w-2xl mx-auto space-y-3 relative z-10">
         <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white mb-2">
           <span class="material-symbols-outlined text-2xl">door_front</span>
@@ -462,7 +462,7 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 relative z-10">
         <a href="#formulir-kemitraan" 
-           class="w-full sm:w-auto bg-white hover:bg-gray-100 text-[#561D1E] px-8 py-3.5 rounded-full text-xs font-bold shadow-md transition-all">
+           class="w-full sm:w-auto bg-white hover:bg-gray-100 text-[#16203A] px-8 py-3.5 rounded-full text-xs font-bold shadow-md transition-all">
           {{ __('sections.for_villages.cta.btn_register') }}
         </a>
         <a href="https://wa.me/{{ \App\Models\SiteSetting::get('contact_whatsapp_ryan', '6285774410978') }}?text={{ urlencode('Halo Ryan, kami pengelola desa ingin mendaftarkan destinasi kami.') }}" 
