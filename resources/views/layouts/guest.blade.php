@@ -4,39 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <script>
-            (function() {
-                try {
-                    var storedTheme = localStorage.getItem('destinara-theme');
-                    var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
-                        document.documentElement.classList.add('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                    }
-                } catch (e) {}
-            })();
-        </script>
+        <meta name="theme-color" content="#1F2B45"/>
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <body class="min-h-screen antialiased text-gray-900">
+        {{-- Latar: foto yang sama dengan hero beranda --}}
+        <div class="fixed inset-0 -z-10" aria-hidden="true">
+            <img src="{{ asset('assets/img/hd/hero-bg-waterfall.webp') }}" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/55"></div>
+        </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+        <div class="min-h-screen flex flex-col justify-center items-center px-4 py-10">
+            <a href="/" class="inline-flex items-center gap-3 text-white mb-6">
+                <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Logo Destinara" class="w-10 h-10 object-contain brightness-110">
+                <span class="text-xl font-extrabold tracking-tight">DESTINARA</span>
+            </a>
+
+            <div class="w-full sm:max-w-md px-6 py-6 sm:px-8 bg-white/95 backdrop-blur-xl border border-white/40 shadow-[0_24px_60px_rgba(0,0,0,0.35)] rounded-3xl">
                 {{ $slot }}
             </div>
         </div>
