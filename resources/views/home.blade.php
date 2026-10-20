@@ -19,7 +19,7 @@
   }
 @endphp
 
-<main class="w-full bg-[#FFFFFF] dark:bg-[#140E0D] pb-16 lg:pb-24 transition-colors">
+<main class="w-full bg-[#FFFFFF] dark:bg-[#111315] pb-16 lg:pb-24 transition-colors">
 
   <!-- ==================== 1. SCROLL EXPANSION HERO (media kecil → layar penuh saat di-scroll) ==================== -->
   @php
@@ -57,7 +57,7 @@
     @media (max-width: 767px) { [data-scroll-hero].is-animated { height: 240vh; } }
   </style>
 
-  <section data-scroll-hero class="relative w-full bg-[#1E1716]">
+  <section data-scroll-hero class="relative w-full bg-[#111315]">
     <div class="sticky top-0 h-[100dvh] w-full overflow-hidden">
 
       <!-- Latar: foto lanskap penuh, memudar saat media membesar -->
@@ -122,7 +122,7 @@
               </a>
 
               <a href="{{ route('for-schools') }}"
-                 class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-bold text-xs sm:text-sm px-6 sm:px-7 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+                 class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/30 font-bold text-xs sm:text-sm px-6 sm:px-7 py-4 rounded-2xl hover:scale-105 transition-all duration-300 shadow-sm">
                 <span>{{ __('site.nav.for_schools') }}</span>
                 <span class="material-symbols-outlined text-[19px]">school</span>
               </a>
@@ -137,11 +137,11 @@
   <!-- ==================== 2. FLOATING SEARCH BAR ==================== -->
   <div class="max-w-[1140px] mx-auto px-3 sm:px-6 relative -mt-10 sm:-mt-12 z-30">
     <form action="{{ route('destinations.index') }}" method="GET" 
-          class="bg-white dark:bg-[#1E1716] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
+          class="bg-white dark:bg-[#1A1D21] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
       
       <!-- Slot 1: Lokasi / Destinasi -->
       <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[22px]">location_on</span>
+        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[22px]">location_on</span>
         <div class="flex-1 min-w-0">
           <label for="q-search" class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.nav.destinations') }}</label>
           <input type="text" id="q-search" name="q" placeholder="{{ __('site.common.all_regions') }}" 
@@ -153,14 +153,14 @@
 
       <!-- Slot 2: Mandat / Jalur Program -->
       <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[22px]">school</span>
+        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[22px]">school</span>
         <div class="flex-1 min-w-0">
           <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('sections.home.gateways.tag') }}</span>
           <select name="mandate" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-            <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
-            <option value="school" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.school_tag') }}</option>
-            <option value="research" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.research_tag') }}</option>
-            <option value="village" class="dark:bg-[#1E1716]">{{ __('sections.home.gateways.village_tag') }}</option>
+            <option value="" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_all') }}</option>
+            <option value="school" class="dark:bg-[#1A1D21]">{{ __('sections.home.gateways.school_tag') }}</option>
+            <option value="research" class="dark:bg-[#1A1D21]">{{ __('sections.home.gateways.research_tag') }}</option>
+            <option value="village" class="dark:bg-[#1A1D21]">{{ __('sections.home.gateways.village_tag') }}</option>
           </select>
         </div>
       </div>
@@ -169,15 +169,15 @@
 
       <!-- Slot 3: Kategori Lanskap -->
       <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[22px]">landscape</span>
+        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[22px]">landscape</span>
         <div class="flex-1 min-w-0">
           <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.landscape_category') }}</span>
           <select name="category" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-            <option value="" class="dark:bg-[#1E1716]">{{ __('site.common.cat_all') }}</option>
-            <option value="budaya" class="dark:bg-[#1E1716]">{{ __('site.common.cat_culture') }}</option>
-            <option value="ekologi" class="dark:bg-[#1E1716]">{{ __('site.common.cat_ecology') }}</option>
-            <option value="pangan" class="dark:bg-[#1E1716]">{{ __('site.common.cat_food') }}</option>
-            <option value="bahari" class="dark:bg-[#1E1716]">{{ __('site.common.cat_marine') }}</option>
+            <option value="" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_all') }}</option>
+            <option value="budaya" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_culture') }}</option>
+            <option value="ekologi" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_ecology') }}</option>
+            <option value="pangan" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_food') }}</option>
+            <option value="bahari" class="dark:bg-[#1A1D21]">{{ __('site.common.cat_marine') }}</option>
           </select>
         </div>
       </div>
@@ -186,7 +186,7 @@
 
       <!-- Slot 4: Kapasitas Rombongan -->
       <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
-        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[22px]">group</span>
+        <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[22px]">group</span>
         <div class="flex-1 min-w-0">
           <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.max_group_capacity') }}</span>
           <span class="text-xs text-gray-500 dark:text-gray-400 font-medium block truncate">{{ __('site.common.default_capacity_range') }}</span>
@@ -196,7 +196,7 @@
       <!-- Action Button: Maroon Pill Button -->
       <div class="w-full lg:w-auto px-2 shrink-0">
         <button type="submit" 
-                class="w-full lg:w-auto bg-[#1F2B45] hover:bg-[#16203A] text-white px-7 py-3.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+                class="w-full lg:w-auto bg-[#1F2B45] hover:bg-[#16203A] text-white px-7 py-3.5 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
           <span>{{ __('site.common.explore_destinations') }}</span>
           <span class="material-symbols-outlined text-[16px]">search</span>
         </button>
@@ -210,7 +210,7 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#1A1D21] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">verified_user</span>
         </div>
         <div>
@@ -220,7 +220,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#1A1D21] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">health_and_safety</span>
         </div>
         <div>
@@ -230,7 +230,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#1A1D21] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">menu_book</span>
         </div>
         <div>
@@ -240,7 +240,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#E8999B] shrink-0 bg-white dark:bg-[#1E1716] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#1A1D21] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">school</span>
         </div>
         <div>
@@ -263,7 +263,7 @@
           <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">{{ __('sections.home.featured_destinations.title') }}</h2>
           <span class="text-xl">🌿</span>
         </div>
-        <a href="{{ route('destinations.index') }}" class="text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-[#1F2B45] dark:hover:text-[#E8999B] flex items-center gap-1.5 group transition-colors">
+        <a href="{{ route('destinations.index') }}" class="text-xs font-bold text-gray-700 dark:text-gray-300 hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] flex items-center gap-1.5 group transition-colors">
           <span>{{ __('sections.home.featured_destinations.all_btn') }}</span>
           <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </a>
@@ -273,7 +273,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
         @foreach($featuredList as $dest)
         <a href="{{ route('destinations.show', $dest->slug) }}" 
-           class="relative aspect-[3/4] rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 block bg-[#231917]">
+           class="relative aspect-[3/4] rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-all duration-300 block bg-[#1F2937]">
           
           <!-- Full-Bleed Photography -->
           <img src="{{ $dest->cover_image_url ?? $dest->image_url ?? asset('assets/img/hd/dest-wonosadi.jpg') }}" 
@@ -317,42 +317,42 @@
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">museum</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('site.common.cat_culture') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('site.common.cat_culture') }}</span>
         </a>
 
         <a href="{{ route('destinations.index', ['category' => 'ekologi']) }}" class="flex items-center gap-3 group">
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">forest</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('site.common.cat_ecology') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('site.common.cat_ecology') }}</span>
         </a>
 
         <a href="{{ route('destinations.index', ['category' => 'pangan']) }}" class="flex items-center gap-3 group">
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">agriculture</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('site.common.cat_food') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('site.common.cat_food') }}</span>
         </a>
 
         <a href="{{ route('destinations.index', ['category' => 'bahari']) }}" class="flex items-center gap-3 group">
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">water</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('site.common.cat_marine') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('site.common.cat_marine') }}</span>
         </a>
 
         <a href="{{ route('for-schools') }}" class="flex items-center gap-3 group">
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">school</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('sections.home.gateways.school_tag') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('sections.home.gateways.school_tag') }}</span>
         </a>
 
         <a href="{{ route('for-researchers') }}" class="flex items-center gap-3 group">
           <div class="w-13 h-13 rounded-full bg-[#EBF1E8] dark:bg-[#253022] text-[#51634B] dark:text-[#A7C89F] flex items-center justify-center group-hover:bg-[#1F2B45] group-hover:text-white transition-all shadow-xs">
             <span class="material-symbols-outlined text-[24px]">biotech</span>
           </div>
-          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors">{{ __('sections.home.gateways.research_tag') }}</span>
+          <span class="text-xs font-bold text-gray-800 dark:text-gray-200 group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors">{{ __('sections.home.gateways.research_tag') }}</span>
         </a>
 
       </div>
@@ -360,7 +360,7 @@
 
     <!-- ==================== 6. TRAVEL STORIES & GUIDES (POMAII 3-PART CARD) ==================== -->
     <section data-reveal class="w-full">
-      <div class="bg-[#EEF1F5] dark:bg-[#1E1716] rounded-3xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-[#E2E7EE] dark:border-white/10 transition-colors">
+      <div class="bg-[#EEF1F5] dark:bg-[#1A1D21] rounded-3xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-[#E2E7EE] dark:border-white/10 transition-colors">
         
         <!-- Bottom-Right Botanical Leaf Illustration -->
         <div class="absolute bottom-4 right-4 pointer-events-none opacity-40">
@@ -384,7 +384,7 @@
             </p>
             <div class="pt-2">
               <a href="{{ route('stories.index') }}" 
-                 class="inline-flex items-center gap-2 bg-[#1F2B45] hover:bg-[#16203A] text-white px-6 py-3.5 rounded-full text-xs font-bold transition-all duration-200 shadow-sm hover:shadow-md">
+                 class="inline-flex items-center gap-2 bg-[#1F2B45] hover:bg-[#16203A] text-white px-6 py-3.5 rounded-2xl text-xs font-bold transition-all duration-200 shadow-sm hover:shadow-md">
                 <span>{{ __('sections.home.stories.all_btn') }}</span>
                 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
               </a>
@@ -395,7 +395,7 @@
           <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             
             @forelse($stories->take(2) as $story)
-            <div class="bg-white dark:bg-[#251D1C] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#1A1D21] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.show', $story->slug) }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ $story->cover_image_url ?? $story->image_url ?? asset('assets/img/hd/story-ulin.jpg') }}" 
@@ -403,7 +403,7 @@
                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
                 <div>
-                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors leading-snug line-clamp-2">
+                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors leading-snug line-clamp-2">
                     {{ $story->title }}
                   </h3>
                   <span class="text-[11px] text-gray-400 dark:text-gray-400 mt-1 block">
@@ -414,14 +414,14 @@
             </div>
             @empty
             <!-- Fallback Story 1 -->
-            <div class="bg-white dark:bg-[#251D1C] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#1A1D21] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.index') }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ asset('assets/img/hd/story-ulin.jpg') }}" alt="{{ __('site.footer.monograph_sikka') }}" 
                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
                 <div>
-                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors leading-snug">
+                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors leading-snug">
                     {{ __('site.footer.monograph_sikka') }}
                   </h3>
                   <span class="text-[11px] text-gray-400 dark:text-gray-400 mt-1 block">5 {{ __('site.common.minutes') }}</span>
@@ -430,14 +430,14 @@
             </div>
 
             <!-- Fallback Story 2 -->
-            <div class="bg-white dark:bg-[#251D1C] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#1A1D21] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.index') }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ asset('assets/img/hd/peneliti-sade.jpg') }}" alt="{{ __('site.common.field_stories_badge') }}" 
                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
                 <div>
-                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#E8999B] transition-colors leading-snug">
+                  <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white group-hover:text-[#1F2B45] dark:group-hover:text-[#8FA8D0] transition-colors leading-snug">
                     {{ __('site.common.field_stories_badge') }}
                   </h3>
                   <span class="text-[11px] text-gray-400 dark:text-gray-400 mt-1 block">4 {{ __('site.common.minutes') }}</span>
@@ -482,7 +482,7 @@
 
           <div class="pt-2">
             <a href="{{ route('about') }}" 
-               class="inline-flex items-center gap-2 bg-[#1F2B45] hover:bg-[#2E3D5C] border border-white/20 text-white font-bold text-xs sm:text-sm px-8 py-3.5 rounded-full shadow-lg hover:scale-105 transition-all duration-300">
+               class="inline-flex items-center gap-2 bg-[#1F2B45] hover:bg-[#2E3D5C] border border-white/20 text-white font-bold text-xs sm:text-sm px-8 py-3.5 rounded-2xl shadow-lg hover:scale-105 transition-all duration-300">
               <span>{{ __('sections.home.intro_story.button_text') }}</span>
               <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>
@@ -510,7 +510,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 w-full md:w-auto">
           
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[26px]">verified</span>
+            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[26px]">verified</span>
             <div>
               <span class="text-base font-extrabold text-gray-900 dark:text-white block leading-tight font-mono">12+</span>
               <span class="text-[11px] text-gray-500 dark:text-gray-400">{{ __('sections.home.stats.sites_verified') }}</span>
@@ -518,7 +518,7 @@
           </div>
 
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[26px]">group</span>
+            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[26px]">group</span>
             <div>
               <span class="text-base font-extrabold text-gray-900 dark:text-white block leading-tight font-mono">1.400+</span>
               <span class="text-[11px] text-gray-500 dark:text-gray-400">{{ __('sections.home.stats.students_field') }}</span>
@@ -534,7 +534,7 @@
           </div>
 
           <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#E8999B] text-[26px]">handshake</span>
+            <span class="material-symbols-outlined text-[#1F2B45] dark:text-[#8FA8D0] text-[26px]">handshake</span>
             <div>
               <span class="text-base font-extrabold text-gray-900 dark:text-white block leading-tight font-mono">35+</span>
               <span class="text-[11px] text-gray-500 dark:text-gray-400">{{ __('sections.home.stats.partner_institutions') }}</span>

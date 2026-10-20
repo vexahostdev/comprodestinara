@@ -354,7 +354,7 @@
 <body class="bg-surface font-body-default text-body-default text-on-surface">
 
   <!-- ==================== HEADER (POMAII ARCHITECTURE: TRANSPARENT OVER HERO, SOLID ON SCROLL) ==================== -->
-  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ request()->routeIs('home') ? 'is-home-header header-transparent' : 'bg-white/95 dark:bg-[#181211]/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-white/10' }}">
+  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ request()->routeIs('home') ? 'is-home-header header-transparent' : 'bg-white/95 dark:bg-[#111315]/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-white/10' }}">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Left: Logo & Slogan (Pomaii Brand Lockup with Destinara Identity) -->
@@ -424,7 +424,7 @@
         <div class="relative group" id="desktopLangDropdown">
           <button type="button" 
                   id="desktopLangBtn"
-                  class="header-circle-btn h-10 px-3 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
+                  class="header-circle-btn h-10 px-3 rounded-2xl border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
                   title="{{ __('site.nav.choose_language') }}">
             <span class="material-symbols-outlined text-[17px] text-[#1F2B45]">translate</span>
             <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
@@ -441,32 +441,32 @@
           </button>
           
           <!-- Dropdown Menu -->
-          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#1E1716] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
-            <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#1A1D21] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
+            <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
               @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇬🇧</span><span>English</span></span>
               @if(app()->getLocale() === 'en') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇨🇳</span><span>中文</span></span>
               @if(app()->getLocale() === 'zh') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇯🇵</span><span>日本語</span></span>
               @if(app()->getLocale() === 'ja') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇩🇪</span><span>Deutsch</span></span>
               @if(app()->getLocale() === 'de') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇫🇷</span><span>Français</span></span>
               @if(app()->getLocale() === 'fr') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇳🇱</span><span>Nederlands</span></span>
               @if(app()->getLocale() === 'nl') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
             </a>
@@ -476,14 +476,14 @@
         <!-- Icon 1: Search -->
         <a href="{{ route('destinations.index') }}" 
            title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">search</span>
         </a>
 
         <!-- Icon 2: Wishlist / Saved -->
         <a href="{{ route('destinations.index') }}" 
            title="Tapak Tersimpan"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">favorite_border</span>
         </a>
 
@@ -492,7 +492,7 @@
                 id="headerDrawerBtn"
                 aria-label="{{ __('site.nav.open_menu') }}"
                 title="Menu & Akses"
-                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1E1B1B]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
 
@@ -505,7 +505,7 @@
   <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
 
   <!-- Slide-out Menu Drawer (Desktop & Mobile) -->
-  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 z-50 bg-white dark:bg-[#181211] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto" aria-modal="true" role="dialog">
+  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 z-50 bg-white dark:bg-[#111315] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto" aria-modal="true" role="dialog">
     <div>
       <!-- Header with Brand & Close Button -->
       <div class="flex items-center justify-between pb-5 mb-5 border-b border-outline-variant/30">
@@ -530,25 +530,25 @@
             <span class="text-[11px] font-normal text-gray-400 font-sans">{{ __('site.nav.choose_language') }}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇮🇩 Indonesia
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇬🇧 English
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇨🇳 中文
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇯🇵 日本語
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇩🇪 Deutsch
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇫🇷 Français
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1E1716] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇳🇱 Nederlands
             </a>
           </div>
@@ -576,12 +576,12 @@
       <!-- Portal Layanan Quick Buttons -->
       <div class="grid grid-cols-2 gap-2.5 mb-5 pb-4 border-b border-gray-100 dark:border-white/10">
         <a href="{{ config('services.core_system.url') }}/login" target="_blank" rel="noopener noreferrer" 
-           class="py-2.5 px-3 rounded-full border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
+           class="py-2.5 px-3 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-xs font-bold text-gray-700 dark:text-gray-200 flex items-center justify-center gap-1.5 transition-colors">
           <span class="material-symbols-outlined text-[16px]">login</span>
           <span>{{ __('site.nav.login') }}</span>
         </a>
         <a href="{{ config('services.core_system.url') }}/register" target="_blank" rel="noopener noreferrer" 
-           class="py-2.5 px-3 rounded-full bg-[#1F2B45] hover:bg-[#16203A] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
+           class="py-2.5 px-3 rounded-2xl bg-[#1F2B45] hover:bg-[#16203A] text-white text-xs font-bold flex items-center justify-center transition-colors shadow-xs">
           <span>{{ __('site.nav.register') }}</span>
         </a>
       </div>
@@ -625,10 +625,10 @@
 
     <!-- Footer Action inside Drawer with Legal Links -->
     <div class="mt-8 pt-5 border-t border-gray-100 dark:border-white/10 space-y-3">
-      <a href="{{ route('destinations.index') }}" class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3 px-5 rounded-full text-xs font-bold text-center block shadow-xs transition-colors">
+      <a href="{{ route('destinations.index') }}" class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3 px-5 rounded-2xl text-xs font-bold text-center block shadow-xs transition-colors">
         <span>{{ __('site.nav.explore_destinations') }}</span>
       </a>
-      <a href="{{ route('contact.index') }}" class="w-full border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-gray-700 dark:text-gray-200 py-3 px-5 rounded-full text-xs font-bold text-center block transition-colors">
+      <a href="{{ route('contact.index') }}" class="w-full border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-gray-700 dark:text-gray-200 py-3 px-5 rounded-2xl text-xs font-bold text-center block transition-colors">
         <span>{{ __('site.nav.consult_program') }}</span>
       </a>
       
@@ -651,7 +651,7 @@
   @yield('content')
 
   <!-- ==================== FOOTER (DESTINARA OFFICIAL 4-COLUMN ARCHITECTURE) ==================== -->
-  <footer class="w-full bg-[#FFFFFF] dark:bg-[#140E0D] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
+  <footer class="w-full bg-[#FFFFFF] dark:bg-[#111315] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Brand Strip -->
@@ -676,25 +676,25 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.company') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('about') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.about_destinara') }}</a>
+              <a href="{{ route('about') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.about_destinara') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#filosofi" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.philosophy') }}</a>
+              <a href="{{ route('about') }}#filosofi" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.philosophy') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#rekam-jejak" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.track_record') }}</a>
+              <a href="{{ route('about') }}#rekam-jejak" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.track_record') }}</a>
             </li>
             <li>
-              <a href="{{ route('destinations.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.selected_sanctuaries') }}</a>
+              <a href="{{ route('destinations.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.selected_sanctuaries') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.terms') }}</a>
+              <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.terms') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy') }}</a>
+              <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.privacy') }}</a>
             </li>
             <li>
-              <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.privacy_en') }}</a>
+              <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.privacy_en') }}</a>
             </li>
           </ul>
         </div>
@@ -704,16 +704,16 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.for_users') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('for-schools') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.school_programs') }}</a>
+              <a href="{{ route('for-schools') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.school_programs') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-researchers') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.research_collab') }}</a>
+              <a href="{{ route('for-researchers') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.research_collab') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-villages') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.village_partnership') }}</a>
+              <a href="{{ route('for-villages') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.village_partnership') }}</a>
             </li>
             <li>
-              <a href="{{ route('about') }}#fpic" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.fpic_ethics') }}</a>
+              <a href="{{ route('about') }}#fpic" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.fpic_ethics') }}</a>
             </li>
           </ul>
         </div>
@@ -723,16 +723,16 @@
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">{{ __('site.footer.publications') }}</h4>
           <ul class="flex flex-col gap-2.5 text-xs text-gray-600 dark:text-gray-300">
             <li>
-              <a href="{{ route('stories.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.latest_stories') }}</a>
+              <a href="{{ route('stories.index') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.latest_stories') }}</a>
             </li>
             <li>
-              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.monograph_sikka') }}</a>
+              <a href="{{ route('stories.show', 'zat-pewarna-alami-sikka') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.monograph_sikka') }}</a>
             </li>
             <li>
-              <a href="{{ route('stories.index') }}#newsletter-form" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.newsletter') }}</a>
+              <a href="{{ route('stories.index') }}#newsletter-form" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.newsletter') }}</a>
             </li>
             <li>
-              <a href="{{ route('for-schools') }}#silabus" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">{{ __('site.footer.syllabus_guide') }}</a>
+              <a href="{{ route('for-schools') }}#silabus" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">{{ __('site.footer.syllabus_guide') }}</a>
             </li>
           </ul>
         </div>
@@ -745,22 +745,22 @@
             <p>{{ __('site.footer.menteng_address') }}</p>
             <div class="flex flex-col gap-1.5 pt-2">
               <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.whatsapp_contacts') }}</span>
-              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-mono">
                 Maya: +62 821-1620-0363
               </a>
-              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-mono">
                 Azki: +62 858-9486-0696
               </a>
-              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-mono">
+              <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-mono">
                 Ryan: +62 857-7441-0978
               </a>
             </div>
             <div class="flex flex-col gap-1 pt-2">
               <span class="text-gray-900 dark:text-white font-semibold text-[11px] uppercase tracking-wider">{{ __('site.footer.official_emails') }}</span>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">
                 {{ \App\Models\SiteSetting::get('contact_email_partnership', 'partnership@destinara.id') }}
               </a>
-              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors">
+              <a href="mailto:{{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors">
                 {{ \App\Models\SiteSetting::get('contact_email_hello', 'hello@destinara.id') }}
               </a>
             </div>
@@ -773,28 +773,28 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left">
         <p>&copy; {{ date('Y') }} {{ \App\Models\SiteSetting::get('company_legal_name', 'PT DESTINARA CHAKRAWAL ARTHA') }}. {{ __('site.footer.copyright') }}</p>
         <div class="flex items-center justify-center gap-3 text-xs">
-          <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
+          <a href="{{ route('legal.terms') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-medium">{{ __('site.footer.terms') }}</a>
           <span>•</span>
-          <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
+          <a href="{{ route('legal.privacy') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-medium">{{ __('site.footer.privacy') }}</a>
           <span>•</span>
-          <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#E8999B] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
+          <a href="{{ route('legal.privacy.en') }}" class="hover:text-[#1F2B45] dark:hover:text-[#8FA8D0] transition-colors font-medium">{{ __('site.footer.privacy_en') }}</a>
         </div>
-        <p class="italic text-[#1F2B45] dark:text-[#E8999B]">{{ __('site.footer.motto') }}</p>
+        <p class="italic text-[#1F2B45] dark:text-[#8FA8D0]">{{ __('site.footer.motto') }}</p>
       </div>
     </div>
   </footer>
 
   <!-- ==================== MOBILE STICKY UTILITY BAR ==================== -->
-  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#181211]/95 backdrop-blur-md border-t border-gray-200/60 dark:border-white/10 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] mobile-sticky-action-bar">
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#111315]/95 backdrop-blur-md border-t border-gray-200/60 dark:border-white/10 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] mobile-sticky-action-bar">
     <div class="max-w-md mx-auto flex items-center gap-2">
       <button type="button" 
          onclick="document.getElementById('mobileWhatsAppModal').classList.remove('hidden');" 
-         class="flex-1 bg-[#51634b] hover:bg-[#3e4d39] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center cursor-pointer shadow-xs transition-all">
+         class="flex-1 bg-[#51634b] hover:bg-[#3e4d39] text-white py-2.5 px-3 text-xs font-semibold rounded-2xl flex items-center justify-center gap-1.5 text-center cursor-pointer shadow-xs transition-all">
         <span class="material-symbols-outlined text-[17px]">chat</span>
         <span>WhatsApp</span>
       </button>
       <a href="{{ route('destinations.index') }}" 
-         class="flex-1 bg-[#1F2B45] hover:bg-[#16203A] text-white py-2.5 px-3 text-xs font-semibold rounded-full flex items-center justify-center gap-1.5 text-center shadow-xs transition-all">
+         class="flex-1 bg-[#1F2B45] hover:bg-[#16203A] text-white py-2.5 px-3 text-xs font-semibold rounded-2xl flex items-center justify-center gap-1.5 text-center shadow-xs transition-all">
         <span class="material-symbols-outlined text-[17px]">travel_explore</span>
         <span>{{ __('site.common.explore_destinations') }}</span>
       </a>
@@ -803,10 +803,10 @@
 
   <!-- Mobile WhatsApp Contact Sheet Modal -->
   <div id="mobileWhatsAppModal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-xs p-0 sm:p-4">
-    <div class="bg-white dark:bg-[#1F1716] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
+    <div class="bg-white dark:bg-[#1A1D21] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
       <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/10">
         <div>
-          <span class="text-base font-bold text-[#1E1B1B] dark:text-white">{{ __('site.modal.wa_title') }}</span>
+          <span class="text-base font-bold text-[#111827] dark:text-white">{{ __('site.modal.wa_title') }}</span>
           <p class="text-xs text-gray-500 dark:text-gray-400">{{ __('site.modal.wa_subtitle') }}</p>
         </div>
         <button type="button" onclick="document.getElementById('mobileWhatsAppModal').classList.add('hidden');" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-white/10">
@@ -818,7 +818,7 @@
         <!-- Maya -->
         <a href="https://wa.me/6282116200363?text={{ urlencode(__('site.modal.maya_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.maya_name') }}</span>
+            <span class="font-bold text-sm text-[#111827] dark:text-white">{{ __('site.modal.maya_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.maya_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 821-1620-0363</span>
           </div>
@@ -828,7 +828,7 @@
         <!-- Azki -->
         <a href="https://wa.me/6285894860696?text={{ urlencode(__('site.modal.azki_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.azki_name') }}</span>
+            <span class="font-bold text-sm text-[#111827] dark:text-white">{{ __('site.modal.azki_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.azki_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 858-9486-0696</span>
           </div>
@@ -838,7 +838,7 @@
         <!-- Ryan -->
         <a href="https://wa.me/6285774410978?text={{ urlencode(__('site.modal.ryan_msg')) }}" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-50 dark:bg-white/5 hover:bg-[#1F2B45]/5 rounded-2xl border border-transparent hover:border-[#1F2B45]/20 flex items-center justify-between transition-colors">
           <div>
-            <span class="font-bold text-sm text-[#1E1B1B] dark:text-white">{{ __('site.modal.ryan_name') }}</span>
+            <span class="font-bold text-sm text-[#111827] dark:text-white">{{ __('site.modal.ryan_name') }}</span>
             <span class="text-[11px] text-[#51634b] block font-medium">{{ __('site.modal.ryan_role') }}</span>
             <span class="text-xs text-gray-500 dark:text-gray-400 font-mono mt-0.5 block">+62 857-7441-0978</span>
           </div>

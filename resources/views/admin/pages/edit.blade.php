@@ -14,7 +14,7 @@
                 </a>
             </div>
             <h1 class="text-xl font-bold text-gray-900 tracking-tight">Edit Konten: {{ $section->section_name }}</h1>
-            <p class="text-xs text-gray-500 mt-0.5">Halaman: <span class="font-semibold text-gray-700">{{ $pages[$section->page_slug] ?? $section->page_slug }}</span> | Key: <code class="bg-gray-100 px-1 py-0.5 rounded text-[11px] text-[#703a3a]">{{ $section->section_key }}</code></p>
+            <p class="text-xs text-gray-500 mt-0.5">Halaman: <span class="font-semibold text-gray-700">{{ $pages[$section->page_slug] ?? $section->page_slug }}</span> | Key: <code class="bg-gray-100 px-1 py-0.5 rounded text-[11px] text-[#1F2B45]">{{ $section->section_key }}</code></p>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
 
         <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-5">
             <h2 class="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-[#703a3a]">edit_note</span>
+                <span class="material-symbols-outlined text-[18px] text-[#1F2B45]">edit_note</span>
                 <span>Informasi &amp; Teks Utama Section</span>
             </h2>
 
@@ -60,7 +60,7 @@
                     </label>
                     <input type="text" name="title" id="title" value="{{ old('title', $section->title) }}"
                            placeholder="cth. Menghidupkan Ruang Belajar Nyata..."
-                           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a] focus:border-[#703a3a]">
+                           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45] focus:border-[#1F2B45]">
                 </div>
 
                 <div>
@@ -69,7 +69,7 @@
                     </label>
                     <input type="text" name="badge" id="badge" value="{{ old('badge', $section->badge) }}"
                            placeholder="cth. Arsip Lapangan No. 042"
-                           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a] focus:border-[#703a3a]">
+                           class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45] focus:border-[#1F2B45]">
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                 </label>
                 <textarea name="subtitle" id="subtitle" rows="3"
                           placeholder="Penjelasan ringkas atau pengantar section..."
-                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a] focus:border-[#703a3a]">{{ old('subtitle', $section->subtitle) }}</textarea>
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45] focus:border-[#1F2B45]">{{ old('subtitle', $section->subtitle) }}</textarea>
             </div>
 
             <div>
@@ -88,7 +88,7 @@
                 </label>
                 <textarea name="content" id="content" rows="6"
                           placeholder="Teks naratif lengkap (opsional, jika section memiliki deskripsi cerita panjang)..."
-                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a] focus:border-[#703a3a] font-mono leading-relaxed">{{ old('content', $section->content) }}</textarea>
+                          class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45] focus:border-[#1F2B45] font-mono leading-relaxed">{{ old('content', $section->content) }}</textarea>
                 <span class="block text-[11px] text-gray-400 mt-1">Gunakan pemisah baris/enter untuk membagi paragraf.</span>
             </div>
         </div>
@@ -96,7 +96,7 @@
         {{-- Foto / Media Section --}}
         <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-5">
             <h2 class="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-[#703a3a]">image</span>
+                <span class="material-symbols-outlined text-[18px] text-[#1F2B45]">image</span>
                 <span>Foto &amp; Media Visual Section</span>
             </h2>
 
@@ -122,7 +122,7 @@
                             Unggah Foto Baru (JPG, PNG, WEBP, Maks. 5MB)
                         </label>
                         <input type="file" name="image_file" id="image_file" accept="image/*"
-                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg text-xs file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-[#703a3a]/10 file:text-[#703a3a] hover:file:bg-[#703a3a]/20">
+                               class="w-full px-3 py-1.5 border border-gray-300 rounded-lg text-xs file:mr-3 file:py-1 file:px-3 file:rounded-2xl file:border-0 file:text-xs file:font-semibold file:bg-[#1F2B45]/10 file:text-[#1F2B45] hover:file:bg-[#1F2B45]/20">
                         <span class="block text-[11px] text-gray-400 mt-1">Kosongkan jika tidak ingin mengganti foto saat ini.</span>
                     </div>
 
@@ -132,7 +132,7 @@
                         </label>
                         <input type="text" name="image_caption" id="image_caption" value="{{ old('image_caption', $section->image_caption) }}"
                                placeholder="cth. Tapak Studi Etnobotani Pewarnaan Alami, Sanggar Tarum..."
-                               class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a] focus:border-[#703a3a]">
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45] focus:border-[#1F2B45]">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
         {{-- Tombol Aksi (CTA) --}}
         <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-5">
             <h2 class="text-sm font-bold text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[18px] text-[#703a3a]">touch_app</span>
+                <span class="material-symbols-outlined text-[18px] text-[#1F2B45]">touch_app</span>
                 <span>Tombol Aksi (Call To Action / Link)</span>
             </h2>
 
@@ -153,13 +153,13 @@
                         <label class="block text-[11px] font-medium text-gray-600 mb-1">Teks Tombol</label>
                         <input type="text" name="button_text" value="{{ old('button_text', $section->button_text) }}"
                                placeholder="cth. Jelajahi Destinasi"
-                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a]">
+                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45]">
                     </div>
                     <div>
                         <label class="block text-[11px] font-medium text-gray-600 mb-1">Tautan / URL (href)</label>
                         <input type="text" name="button_link" value="{{ old('button_link', $section->button_link) }}"
                                placeholder="cth. /destinasi atau https://..."
-                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a]">
+                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45]">
                     </div>
                 </div>
 
@@ -170,13 +170,13 @@
                         <label class="block text-[11px] font-medium text-gray-600 mb-1">Teks Tombol Sekunder</label>
                         <input type="text" name="secondary_button_text" value="{{ old('secondary_button_text', $section->secondary_button_text) }}"
                                placeholder="cth. Unduh Silabus"
-                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a]">
+                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45]">
                     </div>
                     <div>
                         <label class="block text-[11px] font-medium text-gray-600 mb-1">Tautan / URL Sekunder</label>
                         <input type="text" name="secondary_button_link" value="{{ old('secondary_button_link', $section->secondary_button_link) }}"
                                placeholder="cth. /untuk-sekolah"
-                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#703a3a]">
+                               class="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-[#1F2B45]">
                     </div>
                 </div>
             </div>
@@ -186,10 +186,10 @@
         <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm space-y-5" x-show="items.length > 0 || {{ !empty($section->items) ? 'true' : 'false' }}">
             <div class="flex items-center justify-between border-b border-gray-100 pb-3">
                 <h2 class="text-sm font-bold text-gray-900 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px] text-[#703a3a]">list_alt</span>
+                    <span class="material-symbols-outlined text-[18px] text-[#1F2B45]">list_alt</span>
                     <span>Daftar Poin / Kartu / Langkah Khusus (Items)</span>
                 </h2>
-                <button type="button" @click="addItem()" class="inline-flex items-center gap-1 text-xs font-semibold text-[#703a3a] hover:text-[#5a2e2e]">
+                <button type="button" @click="addItem()" class="inline-flex items-center gap-1 text-xs font-semibold text-[#1F2B45] hover:text-[#16203A]">
                     <span class="material-symbols-outlined text-[16px]">add_circle</span>
                     <span>Tambah Poin</span>
                 </button>
@@ -246,7 +246,7 @@
         <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
             <label class="flex items-center gap-2.5 cursor-pointer select-none">
                 <input type="checkbox" name="is_active" value="1" {{ old('is_active', $section->is_active) ? 'checked' : '' }}
-                       class="w-4 h-4 text-[#703a3a] border-gray-300 rounded focus:ring-[#703a3a]">
+                       class="w-4 h-4 text-[#1F2B45] border-gray-300 rounded focus:ring-[#1F2B45]">
                 <span class="text-xs font-semibold text-gray-700">Tampilkan Section Ini di Halaman Publik</span>
             </label>
 
@@ -256,7 +256,7 @@
                     Batal
                 </a>
                 <button type="submit" 
-                        class="w-full sm:w-auto px-5 py-2 bg-[#703a3a] hover:bg-[#5a2e2e] text-white rounded-lg text-xs font-bold shadow-sm transition-colors flex items-center justify-center gap-1.5">
+                        class="w-full sm:w-auto px-5 py-2 bg-[#1F2B45] hover:bg-[#16203A] text-white rounded-2xl text-xs font-bold shadow-sm transition-colors flex items-center justify-center gap-1.5">
                     <span class="material-symbols-outlined text-[16px]">save</span>
                     <span>Simpan Perubahan Section</span>
                 </button>

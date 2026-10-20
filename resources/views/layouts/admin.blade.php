@@ -32,7 +32,7 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#703a3a',
+                        primary: '#1F2B45',
                     }
                 }
             }
@@ -48,79 +48,79 @@
             color-scheme: dark;
         }
         html.dark body {
-            background-color: #120c0b !important;
-            color: #ede0dc !important;
+            background-color: #111315 !important;
+            color: #ECEDEF !important;
         }
         html.dark main {
-            background-color: #181211 !important;
+            background-color: #111315 !important;
         }
         html.dark header.bg-white {
-            background-color: #1e1716 !important;
-            border-color: #382e2c !important;
-            color: #ede0dc !important;
+            background-color: #1A1D21 !important;
+            border-color: #2C3036 !important;
+            color: #ECEDEF !important;
         }
         html.dark .bg-white {
-            background-color: #241c1a !important;
-            color: #ede0dc !important;
+            background-color: #1A1D21 !important;
+            color: #ECEDEF !important;
         }
         html.dark .border-gray-200,
         html.dark .border-gray-100,
         html.dark .border-gray-300 {
-            border-color: #382e2c !important;
+            border-color: #2C3036 !important;
         }
         html.dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]),
         html.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-            border-color: #382e2c !important;
+            border-color: #2C3036 !important;
         }
         html.dark .text-gray-900,
         html.dark .text-gray-800,
         html.dark .text-gray-700 {
-            color: #ede0dc !important;
+            color: #ECEDEF !important;
         }
         html.dark .text-gray-600,
         html.dark .text-gray-500 {
-            color: #c4b3af !important;
+            color: #B4B9C0 !important;
         }
         html.dark .text-gray-400 {
-            color: #9e8c89 !important;
+            color: #9EA3AA !important;
         }
         html.dark .bg-gray-50,
         html.dark .bg-gray-100 {
-            background-color: #1e1716 !important;
+            background-color: #1A1D21 !important;
         }
         html.dark .hover\:bg-gray-50:hover,
         html.dark .hover\:bg-gray-100:hover {
-            background-color: #2d2220 !important;
+            background-color: #2C3036 !important;
         }
         html.dark input,
         html.dark select,
         html.dark textarea {
-            background-color: #1a1211 !important;
-            color: #ede0dc !important;
-            border-color: #4a3c39 !important;
+            background-color: #202429 !important;
+            color: #ECEDEF !important;
+            border-color: #3A3F46 !important;
         }
         html.dark input:focus,
         html.dark select:focus,
         html.dark textarea:focus {
-            border-color: #ffb3b2 !important;
+            border-color: #AFC0D8 !important;
         }
         html.dark input::placeholder,
         html.dark textarea::placeholder {
-            color: #7d6b67 !important;
+            color: #6E747D !important;
         }
         html.dark select option {
-            background-color: #241c1a !important;
-            color: #ede0dc !important;
+            background-color: #1A1D21 !important;
+            color: #ECEDEF !important;
         }
         html.dark table thead {
-            background-color: #1e1716 !important;
+            background-color: #1A1D21 !important;
         }
         html.dark table th {
-            color: #d5c2be !important;
-            border-color: #382e2c !important;
+            color: #C4C8CE !important;
+            border-color: #2C3036 !important;
         }
         html.dark table td {
-            border-color: #382e2c !important;
+            border-color: #2C3036 !important;
         }
         html.dark .shadow-sm {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4) !important;
@@ -131,7 +131,7 @@
 
 <div class="flex h-screen overflow-hidden">
     {{-- Sidebar --}}
-    <aside class="fixed inset-y-0 left-0 z-50 w-72 bg-[#392e2b] transform transition-transform duration-300 lg:translate-x-0 lg:static lg:inset-0 flex flex-col justify-between"
+    <aside class="fixed inset-y-0 left-0 z-50 w-72 bg-[#1F2937] transform transition-transform duration-300 lg:translate-x-0 lg:static lg:inset-0 flex flex-col justify-between"
            :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'">
         <div>
             <div class="flex items-center justify-between h-14 px-5">
@@ -166,14 +166,14 @@
                 @foreach($navItems as $item)
                     @php $active = request()->routeIs($item['route']) || (isset($item['prefix']) && request()->routeIs($item['prefix'].'*')); @endphp
                     <a href="{{ route($item['route']) }}"
-                       class="flex items-center justify-between px-3 py-2 rounded-lg text-xs transition-all
-                              {{ $active ? 'bg-[#703a3a] text-white font-medium shadow-sm' : 'text-white/70 hover:bg-white/10 hover:text-white font-normal' }}">
+                       class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs transition-all
+ {{ $active ? 'bg-[#1F2B45] text-white font-medium shadow-sm' : 'text-white/70 hover:bg-white/10 hover:text-white font-normal' }}">
                         <div class="flex items-center gap-2.5">
                             <span class="material-symbols-outlined text-[18px] flex-shrink-0 text-white/80">{{ $item['icon'] }}</span>
                             <span>{{ $item['label'] }}</span>
                         </div>
                         @if(!empty($item['badge']) && $item['badge'] > 0)
-                            <span class="px-2 py-0.5 text-[10px] font-semibold bg-[#ffb3b2] text-[#392e2b] rounded-full">
+                            <span class="px-2 py-0.5 text-[10px] font-semibold bg-[#AFC0D8] text-[#1F2937] rounded-full">
                                 {{ $item['badge'] }}
                             </span>
                         @endif
@@ -225,7 +225,7 @@
                         type="button" 
                         aria-label="Ganti Tema Tampilan" 
                         title="Ganti Mode Tampilan" 
-                        class="theme-toggle-btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-[#382e2c] bg-gray-50 hover:bg-gray-100 dark:bg-[#241c1a] dark:hover:bg-[#2d2220] text-gray-700 dark:text-[#ede0dc] transition-all cursor-pointer shadow-xs">
+                        class="theme-toggle-btn flex items-center gap-1.5 px-2.5 py-1.5 rounded-2xl border border-gray-200 dark:border-[#2C3036] bg-gray-50 hover:bg-gray-100 dark:bg-[#1A1D21] dark:hover:bg-[#2C3036] text-gray-700 dark:text-[#ECEDEF] transition-all cursor-pointer shadow-xs">
                     <span class="theme-icon-light material-symbols-outlined text-[18px] text-amber-600 dark:hidden">light_mode</span>
                     <span class="theme-icon-dark material-symbols-outlined text-[18px] text-amber-200 hidden dark:inline-flex">dark_mode</span>
                     <span class="text-xs font-semibold uppercase tracking-wider font-sans hidden sm:inline">
@@ -235,16 +235,16 @@
                 </button>
 
                 <div class="text-right hidden sm:block">
-                    <div class="text-xs font-medium text-gray-800 dark:text-[#ede0dc]">{{ auth()->user()?->name ?? 'Admin Destinara' }}</div>
-                    <div class="text-[10px] text-gray-400 dark:text-[#9e8c89]">{{ auth()->user()?->email ?? 'admin@destinara.id' }}</div>
+                    <div class="text-xs font-medium text-gray-800 dark:text-[#ECEDEF]">{{ auth()->user()?->name ?? 'Admin Destinara' }}</div>
+                    <div class="text-[10px] text-gray-400 dark:text-[#9EA3AA]">{{ auth()->user()?->email ?? 'admin@destinara.id' }}</div>
                 </div>
-                <div class="w-8 h-8 rounded-full bg-[#703a3a] flex items-center justify-center text-white text-xs font-semibold shadow-sm">
+                <div class="w-8 h-8 rounded-full bg-[#1F2B45] flex items-center justify-center text-white text-xs font-semibold shadow-sm">
                     {{ strtoupper(substr(auth()->user()?->name ?? 'D', 0, 1)) }}
                 </div>
             </div>
         </header>
 
-        <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-[#181211] p-6">
+        <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-[#111315] p-6">
             @if(session('success'))
                 <div class="mb-4 p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-xs flex items-center gap-2">
                     <span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>

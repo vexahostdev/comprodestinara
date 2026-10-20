@@ -12,7 +12,7 @@
                 <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border-radius: 0; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
                     <!-- Header -->
                     <tr>
-                        <td style="background-color: #8C5151; padding: 28px 32px; text-align: center;">
+                        <td style="background-color: #2E3D5C; padding: 28px 32px; text-align: center;">
                             <h1 style="color: #ffffff; margin: 0; font-size: 22px; font-weight: 800; letter-spacing: 0.5px;">DESTINARA</h1>
                             <p style="color: #fbd5d5; margin: 4px 0 0 0; font-size: 13px;">Notifikasi Pesan Konsultasi &amp; Kemitraan Masuk</p>
                         </td>
@@ -42,13 +42,13 @@
                                 @endif
                                 <tr>
                                     <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 13px; font-weight: bold; color: #64748b;">Nomor WhatsApp:</td>
-                                    <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 14px; color: #8C5151; font-weight: bold;">
+                                    <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 14px; color: #2E3D5C; font-weight: bold;">
                                         {{ $contactMessage->whatsapp ?? $contactMessage->phone ?? '-' }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 13px; font-weight: bold; color: #64748b;">Topik Kebutuhan:</td>
-                                    <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 14px; font-weight: bold; color: #703a3a;">
+                                    <td style="padding: 14px 18px; border-bottom: 1px solid #edf2f7; font-size: 14px; font-weight: bold; color: #1F2B45;">
                                         {{ $contactMessage->topic ?? $contactMessage->event_type ?? 'Konsultasi Umum' }}
                                     </td>
                                 </tr>
@@ -63,14 +63,14 @@
                             <!-- Message Content -->
                             <div style="margin-bottom: 28px;">
                                 <p style="font-size: 13px; font-weight: bold; color: #64748b; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Catatan Tambahan / Pesan:</p>
-                                <div style="background-color: #f8fafc; border-left: 4px solid #8C5151; padding: 16px 20px; font-size: 14px; line-height: 1.7; color: #1e293b; white-space: pre-line;">{{ $contactMessage->notes ?? $contactMessage->message }}</div>
+                                <div style="background-color: #f8fafc; border-left: 4px solid #2E3D5C; padding: 16px 20px; font-size: 14px; line-height: 1.7; color: #1e293b; white-space: pre-line;">{{ $contactMessage->notes ?? $contactMessage->message }}</div>
                             </div>
 
                             <!-- CTA Buttons -->
                             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 24px;">
                                 <tr>
                                     <td align="center">
-                                        <a href="{{ route('admin.messages.show', $contactMessage->id) }}" target="_blank" style="display: inline-block; background-color: #8C5151; color: #ffffff; text-decoration: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border: 1px solid #703a3a;">
+                                        <a href="{{ route('admin.messages.show', $contactMessage->id) }}" target="_blank" style="display: inline-block; background-color: #2E3D5C; color: #ffffff; text-decoration: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border: 1px solid #1F2B45;">
                                             Buka di Admin Panel &rarr;
                                         </a>
                                     </td>

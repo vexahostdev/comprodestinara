@@ -36,13 +36,13 @@
   $cta = $sections['cta_schools'] ?? null;
 @endphp
 
-<main class="w-full bg-[#FFFFFF] dark:bg-[#140E0D] pt-20 sm:pt-24 pb-20 transition-colors">
+<main class="w-full bg-[#FFFFFF] dark:bg-[#111315] pt-20 sm:pt-24 pb-20 transition-colors">
   <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20">
 
     <!-- 1. Hero Section (Modern Clean Split Banner) -->
     @if(!$hero || $hero->is_active)
     <section class="relative w-full">
-      <div class="bg-white dark:bg-[#1F1716] rounded-3xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 border border-gray-100 dark:border-white/5 shadow-sm">
+      <div class="bg-white dark:bg-[#1A1D21] rounded-3xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 border border-gray-100 dark:border-white/5 shadow-sm">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           <!-- Left: Hero Text -->
@@ -95,7 +95,7 @@
             <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5">
               <img class="w-full h-full object-cover" alt="{{ $hero?->title ?? 'Siswa berdiskusi' }}" src="{{ $hero?->image_url ?? asset('assets/img/hd/sekolah-diskusi.jpg') }}"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 dark:bg-[#1E1B1B]/95 backdrop-blur-md rounded-2xl shadow-sm flex items-center justify-between gap-3">
+              <div class="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 dark:bg-[#1A1D21]/95 backdrop-blur-md rounded-2xl shadow-sm flex items-center justify-between gap-3">
                 <div>
                   <p class="text-xs font-bold text-gray-900 dark:text-white leading-tight">Sanggar Lapangan Pentingsari</p>
                   <p class="text-[11px] text-gray-500 dark:text-gray-400 italic">{{ $hero?->image_caption ?? 'Observasi etnobotani terpadu — Kelas VIII' }}</p>
@@ -138,7 +138,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @foreach($benefitItems as $bItem)
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col gap-3 group">
+          <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col gap-3 group">
             <div class="w-11 h-11 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center group-hover:scale-105 transition-transform">
               <span class="material-symbols-outlined text-[24px]">{{ $bItem['icon'] ?? 'verified' }}</span>
             </div>
@@ -180,8 +180,8 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @foreach($flowItems as $idx => $fItem)
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-3">
-            <span class="text-3xl font-black text-[#1F2B45] dark:text-[#E8999B]">
+          <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-3">
+            <span class="text-3xl font-black text-[#1F2B45] dark:text-[#8FA8D0]">
               {{ $fItem['step'] ?? sprintf('%02d', $idx + 1) }}
             </span>
             <h4 class="text-base font-bold text-[#1A1A1A] dark:text-white">
@@ -209,13 +209,13 @@
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
               {{ $cta?->title ?? __('sections.for_schools.cta_schools.title') }}
             </h2>
-            <p class="text-xs sm:text-sm text-[#D7C2C1] max-w-xl leading-relaxed">
+            <p class="text-xs sm:text-sm text-[#D2D9E3] max-w-xl leading-relaxed">
               {{ $cta?->subtitle ?? __('sections.for_schools.cta_schools.subtitle') }}
             </p>
           </div>
 
           <div class="lg:col-span-5">
-            <div class="bg-white text-[#1E1B1B] rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col gap-4">
+            <div class="bg-white text-[#111827] rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col gap-4">
               <div>
                 <p class="text-lg font-bold text-gray-900">{{ __('sections.for_schools.cta_schools.schedule_title') }}</p>
                 <p class="text-xs text-gray-500">{{ __('sections.for_schools.cta_schools.schedule_subtitle') }}</p>

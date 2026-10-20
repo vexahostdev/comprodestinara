@@ -29,7 +29,7 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#111315] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
 
     <!-- Top Header Banner -->
@@ -39,7 +39,7 @@
           <span class="material-symbols-outlined text-[16px]">menu_book</span>
           <span>{{ __('site.common.field_stories_badge') }}</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight leading-tight">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] dark:text-white tracking-tight leading-tight">
           {{ __('site.common.stories_hero_title') }}
         </h1>
         <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
@@ -55,7 +55,7 @@
 
     <!-- Featured Story (Pomaii Hero Article Card) -->
     @if($featuredStory)
-    <section class="bg-white dark:bg-[#1E1716] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all">
+    <section class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <div class="lg:col-span-7">
@@ -77,7 +77,7 @@
               <span class="text-gray-500 dark:text-gray-400 font-medium">{{ $featuredStory->read_time }}</span>
             </div>
 
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1E1B1B] dark:text-white leading-snug tracking-tight">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#111827] dark:text-white leading-snug tracking-tight">
               <a href="{{ route('stories.show', $featuredStory->slug) }}" class="hover:text-[#1F2B45] transition-colors">
                 {{ $featuredStory->title }}
               </a>
@@ -111,7 +111,7 @@
           <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45] block mb-1">
             {{ __('site.common.field_collection_badge') }}
           </span>
-          <h3 class="text-2xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
+          <h3 class="text-2xl font-extrabold text-[#111827] dark:text-white tracking-tight">
             {{ __('site.common.recent_notes_archive') }}
           </h3>
         </div>
@@ -119,7 +119,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @forelse($stories as $story)
-          <article class="bg-white dark:bg-[#1E1716] rounded-3xl p-4 sm:p-5 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <article class="bg-white dark:bg-[#1A1D21] rounded-3xl p-4 sm:p-5 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
             
             <div class="space-y-4">
               <a href="{{ route('stories.show', $story->slug) }}" class="relative w-full aspect-[16/10] overflow-hidden block rounded-2xl shadow-sm">
@@ -136,7 +136,7 @@
                   <span>{{ $story->published_at ? $story->published_at->translatedFormat('d M Y') : '' }}</span>
                 </div>
 
-                <h4 class="text-base sm:text-lg font-bold text-[#1E1B1B] dark:text-white leading-snug group-hover:text-[#1F2B45] transition-colors">
+                <h4 class="text-base sm:text-lg font-bold text-[#111827] dark:text-white leading-snug group-hover:text-[#1F2B45] transition-colors">
                   <a href="{{ route('stories.show', $story->slug) }}">
                     {{ $story->title }}
                   </a>
@@ -157,7 +157,7 @@
 
           </article>
         @empty
-          <div class="col-span-3 text-center py-16 bg-white dark:bg-[#1E1716] rounded-3xl border border-gray-100 dark:border-white/5">
+          <div class="col-span-3 text-center py-16 bg-white dark:bg-[#1A1D21] rounded-3xl border border-gray-100 dark:border-white/5">
             <span class="material-symbols-outlined text-4xl text-gray-300 mb-2">article</span>
             <p class="text-gray-500 dark:text-gray-400 text-sm">{{ __('site.common.no_stories') }}</p>
           </div>

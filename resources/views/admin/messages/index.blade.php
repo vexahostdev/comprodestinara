@@ -14,7 +14,7 @@
         @if($unreadCount > 0)
             <form action="{{ route('admin.messages.mark-all-read') }}" method="POST">
                 @csrf
-                <button type="submit" class="px-3 py-1.5 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg text-xs font-medium">Tandai Semua Terbaca</button>
+                <button type="submit" class="px-3 py-1.5 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-2xl text-xs font-medium">Tandai Semua Terbaca</button>
             </form>
         @endif
     </div>

@@ -37,13 +37,13 @@
   $gov = $sections['governance'] ?? null;
 @endphp
 
-<main class="w-full bg-[#FFFFFF] dark:bg-[#140E0D] pt-20 sm:pt-24 pb-20 transition-colors">
+<main class="w-full bg-[#FFFFFF] dark:bg-[#111315] pt-20 sm:pt-24 pb-20 transition-colors">
   <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20">
 
     <!-- 1. Hero Section (Modern Clean Island Banner) -->
     @if(!$hero || $hero->is_active)
     <section class="relative w-full">
-      <div class="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] rounded-3xl sm:rounded-3xl lg:rounded-3xl overflow-hidden bg-[#231917] shadow-sm border border-gray-200/50 flex items-end">
+      <div class="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] rounded-3xl sm:rounded-3xl lg:rounded-3xl overflow-hidden bg-[#1F2937] shadow-sm border border-gray-200/50 flex items-end">
         <img src="{{ $hero?->image_url ?? asset('assets/img/hd/hero-about.jpg') }}" 
              alt="{{ $hero?->title ?? 'Tentang Kami Destinara' }}" 
              class="absolute inset-0 w-full h-full object-cover object-[center_35%] brightness-90"/>
@@ -78,7 +78,7 @@
     <!-- 2. Section Visi-Misi & Manifesto (Modern Minimalist Card) -->
     @if(!$manifesto || $manifesto->is_active)
     <section class="w-full" id="manifesto">
-      <div class="bg-white dark:bg-[#1F1716] rounded-3xl sm:rounded-3xl p-8 sm:p-14 border border-gray-100 dark:border-white/5 shadow-sm text-center flex flex-col items-center">
+      <div class="bg-white dark:bg-[#1A1D21] rounded-3xl sm:rounded-3xl p-8 sm:p-14 border border-gray-100 dark:border-white/5 shadow-sm text-center flex flex-col items-center">
         <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-[26px]">menu_book</span>
         </div>
@@ -103,7 +103,7 @@
         <div class="mt-12 w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           @foreach($manifestoItems as $idx => $mItem)
             <div class="bg-gray-50 dark:bg-white/5 rounded-2xl p-6 text-left flex flex-col justify-between border border-transparent hover:border-[#1F2B45]/20 transition-all">
-              <span class="text-2xl lg:text-3xl font-extrabold text-[#1F2B45] dark:text-[#E8999B] tracking-tight block">
+              <span class="text-2xl lg:text-3xl font-extrabold text-[#1F2B45] dark:text-[#8FA8D0] tracking-tight block">
                 {{ $mItem['stat'] ?? $mItem['title'] ?? '' }}
               </span>
               <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
@@ -125,7 +125,7 @@
           <div class="rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5 relative aspect-[4/3] sm:aspect-[16/11]">
             <img class="w-full h-full object-cover" alt="{{ $founder?->title ?? 'Musyawarah etika tapak' }}" src="{{ $founder?->image_url ?? asset('assets/img/hd/about-musyawarah.jpg') }}"/>
           </div>
-          <div class="bg-white dark:bg-[#1F1716] rounded-2xl p-5 border border-gray-100 dark:border-white/5 shadow-xs flex items-start gap-3.5">
+          <div class="bg-white dark:bg-[#1A1D21] rounded-2xl p-5 border border-gray-100 dark:border-white/5 shadow-xs flex items-start gap-3.5">
             <span class="material-symbols-outlined text-[#1F2B45] text-[22px] shrink-0 mt-0.5">format_quote</span>
             <div>
               <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-200 italic leading-relaxed">
@@ -139,7 +139,7 @@
         </div>
 
         <!-- Right: Story Essay -->
-        <div class="lg:col-span-7 flex flex-col gap-4 bg-white dark:bg-[#1F1716] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm">
+        <div class="lg:col-span-7 flex flex-col gap-4 bg-white dark:bg-[#1A1D21] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm">
           <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#51634b]">
             <span class="material-symbols-outlined text-[18px]">history_edu</span>
             <span>{{ $founder?->badge ?? 'Latar Belakang & Perjalanan' }}</span>
@@ -188,14 +188,14 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         @forelse($team as $member)
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group">
+          <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-4">
                 <img class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover shrink-0 border border-gray-100 shadow-xs" 
                      alt="{{ $member->name }}" 
                      src="{{ $member->photo_url }}"/>
                 <div>
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-[#1F2B45] dark:text-[#E8999B] block">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-[#1F2B45] dark:text-[#8FA8D0] block">
                     {{ $member->role }}
                   </span>
                   <h3 class="text-lg font-bold text-[#1A1A1A] dark:text-white mt-0.5">
@@ -241,7 +241,7 @@
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight max-w-xl">
           {{ $gov?->title ?? __('sections.about.cta.title') }}
         </h2>
-        <p class="text-xs sm:text-sm text-[#D7C2C1] mt-3 max-w-lg leading-relaxed">
+        <p class="text-xs sm:text-sm text-[#D2D9E3] mt-3 max-w-lg leading-relaxed">
           {{ $gov?->subtitle ?? __('sections.about.cta.subtitle') }}
         </p>
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -250,7 +250,7 @@
             {{ $gov?->button_text ?? __('sections.about.cta.button_text') }}
           </a>
           <a href="{{ route('destinations.index') }}" 
-             class="border border-white/30 hover:border-white text-white font-bold px-6 py-3 rounded-full text-xs transition-all">
+             class="border border-white/30 hover:border-white text-white font-bold px-6 py-3 rounded-2xl text-xs transition-all">
             {{ __('site.common.explore_destinations') }}
           </a>
         </div>

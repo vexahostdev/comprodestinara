@@ -47,13 +47,13 @@
 html.dark {
   color-scheme: dark;
 
-  /* Material 3 & Destinara Deep Warm Obsidian Dark Palette */
-  --color-primary: 255 179 178; /* #ffb3b2 */
-  --color-primary-container: 140 81 81; /* #8c5151 */
-  --color-on-primary: 86 29 30; /* #561d1e */
-  --color-on-primary-container: 255 211 210;
-  --color-primary-fixed: 255 218 217;
-  --color-primary-fixed-dim: 255 179 178;
+  /* Material 3 & Destinara Charcoal Netral Dark Palette */
+  --color-primary: 143 168 208;
+  --color-primary-container: 46 61 92;
+  --color-on-primary: 14 20 34;
+  --color-on-primary-container: 220 228 239;
+  --color-primary-fixed: 226 232 241;
+  --color-primary-fixed-dim: 175 192 216;
 
   --color-secondary: 184 204 175; /* #b8ccaf */
   --color-secondary-container: 58 75 53; /* #3a4b35 */
@@ -69,23 +69,23 @@ html.dark {
   --color-tertiary-fixed: 255 221 181;
   --color-tertiary-fixed-dim: 248 187 106;
 
-  --color-surface: 24 18 17; /* #181211 */
-  --color-surface-dim: 20 14 13; /* #140e0d */
-  --color-surface-bright: 56 46 44; /* #382e2c */
-  --color-surface-container-lowest: 16 10 9; /* #100a09 */
-  --color-surface-container-low: 30 23 22; /* #1e1716 */
-  --color-surface-container: 36 28 26; /* #241c1a */
-  --color-surface-container-high: 46 37 35; /* #2e2523 */
-  --color-surface-container-highest: 56 46 44; /* #382e2c */
+  --color-surface: 17 19 21;
+  --color-surface-dim: 13 15 17;
+  --color-surface-bright: 44 48 54;
+  --color-surface-container-lowest: 11 12 14;
+  --color-surface-container-low: 26 29 33;
+  --color-surface-container: 32 36 41;
+  --color-surface-container-high: 38 42 48;
+  --color-surface-container-highest: 44 48 54;
 
-  --color-on-surface: 241 223 217; /* #f1dfd9 */
-  --color-on-surface-variant: 215 194 193; /* #d7c2c1 */
-  --color-inverse-surface: 241 223 217;
-  --color-inverse-on-surface: 57 46 43;
-  --color-outline: 160 140 138; /* #a08c8a */
-  --color-outline-variant: 82 67 67; /* #524343 */
-  --color-background: 24 18 17;
-  --color-on-background: 241 223 217;
+  --color-on-surface: 236 237 239;
+  --color-on-surface-variant: 158 163 170;
+  --color-inverse-surface: 236 237 239;
+  --color-inverse-on-surface: 26 29 33;
+  --color-outline: 110 116 125;
+  --color-outline-variant: 58 63 70;
+  --color-background: 17 19 21;
+  --color-on-background: 236 237 239;
 }
 
 html {
@@ -576,13 +576,13 @@ html, body {
 
 /* Dark Mode Scrollbar */
 html.dark ::-webkit-scrollbar-track {
-  background: #1e1716;
+  background: #1A1D21;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #5c2c2c;
 }
 html.dark ::-webkit-scrollbar-thumb:hover {
-  background: #8c5151;
+  background: #3A3F46;
 }
 
 /* Dark Mode Text Selection */
@@ -593,25 +593,25 @@ html.dark ::selection {
 
 /* RGS Hero Panel in Dark Mode */
 html.dark .rgs-hero-panel {
-  background-color: #241c1a !important;
-  border-left-color: #ffb3b2 !important;
+  background-color: #1A1D21 !important;
+  border-left-color: #8FA8D0 !important;
 }
 html.dark .rgs-hero-panel h1 {
-  color: #f1dfd9 !important;
+  color: #ECEDEF !important;
 }
 html.dark .rgs-hero-panel p {
-  color: #d7c2c1 !important;
+  color: #9EA3AA !important;
 }
 
 /* RGS Outline Button in Dark Mode */
 html.dark .rgs-btn-outline {
-  color: #ede0dc !important;
+  color: #ECEDEF !important;
   border-color: rgba(237, 224, 220, 0.4) !important;
 }
 html.dark .rgs-btn-outline:hover {
-  background-color: #ede0dc !important;
-  color: #181211 !important;
-  border-color: #ede0dc !important;
+  background-color: #ECEDEF !important;
+  color: #111315 !important;
+  border-color: #ECEDEF !important;
 }
 
 /* RGS Editorial Card & Grid Borders in Dark Mode */
@@ -619,7 +619,7 @@ html.dark .rgs-card-alt {
   border-bottom-color: rgba(215, 194, 193, 0.2) !important;
 }
 html.dark .rgs-card-alt:hover {
-  border-bottom-color: #ffb3b2 !important;
+  border-bottom-color: #8FA8D0 !important;
 }
 @media (min-width: 768px) {
   html.dark .rgs-card-alt::after {
@@ -632,56 +632,56 @@ html.dark .rgs-grid-connected-alt {
 
 /* Mobile Menu Drawer in Dark Mode */
 html.dark #mobileMenuDrawer {
-  background-color: #181211 !important;
-  color: #f1dfd9 !important;
+  background-color: #111315 !important;
+  color: #ECEDEF !important;
 }
 
 /* Dossier Modal Popup in Dark Mode */
 html.dark .modal-dialog {
-  background: #241c1a !important;
-  color: #f1dfd9 !important;
+  background: #1A1D21 !important;
+  color: #ECEDEF !important;
   border-color: rgba(215, 194, 193, 0.15) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Toast Notifications in Dark Mode */
 html.dark .toast {
-  background: #241c1a !important;
-  color: #f1dfd9 !important;
-  border-left-color: #ffb3b2 !important;
+  background: #1A1D21 !important;
+  color: #ECEDEF !important;
+  border-left-color: #8FA8D0 !important;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
 }
 html.dark .toast.toast-success {
   border-left-color: #b8ccaf !important;
 }
 html.dark .toast p.font-semibold {
-  color: #f1dfd9 !important;
+  color: #ECEDEF !important;
 }
 html.dark .toast p.text-xs {
-  color: #d7c2c1 !important;
+  color: #9EA3AA !important;
 }
 
 /* Form Controls (Inputs, Selects, Textareas) in Dark Mode */
 html.dark input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
 html.dark textarea,
 html.dark select {
-  background-color: #1e1716 !important;
-  color: #f1dfd9 !important;
+  background-color: #1A1D21 !important;
+  color: #ECEDEF !important;
   border-color: rgba(82, 67, 67, 0.8) !important;
 }
 html.dark input:focus,
 html.dark textarea:focus,
 html.dark select:focus {
-  border-color: #ffb3b2 !important;
-  background-color: #241c1a !important;
+  border-color: #8FA8D0 !important;
+  background-color: #1A1D21 !important;
 }
 html.dark input::placeholder,
 html.dark textarea::placeholder {
   color: #847372 !important;
 }
 html.dark select option {
-  background-color: #241c1a !important;
-  color: #f1dfd9 !important;
+  background-color: #1A1D21 !important;
+  color: #ECEDEF !important;
 }
 
 /* Destinara Logo Filter in Dark Mode */
@@ -692,13 +692,13 @@ html.dark .destinara-logo {
 
 /* Dark Mode Overrides for Hardcoded Text & Borders */
 html.dark .text-\[\#231917\] {
-  color: #f1dfd9 !important;
+  color: #ECEDEF !important;
 }
 html.dark .text-\[\#2B211E\] {
-  color: #f1dfd9 !important;
+  color: #ECEDEF !important;
 }
 html.dark .text-\[\#2B211E\]\/80 {
-  color: rgba(241, 223, 217, 0.8) !important;
+  color: rgba(236,237,239, 0.8) !important;
 }
 html.dark .border-\[\#2B211E\]\/10,
 html.dark .border-\[\#2B211E\]\/15,

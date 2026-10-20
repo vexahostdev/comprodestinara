@@ -29,7 +29,7 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#140E0D] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#111315] pb-20">
   <div class="flex flex-col w-full">
     
     <!-- Header Banner -->
@@ -40,7 +40,7 @@
             <span class="w-1.5 h-1.5 rounded-full bg-[#51634b]"></span>
             <span>Katalog Tapak Terkurasi {{ date('Y') }}</span>
           </div>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1E1B1B] dark:text-white tracking-tight">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] dark:text-white tracking-tight">
             {{ __('site.common.curated_destinations') }}
           </h1>
           <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2 max-w-2xl leading-relaxed">
@@ -55,12 +55,12 @@
       </div>
 
       <!-- Search & Category Filters Bar (Modern Traveloka Floating Filter) -->
-      <div class="mt-6 bg-white dark:bg-[#1F1716] p-4 rounded-2xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+      <div class="mt-6 bg-white dark:bg-[#1A1D21] p-4 rounded-2xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
         
         <!-- Category Filter Pills -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full flex-nowrap">
           <a href="{{ route('destinations.index') }}" 
-             class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap {{ !request('category') || request('category') === 'all' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
+             class="px-4 py-2 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap {{ !request('category') || request('category') === 'all' ? 'bg-[#1F2B45] text-white shadow-xs' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5' }}">
             {{ __('site.common.all_regions') }}
           </a>
           <a href="{{ route('destinations.index', ['category' => 'budaya']) }}" 
@@ -88,10 +88,10 @@
           @endif
           <div class="relative w-full sm:w-64">
             <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari nama tapak..." 
-                   class="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full text-[#1E1B1B] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45]">
+                   class="w-full pl-9 pr-4 py-2 text-xs bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full text-[#111827] dark:text-white placeholder-gray-400 focus:outline-none focus:border-[#1F2B45]">
             <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400 text-[16px]">search</span>
           </div>
-          <button type="submit" class="bg-[#1F2B45] text-white px-4 py-2 rounded-full text-xs font-bold shrink-0 hover:bg-[#16203A] transition-colors">
+          <button type="submit" class="bg-[#1F2B45] text-white px-4 py-2 rounded-2xl text-xs font-bold shrink-0 hover:bg-[#16203A] transition-colors">
             Cari
           </button>
         </form>
@@ -103,7 +103,7 @@
     <section class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 w-full">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @forelse($destinations as $dest)
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
             
             <div>
               <!-- Image Container -->
@@ -118,7 +118,7 @@
                 @endif
 
                 <!-- Location Pill -->
-                <div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#1F1716]/90 backdrop-blur-md text-[#2B211E] dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-xs">
+                <div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#1A1D21]/90 backdrop-blur-md text-[#1F2937] dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-xs">
                   {{ $dest->location ?? 'Indonesia' }}
                 </div>
 
@@ -169,7 +169,7 @@
 
           </div>
         @empty
-          <div class="col-span-1 sm:col-span-2 lg:col-span-3 py-16 text-center text-gray-500 bg-white dark:bg-[#1F1716] rounded-3xl p-8 border border-gray-100 dark:border-white/5">
+          <div class="col-span-1 sm:col-span-2 lg:col-span-3 py-16 text-center text-gray-500 bg-white dark:bg-[#1A1D21] rounded-3xl p-8 border border-gray-100 dark:border-white/5">
             <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">search_off</span>
             <p class="text-sm font-semibold">{{ __('site.common.no_destinations') }}</p>
             <a href="{{ route('destinations.index') }}" class="inline-block mt-3 text-xs font-bold text-[#1F2B45] hover:underline">{{ __('site.common.back_to_all') }}</a>

@@ -9,7 +9,7 @@
             <h1 class="text-xl font-bold text-gray-900 tracking-tight">Dewan Kurator &amp; Fasilitator Lapangan ({{ $members->count() }})</h1>
             <p class="text-xs text-gray-500 mt-0.5">Kelola profil anggota tim pendiri, kurator riset, dan fasilitator tapak yang tampil di halaman Tentang Kami.</p>
         </div>
-        <a href="{{ route('admin.team.create') }}" class="px-4 py-2 bg-[#703a3a] hover:bg-[#582d2d] text-white rounded-lg text-xs font-medium flex items-center gap-1.5 shadow-sm transition-colors">
+        <a href="{{ route('admin.team.create') }}" class="px-4 py-2 bg-[#1F2B45] hover:bg-[#16203A] text-white rounded-2xl text-xs font-medium flex items-center gap-1.5 shadow-sm transition-colors">
             <span class="material-symbols-outlined text-[18px]">add</span>
             <span>Tambah Anggota</span>
         </a>
@@ -46,7 +46,7 @@
                                 <span class="font-bold text-gray-900 block">{{ $m->name }}</span>
                             </div>
                         </td>
-                        <td class="p-3.5 font-medium text-[#703a3a]">{{ $m->role }}</td>
+                        <td class="p-3.5 font-medium text-[#1F2B45]">{{ $m->role }}</td>
                         <td class="p-3.5 text-gray-600 italic text-[11px]">{{ $m->affiliation ?? '-' }}</td>
                         <td class="p-3.5 text-gray-600">
                             <div>{{ $m->email ?? '-' }}</div>
