@@ -300,7 +300,7 @@
             full: "9999px"
           },
           boxShadow: {
-            "soft": "0 4px 20px -2px rgba(43, 33, 30, 0.05)",
+            "soft": "0 4px 20px -2px rgba(31, 41, 55, 0.05)",
             "floating": "0 20px 45px -12px rgba(31, 43, 69, 0.16)",
             "card": "0 10px 30px -5px rgba(0, 0, 0, 0.06)",
             "card-hover": "0 20px 35px -8px rgba(31, 43, 69, 0.18)"
@@ -349,6 +349,7 @@
   </script>
 
   <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}"/>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-surface font-body-default text-body-default text-on-surface">

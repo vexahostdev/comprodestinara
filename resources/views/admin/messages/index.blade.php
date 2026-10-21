@@ -8,7 +8,7 @@
         <div class="flex items-center gap-2">
             <h2 class="text-base font-semibold text-gray-800">Inbox Pesan Masuk ({{ $messages->total() }})</h2>
             @if($unreadCount > 0)
-                <span class="px-2 py-0.5 text-xs font-semibold bg-rose-100 text-rose-700 rounded-full">{{ $unreadCount }} Belum Dibaca</span>
+                <span class="px-2 py-0.5 text-xs font-semibold bg-[#EEF1F5] text-[#1F2B45] rounded-full">{{ $unreadCount }} Belum Dibaca</span>
             @endif
         </div>
         @if($unreadCount > 0)
@@ -35,7 +35,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-100">
                     @forelse($messages as $msg)
-                        <tr class="hover:bg-gray-50 transition-colors {{ !$msg->is_read ? 'bg-rose-50/40' : '' }}">
+                        <tr class="hover:bg-gray-50 transition-colors {{ !$msg->is_read ? 'bg-[#EEF1F5]/60' : '' }}">
                             <td class="p-3.5 font-semibold text-gray-800">{{ $msg->full_name }}</td>
                             <td class="p-3.5 text-gray-600">{{ $msg->institution }}</td>
                             <td class="p-3.5">
@@ -45,7 +45,7 @@
                             <td class="p-3.5 text-gray-400 text-[11px]">{{ $msg->created_at->translatedFormat('d M Y, H:i') }}</td>
                             <td class="p-3.5">
                                 @if(!$msg->is_read)
-                                    <span class="px-2 py-0.5 bg-rose-100 text-rose-700 rounded text-[10px] font-semibold">Baru</span>
+                                    <span class="px-2 py-0.5 bg-[#EEF1F5] text-[#1F2B45] rounded text-[10px] font-semibold">Baru</span>
                                 @else
                                     <span class="px-2 py-0.5 bg-gray-100 text-gray-500 rounded text-[10px]">Terbaca</span>
                                 @endif

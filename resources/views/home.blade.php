@@ -116,7 +116,7 @@
 
             <div class="flex flex-wrap items-center gap-3.5 sm:gap-4">
               <a href="{{ $hero?->button_link ?? route('destinations.index') }}"
-                 class="inline-flex items-center gap-2.5 bg-white hover:bg-[#EEF1F5] text-[#1F2B45] font-bold text-xs sm:text-sm px-8 sm:px-9 py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.45)] hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                 class="inline-flex items-center gap-2.5 bg-white hover:bg-[#EEF1F5] text-[#1F2B45] dark:bg-white dark:text-[#1F2B45] font-bold text-xs sm:text-sm px-8 sm:px-9 py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.45)] hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 <span>{{ $hero?->button_text ?? __('sections.home.hero.button_text') }}</span>
                 <span class="material-symbols-outlined text-[19px]">arrow_forward</span>
               </a>
@@ -495,7 +495,7 @@
             <path d="M120 120 C100 80 140 50 160 70 C150 100 130 110 120 120 Z" fill="#2E3D5C"/>
             <path d="M110 130 C70 120 60 150 80 160 C100 150 110 140 110 130 Z" fill="#1F2B45"/>
             <path d="M130 110 C150 80 160 110 160 130 C140 130 130 120 130 110 Z" fill="#8FA8D0"/>
-            <circle cx="125" cy="125" r="8" fill="#F0C2A0"/>
+            <circle cx="125" cy="125" r="8" fill="#DCE4EF"/>
           </svg>
         </div>
 

@@ -57,7 +57,7 @@
                             @if($m->is_active)
                                 <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-100 text-emerald-800">Aktif</span>
                             @else
-                                <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-rose-100 text-rose-800">Nonaktif</span>
+                                <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-600">Nonaktif</span>
                             @endif
                         </td>
                         <td class="p-3.5 text-right space-x-2">

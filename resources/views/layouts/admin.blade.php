@@ -126,6 +126,7 @@
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4) !important;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}"/>
 </head>
 <body class="bg-gray-100 antialiased font-normal text-gray-700 text-xs transition-colors duration-200" x-data="{ sidebarOpen: false }">
 

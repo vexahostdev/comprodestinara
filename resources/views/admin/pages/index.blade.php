@@ -72,8 +72,8 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Aktif
                             </span>
                         @else
-                            <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-rose-100 text-rose-800 flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Nonaktif
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-600 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-gray-400"></span> Nonaktif
                             </span>
                         @endif
                     </div>
