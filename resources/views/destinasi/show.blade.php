@@ -55,7 +55,7 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#111315] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#0A0A0A] pb-20">
   <div class="flex flex-col w-full">
 
     <!-- Header Dossier Top -->
@@ -105,7 +105,7 @@
           </div>
 
           <!-- Description Block -->
-          <div class="bg-white dark:bg-[#1A1D21] p-6 sm:p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
+          <div class="bg-white dark:bg-[#0A0A0A] p-6 sm:p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
             <h3 class="text-xl font-bold text-[#111827] dark:text-white">
               {{ __('site.common.site_narrative_context') }}
             </h3>
@@ -116,7 +116,7 @@
 
           @if($destination->research_focus)
             <!-- Research Focus Highlight -->
-            <div class="p-6 bg-white dark:bg-[#1A1D21] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-2">
+            <div class="p-6 bg-white dark:bg-[#0A0A0A] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-2">
               <span class="text-xs font-bold uppercase tracking-wider text-[#51634b] flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[18px]">biotech</span>
                 <span>{{ __('site.common.research_learning_focus') }}</span>
@@ -129,7 +129,7 @@
 
           @if(!empty($destination->packages) && count($destination->packages) > 0)
             <!-- Packages Highlight -->
-            <div class="p-6 bg-white dark:bg-[#1A1D21] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
+            <div class="p-6 bg-white dark:bg-[#0A0A0A] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex flex-col gap-4">
               <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45] flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[18px]">inventory_2</span>
                 <span>Paket Pembelajaran & Riset Tersedia</span>
@@ -155,7 +155,7 @@
 
         <!-- Right Sticky Booking / Information Card -->
         <div class="lg:col-span-4 flex flex-col gap-6 sticky top-28">
-          <div class="bg-white dark:bg-[#1A1D21] p-6 sm:p-7 rounded-3xl border border-gray-100 dark:border-white/5 shadow-xl flex flex-col gap-5">
+          <div class="bg-white dark:bg-[#0A0A0A] p-6 sm:p-7 rounded-3xl border border-gray-100 dark:border-white/5 shadow-xl flex flex-col gap-5">
             
             <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/5">
               <h4 class="text-base font-bold text-[#111827] dark:text-white">
@@ -198,7 +198,7 @@
               <a href="https://wa.me/{{ \App\Models\SiteSetting::get('contact_whatsapp', '6282116200363') }}?text={{ urlencode('Halo Destinara, saya tertarik dengan tapak ' . $destination->name . ' untuk program lapangan.') }}" 
                  target="_blank" 
                  rel="noopener noreferrer" 
-                 class="w-full bg-white dark:bg-[#1A1D21] border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 text-[#1F2937] dark:text-white py-3 px-4 rounded-full text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                 class="w-full bg-white dark:bg-[#0A0A0A] border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 text-[#1F2937] dark:text-white py-3 px-4 rounded-full text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
                 <span class="material-symbols-outlined text-[18px] text-[#51634b]">chat</span>
                 <span>{{ __('site.common.consult_whatsapp') }}</span>
               </a>
@@ -230,7 +230,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($related as $rel)
-          <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
             <div>
               <div class="relative w-full aspect-[16/11] rounded-2xl overflow-hidden bg-gray-100 mb-3">
                 <img src="{{ $rel->image_url }}" alt="{{ $rel->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">

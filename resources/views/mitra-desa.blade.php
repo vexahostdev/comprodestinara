@@ -39,12 +39,12 @@
   $hero = $sections['hero'] ?? null;
   $villageBenefits = $sections['village_benefits'] ?? null;
 @endphp
-<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#111315] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#0A0A0A] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
     
     @if(!$hero || $hero->is_active)
     <!-- Hero Island Section (Split 2-Kolom Modern Pomaii) -->
-    <section class="bg-white dark:bg-[#1A1D21] rounded-3xl p-8 sm:p-12 lg:p-14 border border-gray-100 dark:border-white/5 shadow-sm">
+    <section class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-8 sm:p-12 lg:p-14 border border-gray-100 dark:border-white/5 shadow-sm">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         
         <!-- Left: Text & Action -->
@@ -124,7 +124,7 @@
 
     <!-- Elder Quote Section (Modern Clean Card) -->
     <section class="max-w-4xl mx-auto w-full">
-      <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col sm:flex-row items-center gap-8">
+      <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col sm:flex-row items-center gap-8">
         <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl overflow-hidden shrink-0 shadow-md">
           <img src="{{ asset('assets/img/hd/desa-lurah.jpg') }}" alt="Pak Lurah Marto Suwito" class="w-full h-full object-cover">
         </div>
@@ -157,7 +157,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <!-- Benefit 1 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center">
               <span class="material-symbols-outlined text-[26px]">handshake</span>
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Benefit 2 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-2xl bg-[#51634b]/10 text-[#51634b] flex items-center justify-center">
               <span class="material-symbols-outlined text-[26px]">payments</span>
@@ -193,7 +193,7 @@
         </div>
 
         <!-- Benefit 3 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-5">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 flex items-center justify-center">
               <span class="material-symbols-outlined text-[26px]">assignment_turned_in</span>
@@ -250,7 +250,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Step 1 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
             <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">01</span>
             <h4 class="text-base font-bold text-[#111827] dark:text-white">
@@ -267,7 +267,7 @@
         </div>
 
         <!-- Step 2 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
             <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">02</span>
             <h4 class="text-base font-bold text-[#111827] dark:text-white">
@@ -284,7 +284,7 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
             <span class="text-3xl font-extrabold text-[#1F2B45] block leading-none">03</span>
             <h4 class="text-base font-bold text-[#111827] dark:text-white">
@@ -301,7 +301,7 @@
         </div>
 
         <!-- Step 4 -->
-        <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
+        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4">
           <div class="space-y-3">
             <span class="text-3xl font-extrabold text-[#51634b] block leading-none">04</span>
             <h4 class="text-base font-bold text-[#111827] dark:text-white">
@@ -322,7 +322,7 @@
     <!-- Registration Form & FAQ Section -->
     <section id="formulir-kemitraan" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <!-- Left: Form Card -->
-      <div class="lg:col-span-7 bg-white dark:bg-[#1A1D21] p-8 sm:p-10 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
+      <div class="lg:col-span-7 bg-white dark:bg-[#0A0A0A] p-8 sm:p-10 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45]">
             {{ __('sections.for_villages.form.tag') }}
@@ -399,7 +399,7 @@
 
       <!-- Right: FAQ & Direct Contact -->
       <div class="lg:col-span-5 flex flex-col gap-6">
-        <div class="bg-white dark:bg-[#1A1D21] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-4">
+        <div class="bg-white dark:bg-[#0A0A0A] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-4">
           <h4 class="text-lg font-bold text-[#111827] dark:text-white">
             {{ __('sections.for_villages.faq.title') }}
           </h4>
@@ -432,7 +432,7 @@
         </div>
 
         <!-- Direct Contact Card -->
-        <div class="bg-white dark:bg-[#1A1D21] p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex items-center gap-4">
+        <div class="bg-white dark:bg-[#0A0A0A] p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm flex items-center gap-4">
           <div class="w-12 h-12 rounded-full bg-[#51634b]/10 text-[#51634b] flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-[24px]">support_agent</span>
           </div>

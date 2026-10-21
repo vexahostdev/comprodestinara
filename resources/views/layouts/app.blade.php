@@ -355,7 +355,7 @@
 <body class="bg-surface font-body-default text-body-default text-on-surface">
 
   <!-- ==================== HEADER (POMAII ARCHITECTURE: TRANSPARENT OVER HERO, SOLID ON SCROLL) ==================== -->
-  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ request()->routeIs('home') ? 'is-home-header header-transparent' : 'bg-white/95 dark:bg-[#111315]/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-white/10' }}">
+  <header id="mainHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 {{ request()->routeIs('home') ? 'is-home-header header-transparent' : 'bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md shadow-xs border-b border-gray-100 dark:border-white/10' }}">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Left: Logo & Slogan (Pomaii Brand Lockup with Destinara Identity) -->
@@ -425,7 +425,7 @@
         <div class="relative group" id="desktopLangDropdown">
           <button type="button" 
                   id="desktopLangBtn"
-                  class="header-circle-btn h-10 px-3 rounded-2xl border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
+                  class="header-circle-btn h-10 px-3 rounded-2xl border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
                   title="{{ __('site.nav.choose_language') }}">
             <span class="material-symbols-outlined text-[17px] text-[#1F2B45]">translate</span>
             <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
@@ -442,7 +442,7 @@
           </button>
           
           <!-- Dropdown Menu -->
-          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#1A1D21] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
+          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
             <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
               @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
@@ -477,14 +477,14 @@
         <!-- Icon 1: Search -->
         <a href="{{ route('destinations.index') }}" 
            title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">search</span>
         </a>
 
         <!-- Icon 2: Wishlist / Saved -->
         <a href="{{ route('destinations.index') }}" 
            title="Tapak Tersimpan"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">favorite_border</span>
         </a>
 
@@ -493,7 +493,7 @@
                 id="headerDrawerBtn"
                 aria-label="{{ __('site.nav.open_menu') }}"
                 title="Menu & Akses"
-                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#1A1D21]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
 
@@ -506,7 +506,7 @@
   <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden opacity-0 transition-opacity duration-300"></div>
 
   <!-- Slide-out Menu Drawer (Desktop & Mobile) -->
-  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 z-50 bg-white dark:bg-[#111315] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto" aria-modal="true" role="dialog">
+  <div id="mobileMenuDrawer" class="fixed inset-y-0 right-0 z-50 bg-white dark:bg-[#0A0A0A] shadow-2xl flex flex-col justify-between p-6 sm:p-8 overflow-y-auto" aria-modal="true" role="dialog">
     <div>
       <!-- Header with Brand & Close Button -->
       <div class="flex items-center justify-between pb-5 mb-5 border-b border-outline-variant/30">
@@ -531,25 +531,25 @@
             <span class="text-[11px] font-normal text-gray-400 font-sans">{{ __('site.nav.choose_language') }}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇮🇩 Indonesia
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇬🇧 English
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇨🇳 中文
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇯🇵 日本語
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇩🇪 Deutsch
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇫🇷 Français
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#1A1D21] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇳🇱 Nederlands
             </a>
           </div>
@@ -652,7 +652,7 @@
   @yield('content')
 
   <!-- ==================== FOOTER (DESTINARA OFFICIAL 4-COLUMN ARCHITECTURE) ==================== -->
-  <footer class="w-full bg-[#FFFFFF] dark:bg-[#111315] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
+  <footer class="w-full bg-[#FFFFFF] dark:bg-[#0A0A0A] py-14 lg:py-18 mt-16 border-t border-gray-200/60 dark:border-white/10 text-gray-600 dark:text-gray-300 transition-colors">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Top Brand Strip -->
@@ -786,7 +786,7 @@
   </footer>
 
   <!-- ==================== MOBILE STICKY UTILITY BAR ==================== -->
-  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#111315]/95 backdrop-blur-md border-t border-gray-200/60 dark:border-white/10 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] mobile-sticky-action-bar">
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-md border-t border-gray-200/60 dark:border-white/10 px-4 py-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] mobile-sticky-action-bar">
     <div class="max-w-md mx-auto flex items-center gap-2">
       <button type="button" 
          onclick="document.getElementById('mobileWhatsAppModal').classList.remove('hidden');" 
@@ -804,7 +804,7 @@
 
   <!-- Mobile WhatsApp Contact Sheet Modal -->
   <div id="mobileWhatsAppModal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-xs p-0 sm:p-4">
-    <div class="bg-white dark:bg-[#1A1D21] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
+    <div class="bg-white dark:bg-[#0A0A0A] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
       <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/10">
         <div>
           <span class="text-base font-bold text-[#111827] dark:text-white">{{ __('site.modal.wa_title') }}</span>

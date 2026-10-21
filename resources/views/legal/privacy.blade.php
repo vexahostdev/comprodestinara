@@ -28,7 +28,7 @@
 @endpush
 
 @section('content')
-<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#111315] pb-20">
+<main class="w-full pt-20 sm:pt-24 bg-[#FFFFFF] dark:bg-[#0A0A0A] pb-20">
   <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
     
     <!-- Breadcrumb -->
@@ -39,7 +39,7 @@
     </nav>
 
     <!-- Header Dokumen Card -->
-    <div class="bg-white dark:bg-[#1A1D21] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
+    <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div class="space-y-3 max-w-3xl">
           <div class="flex items-center gap-2">
@@ -92,7 +92,7 @@
     </div>
 
     <!-- PDF Viewer Container -->
-    <div id="pdfViewerCard" class="bg-white dark:bg-[#1A1D21] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm overflow-hidden transition-all duration-200">
+    <div id="pdfViewerCard" class="bg-white dark:bg-[#0A0A0A] rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm overflow-hidden transition-all duration-200">
       <div class="px-5 py-3.5 bg-gray-50 dark:bg-white/5 border-b border-gray-100 dark:border-white/5 flex items-center justify-between text-xs text-gray-600 dark:text-gray-300 flex-wrap gap-2">
         <div class="flex items-center gap-2 font-medium">
           <span class="material-symbols-outlined text-base text-[#51634b]">verified</span>
@@ -101,13 +101,13 @@
         </div>
         <div class="flex items-center gap-2">
           <button type="button" onclick="togglePdfFullscreen('pdfViewerCard')" 
-                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1A1D21] rounded-2xl border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs cursor-pointer"
+                  class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs cursor-pointer"
                   title="{{ __('site.legal.fullscreen') }}">
             <span class="material-symbols-outlined text-base" id="fullscreenIcon">fullscreen</span>
             <span id="fullscreenText">{{ __('site.legal.fullscreen') }}</span>
           </button>
           <a href="{{ $streamUrl }}#zoom=80&navpanes=1&pagemode=bookmarks" target="_blank" rel="noopener noreferrer" 
-             class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#1A1D21] rounded-2xl border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs"
+             class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] font-semibold transition-all shadow-xs"
              title="{{ __('site.legal.full_tab') }}">
             <span class="material-symbols-outlined text-base">open_in_new</span>
             <span>{{ __('site.legal.full_tab') }}</span>
@@ -144,7 +144,7 @@
     </div>
 
     <!-- Catatan Penutup Card -->
-    <div class="p-5 bg-white dark:bg-[#1A1D21] rounded-2xl border border-gray-100 dark:border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400">
+    <div class="p-5 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-gray-100 dark:border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400">
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-base text-[#51634b]">lock</span>
         <span>

@@ -37,15 +37,15 @@ function initHeaderScroll() {
         header.classList.remove('header-transparent');
       }
       header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
-      header.classList.add('bg-white/95', 'dark:bg-[#111315]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+      header.classList.add('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
     } else {
       if (isHome) {
         header.classList.add('header-transparent');
         header.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
-        header.classList.remove('bg-white/95', 'dark:bg-[#111315]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+        header.classList.remove('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
       } else {
         header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
-        header.classList.add('bg-white/95', 'dark:bg-[#111315]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+        header.classList.add('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
       }
     }
   }
