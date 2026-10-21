@@ -55,7 +55,7 @@
       </div>
 
       <!-- Search & Category Filters Bar (Modern Traveloka Floating Filter) -->
-      <div class="mt-6 bg-white dark:bg-[#0A0A0A] p-4 rounded-2xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+      <div class="mt-6 bg-white dark:bg-[#141414] p-4 rounded-2xl sm:rounded-full border border-gray-100 dark:border-white/10 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
         
         <!-- Category Filter Pills -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full flex-nowrap">
@@ -103,7 +103,7 @@
     <section class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 w-full">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @forelse($destinations as $dest)
-          <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
             
             <div>
               <!-- Image Container -->
@@ -118,7 +118,7 @@
                 @endif
 
                 <!-- Location Pill -->
-                <div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#0A0A0A]/90 backdrop-blur-md text-[#1F2937] dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-xs">
+                <div class="absolute top-3 right-3 z-10 bg-white/90 dark:bg-[#141414]/90 backdrop-blur-md text-[#1F2937] dark:text-white text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-xs">
                   {{ $dest->location ?? 'Indonesia' }}
                 </div>
 
@@ -169,7 +169,7 @@
 
           </div>
         @empty
-          <div class="col-span-1 sm:col-span-2 lg:col-span-3 py-16 text-center text-gray-500 bg-white dark:bg-[#0A0A0A] rounded-3xl p-8 border border-gray-100 dark:border-white/5">
+          <div class="col-span-1 sm:col-span-2 lg:col-span-3 py-16 text-center text-gray-500 bg-white dark:bg-[#141414] rounded-3xl p-8 border border-gray-100 dark:border-white/5">
             <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">search_off</span>
             <p class="text-sm font-semibold">{{ __('site.common.no_destinations') }}</p>
             <a href="{{ route('destinations.index') }}" class="inline-block mt-3 text-xs font-bold text-[#1F2B45] hover:underline">{{ __('site.common.back_to_all') }}</a>

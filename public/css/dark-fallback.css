@@ -1,5 +1,6 @@
 /* Dark mode fallback (palet Charcoal): hanya untuk class warna yang TIDAK punya varian dark: di elemen yang sama.
    Dibangkitkan otomatis dari views + public/js. */
+html.dark .bg-white[class*="rounded"]:not([class*="border"]):not([class*="dark:bg-"]) { outline: 1px solid #262626; outline-offset: -1px; }
 :where(html.dark) .bg-\[\#16203A\]:not([class*="dark:bg-"]) { background-color: #34466A !important; }
 :where(html.dark) .bg-\[\#1F2937\]:not([class*="dark:bg-"]) { background-color: #262626 !important; }
 :where(html.dark) .bg-\[\#1F2B45\]:not([class*="dark:bg-"]) { background-color: #34466A !important; }
@@ -10,8 +11,8 @@
 :where(html.dark) .bg-\[\#51634b\]\/80:not([class*="dark:bg-"]) { background-color: rgba(167,200,159,0.8) !important; }
 :where(html.dark) .bg-\[\#D4E9CA\]:not([class*="dark:bg-"]) { background-color: rgba(167,200,159,0.14) !important; }
 :where(html.dark) .bg-\[\#EBF1E8\]:not([class*="dark:bg-"]) { background-color: rgba(167,200,159,0.14) !important; }
-:where(html.dark) .bg-\[\#EEF1F5\]:not([class*="dark:bg-"]) { background-color: #171717 !important; }
-:where(html.dark) .bg-\[\#EEF1F5\]\/60:not([class*="dark:bg-"]) { background-color: rgba(23,23,23,0.6) !important; }
+:where(html.dark) .bg-\[\#EEF1F5\]:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
+:where(html.dark) .bg-\[\#EEF1F5\]\/60:not([class*="dark:bg-"]) { background-color: rgba(26,26,26,0.6) !important; }
 :where(html.dark) .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) { background-color: #0A0A0A !important; }
 :where(html.dark) .bg-amber-50:not([class*="dark:bg-"]) { background-color: rgba(245,158,11,0.14) !important; }
 :where(html.dark) .bg-blue-50:not([class*="dark:bg-"]) { background-color: rgba(59,130,246,0.14) !important; }
@@ -20,15 +21,15 @@
 :where(html.dark) .bg-gray-100:not([class*="dark:bg-"]) { background-color: #24282E !important; }
 :where(html.dark) .bg-gray-200:not([class*="dark:bg-"]) { background-color: #262626 !important; }
 :where(html.dark) .bg-gray-400:not([class*="dark:bg-"]) { background-color: #555B64 !important; }
-:where(html.dark) .bg-gray-50:not([class*="dark:bg-"]) { background-color: #171717 !important; }
+:where(html.dark) .bg-gray-50:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
 :where(html.dark) .bg-green-50:not([class*="dark:bg-"]) { background-color: rgba(34,197,94,0.14) !important; }
 :where(html.dark) .bg-purple-50:not([class*="dark:bg-"]) { background-color: rgba(168,85,247,0.14) !important; }
 :where(html.dark) .bg-rose-50:not([class*="dark:bg-"]) { background-color: rgba(244,63,94,0.14) !important; }
 :where(html.dark) .bg-sky-50:not([class*="dark:bg-"]) { background-color: rgba(14,165,233,0.14) !important; }
-:where(html.dark) .bg-white:not([class*="dark:bg-"]) { background-color: #0A0A0A !important; }
-:where(html.dark) .bg-white\/80:not([class*="dark:bg-"]) { background-color: rgba(10,10,10,0.8) !important; }
-:where(html.dark) .bg-white\/90:not([class*="dark:bg-"]) { background-color: rgba(10,10,10,0.9) !important; }
-:where(html.dark) .bg-white\/95:not([class*="dark:bg-"]) { background-color: rgba(10,10,10,0.95) !important; }
+:where(html.dark) .bg-white:not([class*="dark:bg-"]) { background-color: #141414 !important; }
+:where(html.dark) .bg-white\/80:not([class*="dark:bg-"]) { background-color: rgba(20,20,20,0.8) !important; }
+:where(html.dark) .bg-white\/90:not([class*="dark:bg-"]) { background-color: rgba(20,20,20,0.9) !important; }
+:where(html.dark) .bg-white\/95:not([class*="dark:bg-"]) { background-color: rgba(20,20,20,0.95) !important; }
 :where(html.dark) .border-\[\#1F2B45\]:not([class*="dark:border-"]) { border-color: #8FA8D0 !important; }
 :where(html.dark) .border-\[\#E2E7EE\]:not([class*="dark:border-"]) { border-color: #262626 !important; }
 :where(html.dark) .border-amber-200:not([class*="dark:border-"]) { border-color: rgba(245,158,11,0.35) !important; }
@@ -86,9 +87,9 @@
 :where(html.dark) .via-\[\#16203A\]\/50:not([class*="dark:via-"]) { --tw-gradient-via: #34466A !important; }
 :where(html.dark) .active\:bg-\[\#16203A\]:active:not([class*="dark:bg-"]) { background-color: #34466A !important; }
 :where(html.dark) .focus\:bg-\[\#2E3D5C\]:focus:not([class*="dark:bg-"]) { background-color: #34466A !important; }
-:where(html.dark) .focus\:bg-\[\#EEF1F5\]:focus:not([class*="dark:bg-"]) { background-color: #171717 !important; }
+:where(html.dark) .focus\:bg-\[\#EEF1F5\]:focus:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
 :where(html.dark) .focus\:bg-gray-100:focus:not([class*="dark:bg-"]) { background-color: #24282E !important; }
-:where(html.dark) .focus\:bg-gray-50:focus:not([class*="dark:bg-"]) { background-color: #171717 !important; }
+:where(html.dark) .focus\:bg-gray-50:focus:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
 :where(html.dark) .focus\:border-\[\#1B2B5E\]:focus:not([class*="dark:border-"]) { border-color: #404040 !important; }
 :where(html.dark) .focus\:border-\[\#1F2B45\]:focus:not([class*="dark:border-"]) { border-color: #8FA8D0 !important; }
 :where(html.dark) .focus\:border-gray-300:focus:not([class*="dark:border-"]) { border-color: #404040 !important; }
@@ -103,11 +104,11 @@
 :where(html.dark) .hover\:bg-\[\#1F2B45\]:hover:not([class*="dark:bg-"]) { background-color: #34466A !important; }
 :where(html.dark) .hover\:bg-\[\#1F2B45\]\/5:hover:not([class*="dark:bg-"]) { background-color: rgba(143,168,208,0.05) !important; }
 :where(html.dark) .hover\:bg-\[\#2E3D5C\]:hover:not([class*="dark:bg-"]) { background-color: #34466A !important; }
-:where(html.dark) .hover\:bg-\[\#EEF1F5\]:hover:not([class*="dark:bg-"]) { background-color: #171717 !important; }
+:where(html.dark) .hover\:bg-\[\#EEF1F5\]:hover:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
 :where(html.dark) .hover\:bg-gray-100:hover:not([class*="dark:bg-"]) { background-color: #24282E !important; }
 :where(html.dark) .hover\:bg-gray-300:hover:not([class*="dark:bg-"]) { background-color: #404040 !important; }
-:where(html.dark) .hover\:bg-gray-50:hover:not([class*="dark:bg-"]) { background-color: #171717 !important; }
-:where(html.dark) .hover\:bg-gray-50\/80:hover:not([class*="dark:bg-"]) { background-color: rgba(23,23,23,0.8) !important; }
+:where(html.dark) .hover\:bg-gray-50:hover:not([class*="dark:bg-"]) { background-color: #1A1A1A !important; }
+:where(html.dark) .hover\:bg-gray-50\/80:hover:not([class*="dark:bg-"]) { background-color: rgba(26,26,26,0.8) !important; }
 :where(html.dark) .hover\:border-\[\#1F2B45\]:hover:not([class*="dark:border-"]) { border-color: #8FA8D0 !important; }
 :where(html.dark) .hover\:border-\[\#1F2B45\]\/20:hover:not([class*="dark:border-"]) { border-color: rgba(143,168,208,0.2) !important; }
 :where(html.dark) .hover\:border-\[\#1F2B45\]\/40:hover:not([class*="dark:border-"]) { border-color: rgba(143,168,208,0.4) !important; }

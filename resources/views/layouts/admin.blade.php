@@ -49,19 +49,19 @@
             color-scheme: dark;
         }
         html.dark body {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
             color: #FAFAFA !important;
         }
         html.dark main {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
         }
         html.dark header.bg-white {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
             border-color: #262626 !important;
             color: #FAFAFA !important;
         }
         html.dark .bg-white {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
             color: #FAFAFA !important;
         }
         html.dark .border-gray-200,
@@ -87,7 +87,7 @@
         }
         html.dark .bg-gray-50,
         html.dark .bg-gray-100 {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
         }
         html.dark .hover\:bg-gray-50:hover,
         html.dark .hover\:bg-gray-100:hover {
@@ -110,11 +110,11 @@
             color: #6E747D !important;
         }
         html.dark select option {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
             color: #FAFAFA !important;
         }
         html.dark table thead {
-            background-color: #0A0A0A !important;
+            background-color: #141414 !important;
         }
         html.dark table th {
             color: #C4C8CE !important;
@@ -151,10 +151,10 @@
 
 <aside class="ps-aside" :class="{ 'is-open': mobileSidebarOpen, 'is-rail': rail }" @keydown.escape.window="mobileSidebarOpen = false">
     <a href="{{ route('admin.dashboard') }}" class="ps-brand" title="Destinara Admin">
-        <span class="ps-logo"><img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Logo Destinara"></span>
-        <span x-show="!rail" class="grid min-w-0 flex-1">
-            <span class="ps-title truncate">Destinara</span>
-            <span class="ps-sub truncate">Panel Kurator &amp; Admin</span>
+        <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Logo Destinara" class="ps-logo">
+        <span x-show="!rail" class="flex min-w-0 flex-1 flex-col">
+            <span class="ps-brand-name">DESTINARA</span>
+            <span class="ps-brand-sub truncate">Panel Kurator &amp; Admin</span>
         </span>
     </a>
 

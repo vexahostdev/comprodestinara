@@ -78,7 +78,7 @@
     <!-- 2. Section Visi-Misi & Manifesto (Modern Minimalist Card) -->
     @if(!$manifesto || $manifesto->is_active)
     <section class="w-full" id="manifesto">
-      <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl sm:rounded-3xl p-8 sm:p-14 border border-gray-100 dark:border-white/5 shadow-sm text-center flex flex-col items-center">
+      <div class="bg-white dark:bg-[#141414] rounded-3xl sm:rounded-3xl p-8 sm:p-14 border border-gray-100 dark:border-white/5 shadow-sm text-center flex flex-col items-center">
         <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center mb-6">
           <span class="material-symbols-outlined text-[26px]">menu_book</span>
         </div>
@@ -125,7 +125,7 @@
           <div class="rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5 relative aspect-[4/3] sm:aspect-[16/11]">
             <img class="w-full h-full object-cover" alt="{{ $founder?->title ?? 'Musyawarah etika tapak' }}" src="{{ $founder?->image_url ?? asset('assets/img/hd/about-musyawarah.jpg') }}"/>
           </div>
-          <div class="bg-white dark:bg-[#0A0A0A] rounded-2xl p-5 border border-gray-100 dark:border-white/5 shadow-xs flex items-start gap-3.5">
+          <div class="bg-white dark:bg-[#141414] rounded-2xl p-5 border border-gray-100 dark:border-white/5 shadow-xs flex items-start gap-3.5">
             <span class="material-symbols-outlined text-[#1F2B45] text-[22px] shrink-0 mt-0.5">format_quote</span>
             <div>
               <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-200 italic leading-relaxed">
@@ -139,7 +139,7 @@
         </div>
 
         <!-- Right: Story Essay -->
-        <div class="lg:col-span-7 flex flex-col gap-4 bg-white dark:bg-[#0A0A0A] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm">
+        <div class="lg:col-span-7 flex flex-col gap-4 bg-white dark:bg-[#141414] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm">
           <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#51634b]">
             <span class="material-symbols-outlined text-[18px]">history_edu</span>
             <span>{{ $founder?->badge ?? 'Latar Belakang & Perjalanan' }}</span>
@@ -188,7 +188,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         @forelse($team as $member)
-          <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col justify-between group">
             <div class="flex flex-col gap-4">
               <div class="flex items-center gap-4">
                 <img class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover shrink-0 border border-gray-100 shadow-xs" 

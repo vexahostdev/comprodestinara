@@ -425,7 +425,7 @@
         <div class="relative group" id="desktopLangDropdown">
           <button type="button" 
                   id="desktopLangBtn"
-                  class="header-circle-btn h-10 px-3 rounded-2xl border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
+                  class="header-circle-btn h-10 px-3 rounded-2xl border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-xs flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] transition-all cursor-pointer shadow-xs"
                   title="{{ __('site.nav.choose_language') }}">
             <span class="material-symbols-outlined text-[17px] text-[#1F2B45]">translate</span>
             <span class="tracking-wide uppercase font-sans text-[11px] sm:text-xs">
@@ -442,7 +442,7 @@
           </button>
           
           <!-- Dropdown Menu -->
-          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#0A0A0A] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
+          <div id="desktopLangMenu" class="absolute right-0 top-full mt-1.5 w-44 bg-white dark:bg-[#141414] rounded-2xl border border-gray-100 dark:border-white/10 shadow-xl p-1.5 z-50 hidden group-hover:block transition-all">
             <a href="{{ route('lang.switch', 'id') }}" class="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#1F2B45] transition-colors {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45]/10 text-[#1F2B45] font-bold' : '' }}">
               <span class="flex items-center gap-2"><span>🇮🇩</span><span>Indonesia</span></span>
               @if(app()->getLocale() === 'id') <span class="material-symbols-outlined text-sm text-[#1F2B45]">check</span> @endif
@@ -477,14 +477,14 @@
         <!-- Icon 1: Search -->
         <a href="{{ route('destinations.index') }}" 
            title="{{ __('site.common.search_title') ?? 'Cari Destinasi' }}"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">search</span>
         </a>
 
         <!-- Icon 2: Wishlist / Saved -->
         <a href="{{ route('destinations.index') }}" 
            title="Tapak Tersimpan"
-           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+           class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[19px]">favorite_border</span>
         </a>
 
@@ -493,7 +493,7 @@
                 id="headerDrawerBtn"
                 aria-label="{{ __('site.nav.open_menu') }}"
                 title="Menu & Akses"
-                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
+                class="header-circle-btn w-10 h-10 rounded-full border border-gray-200/90 dark:border-white/15 bg-white/80 dark:bg-[#141414]/80 backdrop-blur-xs flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-[#1F2B45] hover:border-[#1F2B45] hover:bg-gray-50 dark:hover:bg-white/5 transition-all cursor-pointer shadow-xs">
           <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
 
@@ -531,25 +531,25 @@
             <span class="text-[11px] font-normal text-gray-400 font-sans">{{ __('site.nav.choose_language') }}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'id') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'id' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇮🇩 Indonesia
             </a>
-            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'en') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'en' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇬🇧 English
             </a>
-            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'zh') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'zh' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇨🇳 中文
             </a>
-            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'ja') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'ja' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇯🇵 日本語
             </a>
-            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'de') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'de' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇩🇪 Deutsch
             </a>
-            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'fr') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'fr' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇫🇷 Français
             </a>
-            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#0A0A0A] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
+            <a href="{{ route('lang.switch', 'nl') }}" class="py-2 px-2.5 text-center text-xs font-semibold rounded-2xl transition-all {{ app()->getLocale() === 'nl' ? 'bg-[#1F2B45] text-white font-bold shadow-xs' : 'bg-white dark:bg-[#141414] text-gray-700 dark:text-gray-200 border border-gray-200/60 dark:border-white/10 hover:border-[#1F2B45]' }}">
               🇳🇱 Nederlands
             </a>
           </div>
@@ -804,7 +804,7 @@
 
   <!-- Mobile WhatsApp Contact Sheet Modal -->
   <div id="mobileWhatsAppModal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-xs p-0 sm:p-4">
-    <div class="bg-white dark:bg-[#0A0A0A] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
+    <div class="bg-white dark:bg-[#141414] w-full max-w-md p-6 rounded-t-3xl sm:rounded-3xl border border-gray-100 dark:border-white/10 shadow-2xl flex flex-col gap-4">
       <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/10">
         <div>
           <span class="text-base font-bold text-[#111827] dark:text-white">{{ __('site.modal.wa_title') }}</span>

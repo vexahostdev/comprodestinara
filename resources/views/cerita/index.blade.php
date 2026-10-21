@@ -55,7 +55,7 @@
 
     <!-- Featured Story (Pomaii Hero Article Card) -->
     @if($featuredStory)
-    <section class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all">
+    <section class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <div class="lg:col-span-7">
@@ -119,7 +119,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @forelse($stories as $story)
-          <article class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-4 sm:p-5 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <article class="bg-white dark:bg-[#141414] rounded-3xl p-4 sm:p-5 border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
             
             <div class="space-y-4">
               <a href="{{ route('stories.show', $story->slug) }}" class="relative w-full aspect-[16/10] overflow-hidden block rounded-2xl shadow-sm">
@@ -157,7 +157,7 @@
 
           </article>
         @empty
-          <div class="col-span-3 text-center py-16 bg-white dark:bg-[#0A0A0A] rounded-3xl border border-gray-100 dark:border-white/5">
+          <div class="col-span-3 text-center py-16 bg-white dark:bg-[#141414] rounded-3xl border border-gray-100 dark:border-white/5">
             <span class="material-symbols-outlined text-4xl text-gray-300 mb-2">article</span>
             <p class="text-gray-500 dark:text-gray-400 text-sm">{{ __('site.common.no_stories') }}</p>
           </div>

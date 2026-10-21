@@ -66,7 +66,7 @@
     <!-- Top Navigation & Breadcrumb -->
     <div class="flex items-center justify-between pt-4">
       <a href="{{ route('stories.index') }}" 
-         class="inline-flex items-center gap-2 text-xs font-bold text-[#1F2B45] bg-white dark:bg-[#0A0A0A] px-4 py-2 rounded-2xl border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all">
+         class="inline-flex items-center gap-2 text-xs font-bold text-[#1F2B45] bg-white dark:bg-[#141414] px-4 py-2 rounded-2xl border border-gray-100 dark:border-white/5 shadow-xs hover:shadow-md transition-all">
         <span class="material-symbols-outlined text-[16px]">arrow_back</span>
         <span>{{ __('site.common.back_to_stories') }}</span>
       </a>
@@ -82,7 +82,7 @@
     </div>
 
     <!-- Article Header Card -->
-    <header class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm space-y-4">
+    <header class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-10 border border-gray-100 dark:border-white/5 shadow-sm space-y-4">
       <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 font-medium">
         <span>{{ $story->archive_no }}</span>
         <span>•</span>
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Article Body Card -->
-    <article class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm space-y-8">
+    <article class="bg-white dark:bg-[#141414] rounded-3xl p-8 sm:p-12 border border-gray-100 dark:border-white/5 shadow-sm space-y-8">
       <div class="prose prose-lg max-w-none text-sm sm:text-base text-gray-700 dark:text-gray-200 leading-relaxed space-y-6">
         @if($story->content)
           {!! $story->content !!}

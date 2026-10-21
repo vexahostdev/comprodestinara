@@ -137,7 +137,7 @@
   <!-- ==================== 2. FLOATING SEARCH BAR ==================== -->
   <div class="max-w-[1140px] mx-auto px-3 sm:px-6 relative -mt-10 sm:-mt-12 z-30">
     <form action="{{ route('destinations.index') }}" method="GET" 
-          class="bg-white dark:bg-[#0A0A0A] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
+          class="bg-white dark:bg-[#141414] rounded-3xl lg:rounded-full p-2.5 sm:p-3 shadow-[0_20px_50px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-100 dark:border-white/10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0">
       
       <!-- Slot 1: Lokasi / Destinasi -->
       <div class="w-full lg:flex-1 px-5 py-2 hover:bg-gray-50/80 dark:hover:bg-white/5 rounded-2xl lg:rounded-full transition-colors flex items-center gap-3.5 cursor-pointer">
@@ -157,10 +157,10 @@
         <div class="flex-1 min-w-0">
           <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('sections.home.gateways.tag') }}</span>
           <select name="mandate" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-            <option value="" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_all') }}</option>
-            <option value="school" class="dark:bg-[#0A0A0A]">{{ __('sections.home.gateways.school_tag') }}</option>
-            <option value="research" class="dark:bg-[#0A0A0A]">{{ __('sections.home.gateways.research_tag') }}</option>
-            <option value="village" class="dark:bg-[#0A0A0A]">{{ __('sections.home.gateways.village_tag') }}</option>
+            <option value="" class="dark:bg-[#141414]">{{ __('site.common.cat_all') }}</option>
+            <option value="school" class="dark:bg-[#141414]">{{ __('sections.home.gateways.school_tag') }}</option>
+            <option value="research" class="dark:bg-[#141414]">{{ __('sections.home.gateways.research_tag') }}</option>
+            <option value="village" class="dark:bg-[#141414]">{{ __('sections.home.gateways.village_tag') }}</option>
           </select>
         </div>
       </div>
@@ -173,11 +173,11 @@
         <div class="flex-1 min-w-0">
           <span class="block text-xs font-bold text-gray-900 dark:text-white leading-none mb-1">{{ __('site.common.landscape_category') }}</span>
           <select name="category" class="w-full text-xs text-gray-600 dark:text-gray-300 bg-transparent border-0 p-0 focus:ring-0 focus:outline-none cursor-pointer font-medium">
-            <option value="" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_all') }}</option>
-            <option value="budaya" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_culture') }}</option>
-            <option value="ekologi" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_ecology') }}</option>
-            <option value="pangan" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_food') }}</option>
-            <option value="bahari" class="dark:bg-[#0A0A0A]">{{ __('site.common.cat_marine') }}</option>
+            <option value="" class="dark:bg-[#141414]">{{ __('site.common.cat_all') }}</option>
+            <option value="budaya" class="dark:bg-[#141414]">{{ __('site.common.cat_culture') }}</option>
+            <option value="ekologi" class="dark:bg-[#141414]">{{ __('site.common.cat_ecology') }}</option>
+            <option value="pangan" class="dark:bg-[#141414]">{{ __('site.common.cat_food') }}</option>
+            <option value="bahari" class="dark:bg-[#141414]">{{ __('site.common.cat_marine') }}</option>
           </select>
         </div>
       </div>
@@ -210,7 +210,7 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#0A0A0A] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#141414] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">verified_user</span>
         </div>
         <div>
@@ -220,7 +220,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#0A0A0A] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#141414] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">health_and_safety</span>
         </div>
         <div>
@@ -230,7 +230,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#0A0A0A] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#141414] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">menu_book</span>
         </div>
         <div>
@@ -240,7 +240,7 @@
       </div>
 
       <div class="flex items-center gap-3.5">
-        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#0A0A0A] shadow-xs">
+        <div class="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#1F2B45] dark:text-[#8FA8D0] shrink-0 bg-white dark:bg-[#141414] shadow-xs">
           <span class="material-symbols-outlined text-[24px]">school</span>
         </div>
         <div>
@@ -360,7 +360,7 @@
 
     <!-- ==================== 6. TRAVEL STORIES & GUIDES (POMAII 3-PART CARD) ==================== -->
     <section data-reveal class="w-full">
-      <div class="bg-[#EEF1F5] dark:bg-[#0A0A0A] rounded-3xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-[#E2E7EE] dark:border-white/10 transition-colors">
+      <div class="bg-[#EEF1F5] dark:bg-[#141414] rounded-3xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden border border-[#E2E7EE] dark:border-white/10 transition-colors">
         
         <!-- Bottom-Right Botanical Leaf Illustration -->
         <div class="absolute bottom-4 right-4 pointer-events-none opacity-40">
@@ -395,7 +395,7 @@
           <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             
             @forelse($stories->take(2) as $story)
-            <div class="bg-white dark:bg-[#0A0A0A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#141414] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.show', $story->slug) }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ $story->cover_image_url ?? $story->image_url ?? asset('assets/img/hd/story-ulin.jpg') }}" 
@@ -414,7 +414,7 @@
             </div>
             @empty
             <!-- Fallback Story 1 -->
-            <div class="bg-white dark:bg-[#0A0A0A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#141414] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.index') }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ asset('assets/img/hd/story-ulin.jpg') }}" alt="{{ __('site.footer.monograph_sikka') }}" 
@@ -430,7 +430,7 @@
             </div>
 
             <!-- Fallback Story 2 -->
-            <div class="bg-white dark:bg-[#0A0A0A] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
+            <div class="bg-white dark:bg-[#141414] rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-sm border border-gray-100 dark:border-white/10 group hover:shadow-md transition-shadow">
               <a href="{{ route('stories.index') }}" class="block space-y-3">
                 <div class="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 dark:bg-white/5">
                   <img src="{{ asset('assets/img/hd/peneliti-sade.jpg') }}" alt="{{ __('site.common.field_stories_badge') }}" 

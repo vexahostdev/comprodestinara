@@ -61,7 +61,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       
       <!-- Kolom Kiri: Formulir Konsultasi -->
-      <div class="lg:col-span-6 bg-white dark:bg-[#0A0A0A] p-8 sm:p-10 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
+      <div class="lg:col-span-6 bg-white dark:bg-[#141414] p-8 sm:p-10 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45]">
             {{ __('sections.contact.form.tag') }}
@@ -154,7 +154,7 @@
       <div class="lg:col-span-6 flex flex-col gap-6">
         
         <!-- Kartu Narahubung Langsung (Maya, Azki, Ryan) -->
-        <div class="bg-white dark:bg-[#0A0A0A] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
+        <div class="bg-white dark:bg-[#141414] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
           <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-white/5">
             <div>
               <span class="text-xs font-bold uppercase tracking-wider text-[#1F2B45] block">Narahubung Resmi</span>
@@ -231,7 +231,7 @@
         </div>
 
         <!-- Surel Resmi & Lokasi Kantor -->
-        <div class="bg-white dark:bg-[#0A0A0A] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
+        <div class="bg-white dark:bg-[#141414] p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm space-y-6">
           <h3 class="text-lg font-bold text-[#111827] dark:text-white">{{ __('sections.contact.email_card.title') }}</h3>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -298,7 +298,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
           <div class="w-12 h-12 rounded-2xl bg-[#51634b]/10 text-[#51634b] flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px]">nature_people</span>
           </div>
@@ -308,7 +308,7 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
           <div class="w-12 h-12 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px]">local_library</span>
           </div>
@@ -318,7 +318,7 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-[#0A0A0A] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-7 border border-gray-100 dark:border-white/5 shadow-xs space-y-3">
           <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
           </div>

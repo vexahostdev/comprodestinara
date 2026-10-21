@@ -576,7 +576,7 @@ html, body {
 
 /* Dark Mode Scrollbar */
 html.dark ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #141414;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #404040;
@@ -593,7 +593,7 @@ html.dark ::selection {
 
 /* RGS Hero Panel in Dark Mode */
 html.dark .rgs-hero-panel {
-  background-color: #0A0A0A !important;
+  background-color: #141414 !important;
   border-left-color: #8FA8D0 !important;
 }
 html.dark .rgs-hero-panel h1 {
@@ -632,13 +632,13 @@ html.dark .rgs-grid-connected-alt {
 
 /* Mobile Menu Drawer in Dark Mode */
 html.dark #mobileMenuDrawer {
-  background-color: #0A0A0A !important;
+  background-color: #141414 !important;
   color: #FAFAFA !important;
 }
 
 /* Dossier Modal Popup in Dark Mode */
 html.dark .modal-dialog {
-  background: #0A0A0A !important;
+  background: #141414 !important;
   color: #FAFAFA !important;
   border-color: rgba(158, 163, 170, 0.15) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
@@ -646,7 +646,7 @@ html.dark .modal-dialog {
 
 /* Toast Notifications in Dark Mode */
 html.dark .toast {
-  background: #0A0A0A !important;
+  background: #141414 !important;
   color: #FAFAFA !important;
   border-left-color: #8FA8D0 !important;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5) !important;
@@ -665,7 +665,7 @@ html.dark .toast p.text-xs {
 html.dark input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
 html.dark textarea,
 html.dark select {
-  background-color: #0A0A0A !important;
+  background-color: #141414 !important;
   color: #FAFAFA !important;
   border-color: rgba(82, 67, 67, 0.8) !important;
 }
@@ -673,14 +673,14 @@ html.dark input:focus,
 html.dark textarea:focus,
 html.dark select:focus {
   border-color: #8FA8D0 !important;
-  background-color: #0A0A0A !important;
+  background-color: #141414 !important;
 }
 html.dark input::placeholder,
 html.dark textarea::placeholder {
   color: #847372 !important;
 }
 html.dark select option {
-  background-color: #0A0A0A !important;
+  background-color: #141414 !important;
   color: #FAFAFA !important;
 }
 
