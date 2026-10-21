@@ -467,7 +467,7 @@
 
         <!-- Right Side: Content Area -->
         <div class="lg:col-span-6 p-8 sm:p-12 lg:pr-16 space-y-4 relative z-10">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#FFCBB5] flex items-center gap-1.5">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#DCE4EF] flex items-center gap-1.5">
             <span>{{ __('sections.home.intro_story.badge') }}</span>
             <span class="text-amber-400">⚡</span>
           </span>
@@ -491,10 +491,10 @@
 
         <!-- Bottom-Right Floral Ornament Accent -->
         <div class="absolute bottom-0 right-0 pointer-events-none opacity-40 hidden sm:block">
-          <svg class="w-40 h-40 text-rose-300" viewBox="0 0 160 160" fill="currentColor">
+          <svg class="w-40 h-40 text-[#AFC0D8]" viewBox="0 0 160 160" fill="currentColor">
             <path d="M120 120 C100 80 140 50 160 70 C150 100 130 110 120 120 Z" fill="#2E3D5C"/>
             <path d="M110 130 C70 120 60 150 80 160 C100 150 110 140 110 130 Z" fill="#1F2B45"/>
-            <path d="M130 110 C150 80 160 110 160 130 C140 130 130 120 130 110 Z" fill="#B36666"/>
+            <path d="M130 110 C150 80 160 110 160 130 C140 130 130 120 130 110 Z" fill="#8FA8D0"/>
             <circle cx="125" cy="125" r="8" fill="#F0C2A0"/>
           </svg>
         </div>

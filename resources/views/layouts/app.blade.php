@@ -301,9 +301,9 @@
           },
           boxShadow: {
             "soft": "0 4px 20px -2px rgba(43, 33, 30, 0.05)",
-            "floating": "0 20px 45px -12px rgba(112, 58, 58, 0.16)",
+            "floating": "0 20px 45px -12px rgba(31, 43, 69, 0.16)",
             "card": "0 10px 30px -5px rgba(0, 0, 0, 0.06)",
-            "card-hover": "0 20px 35px -8px rgba(112, 58, 58, 0.18)"
+            "card-hover": "0 20px 35px -8px rgba(31, 43, 69, 0.18)"
           },
           spacing: {
             "space-2xs": "0.25rem",

@@ -463,7 +463,7 @@ window.showToast = function(message, type = 'success') {
   toast.className = `toast ${type === 'success' ? 'toast-success' : ''}`;
   
   const icon = type === 'success' ? 'check_circle' : 'info';
-  const iconColor = type === 'success' ? 'text-[#51634b]' : 'text-[#8c5151]';
+  const iconColor = type === 'success' ? 'text-[#51634b]' : 'text-[#1F2B45]';
 
   toast.innerHTML = `
     <span class="material-symbols-outlined ${iconColor} text-[24px] flex-shrink-0">${icon}</span>

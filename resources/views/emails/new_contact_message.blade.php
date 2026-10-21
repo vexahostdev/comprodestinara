@@ -14,7 +14,7 @@
                     <tr>
                         <td style="background-color: #2E3D5C; padding: 28px 32px; text-align: center;">
                             <h1 style="color: #ffffff; margin: 0; font-size: 22px; font-weight: 800; letter-spacing: 0.5px;">DESTINARA</h1>
-                            <p style="color: #fbd5d5; margin: 4px 0 0 0; font-size: 13px;">Notifikasi Pesan Konsultasi &amp; Kemitraan Masuk</p>
+                            <p style="color: #DCE4EF; margin: 4px 0 0 0; font-size: 13px;">Notifikasi Pesan Konsultasi &amp; Kemitraan Masuk</p>
                         </td>
                     </tr>
 
