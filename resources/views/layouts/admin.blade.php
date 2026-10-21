@@ -128,12 +128,14 @@
     </style>
     <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}"/>
 </head>
-<body class="bg-gray-100 antialiased font-normal text-gray-700 text-xs transition-colors duration-200" x-data="{ sidebarOpen: false }">
+<body class="bg-gray-100 antialiased font-normal text-gray-700 text-xs transition-colors duration-200" x-data="{ sidebarOpen: false, deskOpen: (() => { try { return localStorage.getItem('destinara-admin-sidebar') !== '0' } catch (e) { return true } })() }"
+      x-init="$watch('deskOpen', v => { try { localStorage.setItem('destinara-admin-sidebar', v ? '1' : '0') } catch (e) {} })">
 
-<div class="flex h-screen overflow-hidden">
+{{-- Tata letak "sidebar inset": sidebar menempel di latar, halaman = panel membulat di atasnya. --}}
+<div class="flex h-screen overflow-hidden bg-[#1F2937] dark:bg-[#0B0C0E]">
     {{-- Sidebar --}}
-    <aside class="fixed inset-y-0 left-0 z-50 w-72 bg-[#1F2937] transform transition-transform duration-300 lg:translate-x-0 lg:static lg:inset-0 flex flex-col justify-between"
-           :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'">
+    <aside class="fixed inset-y-0 left-0 z-50 w-72 shrink-0 bg-[#1F2937] dark:bg-[#0B0C0E] transform transition-[transform,margin] duration-300 lg:translate-x-0 lg:static lg:inset-0 flex flex-col justify-between"
+           :class="(sidebarOpen ? 'translate-x-0' : '-translate-x-full') + (deskOpen ? '' : ' lg:-ml-72')">
         <div>
             <div class="flex items-center justify-between h-14 px-5">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3" title="Destinara Admin">
@@ -209,12 +211,18 @@
     <div x-show="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 z-40 bg-black/50 lg:hidden"></div>
 
     {{-- Main Container --}}
-    <div class="flex-1 flex flex-col overflow-hidden">
+    <div class="flex-1 min-w-0 flex flex-col overflow-hidden bg-white dark:bg-[#111315] lg:my-2 lg:mr-2 lg:rounded-2xl lg:border lg:border-white/10 lg:shadow-sm" :class="deskOpen ? '' : 'lg:ml-2'">
         <header class="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-5 flex-shrink-0">
             <div class="flex items-center gap-3">
-                <button @click="sidebarOpen = true" class="lg:hidden text-gray-500 hover:text-gray-700">
-                    <span class="material-symbols-outlined">menu</span>
+                <button type="button" @click="window.matchMedia('(min-width: 1024px)').matches ? (deskOpen = !deskOpen) : (sidebarOpen = true)"
+                        title="Buka/tutup menu" aria-label="Buka/tutup menu"
+                        class="p-1.5 -ml-1 rounded-xl text-gray-500 hover:text-gray-800 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10 transition-colors">
+                    <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"></rect>
+                        <path stroke-linecap="round" stroke-width="2" d="M9 3v18"></path>
+                    </svg>
                 </button>
+                <span class="h-4 w-px bg-gray-200 dark:bg-white/10" aria-hidden="true"></span>
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center lg:hidden" title="Destinara Admin">
                     <img src="{{ asset('assets/img/logo-mark-tight.png') }}" alt="Logo Destinara" class="h-7 w-auto object-contain">
                 </a>
