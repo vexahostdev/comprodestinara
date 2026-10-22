@@ -3,6 +3,7 @@
 return [
     'home' => [
         'hero' => [
+            'scroll_hint' => 'Gulir untuk menjelajah',
             'title' => 'Menghidupkan Ruang Belajar Nyata di Balik Kehangatan Desa Nusantara',
             'subtitle' => 'Menjembatani kurikulum institusi pendidikan dengan kearifan tapak, ekologi lokal, dan narasi hidup masyarakat adat di seluruh penjuru Indonesia.',
             'badge' => 'Tahun Akademik '.date('Y').'/'.(date('Y') + 1),

@@ -12,14 +12,14 @@
         <div class="flex items-center gap-2">
             <form action="{{ route('admin.messages.toggle-read', $message->id) }}" method="POST">
                 @csrf
-                <button type="submit" class="px-3 py-1.5 border border-gray-300 rounded-lg text-xs hover:bg-gray-100">
+                <button type="submit" class="px-3 py-1.5 border border-gray-300 rounded-2xl text-xs hover:bg-gray-100">
                     {{ $message->is_read ? 'Tandai Belum Dibaca' : 'Tandai Terbaca' }}
                 </button>
             </form>
             <form action="{{ route('admin.messages.destroy', $message->id) }}" method="POST" onsubmit="return confirm('Hapus pesan ini?')">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs">Hapus</button>
+                <button type="submit" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl text-xs">Hapus</button>
             </form>
         </div>
     </div>

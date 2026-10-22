@@ -31,10 +31,10 @@
                 <input type="number" name="order" value="{{ old('order', $stat->order ?? 0) }}" min="0" class="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#1B2B5E] text-xs">
             </div>
             <div class="flex gap-2.5 pt-2">
-                <button type="submit" class="bg-[#1B2B5E] hover:bg-[#243d7a] text-white font-normal px-4 py-2 rounded-lg text-xs transition-colors shadow-sm">
+                <button type="submit" class="bg-[#1B2B5E] hover:bg-[#243d7a] text-white font-normal px-4 py-2 rounded-2xl text-xs transition-colors shadow-sm">
                     {{ $stat->exists ? 'Simpan' : 'Tambah' }}
                 </button>
-                <a href="{{ route('admin.stats.index') }}" class="px-4 py-2 rounded-lg border border-gray-200 text-gray-600 text-xs font-normal">Batal</a>
+                <a href="{{ route('admin.stats.index') }}" class="px-4 py-2 rounded-2xl border border-gray-200 text-gray-600 text-xs font-normal">Batal</a>
             </div>
         </form>
     </div>

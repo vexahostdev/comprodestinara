@@ -35,13 +35,13 @@
   $facilities = $sections['facilities'] ?? null;
 @endphp
 
-<main class="w-full bg-[#FAF9F6] dark:bg-[#140E0D] pt-20 sm:pt-24 pb-20 transition-colors">
+<main class="w-full bg-[#FFFFFF] dark:bg-[#0A0A0A] pt-20 sm:pt-24 pb-20 transition-colors">
   <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20">
 
     <!-- 1. Hero Section (Modern Clean Split Banner) -->
     @if(!$hero || $hero->is_active)
     <section class="relative w-full">
-      <div class="bg-white dark:bg-[#1F1716] rounded-3xl sm:rounded-[40px] p-8 sm:p-12 lg:p-16 border border-gray-100 dark:border-white/5 shadow-sm">
+      <div class="bg-white dark:bg-[#141414] rounded-3xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 border border-gray-100 dark:border-white/5 shadow-sm">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           <!-- Left: Hero Text -->
@@ -63,18 +63,18 @@
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
               <a href="{{ $hero?->button_link ?? '#direktori-desa' }}" 
-                 class="bg-[#703A3A] hover:bg-[#561D1E] text-white px-6 py-3 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all">
+                 class="bg-[#1F2B45] hover:bg-[#16203A] text-white px-6 py-3 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all">
                 {{ $hero?->button_text ?? __('sections.for_researchers.hero.button_text') }}
               </a>
               <a href="#alur-riset" 
-                 class="border border-gray-200 dark:border-white/10 hover:border-[#703A3A] text-gray-700 dark:text-gray-200 px-6 py-3 rounded-full text-xs font-bold transition-all">
+                 class="border border-gray-200 dark:border-white/10 hover:border-[#1F2B45] text-gray-700 dark:text-gray-200 px-6 py-3 rounded-2xl text-xs font-bold transition-all">
                 {{ __('sections.for_researchers.hero.btn_learn_fpic') }}
               </a>
             </div>
 
             <!-- Fieldnote Marginalia Card -->
             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-2xl border border-gray-100 dark:border-white/5 flex items-start gap-3 mt-2 w-full max-w-xl">
-              <span class="material-symbols-outlined text-[#703A3A] text-[20px] shrink-0 mt-0.5">verified_user</span>
+              <span class="material-symbols-outlined text-[#1F2B45] text-[20px] shrink-0 mt-0.5">verified_user</span>
               <p class="text-xs text-gray-600 dark:text-gray-300 italic leading-relaxed">
                 "{{ __('sections.for_researchers.hero.marginalia_quote') }}"
                 <span class="block not-italic font-bold text-gray-900 dark:text-white text-[11px] mt-1">{{ __('sections.for_researchers.hero.marginalia_author') }}</span>
@@ -87,8 +87,8 @@
             <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-gray-100 dark:border-white/5">
               <img class="w-full h-full object-cover" alt="{{ $hero?->title ?? 'Antropolog budaya' }}" src="{{ $hero?->image_url ?? asset('assets/img/hd/peneliti-wawancara.jpg') }}"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 dark:bg-[#1E1B1B]/95 backdrop-blur-md rounded-2xl shadow-sm">
-                <span class="text-[10px] font-bold text-[#703A3A] uppercase tracking-wider block">{{ __('sections.for_researchers.hero.plate_caption') }}</span>
+              <div class="absolute bottom-4 left-4 right-4 p-3.5 bg-white/95 dark:bg-[#141414]/95 backdrop-blur-md rounded-2xl shadow-sm">
+                <span class="text-[10px] font-bold text-[#1F2B45] uppercase tracking-wider block">{{ __('sections.for_researchers.hero.plate_caption') }}</span>
                 <p class="text-xs text-gray-700 dark:text-gray-200 mt-0.5 leading-snug">{{ $hero?->image_caption ?? 'Pendataan lisan silsilah irigasi Subak & penyerbukan benih di Desa Batur, Kintamani.' }}</p>
               </div>
             </div>
@@ -113,20 +113,20 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         <!-- Kolom Kiri: Visual Kolase & Micro-Stats -->
         <div class="lg:col-span-5 flex flex-col gap-6">
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5 p-4">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/5 p-4">
             <div class="aspect-[16/10] overflow-hidden rounded-2xl mb-3">
               <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Naskah kuno" src="{{ asset('assets/img/hd/peneliti-lontar.jpg') }}"/>
             </div>
-            <span class="text-xs font-bold text-[#703A3A] uppercase tracking-wider block">{{ __('sections.for_researchers.facilities.catalog_title') }}</span>
+            <span class="text-xs font-bold text-[#1F2B45] uppercase tracking-wider block">{{ __('sections.for_researchers.facilities.catalog_title') }}</span>
             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">
               {{ __('sections.for_researchers.facilities.catalog_desc') }}
             </p>
           </div>
 
           <!-- Quick Stats Strip -->
-          <div class="bg-white dark:bg-[#1F1716] p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm grid grid-cols-3 gap-4 text-center">
+          <div class="bg-white dark:bg-[#141414] p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm grid grid-cols-3 gap-4 text-center">
             <div>
-              <span class="text-2xl sm:text-3xl font-black text-[#703A3A] block">100%</span>
+              <span class="text-2xl sm:text-3xl font-black text-[#1F2B45] block">100%</span>
               <span class="text-[11px] text-gray-500 dark:text-gray-400">{{ __('sections.for_researchers.facilities.stat1_label') }}</span>
             </div>
             <div>
@@ -142,8 +142,8 @@
 
         <!-- Kolom Kanan: 3 Pilar Cards -->
         <div class="lg:col-span-7 flex flex-col gap-4">
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
-            <div class="w-10 h-10 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] flex items-center justify-center font-bold text-base shrink-0">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
+            <div class="w-10 h-10 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center font-bold text-base shrink-0">
               01
             </div>
             <div class="flex-1">
@@ -159,8 +159,8 @@
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
-            <div class="w-10 h-10 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] flex items-center justify-center font-bold text-base shrink-0">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
+            <div class="w-10 h-10 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center font-bold text-base shrink-0">
               02
             </div>
             <div class="flex-1">
@@ -176,8 +176,8 @@
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
-            <div class="w-10 h-10 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] flex items-center justify-center font-bold text-base shrink-0">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row gap-4 items-start">
+            <div class="w-10 h-10 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] flex items-center justify-center font-bold text-base shrink-0">
               03
             </div>
             <div class="flex-1">
@@ -212,10 +212,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @for($s = 1; $s <= 4; $s++)
-          <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col justify-between">
+          <div class="bg-white dark:bg-[#141414] rounded-3xl p-6 sm:p-7 border border-gray-100 dark:border-white/5 shadow-sm flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="w-10 h-10 rounded-2xl bg-[#703A3A]/10 text-[#703A3A] font-black text-sm flex items-center justify-center">
+                <span class="w-10 h-10 rounded-2xl bg-[#1F2B45]/10 text-[#1F2B45] font-black text-sm flex items-center justify-center">
                   0{{ $s }}
                 </span>
                 <span class="text-[11px] text-gray-400 italic">{{ __('sections.for_researchers.flow.s' . $s . '_time') }}</span>
@@ -259,7 +259,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <!-- Kartu 1: Sade -->
-        <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
           <div>
             <div class="aspect-[16/10] overflow-hidden rounded-2xl relative mb-3">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Desa Sade" src="{{ asset('assets/img/hd/peneliti-sade.jpg') }}"/>
@@ -276,13 +276,13 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{{ __('sections.for_researchers.directory.c1_desc') }}</p>
             </div>
           </div>
-          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#703A3A] font-semibold mt-2">
+          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#1F2B45] font-semibold mt-2">
             {{ __('sections.for_researchers.directory.c1_accom') }}
           </div>
         </div>
 
         <!-- Kartu 2: Ciptagelar -->
-        <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
           <div>
             <div class="aspect-[16/10] overflow-hidden rounded-2xl relative mb-3">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Ciptagelar" src="{{ asset('assets/img/hd/peneliti-ciptagelar.jpg') }}"/>
@@ -299,13 +299,13 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{{ __('sections.for_researchers.directory.c2_desc') }}</p>
             </div>
           </div>
-          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#703A3A] font-semibold mt-2">
+          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#1F2B45] font-semibold mt-2">
             {{ __('sections.for_researchers.directory.c2_accom') }}
           </div>
         </div>
 
         <!-- Kartu 3: Bleberan -->
-        <div class="bg-white dark:bg-[#1F1716] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
+        <div class="bg-white dark:bg-[#141414] rounded-3xl p-3.5 shadow-sm hover:shadow-xl border border-gray-100 dark:border-white/5 transition-all flex flex-col justify-between group">
           <div>
             <div class="aspect-[16/10] overflow-hidden rounded-2xl relative mb-3">
               <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bleberan" src="{{ asset('assets/img/hd/peneliti-bleberan.jpg') }}"/>
@@ -322,7 +322,7 @@
               <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{{ __('sections.for_researchers.directory.c3_desc') }}</p>
             </div>
           </div>
-          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#703A3A] font-semibold mt-2">
+          <div class="px-2 pt-3 border-t border-gray-100 dark:border-white/5 text-[11px] text-[#1F2B45] font-semibold mt-2">
             {{ __('sections.for_researchers.directory.c3_accom') }}
           </div>
         </div>
@@ -331,7 +331,7 @@
 
     <!-- 5. Form Kontak & Fasilitasi Peneliti (Clean Split Card) -->
     <section class="w-full">
-      <div class="bg-gradient-to-r from-[#3D1415] via-[#4A1D1E] to-[#682728] text-white rounded-3xl sm:rounded-[36px] p-8 sm:p-14 shadow-xl">
+      <div class="bg-gradient-to-r from-[#16203A] via-[#16203A] to-[#2E3D5C] text-white rounded-3xl sm:rounded-3xl p-8 sm:p-14 shadow-xl">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           <div class="lg:col-span-6 flex flex-col gap-3">
@@ -341,7 +341,7 @@
             <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
               {{ __('sections.for_researchers.form.title') }}
             </h3>
-            <p class="text-xs sm:text-sm text-[#D7C2C1] leading-relaxed">
+            <p class="text-xs sm:text-sm text-[#D2D9E3] leading-relaxed">
               {{ __('sections.for_researchers.form.desc') }}
             </p>
             <div class="flex flex-col gap-2 pt-2 text-xs text-white/90">
@@ -364,26 +364,26 @@
                 
                 <div>
                   <label class="block text-xs font-bold text-gray-700 mb-1" for="nama-peneliti">{{ __('sections.for_researchers.form.name_label') }}</label>
-                  <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#703A3A]" id="nama-peneliti" name="full_name" placeholder="{{ __('sections.for_researchers.form.name_placeholder') }}" required type="text"/>
+                  <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#1F2B45]" id="nama-peneliti" name="full_name" placeholder="{{ __('sections.for_researchers.form.name_placeholder') }}" required type="text"/>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label class="block text-xs font-bold text-gray-700 mb-1" for="institusi-kampus">{{ __('sections.for_researchers.form.inst_label') }}</label>
-                    <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#703A3A]" id="institusi-kampus" name="institution" placeholder="{{ __('sections.for_researchers.form.inst_placeholder') }}" required type="text"/>
+                    <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#1F2B45]" id="institusi-kampus" name="institution" placeholder="{{ __('sections.for_researchers.form.inst_placeholder') }}" required type="text"/>
                   </div>
                   <div>
                     <label class="block text-xs font-bold text-gray-700 mb-1" for="whatsapp-peneliti">Nomor WhatsApp</label>
-                    <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#703A3A]" id="whatsapp-peneliti" name="whatsapp" placeholder="08xxxxxxxxxx" required type="tel"/>
+                    <input class="w-full bg-gray-50 text-gray-900 px-4 py-2.5 rounded-full border border-gray-200 text-xs outline-none focus:border-[#1F2B45]" id="whatsapp-peneliti" name="whatsapp" placeholder="08xxxxxxxxxx" required type="tel"/>
                   </div>
                 </div>
 
                 <div>
                   <label class="block text-xs font-bold text-gray-700 mb-1" for="topik-fokus">{{ __('sections.for_researchers.form.topic_label') }}</label>
-                  <textarea class="w-full bg-gray-50 text-gray-900 px-4 py-3 rounded-2xl border border-gray-200 text-xs outline-none focus:border-[#703A3A] resize-none" id="topik-fokus" name="message" placeholder="{{ __('sections.for_researchers.form.topic_placeholder') }}" rows="3"></textarea>
+                  <textarea class="w-full bg-gray-50 text-gray-900 px-4 py-3 rounded-2xl border border-gray-200 text-xs outline-none focus:border-[#1F2B45] resize-none" id="topik-fokus" name="message" placeholder="{{ __('sections.for_researchers.form.topic_placeholder') }}" rows="3"></textarea>
                 </div>
 
-                <button class="w-full bg-[#703A3A] hover:bg-[#561D1E] text-white py-3 rounded-full text-xs font-bold transition-all shadow-md cursor-pointer mt-1" type="submit">
+                <button class="w-full bg-[#1F2B45] hover:bg-[#16203A] text-white py-3 rounded-full text-xs font-bold transition-all shadow-md cursor-pointer mt-1" type="submit">
                   {{ __('sections.for_researchers.form.submit_btn') }}
                 </button>
               </form>

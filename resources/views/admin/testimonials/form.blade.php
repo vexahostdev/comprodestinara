@@ -39,14 +39,14 @@
                 </div>
                 <div>
                     <label class="block text-[11px] font-normal text-gray-500 uppercase tracking-wider mb-1.5">Foto</label>
-                    <input type="file" name="photo" accept="image/*" class="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs text-gray-600 file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:bg-[#1B2B5E] file:text-white file:text-xs cursor-pointer">
+                    <input type="file" name="photo" accept="image/*" class="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs text-gray-600 file:mr-3 file:py-1 file:px-3 file:rounded-2xl file:border-0 file:bg-[#1B2B5E] file:text-white file:text-xs cursor-pointer">
                 </div>
             </div>
             <div class="flex gap-2.5 pt-2">
-                <button type="submit" class="bg-[#1B2B5E] hover:bg-[#243d7a] text-white font-normal px-4 py-2 rounded-lg text-xs transition-colors shadow-sm">
+                <button type="submit" class="bg-[#1B2B5E] hover:bg-[#243d7a] text-white font-normal px-4 py-2 rounded-2xl text-xs transition-colors shadow-sm">
                     {{ $testimonial->exists ? 'Simpan' : 'Tambah' }}
                 </button>
-                <a href="{{ route('admin.testimonials.index') }}" class="px-4 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-normal">Batal</a>
+                <a href="{{ route('admin.testimonials.index') }}" class="px-4 py-2 rounded-2xl border border-gray-200 text-gray-600 hover:bg-gray-50 text-xs font-normal">Batal</a>
             </div>
         </form>
     </div>

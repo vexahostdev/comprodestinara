@@ -24,23 +24,28 @@ function initHeaderScroll() {
   if (!header) return;
 
   const isHome = header.classList.contains('is-home-header');
+  // Beranda dengan scroll hero: header tetap transparan selama hero masih membesar.
+  const scrollHero = document.querySelector('[data-scroll-hero]');
 
   function updateHeader() {
-    const isScrolled = window.scrollY > 25;
+    const threshold = scrollHero && scrollHero.classList.contains('is-animated')
+      ? scrollHero.offsetTop + scrollHero.offsetHeight - window.innerHeight - 25
+      : 25;
+    const isScrolled = window.scrollY > threshold;
     if (isScrolled) {
       if (isHome) {
         header.classList.remove('header-transparent');
       }
       header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
-      header.classList.add('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+      header.classList.add('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
     } else {
       if (isHome) {
         header.classList.add('header-transparent');
         header.classList.add('bg-transparent', 'border-transparent', 'shadow-none');
-        header.classList.remove('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+        header.classList.remove('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
       } else {
         header.classList.remove('bg-transparent', 'border-transparent', 'shadow-none');
-        header.classList.add('bg-white/95', 'dark:bg-[#181211]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
+        header.classList.add('bg-white/95', 'dark:bg-[#0A0A0A]/95', 'backdrop-blur-md', 'shadow-xs', 'border-gray-100', 'dark:border-white/10');
       }
     }
   }
@@ -458,7 +463,7 @@ window.showToast = function(message, type = 'success') {
   toast.className = `toast ${type === 'success' ? 'toast-success' : ''}`;
   
   const icon = type === 'success' ? 'check_circle' : 'info';
-  const iconColor = type === 'success' ? 'text-[#51634b]' : 'text-[#8c5151]';
+  const iconColor = type === 'success' ? 'text-[#51634b]' : 'text-[#1F2B45]';
 
   toast.innerHTML = `
     <span class="material-symbols-outlined ${iconColor} text-[24px] flex-shrink-0">${icon}</span>

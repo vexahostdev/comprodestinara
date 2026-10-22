@@ -13,7 +13,7 @@
         <div class="flex items-center gap-2">
             <a href="{{ route($activePage === 'home' ? 'home' : ($activePage === 'about' ? 'about' : ($activePage === 'contact' ? 'contact.index' : ($activePage === 'for-schools' ? 'for-schools' : ($activePage === 'for-researchers' ? 'for-researchers' : 'for-villages'))))) }}" 
                target="_blank" 
-               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors shadow-sm">
+               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-2xl hover:bg-gray-50 transition-colors shadow-sm">
                 <span class="material-symbols-outlined text-[16px]">visibility</span>
                 <span>Lihat Halaman Ini</span>
             </a>
@@ -34,7 +34,7 @@
                 @php $isActive = $activePage === $slug; @endphp
                 <a href="{{ route('admin.pages.index', ['page' => $slug]) }}"
                    class="px-3.5 py-2 rounded-lg text-xs font-medium transition-all inline-flex items-center gap-1.5
-                          {{ $isActive ? 'bg-[#703a3a] text-white shadow-sm' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900' }}">
+                          {{ $isActive ? 'bg-[#1F2B45] text-white shadow-sm' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900' }}">
                     <span class="material-symbols-outlined text-[16px]">
                         @if($slug === 'home') home
                         @elseif($slug === 'about') auto_stories
@@ -52,14 +52,14 @@
     {{-- Daftar Section pada Halaman Aktif --}}
     <div class="grid grid-cols-1 gap-4">
         @forelse($sections as $section)
-            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:border-[#703a3a]/40 transition-all flex flex-col md:flex-row gap-5 items-start justify-between">
+            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:border-[#1F2B45]/40 transition-all flex flex-col md:flex-row gap-5 items-start justify-between">
                 {{-- Info Section --}}
                 <div class="flex-1 space-y-2.5">
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-100 text-gray-700">
                             Urutan: {{ $section->order }}
                         </span>
-                        <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#703a3a]/10 text-[#703a3a]">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#1F2B45]/10 text-[#1F2B45]">
                             KEY: {{ $section->section_key }}
                         </span>
                         @if($section->badge)
@@ -72,8 +72,8 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Aktif
                             </span>
                         @else
-                            <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-rose-100 text-rose-800 flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Nonaktif
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-600 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-gray-400"></span> Nonaktif
                             </span>
                         @endif
                     </div>
@@ -83,7 +83,7 @@
                             <span>{{ $section->section_name }}</span>
                         </h3>
                         @if($section->title)
-                            <p class="text-xs font-semibold text-[#703a3a] mt-1 line-clamp-1">
+                            <p class="text-xs font-semibold text-[#1F2B45] mt-1 line-clamp-1">
                                 “{{ $section->title }}”
                             </p>
                         @endif
@@ -134,7 +134,7 @@
                             </button>
                         </form>
                         <a href="{{ route('admin.pages.edit', $section) }}" 
-                           class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#703a3a] text-white text-xs font-semibold rounded-lg hover:bg-[#5a2e2e] transition-colors shadow-sm">
+                           class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1F2B45] text-white text-xs font-semibold rounded-2xl hover:bg-[#16203A] transition-colors shadow-sm">
                             <span class="material-symbols-outlined text-[15px]">edit_note</span>
                             <span>Edit Konten</span>
                         </a>

@@ -3,6 +3,7 @@
 return [
     'home' => [
         'hero' => [
+            'scroll_hint' => 'Faites défiler pour explorer',
             'title' => 'Faire vivre des salles de classe réelles au cœur des villages de l’archipel',
             'subtitle' => 'Relier les programmes scolaires et universitaires aux savoirs du territoire, aux équilibres écologiques et aux récits vivants d’Indonésie.',
             'badge' => 'Année académique 2026/2027',
