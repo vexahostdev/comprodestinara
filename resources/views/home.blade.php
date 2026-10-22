@@ -24,11 +24,15 @@
   <!-- ==================== 1. SCROLL EXPANSION HERO (media kecil → layar penuh saat di-scroll) ==================== -->
   @php
     $heroTitle = $hero?->title ?? __('sections.home.hero.title');
-    $heroImage = $hero?->image_url ?? asset('assets/img/hd/hero-home.jpg');
-    // Video lokal diutamakan bila sudah diunggah ke public/assets/video/hero.mp4.
-    $heroVideo = file_exists(public_path('assets/video/hero.mp4'))
+    // Video lokal diutamakan bila sudah diunggah ke public/assets/video/hero.mp4 (+ hero-poster.jpg).
+    $localVideo = file_exists(public_path('assets/video/hero.mp4'));
+    $heroVideo = $localVideo
         ? asset('assets/video/hero.mp4')
         : 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1';
+    // Poster = frame pembuka video yang sama, supaya selama video dimuat tidak tampil foto lain.
+    $heroPoster = $localVideo && file_exists(public_path('assets/video/hero-poster.jpg'))
+        ? asset('assets/video/hero-poster.jpg')
+        : 'https://cdn.21st.dev/assets/localized/5bb1be92440e920def3eb36ad5a610d609240616cd8b11c0effe6b92bcafe06e.jpg';
     // Judul dipecah dua untuk efek bergeser ke kiri & kanan (bahasa tanpa spasi dipecah per karakter).
     $titleWords = preg_split('/\s+/u', trim($heroTitle));
     if (count($titleWords) > 1) {
@@ -69,7 +73,7 @@
 
       <!-- Media: video kecil di tengah yang membesar menjadi layar penuh -->
       <div data-hero-media class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.35)]">
-        <video src="{{ $heroVideo }}" poster="{{ $heroImage }}" autoplay muted loop playsinline preload="metadata"
+        <video src="{{ $heroVideo }}" poster="{{ $heroPoster }}" autoplay muted loop playsinline preload="auto"
                disablepictureinpicture disableremoteplayback aria-hidden="true"
                class="w-full h-full object-cover pointer-events-none"></video>
         <div data-hero-shade class="absolute inset-0 bg-black opacity-40"></div>

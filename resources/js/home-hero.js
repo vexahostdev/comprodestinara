@@ -23,6 +23,22 @@ function initScrollHero() {
     return; // Tampilan statis (layout tanpa JS) sudah lengkap.
   }
 
+  // Atribut autoplay saja kadang ditunda browser (hemat daya/data, video dari server luar
+  // belum ter-buffer). Coba putar segera, saat data siap, dan pada interaksi pertama.
+  if (video) {
+    const play = () => {
+      if (video.paused) video.play().catch(() => {});
+    };
+    play();
+    video.addEventListener('canplay', play, { once: true });
+    ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((type) =>
+      window.addEventListener(type, play, { once: true, passive: true }),
+    );
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) play();
+    });
+  }
+
   const bg = section.querySelector('[data-hero-bg]');
   const media = section.querySelector('[data-hero-media]');
   const shade = section.querySelector('[data-hero-shade]');
