@@ -38,7 +38,7 @@
             }
         };
     </script>
-    <script src="{{ asset('js/portal-shell.js') }}"></script>
+    <script src="{{ asset('js/portal-shell.js') }}?v={{ filemtime(public_path('js/portal-shell.js')) }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -127,8 +127,8 @@
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4) !important;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/portal-shell.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}?v={{ filemtime(public_path('css/dark-fallback.css')) }}"/>
+    <link rel="stylesheet" href="{{ asset('css/portal-shell.css') }}?v={{ filemtime(public_path('css/portal-shell.css')) }}"/>
 </head>
 <body class="ps-shell antialiased text-xs" x-data="portalShell">
 @php

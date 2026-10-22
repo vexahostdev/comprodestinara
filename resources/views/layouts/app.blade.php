@@ -348,8 +348,8 @@
     };
   </script>
 
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}"/>
+  <link rel="stylesheet" href="{{ asset('css/dark-fallback.css') }}?v={{ filemtime(public_path('css/dark-fallback.css')) }}"/>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-surface font-body-default text-body-default text-on-surface">
@@ -854,7 +854,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}?v={{ filemtime(public_path('js/main.js')) }}"></script>
   @stack('scripts')
 
   @if(session('success'))
